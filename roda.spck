@@ -56,9 +56,9 @@ prop2d.proj.dir                                                     = 2         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 8.84781006723642349E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.51853965595364571E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 7.50923353782854974E+00 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 1.08043823242187500E+01 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.30557098388671875E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 1.25728855133056641E+01 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = 4.24597084522247314E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = 1.47646978497505188E-01 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = 3.11884641647338867E-01 ! Orientation
@@ -66,8 +66,8 @@ view.orient (             4 ,       $V_WorkingView                ) = 8.37045848
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 1.41424087524414062E+02 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 2.81678140163421631E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 2.81678123474121094E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -129,7 +129,7 @@ slv.integ.fix.part.type (           $SLV_SolverSettings           ) = 1         
 slv.integ.fix.order (               $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FIXINT_METHOD_ORDER
 slv.integ.fix.posup (               $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FIXINT_POS_COORD_UPDATE
 slv.integ.sodasrt.formalism (       $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FORMALISM
-slv.integ.type (                    $SLV_SolverSettings           ) = 1                       ! Integrator type
+slv.integ.type (                    $SLV_SolverSettings           ) = 6                       ! Integrator type
 slv.integ.jac.struc (               $SLV_SolverSettings           ) = 3                       ! SOLVER_TIME_INTEG_PAR_JACOBIAN_STRUC
 slv.integ.jac.incr.type (           $SLV_SolverSettings           ) = 2                       ! Jacobian increment type
 slv.integ.linalg.slv (              $SLV_SolverSettings           ) = 1                       ! 1 = dense ; 2 = sparse (UMFPACK) ; 3 = sparse (PARDISO)
@@ -160,7 +160,7 @@ slv.integ.fix.utcpar (              $SLV_SolverSettings           ) = 1.00000000
 slv.integ.fix.olcpar (              $SLV_SolverSettings           ) = 5.00000000000000000E-01 ! TIME_INTEG_SCALARPAR_FIXINT_ONE_LEG_OLC
 slv.integ.sodasrt2.estfac (         $SLV_SolverSettings           ) = 9.99999999999999955E-07 ! TIME_INTEG_SCALARPAR_SODASRT20_ERROR_EST_SCALE_FACTOR
 slv.integ.tout.freq (               $SLV_SolverSettings           ) = { 200 Hz }              ! TIME_INTEG_PAR_OUTPUT_FREQ
-slv.integ.tend.time (               $SLV_SolverSettings           ) = { 2 s }                 ! TIME_INTEG_TIMEPAR_END_TIME
+slv.integ.tend.time (               $SLV_SolverSettings           ) = { 20 s }                ! TIME_INTEG_TIMEPAR_END_TIME
 slv.integ.atol.gen (                $SLV_SolverSettings           ) = 1.00000000000000008E-05 ! TIME_INTEG_PARSTATE_DEFAULT
 slv.integ.atol.vel (                $SLV_SolverSettings           ) = 1.00000000000000005E-04 ! TIME_INTEG_PARSTATE_VEL
 slv.integ.rtol.gen (                $SLV_SolverSettings           ) = 9.99999999999999955E-08 ! TIME_INTEG_PARSTATE_DEFAULT
@@ -190,6 +190,7 @@ slv.meas.result (                   $SLV_SolverSettings           ) = 1         
 slv.meas.subvar (                   $SLV_SolverSettings           ) = 1                       ! MEAS_BOOLPAR_SUBVAR
 slv.assmbl.task (                   $SLV_SolverSettings           ) = 3                       ! ASSMBL_PAR_SOLVER_MODE
 slv.output.path.type (              $SLV_SolverSettings           ) = 1                       ! OUTPUT_PATH_PAR_TYPE
+slv.output.file.desc (              $SLV_SolverSettings           ) = ''                      ! Description written to the output file if supported
 slv.compat.solver (                 $SLV_SolverSettings           ) = 0                       ! 0 = no (new solver); 1 = yes (classic solver)
 slv.txt (                           $SLV_SolverSettings           ) = ''                      ! Comment
 
@@ -214,7 +215,7 @@ subvar.dflt (                       $_kpneu                       ) = ''        
 subvar.str (                        $_CI                          ) = '1.8e6'                 ! Definition
 subvar.dflt (                       $_CI                          ) = ''                      ! Default value
 
-subvar.str (                        $_cpneu                       ) = '1e6'                   ! Definition
+subvar.str (                        $_cpneu                       ) = '1e7'                   ! Definition
 subvar.dflt (                       $_cpneu                       ) = ''                      ! Default value
 
 subvar.str (                        $_h                           ) = '0.55*$_b'              ! Definition
@@ -266,11 +267,11 @@ joint.type (                        $J_Body1                      ) = 25        
 joint.st.pos (            1 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            2 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            3 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            4 ,       $J_Body1                      ) = { $_r-0.0001 }          ! Position
+joint.st.pos (            4 ,       $J_Body1                      ) = { 0.435703-0.0049 + 2 } ! Position
 joint.st.pos (            5 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            6 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Position
 joint.st.vel (            1 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Body1                      ) = 1.00000000000000006E-01 ! Velocity
+joint.st.vel (            2 ,       $J_Body1                      ) = 1.00000000000000000E+00 ! Velocity
 joint.st.vel (            3 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            4 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            5 ,       $J_Body1                      ) = 0.00000000000000000E+00 ! Velocity
@@ -355,8 +356,8 @@ joint.st.desc (           6 ,       $J_chao                       ) = 0.00000000
 
 prim.type (                         $P_chao                       ) = 31                      ! Type
 prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
-prim.pos (                1 ,       $P_chao                       ) = -5.00000000000000000E+01 ! Position
-prim.pos (                2 ,       $P_chao                       ) = -5.00000000000000000E+01 ! Position
+prim.pos (                1 ,       $P_chao                       ) = -5.00000000000000000E+00 ! Position
+prim.pos (                2 ,       $P_chao                       ) = -5.00000000000000000E+00 ! Position
 prim.color.r (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
 prim.color.r (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
 prim.color.g (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (green component)
@@ -365,8 +366,8 @@ prim.color.b (            1 ,       $P_chao                       ) = 1.28000000
 prim.color.b (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_chao                       ) = 1.00000000000000000E+02 ! [m] Length in X
-prim.par (                3 ,       $P_chao                       ) = 1.00000000000000000E+02 ! [m] Length in Y
+prim.par (                2 ,       $P_chao                       ) = 1.00000000000000000E+01 ! [m] Length in X
+prim.par (                3 ,       $P_chao                       ) = 1.00000000000000000E+01 ! [m] Length in Y
 prim.par (                4 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments X
 prim.par (                5 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments Y
 
@@ -375,8 +376,8 @@ prim.par (                5 ,       $P_chao                       ) = 5.00000000
 ! Force Elements
 !**********************************************************************
 force.type (                        $F_roda                       ) = 50                      ! Type
-force.from (                        $F_roda                       ) = $M_Body1_BRF            ! From Marker
-force.to (                          $F_roda                       ) = $M_Isys                 ! To Marker
+force.from (                        $F_roda                       ) = $M_Isys                 ! From Marker
+force.to (                          $F_roda                       ) = $M_Body1_BRF            ! To Marker
 force.par (               1 ,       $F_roda                       ) = $M_Isys                 ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_roda                       ) = $X_Fx                   ! [-] Expression for Fx
 force.par (               4 ,       $F_roda                       ) = null                    ! [-] Expression for Fy
@@ -388,18 +389,20 @@ force.par (               8 ,       $F_roda                       ) = null      
 !**********************************************************************
 ! Expressions
 !**********************************************************************
-express.str (                       $X_Fz                         ) = 'IF($X_dist_borda>0)\n{\n0\n}\nELSE\n{\n$X_A*($_kpneu*$X_delta+$_cpneu*$dX_delta)\n}' ! Definition
+express.str (                       $X_Fz                         ) = '-max(IF($X_dist_borda>0)\n{\n0\n}\nELSE\n{\n$X_A*($_kpneu*$X_delta+$_cpneu*$dX_delta*tanh(10*$X_delta))\n},0)\n\n\n' ! Definition
 
-express.str (                       $X_dist_borda                 ) = 'DZ($M_Body1_BRF,$M_Isys)-$_r' ! Definition
+express.str (                       $X_dist_borda                 ) = 'DZ($M_Body1_BRF)-$_r'  ! Definition
 
 express.str (                       $dX_dist_borda                ) = 'VZ($M_Body1_BRF)'      ! Definition
 
-express.str (                       $X_s                          ) = '1-($_r*(WY($M_Body1_BRF)))/VX($M_Body1_BRF)' ! Definition
+express.str (                       $X_s                          ) = 'IF(abs(VX($M_Body1_BRF)) - ($_r-$X_delta)*abs(WY($M_Body1_BRF))>0)\n{\n-$X_vrel/abs(VX($M_Body1_BRF))\n}\nELSE\n{\n-$X_vrel/abs(($_r-$X_delta)*WY($M_Body1_BRF))\n}' ! Definition
+express.txt (                       $X_s                          ) = ''                      ! Comment
 
 express.str (                       $X_Fx                         ) = '$X_GT - $X_MR - $X_IF' ! Definition
 express.txt (                       $X_Fx                         ) = '-0.5*$X_Fz*tanh(100*$X_s)' ! Comment
 
-express.str (                       $X_My                         ) = '-$_r*$X_GT'            ! Definition
+express.str (                       $X_My                         ) = '-$_r*842.4*sign(1,$X_vrel)' ! Definition
+express.txt (                       $X_My                         ) = '-($_r-$X_delta)*$X_Fx' ! Comment
 
 express.str (                       $X_p                          ) = 'IF($X_dist_borda>0)\n{\n0\n}\nELSE\n{\n-$X_dist_borda\n}' ! Definition
 
@@ -415,10 +418,13 @@ express.str (                       $X_Bn                         ) = '($_CI*$_b
 
 express.str (                       $X_Fz2                        ) = 'IF($X_Fz > 0.1)\n{\n$X_Fz\n}\nELSE\n{\n0.1\n}' ! Definition
 
-express.str (                       $X_GT                         ) = '$X_Fz*(0.88*(1-exp(-0.1*$X_Bn))*(1-exp(-7.5*abs($X_s)))+0.04)*tanh(1000*$X_s)' ! Definition
+express.str (                       $X_GT                         ) = '$X_Fz*(0.88*(1-exp(-0.1*$X_Bn))*(1-exp(-7.5*abs($X_s)))+0.04)*tanh(-1000*$X_vrel)' ! Definition
 
-express.str (                       $X_MR                         ) = '$X_Fz*(1/$X_Bn + 0.04 + 0.5*abs($X_s)/$X_Bn)*tanh(1000*$X_s)*tanh(100*VX($M_Body1_BRF))' ! Definition
+express.str (                       $X_MR                         ) = '$X_Fz*(1/$X_Bn + 0.04 + 0.5*abs($X_s)/$X_Bn)*tanh(100*VX($M_Body1_BRF))' ! Definition
 
-express.str (                       $X_IF                         ) = '200*tanh(100*VX($M_Body1_BRF))' ! Definition
+express.str (                       $X_IF                         ) = '-20*tanh(100*VX($M_Body1_BRF))' ! Definition
+
+express.str (                       $X_vrel                       ) = 'VX($M_Body1_BRF) - ($_r)*WY($M_Body1_BRF)' ! Definition
+express.txt (                       $X_vrel                       ) = 'VX($M_Body1_BRF) - ($_r-$X_delta)*WY($M_Body1_BRF)' ! Comment
 
                                                                                                                                                                        
