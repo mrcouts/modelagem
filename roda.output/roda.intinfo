@@ -5,7 +5,7 @@
            0   # nlages
            0   # n_add_eq
            0   # n_roots
-   1.510000       # tend
+   1.515000       # tend
            1   # integration method
   9.9999997E-06   #   atolg(1)
   1.0000000E-07   #   rtolg(1)
@@ -112,17 +112,17 @@
   0.0000000E+00   #   vipar
   
           14   # N-Values for IntegrationOutputInfos
-       96079   #   nrhs_total
-       58063   #   nrhs_nojac
-        7254   #   n jacobi
-       24938   #   n mass
-       12281   #   n steps
+      175746   #   nrhs_total
+      106194   #   nrhs_nojac
+       13497   #   n jacobi
+       45468   #   n mass
+       21807   #   n steps
            0   #   n roots
           33   #   n error test failors
-        5824   #   n convergence test failors
+       10587   #   n convergence test failors
           33   #   n steps_rejected
-  4.0585897E-07   #   last step size
+  1.7465284E-07   #   last step size
            1   #   last order
            0   #   rhs_error_flag
            0   #   integrator_error_flag
-   1.509012       #   tout required
+   1.510668       #   tout required
