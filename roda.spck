@@ -424,7 +424,7 @@ express.str (                       $X_MR                         ) = '$X_Fz*(1/
 
 express.str (                       $X_IF                         ) = '-20*tanh(100*VX($M_Body1_BRF))' ! Definition
 
-express.str (                       $X_vrel                       ) = 'VX($M_Body1_BRF) - ($_r)*WY($M_Body1_BRF)' ! Definition
+express.str (                       $X_vrel                       ) = 'VX($M_Body1_BRF) - ($_r - $X_delta)*WY($M_Body1_BRF)' ! Definition
 express.txt (                       $X_vrel                       ) = 'VX($M_Body1_BRF) - ($_r-$X_delta)*WY($M_Body1_BRF)' ! Comment
 
                                                                                                                                                                        
