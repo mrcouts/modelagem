@@ -56,9 +56,9 @@ prop2d.proj.dir                                                     = 2         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = -2.26820968091487885E-01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.35653591156005859E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 3.61553058028221130E-01 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 3.25998854637145996E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -4.62376594543457031E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 6.33505851030349731E-01 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
@@ -67,7 +67,7 @@ view.angle (                        $V_WorkingView                ) = 7.85398185
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
 view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 6.45031213760375977E+00 ! Back clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 6.71754217147827148E+00 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -229,6 +229,9 @@ subvar.dflt (                       $_A                           ) = ''        
 subvar.str (                        $_c_solo                      ) = '10^6'                  ! Definition
 subvar.dflt (                       $_c_solo                      ) = ''                      ! Default value
 
+subvar.str (                        $_vmin                        ) = '10^(-8)'               ! Definition
+subvar.dflt (                       $_vmin                        ) = ''                      ! Default value
+
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
@@ -301,7 +304,7 @@ joint.st.pos (            1 ,       $J_Base                       ) = -1.0000000
 joint.st.pos (            2 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            3 ,       $J_Base                       ) = { 5*$_r1 }              ! Position
 joint.st.vel (            1 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Base                       ) = 9.99999999999999955E-07 ! Velocity
+joint.st.vel (            2 ,       $J_Base                       ) = 1.00000000000000000E+01 ! Velocity
 joint.st.vel (            3 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Base                       ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Base                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
@@ -553,24 +556,24 @@ constr.par (              7 ,       $L_3                          ) = 0.00000000
 force.type (                        $F_1                          ) = 50                      ! Type
 force.from (                        $F_1                          ) = $M_Isys                 ! From Marker
 force.to (                          $F_1                          ) = $M_Roda1_BRF            ! To Marker
-force.disabled (                    $F_1                          ) = 1                       ! Disabled
+force.disabled (                    $F_1                          ) = 0                       ! Disabled
 force.par (               1 ,       $F_1                          ) = $M_Isys                 ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_1                          ) = null                    ! [-] Expression for Fx
 force.par (               4 ,       $F_1                          ) = null                    ! [-] Expression for Fy
 force.par (               5 ,       $F_1                          ) = null                    ! [-] Expression for Fz
 force.par (               6 ,       $F_1                          ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_1                          ) = $X_Torquecte            ! [-] Expression for Ly
+force.par (               7 ,       $F_1                          ) = $X_My_roda1             ! [-] Expression for Ly
 force.par (               8 ,       $F_1                          ) = null                    ! [-] Expression for Lz
 
 force.type (                        $F_base                       ) = 50                      ! Type
 force.from (                        $F_base                       ) = $M_Isys                 ! From Marker
 force.to (                          $F_base                       ) = $M_Base_BRF             ! To Marker
 force.par (               1 ,       $F_base                       ) = $M_Isys                 ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_base                       ) = null                    ! [-] Expression for Fx
+force.par (               3 ,       $F_base                       ) = $X_Fx                   ! [-] Expression for Fx
 force.par (               4 ,       $F_base                       ) = null                    ! [-] Expression for Fy
 force.par (               5 ,       $F_base                       ) = $X_Fz                   ! [-] Expression for Fz
 force.par (               6 ,       $F_base                       ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_base                       ) = $X_My                   ! [-] Expression for Ly
+force.par (               7 ,       $F_base                       ) = $X_My_base              ! [-] Expression for Ly
 force.par (               8 ,       $F_base                       ) = null                    ! [-] Expression for Lz
 
 !**********************************************************************
@@ -590,7 +593,7 @@ express.str (                       $X_dist_borda                 ) = 'DZ($M_Bas
 
 express.str (                       $dX_dist_borda                ) = 'VZ($M_Base_BRF)'       ! Definition
 
-express.str (                       $X_My                         ) = '\ntanh(10*$X_delta)*($_ksolo*sin(beta($M_Base_BRF)) + $_c_solo*WY($M_Base_BRF)*cos(beta($M_Base_BRF)))*($_A/12)*(cos(beta($M_Base_BRF))*$_TL)^2' ! Definition
+express.str (                       $X_My_base                    ) = '\ntanh(10*$X_delta)*($_ksolo*sin(beta($M_Base_BRF)) + $_c_solo*WY($M_Base_BRF)*cos(beta($M_Base_BRF)))*($_A/12)*(cos(beta($M_Base_BRF))*$_TL)^2' ! Definition
 
 express.str (                       $X_vrel                       ) = 'VX($M_Base_BRF) - $_r1*WY($M_Roda1_BRF)' ! Definition
 
@@ -598,15 +601,17 @@ express.str (                       $X_s                          ) = 'IF(abs(VX
 
 express.str (                       $X_Fz2                        ) = 'IF(abs($X_Fz) > 0.1)\n{\nabs($X_Fz)\n}\nELSE\n{\n0.1\n}' ! Definition
 
-express.str (                       $X_GT                         ) = '$X_Fz*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s))+0.03/$X_DWI)' ! Definition
+express.str (                       $X_GT                         ) = '$X_Fz*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*abs($X_s)))+0.03/$X_DWI)*tanh(-100*$X_vrel)' ! Definition
 
-express.str (                       $X_DWR                        ) = '1+($X_My/$X_Fz2)/$_TL' ! Definition
+express.str (                       $X_DWR                        ) = '1+($X_My_base/$X_Fz2)/$_TL' ! Definition
 
 express.str (                       $X_DWI                        ) = '1-abs(0.7*($X_DWR-1)/($X_DWR+1))' ! Definition
 
-express.str (                       $X_MR                         ) = '$X_Fz*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*$X_s/sqrt($X_Bn))' ! Definition
+express.str (                       $X_MR                         ) = '$X_Fz*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*abs($X_s)/sqrt($X_Bn))*tanh(100*VX($M_Base_BRF))' ! Definition
 
 express.str (                       $X_Fx                         ) = '$X_GT - $X_MR'         ! Definition
+
+express.str (                       $X_My_roda1                   ) = '-$_r1*$X_GT'           ! Definition
 
 model.data.redundancy                                               = 'eJxjYBhcwDTRIjHVMskgzcjQyNg82dgwzcLIJCU1xcjM2NjMLNkIAJGaCIywAAAAAAAAAA==' ! Constraint redundancy data
 model.data.dependency                                               = 'eJxjZiAOMOLBDDjYyNg00SIx1TLJIM3I0MjYPNnYMM3CyCQlNcXIzNjYzCzZCACWrgidiAAAAAAAAAA=' ! Solver state dependency data
