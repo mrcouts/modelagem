@@ -49,7 +49,7 @@ prop2d.grid.hor.step                                                = 1.00000000
 prop2d.grid.vert.start                                              = 0.00000000000000000E+00 ! Vertical offset
 prop2d.grid.vert.step                                               = 1.00000000000000000E+01 ! Vertical step
 prop2d.line.width                                                   = 0                       ! Line width
-prop2d.proj.dir                                                     = 2                       ! Projection direction
+prop2d.proj.dir                                                     = 1                       ! Projection direction
 
 
 !**********************************************************************
@@ -67,7 +67,7 @@ view.angle (                        $V_WorkingView                ) = 7.85398185
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
 view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 6.71754217147827148E+00 ! Back clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 6.71758651733398438E+00 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -236,10 +236,10 @@ subvar.dflt (                       $_vmin                        ) = ''        
 ! Reference systems
 !**********************************************************************
 refsys.type (                       $R_Isys                       ) = 1                       ! Type
-refsys.attr.2d.pos.x (              $R_Isys                       ) = -9.00000000000000000E+01
-refsys.attr.2d.pos.y (              $R_Isys                       ) = -1.00000000000000000E+01
-refsys.attr.2d.width (              $R_Isys                       ) = 2.40000000000000000E+02
-refsys.attr.2d.height (             $R_Isys                       ) = 2.20000000000000000E+02
+refsys.attr.2d.pos.x (              $R_Isys                       ) = -1.60000000000000000E+02
+refsys.attr.2d.pos.y (              $R_Isys                       ) = -6.00000000000000000E+01
+refsys.attr.2d.width (              $R_Isys                       ) = 2.70000000000000000E+02
+refsys.attr.2d.height (             $R_Isys                       ) = 6.30000000000000000E+02
 
 marker.type (                       $M_Isys                       ) = 1                       ! Type
 marker.parent (                     $M_Isys                       ) = $R_Isys                 ! Reference system
@@ -264,10 +264,10 @@ body.I.tens (             2 ,   2 , $B_Base                       ) = 1.00000000
 body.I.tens (             3 ,   3 , $B_Base                       ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_Base                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
 body.flx.dmp.all (                  $B_Base                       ) = 0.00000000000000000E+00 ! Damping input value
-body.attr.2d.pos.x (                $B_Base                       ) = -3.00000000000000000E+01
-body.attr.2d.pos.y (                $B_Base                       ) = 3.00000000000000000E+01
-body.attr.2d.width (                $B_Base                       ) = 1.10000000000000000E+02
-body.attr.2d.height (               $B_Base                       ) = 8.00000000000000000E+01
+body.attr.2d.pos.x (                $B_Base                       ) = -4.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Base                       ) = 2.80000000000000000E+02
+body.attr.2d.width (                $B_Base                       ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Base                       ) = 4.00000000000000000E+01
 
 marker.type (                       $M_Base_BRF                   ) = 1                       ! Type
 marker.parent (                     $M_Base_BRF                   ) = $B_Base                 ! Body
@@ -297,7 +297,7 @@ marker.ref (                        $M_Base_Roda4c                ) = $M_Base_BR
 marker.parent (                     $M_Base_Roda4c                ) = $B_Base                 ! Body
 marker.pos (              1 ,       $M_Base_Roda4c                ) = { -$_TL/2 }             ! Position
 
-joint.from (                        $J_Base                       ) = $M_Isys                 ! From Marker
+joint.from (                        $J_Base                       ) = $M_connector_BRF        ! From Marker
 joint.to (                          $J_Base                       ) = $M_Base_BRF             ! To Marker
 joint.type (                        $J_Base                       ) = 25                      ! Type
 joint.st.pos (            1 ,       $J_Base                       ) = -1.00000000000000006E-01 ! Position
@@ -313,13 +313,13 @@ joint.par (               4 ,       $J_Base                       ) = 1.00000000
 joint.par (               5 ,       $J_Base                       ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
 joint.par (               6 ,       $J_Base                       ) = 0.00000000000000000E+00 ! [-] Axis of translation 3
 joint.par (               8 ,       $J_Base                       ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
-joint.attr.2d.pos.x (     1 ,       $J_Base                       ) = 20
-joint.attr.2d.pos.y (     1 ,       $J_Base                       ) = 170
-joint.attr.2d.ori (       1 ,       $J_Base                       ) = 270
-joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Base      ) = 20, 20
-joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Base      ) = 210, 187
-joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Base        ) = 20, 20
-joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Base        ) = 110, 153
+joint.attr.2d.pos.x (     1 ,       $J_Base                       ) = -20
+joint.attr.2d.pos.y (     1 ,       $J_Base                       ) = 190
+joint.attr.2d.ori (       1 ,       $J_Base                       ) = 90
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Base      ) = 20, -42.5, -42.5, -20, -20, -20, -20
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Base      ) = 0, 0, 143, 143, 153, 163, 173
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Base        ) = -20, -20
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Base        ) = 280, 207
 
 prim.type (                         $P_Base                       ) = 1                       ! Type
 prim.ref (                          $P_Base                       ) = $M_Base_BRF             ! Reference Marker
@@ -341,6 +341,10 @@ body.I.tens (             2 ,   2 , $B_Roda1                      ) = 1.00000000
 body.I.tens (             3 ,   3 , $B_Roda1                      ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_Roda1                      ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
 body.flx.dmp.all (                  $B_Roda1                      ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Roda1                      ) = 3.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Roda1                      ) = 1.40000000000000000E+02
+body.attr.2d.width (                $B_Roda1                      ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Roda1                      ) = 4.00000000000000000E+01
 
 marker.type (                       $M_Roda1_BRF                  ) = 1                       ! Type
 marker.parent (                     $M_Roda1_BRF                  ) = $B_Roda1                ! Body
@@ -364,6 +368,13 @@ joint.to (                          $J_Roda1                      ) = $M_Roda1_B
 joint.type (                        $J_Roda1                      ) = 2                       ! Type
 joint.st.pos (            1 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Position
 joint.st.vel (            1 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Velocity
+joint.attr.2d.pos.x (     1 ,       $J_Roda1                      ) = 30
+joint.attr.2d.pos.y (     1 ,       $J_Roda1                      ) = 220
+joint.attr.2d.ori (       1 ,       $J_Roda1                      ) = 270
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Roda1     ) = 10, 10, 30, 30
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Roda1     ) = 280, 261.75, 261.75, 237
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Roda1       ) = 40, 40, 30, 30
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Roda1       ) = 180, 190, 190, 203
 
 prim.type (                         $P_Roda1                      ) = 2                       ! Type
 prim.ref (                          $P_Roda1                      ) = $M_Roda1_BRF            ! Reference Marker
@@ -395,6 +406,10 @@ body.I.tens (             2 ,   2 , $B_Roda2                      ) = 1.00000000
 body.I.tens (             3 ,   3 , $B_Roda2                      ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_Roda2                      ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
 body.flx.dmp.all (                  $B_Roda2                      ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Roda2                      ) = 3.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Roda2                      ) = 5.10000000000000000E+02
+body.attr.2d.width (                $B_Roda2                      ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Roda2                      ) = 4.00000000000000000E+01
 
 marker.type (                       $M_Roda2_BRF                  ) = 1                       ! Type
 marker.parent (                     $M_Roda2_BRF                  ) = $B_Roda2                ! Body
@@ -405,6 +420,13 @@ joint.to (                          $J_Roda2                      ) = $M_Roda2_B
 joint.type (                        $J_Roda2                      ) = 2                       ! Type
 joint.st.pos (            1 ,       $J_Roda2                      ) = 0.00000000000000000E+00 ! Position
 joint.st.vel (            1 ,       $J_Roda2                      ) = 0.00000000000000000E+00 ! Velocity
+joint.attr.2d.pos.x (     1 ,       $J_Roda2                      ) = 10
+joint.attr.2d.pos.y (     1 ,       $J_Roda2                      ) = 360
+joint.attr.2d.ori (       1 ,       $J_Roda2                      ) = 90
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Roda2     ) = 10, 10
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Roda2     ) = 320, 343
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Roda2       ) = 30, 10, 10
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Roda2       ) = 520, 520, 377
 
 prim.type (                         $P_Roda2                      ) = 2                       ! Type
 prim.ref (                          $P_Roda2                      ) = $M_Roda2_BRF            ! Reference Marker
@@ -436,6 +458,10 @@ body.I.tens (             2 ,   2 , $B_Roda3                      ) = 1.00000000
 body.I.tens (             3 ,   3 , $B_Roda3                      ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_Roda3                      ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
 body.flx.dmp.all (                  $B_Roda3                      ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Roda3                      ) = -9.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Roda3                      ) = 5.10000000000000000E+02
+body.attr.2d.width (                $B_Roda3                      ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Roda3                      ) = 4.00000000000000000E+01
 
 marker.type (                       $M_Roda3_BRF                  ) = 1                       ! Type
 marker.parent (                     $M_Roda3_BRF                  ) = $B_Roda3                ! Body
@@ -446,6 +472,13 @@ joint.to (                          $J_Roda3                      ) = $M_Roda3_B
 joint.type (                        $J_Roda3                      ) = 2                       ! Type
 joint.st.pos (            1 ,       $J_Roda3                      ) = 0.00000000000000000E+00 ! Position
 joint.st.vel (            1 ,       $J_Roda3                      ) = 0.00000000000000000E+00 ! Velocity
+joint.attr.2d.pos.x (     1 ,       $J_Roda3                      ) = -40
+joint.attr.2d.pos.y (     1 ,       $J_Roda3                      ) = 390
+joint.attr.2d.ori (       1 ,       $J_Roda3                      ) = 90
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Roda3     ) = -30, -30, -40, -40
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Roda3     ) = 320, 340.75, 340.75, 373
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Roda3       ) = -50, -50, -40, -40, -40
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Roda3       ) = 510, 494.1875, 494.1875, 476.75, 407
 
 prim.type (                         $P_Roda3                      ) = 2                       ! Type
 prim.ref (                          $P_Roda3                      ) = $M_Roda3_BRF            ! Reference Marker
@@ -477,6 +510,10 @@ body.I.tens (             2 ,   2 , $B_Roda4                      ) = 1.00000000
 body.I.tens (             3 ,   3 , $B_Roda4                      ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_Roda4                      ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
 body.flx.dmp.all (                  $B_Roda4                      ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Roda4                      ) = -1.30000000000000000E+02
+body.attr.2d.pos.y (                $B_Roda4                      ) = 2.00000000000000000E+02
+body.attr.2d.width (                $B_Roda4                      ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Roda4                      ) = 4.00000000000000000E+01
 
 marker.type (                       $M_Roda4_BRF                  ) = 1                       ! Type
 marker.parent (                     $M_Roda4_BRF                  ) = $B_Roda4                ! Body
@@ -487,6 +524,13 @@ joint.to (                          $J_Roda4                      ) = $M_Roda4_B
 joint.type (                        $J_Roda4                      ) = 2                       ! Type
 joint.st.pos (            1 ,       $J_Roda4                      ) = 0.00000000000000000E+00 ! Position
 joint.st.vel (            1 ,       $J_Roda4                      ) = 0.00000000000000000E+00 ! Velocity
+joint.attr.2d.pos.x (     1 ,       $J_Roda4                      ) = -80
+joint.attr.2d.pos.y (     1 ,       $J_Roda4                      ) = 280
+joint.attr.2d.ori (       1 ,       $J_Roda4                      ) = 180
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Roda4     ) = -40, -50, -50, -63
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Roda4     ) = 290, 290, 280, 280
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Roda4       ) = -100, -100, -97
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Roda4       ) = 240, 280, 280
 
 prim.type (                         $P_Roda4                      ) = 2                       ! Type
 prim.ref (                          $P_Roda4                      ) = $M_Roda4_BRF            ! Reference Marker
@@ -511,6 +555,58 @@ prim.par (               10 ,       $P_Roda4                      ) = 0.00000000
 prim.par (               11 ,       $P_Roda4                      ) = 0.00000000000000000E+00 ! [-] Close geometry with
 
 
+body.m (                            $B_connector                  ) = 1.00000000000000006E-09 ! Mass of the Body
+body.I.tens (             1 ,   1 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.kind (                       $B_connector                  ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_connector                  ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_connector                  ) = 2.00000000000000000E+01
+body.attr.2d.pos.y (                $B_connector                  ) = -2.00000000000000000E+01
+body.attr.2d.width (                $B_connector                  ) = 5.00000000000000000E+01
+body.attr.2d.height (               $B_connector                  ) = 3.00000000000000000E+01
+
+marker.type (                       $M_connector_BRF              ) = 1                       ! Type
+marker.parent (                     $M_connector_BRF              ) = $B_connector            ! Body
+marker.flx.type (                   $M_connector_BRF              ) = 4                       ! Flexible type
+
+joint.from (                        $J_connector                  ) = $M_Isys                 ! From Marker
+joint.to (                          $J_connector                  ) = $M_connector_BRF        ! To Marker
+joint.type (                        $J_connector                  ) = 0                       ! Type
+joint.st.pos (            1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.vel (            1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.desc (           1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.par (               1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
+joint.par (               2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
+joint.par (               3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
+joint.par (               4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in x
+joint.par (               5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in y
+joint.par (               6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in z
+joint.par (               7 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+joint.attr.2d.pos.x (     1 ,       $J_connector                  ) = -20
+joint.attr.2d.pos.y (     1 ,       $J_connector                  ) = -20
+joint.attr.2d.ori (       1 ,       $J_connector                  ) = 90
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_connector ) = -20, -20
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_connector ) = -60, -37
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_connector   ) = 50, 50, -20, -20, -20
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_connector   ) = 10, 19.75, 19.75, 7, -3
+
+
 !**********************************************************************
 ! Constraints
 !**********************************************************************
@@ -525,6 +621,13 @@ constr.par (              4 ,       $L_4                          ) = 0.00000000
 constr.par (              5 ,       $L_4                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in y  of M_k
 constr.par (              6 ,       $L_4                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in z  of M_k
 constr.par (              7 ,       $L_4                          ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+constr.attr.2d.pos.x (    1 ,       $L_4                          ) = -20
+constr.attr.2d.pos.y (    1 ,       $L_4                          ) = 460
+constr.attr.2d.ori (      1 ,       $L_4                          ) = 90
+constr.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $L_4        ) = 50, 50, 40, 40, 40, -20, -20, -20
+constr.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $L_4        ) = 180, 237.1171875, 237.1171875, 256.15625, 332.3125, 332.3125, 379.75, 443
+constr.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $L_4          ) = -70, -45.9375, -45.9375, -3.75, 15, 40, 40, 40, 40, 40, 40, 20, 20, 20, 20, -20, -20
+constr.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $L_4          ) = 230, 230, 242.94670104980469, 242.94670104980469, 242.94670104980469, 242.94670104980469, 281.78680419921875, 299.049072265625, 322.0654296875, 352.75390625, 393.671875, 393.671875, 403.671875, 461.5625, 538.75, 538.75, 477
 
 constr.from (                       $L_2                          ) = $M_Roda1_transmission   ! From Marker
 constr.to (                         $L_2                          ) = $M_Roda2_BRF            ! To Marker
@@ -537,6 +640,13 @@ constr.par (              4 ,       $L_2                          ) = 0.00000000
 constr.par (              5 ,       $L_2                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in y  of M_k
 constr.par (              6 ,       $L_2                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in z  of M_k
 constr.par (              7 ,       $L_2                          ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+constr.attr.2d.pos.x (    1 ,       $L_2                          ) = 60
+constr.attr.2d.pos.y (    1 ,       $L_2                          ) = 280
+constr.attr.2d.ori (      1 ,       $L_2                          ) = 90
+constr.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $L_2        ) = 60, 60
+constr.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $L_2        ) = 180, 263
+constr.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $L_2          ) = 70, 70, 60, 60, 60, 60
+constr.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $L_2          ) = 510, 400.1875, 400.1875, 390.1875, 350.25, 297
 
 constr.from (                       $L_3                          ) = $M_Roda1_transmission   ! From Marker
 constr.to (                         $L_3                          ) = $M_Roda3_BRF            ! To Marker
@@ -549,24 +659,38 @@ constr.par (              4 ,       $L_3                          ) = 0.00000000
 constr.par (              5 ,       $L_3                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in y  of M_k
 constr.par (              6 ,       $L_3                          ) = 0.00000000000000000E+00 ! [-] Lock Transl.  in z  of M_k
 constr.par (              7 ,       $L_3                          ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+constr.attr.2d.pos.x (    1 ,       $L_3                          ) = 50
+constr.attr.2d.pos.y (    1 ,       $L_3                          ) = 420
+constr.attr.2d.ori (      1 ,       $L_3                          ) = 90
+constr.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $L_3        ) = 80, 80, 70, 60, 50, 50, 50
+constr.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $L_3        ) = 180, 305.4375, 305.4375, 305.4375, 305.4375, 347.25, 403
+constr.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $L_3          ) = -40, -40, 50, 50
+constr.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $L_3          ) = 510, 484.25, 484.25, 437
 
 !**********************************************************************
 ! Force Elements
 !**********************************************************************
 force.type (                        $F_1                          ) = 50                      ! Type
-force.from (                        $F_1                          ) = $M_Isys                 ! From Marker
+force.from (                        $F_1                          ) = $M_connector_BRF        ! From Marker
 force.to (                          $F_1                          ) = $M_Roda1_BRF            ! To Marker
 force.disabled (                    $F_1                          ) = 0                       ! Disabled
-force.par (               1 ,       $F_1                          ) = $M_Isys                 ! [-] Reference Marker for calc.
+force.par (               1 ,       $F_1                          ) = $M_connector_BRF        ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_1                          ) = null                    ! [-] Expression for Fx
 force.par (               4 ,       $F_1                          ) = null                    ! [-] Expression for Fy
 force.par (               5 ,       $F_1                          ) = null                    ! [-] Expression for Fz
 force.par (               6 ,       $F_1                          ) = null                    ! [-] Expression for Lx
 force.par (               7 ,       $F_1                          ) = $X_My_roda1             ! [-] Expression for Ly
 force.par (               8 ,       $F_1                          ) = null                    ! [-] Expression for Lz
+force.attr.2d.pos.x (     1 ,       $F_1                          ) = 10
+force.attr.2d.pos.y (     1 ,       $F_1                          ) = 50
+force.attr.2d.ori (       1 ,       $F_1                          ) = 90
+force.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $F_1         ) = 40, 40, 10, 10
+force.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $F_1         ) = 10, 20, 20, 33
+force.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $F_1           ) = 30, 10, 10
+force.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $F_1           ) = 150, 150, 67
 
 force.type (                        $F_base                       ) = 50                      ! Type
-force.from (                        $F_base                       ) = $M_Isys                 ! From Marker
+force.from (                        $F_base                       ) = $M_connector_BRF        ! From Marker
 force.to (                          $F_base                       ) = $M_Base_BRF             ! To Marker
 force.par (               1 ,       $F_base                       ) = $M_Isys                 ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_base                       ) = $X_Fx                   ! [-] Expression for Fx
@@ -575,6 +699,13 @@ force.par (               5 ,       $F_base                       ) = $X_Fz     
 force.par (               6 ,       $F_base                       ) = null                    ! [-] Expression for Lx
 force.par (               7 ,       $F_base                       ) = $X_My_base              ! [-] Expression for Ly
 force.par (               8 ,       $F_base                       ) = null                    ! [-] Expression for Lz
+force.attr.2d.pos.x (     1 ,       $F_base                       ) = -20
+force.attr.2d.pos.y (     1 ,       $F_base                       ) = 120
+force.attr.2d.ori (       1 ,       $F_base                       ) = 90
+force.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $F_base      ) = 30, 30, -20, -20, -20
+force.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $F_base      ) = 10, 25.1875, 25.1875, 40.75, 103
+force.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $F_base        ) = 0, 0, -10, -20, -20
+force.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $F_base        ) = 280, 172.75, 172.75, 172.75, 137
 
 !**********************************************************************
 ! Expressions
