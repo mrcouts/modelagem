@@ -78,9 +78,9 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 2.10279534533619881E+01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -2.78384792438009754E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.17531189336150419E+01 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 1.05927233538823202E+01 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.77755057396134362E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 5.97668221301864833E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = -5.87696313858032227E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = -5.30599523335695267E-03 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = -1.44257638603448868E-02 ! Orientation
@@ -88,8 +88,8 @@ view.orient (             4 ,       $V_WorkingView                ) = -8.0893552
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 4.16792817413806915E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 4.16792793273925781E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 3.00603564828634262E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.00603542327880859E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -227,10 +227,10 @@ subvar.dflt (                       $_H                           ) = ''        
 subvar.str (                        $_L                           ) = '1.50'                  ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
-subvar.str (                        $_kr                          ) = '1e6'                   ! Definition
+subvar.str (                        $_kr                          ) = '1e5'                   ! Definition
 subvar.dflt (                       $_kr                          ) = ''                      ! Default value
 
-subvar.str (                        $_cr                          ) = '1e6'                   ! Definition
+subvar.str (                        $_cr                          ) = '1e4'                   ! Definition
 subvar.dflt (                       $_cr                          ) = ''                      ! Default value
 
 !**********************************************************************
@@ -340,7 +340,7 @@ joint.st.pos (            1 ,       $J_Boogie                     ) = 0.00000000
 joint.st.pos (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            3 ,       $J_Boogie                     ) = { $_H/2 + $S_esteira1.$_r1 -0.05 } ! Position
 joint.st.vel (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Boogie                     ) = 1.00000000000000000E+01 ! Velocity
+joint.st.vel (            2 ,       $J_Boogie                     ) = 5.00000000000000000E+00 ! Velocity
 joint.st.vel (            3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
