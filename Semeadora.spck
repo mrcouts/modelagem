@@ -78,9 +78,9 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 1.05927233538823202E+01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -1.77755057396134362E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 5.97668221301864833E+00 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 1.57584736548596993E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.92197360682184808E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 2.28070639501675032E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = -5.87696313858032227E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = -5.30599523335695267E-03 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = -1.44257638603448868E-02 ! Orientation
@@ -322,14 +322,14 @@ marker.pos (              3 ,       $M_Boogie_esteira2            ) = { -$_H/2 }
 marker.type (                       $M_Boogie_2rocker1            ) = 2                       ! Type
 marker.ref (                        $M_Boogie_2rocker1            ) = $M_Boogie_BRF           ! Reference Marker
 marker.parent (                     $M_Boogie_2rocker1            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker1            ) = { $_L/2 }               ! Position
+marker.pos (              1 ,       $M_Boogie_2rocker1            ) = 0.00000000000000000E+00 ! Position
 marker.pos (              2 ,       $M_Boogie_2rocker1            ) = { -$_W/2 + $S_rocker1.$_W/2 } ! Position
 marker.pos (              3 ,       $M_Boogie_2rocker1            ) = { $_H/2 }               ! Position
 
 marker.type (                       $M_Boogie_2rocker2            ) = 2                       ! Type
 marker.ref (                        $M_Boogie_2rocker2            ) = $M_Boogie_BRF           ! Reference Marker
 marker.parent (                     $M_Boogie_2rocker2            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker2            ) = { $_L/2 }               ! Position
+marker.pos (              1 ,       $M_Boogie_2rocker2            ) = 0.00000000000000000E+00 ! Position
 marker.pos (              2 ,       $M_Boogie_2rocker2            ) = { $_W/2 - $S_rocker2.$_W/2 } ! Position
 marker.pos (              3 ,       $M_Boogie_2rocker2            ) = { $_H/2 }               ! Position
 
