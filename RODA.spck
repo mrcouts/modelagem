@@ -10,7 +10,6 @@ version.build  = 122
 !**********************************************************************
 !  Global parameters
 !**********************************************************************
-searchpath (              1                                       ) = '.'
 gravity (                 1                                       ) = 0.00000000000000000E+00 ! Gravity
 gravity (                 2                                       ) = 0.00000000000000000E+00 ! Gravity
 gravity (                 3                                       ) = -9.81000000000000050E+00 ! Gravity
@@ -50,46 +49,25 @@ prop2d.grid.hor.step                                                = 1.00000000
 prop2d.grid.vert.start                                              = 0.00000000000000000E+00 ! Vertical offset
 prop2d.grid.vert.step                                               = 1.00000000000000000E+01 ! Vertical step
 prop2d.line.width                                                   = 0                       ! Line width
-prop2d.proj.dir                                                     = 2                       ! Projection direction
+prop2d.proj.dir                                                     = 1                       ! Projection direction
 
-
-!**********************************************************************
-! Substructures
-!**********************************************************************
-substr.file (                       $S_esteira1                   ) = 'esteira.spck'          ! Filename
-substr.id (                         $S_esteira1                   ) = '1'                     ! Substructure Id
-
-substr.file (                       $S_esteira2                   ) = 'esteira.spck'          ! Filename
-substr.id (                         $S_esteira2                   ) = '2'                     ! Substructure Id
-
-substr.file (                       $S_rocker1                    ) = 'Rocker.spck'           ! Filename
-substr.id (                         $S_rocker1                    ) = '1'                     ! Substructure Id
-
-substr.file (                       $S_rocker2                    ) = 'Rocker.spck'           ! Filename
-substr.id (                         $S_rocker2                    ) = '2'                     ! Substructure Id
-
-substr.file (                       $S_roda1                      ) = 'RODA.spck'             ! Filename
-substr.id (                         $S_roda1                      ) = '1'                     ! Substructure Id
-
-substr.file (                       $S_roda2                      ) = 'RODA.spck'             ! Filename
-substr.id (                         $S_roda2                      ) = '2'                     ! Substructure Id
 
 !**********************************************************************
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 2.10279534533619881E+01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -2.78384792438009754E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.17531189336150419E+01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = -5.87696313858032227E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -5.30599523335695267E-03 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -1.44257638603448868E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = -8.08935523033142090E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 2.27729492187500000E+01 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -3.50778617858886719E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 5.61657190322875977E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 4.16792817413806915E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 4.16792793273925781E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 3.76861356198787689E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.76861343383789062E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -218,29 +196,44 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 !**********************************************************************
 ! SubVars
 !**********************************************************************
-subvar.str (                        $_W                           ) = '2'                     ! Definition
-subvar.dflt (                       $_W                           ) = ''                      ! Default value
+subvar.str (                        $_b                           ) = '0.400'                 ! Definition
+subvar.dflt (                       $_b                           ) = ''                      ! Default value
 
-subvar.str (                        $_H                           ) = '1.2'                   ! Definition
-subvar.dflt (                       $_H                           ) = ''                      ! Default value
+subvar.str (                        $_d                           ) = '0.879'                 ! Definition
+subvar.dflt (                       $_d                           ) = ''                      ! Default value
 
-subvar.str (                        $_L                           ) = '1.50'                  ! Definition
-subvar.dflt (                       $_L                           ) = ''                      ! Default value
+subvar.str (                        $_r                           ) = '$_d/2'                 ! Definition
+subvar.dflt (                       $_r                           ) = ''                      ! Default value
 
-subvar.str (                        $_kr                          ) = '1e6'                   ! Definition
-subvar.dflt (                       $_kr                          ) = ''                      ! Default value
+subvar.str (                        $_CI                          ) = '1.8*10^6'              ! Definition
+subvar.dflt (                       $_CI                          ) = ''                      ! Default value
 
-subvar.str (                        $_cr                          ) = '1e6'                   ! Definition
-subvar.dflt (                       $_cr                          ) = ''                      ! Default value
+subvar.str (                        $_ksolo                       ) = '5*10^6'                ! Definition
+subvar.dflt (                       $_ksolo                       ) = ''                      ! Default value
+
+subvar.str (                        $_A                           ) = '$_d*$_b'               ! Definition
+subvar.dflt (                       $_A                           ) = ''                      ! Default value
+
+subvar.str (                        $_cpneu                       ) = '10^6'                  ! Definition
+subvar.dflt (                       $_cpneu                       ) = ''                      ! Default value
+
+subvar.str (                        $_vmin                        ) = '10^(-8)'               ! Definition
+subvar.dflt (                       $_vmin                        ) = ''                      ! Default value
+
+subvar.str (                        $_h                           ) = '0.55*$_b'              ! Definition
+subvar.dflt (                       $_h                           ) = ''                      ! Default value
+
+subvar.str (                        $_kpneu                       ) = '1.12e7'                ! Definition
+subvar.dflt (                       $_kpneu                       ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
 refsys.type (                       $R_Isys                       ) = 1                       ! Type
-refsys.attr.2d.pos.x (              $R_Isys                       ) = -9.00000000000000000E+01
-refsys.attr.2d.pos.y (              $R_Isys                       ) = -1.00000000000000000E+01
-refsys.attr.2d.width (              $R_Isys                       ) = 2.40000000000000000E+02
-refsys.attr.2d.height (             $R_Isys                       ) = 2.20000000000000000E+02
+refsys.attr.2d.pos.x (              $R_Isys                       ) = -1.60000000000000000E+02
+refsys.attr.2d.pos.y (              $R_Isys                       ) = -6.00000000000000000E+01
+refsys.attr.2d.width (              $R_Isys                       ) = 2.70000000000000000E+02
+refsys.attr.2d.height (             $R_Isys                       ) = 6.30000000000000000E+02
 
 marker.type (                       $M_Isys                       ) = 1                       ! Type
 marker.parent (                     $M_Isys                       ) = $R_Isys                 ! Reference system
@@ -257,204 +250,176 @@ prim.par (                3 ,       $P_Isys                       ) = 1.00000000
 !**********************************************************************
 ! Bodies
 !**********************************************************************
-body.m (                            $B_chao                       ) = 1.00000000000000004E-10 ! Mass of the Body
-body.I.tens (             1 ,   1 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             2 ,   2 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             3 ,   3 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.kind (                       $B_chao                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
-body.flx.dmp.all (                  $B_chao                       ) = 0.00000000000000000E+00 ! Damping input value
+body.m (                            $B_Roda1                      ) = 1.00000000000000000E+00 ! Mass of the Body
+body.mp (                           $B_Roda1                      ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
+body.I.tens (             1 ,   1 , $B_Roda1                      ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_Roda1                      ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_Roda1                      ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.kind (                       $B_Roda1                      ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_Roda1                      ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Roda1                      ) = 3.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Roda1                      ) = 1.40000000000000000E+02
+body.attr.2d.width (                $B_Roda1                      ) = 6.00000000000000000E+01
+body.attr.2d.height (               $B_Roda1                      ) = 4.00000000000000000E+01
 
-marker.type (                       $M_chao_BRF                   ) = 1                       ! Type
-marker.parent (                     $M_chao_BRF                   ) = $B_chao                 ! Body
-marker.flx.type (                   $M_chao_BRF                   ) = 4                       ! Flexible type
+marker.type (                       $M_Roda1_BRF                  ) = 1                       ! Type
+marker.parent (                     $M_Roda1_BRF                  ) = $B_Roda1                ! Body
+marker.flx.type (                   $M_Roda1_BRF                  ) = 4                       ! Flexible type
 
-joint.from (                        $J_chao                       ) = $M_Isys                 ! From Marker
-joint.to (                          $J_chao                       ) = $M_chao_BRF             ! To Marker
-joint.type (                        $J_chao                       ) = 0                       ! Type
-joint.par (               1 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
-joint.par (               2 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
-joint.par (               3 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
-joint.par (               4 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in x
-joint.par (               5 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in y
-joint.par (               6 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in z
-joint.par (               7 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+joint.from (                        $J_Roda1                      ) = $M_connector_BRF        ! From Marker
+joint.to (                          $J_Roda1                      ) = $M_Roda1_BRF            ! To Marker
+joint.type (                        $J_Roda1                      ) = 25                      ! Type
+joint.st.pos (            1 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            3 ,       $J_Roda1                      ) = { 5*$_r }               ! Position
+joint.st.vel (            1 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $J_Roda1                      ) = 1.00000000000000000E+01 ! Velocity
+joint.par (               1 ,       $J_Roda1                      ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
+joint.par (               2 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
+joint.par (               3 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! [-] Axis of rotation    3
+joint.par (               4 ,       $J_Roda1                      ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
+joint.par (               5 ,       $J_Roda1                      ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
+joint.par (               6 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! [-] Axis of translation 3
+joint.par (               8 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
+joint.attr.2d.pos.x (     1 ,       $J_Roda1                      ) = 30
+joint.attr.2d.pos.y (     1 ,       $J_Roda1                      ) = 220
+joint.attr.2d.ori (       1 ,       $J_Roda1                      ) = 270
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Roda1     ) = 10, 10, 30, 30
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Roda1     ) = 280, 261.75, 261.75, 237
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Roda1       ) = 40, 40, 30, 30
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Roda1       ) = 180, 190, 190, 203
 
-prim.type (                         $P_chao                       ) = 31                      ! Type
-prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
-prim.pos (                1 ,       $P_chao                       ) = -2.00000000000000000E+00 ! Position
-prim.pos (                2 ,       $P_chao                       ) = -2.00000000000000000E+00 ! Position
-prim.color.r (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.r (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.g (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.b (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.color.t (            2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_chao                       ) = 1.30000000000000000E+01 ! [m] Length in X
-prim.par (                3 ,       $P_chao                       ) = 4.00000000000000000E+00 ! [m] Length in Y
-prim.par (                4 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments X
-prim.par (                5 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments Y
+prim.type (                         $P_Roda1                      ) = 2                       ! Type
+prim.ref (                          $P_Roda1                      ) = $M_Roda1_BRF            ! Reference Marker
+prim.color.r (            1 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Roda1                      ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Roda1                      ) = { 7850/25 }             ! Density
+prim.par (                2 ,       $P_Roda1                      ) = $_b                     ! [m] Height
+prim.par (                3 ,       $P_Roda1                      ) = $_d                     ! [m] Outer diameter
+prim.par (                4 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Roda1                      ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Roda1                      ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Roda1                      ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Roda1                      ) = 0.00000000000000000E+00 ! [-] Close geometry with
 
 
-body.m (                            $B_Boogie                     ) = 1.00000000000000002E-08 ! Mass of the Body
-body.mp (                           $B_Boogie                     ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
-body.I.tens (             1 ,   1 , $B_Boogie                     ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             2 ,   2 , $B_Boogie                     ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             3 ,   3 , $B_Boogie                     ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.kind (                       $B_Boogie                     ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
-body.flx.dmp.all (                  $B_Boogie                     ) = 0.00000000000000000E+00 ! Damping input value
+body.m (                            $B_connector                  ) = 1.00000000000000006E-09 ! Mass of the Body
+body.I.tens (             1 ,   1 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_connector                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.kind (                       $B_connector                  ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_connector                  ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_connector                  ) = 2.00000000000000000E+01
+body.attr.2d.pos.y (                $B_connector                  ) = -2.00000000000000000E+01
+body.attr.2d.width (                $B_connector                  ) = 5.00000000000000000E+01
+body.attr.2d.height (               $B_connector                  ) = 3.00000000000000000E+01
 
-marker.type (                       $M_Boogie_BRF                 ) = 1                       ! Type
-marker.parent (                     $M_Boogie_BRF                 ) = $B_Boogie               ! Body
-marker.flx.type (                   $M_Boogie_BRF                 ) = 4                       ! Flexible type
+marker.type (                       $M_connector_BRF              ) = 1                       ! Type
+marker.parent (                     $M_connector_BRF              ) = $B_connector            ! Body
+marker.flx.type (                   $M_connector_BRF              ) = 4                       ! Flexible type
 
-marker.type (                       $M_Boogie_esteira1            ) = 2                       ! Type
-marker.parent (                     $M_Boogie_esteira1            ) = $B_Boogie               ! Body
-marker.pos (              2 ,       $M_Boogie_esteira1            ) = { -$_W/2 }              ! Position
-marker.pos (              3 ,       $M_Boogie_esteira1            ) = { -$_H/2 }              ! Position
-
-marker.type (                       $M_Boogie_esteira2            ) = 2                       ! Type
-marker.parent (                     $M_Boogie_esteira2            ) = $B_Boogie               ! Body
-marker.pos (              2 ,       $M_Boogie_esteira2            ) = { $_W/2 }               ! Position
-marker.pos (              3 ,       $M_Boogie_esteira2            ) = { -$_H/2 }              ! Position
-
-marker.type (                       $M_Boogie_2rocker1            ) = 2                       ! Type
-marker.ref (                        $M_Boogie_2rocker1            ) = $M_Boogie_BRF           ! Reference Marker
-marker.parent (                     $M_Boogie_2rocker1            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker1            ) = { $_L/2 }               ! Position
-marker.pos (              2 ,       $M_Boogie_2rocker1            ) = { -$_W/2 + $S_rocker1.$_W/2 } ! Position
-marker.pos (              3 ,       $M_Boogie_2rocker1            ) = { $_H/2 }               ! Position
-
-marker.type (                       $M_Boogie_2rocker2            ) = 2                       ! Type
-marker.ref (                        $M_Boogie_2rocker2            ) = $M_Boogie_BRF           ! Reference Marker
-marker.parent (                     $M_Boogie_2rocker2            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker2            ) = { $_L/2 }               ! Position
-marker.pos (              2 ,       $M_Boogie_2rocker2            ) = { $_W/2 - $S_rocker2.$_W/2 } ! Position
-marker.pos (              3 ,       $M_Boogie_2rocker2            ) = { $_H/2 }               ! Position
-
-joint.from (                        $J_Boogie                     ) = $M_Isys                 ! From Marker
-joint.to (                          $J_Boogie                     ) = $M_Boogie_BRF           ! To Marker
-joint.type (                        $J_Boogie                     ) = 25                      ! Type
-joint.st.pos (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            3 ,       $J_Boogie                     ) = { $_H/2 + $S_esteira1.$_r1 -0.05 } ! Position
-joint.st.vel (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Boogie                     ) = 1.00000000000000000E+01 ! Velocity
-joint.st.vel (            3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.par (               1 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
-joint.par (               2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
-joint.par (               3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    3
-joint.par (               4 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
-joint.par (               5 ,       $J_Boogie                     ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
-joint.par (               6 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of translation 3
-joint.par (               8 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
-
-prim.type (                         $P_Boogie                     ) = 1                       ! Type
-prim.ref (                          $P_Boogie                     ) = $M_Boogie_BRF           ! Reference Marker
-prim.color.r (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie                     ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie                     ) = { 7850/10 }             ! Density
-prim.par (                2 ,       $P_Boogie                     ) = $_L                     ! [m] Length in X
-prim.par (                3 ,       $P_Boogie                     ) = $_W                     ! [m] Length in Y
-prim.par (                4 ,       $P_Boogie                     ) = $_H                     ! [m] Length in Z
+joint.from (                        $J_connector                  ) = $M_Isys                 ! From Marker
+joint.to (                          $J_connector                  ) = $M_connector_BRF        ! To Marker
+joint.type (                        $J_connector                  ) = 0                       ! Type
+joint.st.pos (            1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Position
+joint.st.vel (            1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.desc (           1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.st.desc (           6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! Descriptive states
+joint.par (               1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
+joint.par (               2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
+joint.par (               3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
+joint.par (               4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in x
+joint.par (               5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in y
+joint.par (               6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in z
+joint.par (               7 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+joint.attr.2d.pos.x (     1 ,       $J_connector                  ) = -20
+joint.attr.2d.pos.y (     1 ,       $J_connector                  ) = -20
+joint.attr.2d.ori (       1 ,       $J_connector                  ) = 90
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_connector ) = -20, -20
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_connector ) = -60, -37
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_connector   ) = 50, 50, -20, -20, -20
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_connector   ) = 10, 19.75, 19.75, 7, -3
 
 
 !**********************************************************************
 ! Force Elements
 !**********************************************************************
-force.type (                        $F_mola_amort_rocker1         ) = 50                      ! Type
-force.from (                        $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! From Marker
-force.to (                          $F_mola_amort_rocker1         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.par (               1 ,       $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_mola_amort_rocker1         ) = $X_F_mola_amort_rocker1 ! [-] Expression for Ly
-force.par (               8 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Lz
-
-force.type (                        $F_mola_amort_rocker2         ) = 50                      ! Type
-force.from (                        $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! From Marker
-force.to (                          $F_mola_amort_rocker2         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.par (               1 ,       $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_mola_amort_rocker2         ) = $X_F_mola_amort_rocker2 ! [-] Expression for Ly
-force.par (               8 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Lz
+force.type (                        $F_roda                       ) = 50                      ! Type
+force.from (                        $F_roda                       ) = $M_connector_BRF        ! From Marker
+force.to (                          $F_roda                       ) = $M_Roda1_BRF            ! To Marker
+force.par (               1 ,       $F_roda                       ) = $M_connector_BRF        ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_roda                       ) = $X_Fx                   ! [-] Expression for Fx
+force.par (               4 ,       $F_roda                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_roda                       ) = $X_Fz                   ! [-] Expression for Fz
+force.par (               6 ,       $F_roda                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_roda                       ) = $X_My_roda1             ! [-] Expression for Ly
+force.par (               8 ,       $F_roda                       ) = null                    ! [-] Expression for Lz
+force.attr.2d.pos.x (     1 ,       $F_roda                       ) = -20
+force.attr.2d.pos.y (     1 ,       $F_roda                       ) = 120
+force.attr.2d.ori (       1 ,       $F_roda                       ) = 90
+force.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $F_roda      ) = 30, 30, -20, -20, -20
+force.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $F_roda      ) = 10, 25.1875, 25.1875, 40.75, 103
+force.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $F_roda        ) = 0, 0, -10, -20, -20
+force.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $F_roda        ) = 280, 172.75, 172.75, 172.75, 137
 
 !**********************************************************************
 ! Expressions
 !**********************************************************************
-express.str (                       $X_F_mola_amort_rocker1       ) = '-$_kr*(beta($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF))' ! Definition
+express.str (                       $X_Torquecte                  ) = '-10'                   ! Definition
 
-express.str (                       $X_F_mola_amort_rocker2       ) = '-$_kr*(beta($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF))' ! Definition
+express.str (                       $X_Bn                         ) = '($_CI*$_d*$_b/($X_Fz2))*(1+5*$X_delta/$_h)/(1+6*($_b/$_d))' ! Definition
 
+express.str (                       $X_Fz                         ) = '-($_kpneu*$X_delta + $_cpneu*$dX_delta)*$X_A' ! Definition
 
-! Overwritten substructure values
-joint.from (                        $S_esteira1.$J_Base           ) = $M_Boogie_esteira1      ! From Marker
-joint.type (                        $S_esteira1.$J_Base           ) = 0                       ! Type
-joint.par (               1 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
-joint.par (               2 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
-joint.par (               3 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
-joint.par (               4 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in x
-joint.par (               5 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in y
-joint.par (               6 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in z
-joint.par (               7 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+express.str (                       $X_delta                      ) = '($_ksolo/($_ksolo+$_kpneu))*$X_p' ! Definition
 
+express.str (                       $X_p                          ) = 'IF($X_dist_borda < 0)\n{\n-$X_dist_borda\n}\nELSE\n{\n0\n}' ! Definition
 
-joint.from (                        $S_esteira1.$J_connector      ) = $M_Isys                 ! From Marker
+express.str (                       $dX_delta                     ) = '($_ksolo/($_ksolo+$_kpneu))*$dX_p' ! Definition
 
+express.str (                       $dX_p                         ) = 'IF($X_dist_borda < 0)\n{\n-$dX_dist_borda\n}\nELSE\n{\n0\n}' ! Definition
 
-joint.from (                        $S_esteira2.$J_Base           ) = $M_Boogie_esteira2      ! From Marker
-joint.type (                        $S_esteira2.$J_Base           ) = 0                       ! Type
-joint.par (               1 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
-joint.par (               2 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
-joint.par (               3 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
-joint.par (               4 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in x
-joint.par (               5 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in y
-joint.par (               6 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [m] Translation in z
-joint.par (               7 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+express.str (                       $X_dist_borda                 ) = 'DZ($M_Roda1_BRF)-$_r'  ! Definition
 
+express.str (                       $dX_dist_borda                ) = 'VZ($M_Roda1_BRF)'      ! Definition
 
-joint.from (                        $S_esteira2.$J_connector      ) = $M_Isys                 ! From Marker
+express.str (                       $X_vrel                       ) = 'VX($M_Roda1_BRF) - ($_r-$X_delta)*WY($M_Roda1_BRF)' ! Definition
 
+express.str (                       $X_s                          ) = 'IF(abs(VX($M_Roda1_BRF)) - ($_r - $X_delta)*abs(WY($M_Roda1_BRF))>0)\n{\n-$X_vrel/abs(VX($M_Roda1_BRF))\n}\nELSE\n{\n-$X_vrel/(($_r - $X_delta)*abs(WY($M_Roda1_BRF)))\n}' ! Definition
 
-view.fclip.value (                  $S_rocker1.$V_WorkingView     ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $S_rocker1.$V_WorkingView     ) = 4.88832426071166992E+00 ! Back clipping plane value
+express.str (                       $X_Fz2                        ) = 'IF(abs($X_Fz) > 0.1)\n{\nabs($X_Fz)\n}\nELSE\n{\n0.1\n}' ! Definition
 
-joint.from (                        $S_rocker1.$J_Rocker          ) = $M_Boogie_2rocker1      ! From Marker
+express.str (                       $X_GT                         ) = '$X_Fz*(0.88*(1-exp(-0.1*$X_Bn))*(1-exp(-7.5*abs($X_s)))+0.04)*tanh(-100*$X_vrel)' ! Definition
 
+express.str (                       $X_MR                         ) = '$X_Fz*(1.0/($X_Bn)+0.04 + 0.5*abs($X_s)/sqrt($X_Bn))*tanh(100*VX($M_Roda1_BRF))' ! Definition
 
-view.fclip.value (                  $S_rocker2.$V_WorkingView     ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $S_rocker2.$V_WorkingView     ) = 4.88832426071166992E+00 ! Back clipping plane value
+express.str (                       $X_Fx                         ) = '$X_GT - $X_MR'         ! Definition
 
-joint.from (                        $S_rocker2.$J_Rocker          ) = $M_Boogie_2rocker2      ! From Marker
+express.str (                       $X_My_roda1                   ) = '-($_r-$X_delta)*$X_GT' ! Definition
 
+express.str (                       $X_A                          ) = '(PI/2)*$_b*sqrt($X_delta*($_d-$X_delta))' ! Definition
 
-view.fclip.value (                  $S_roda1.$V_WorkingView       ) = 1.12844556570053101E-02 ! Front clipping plane value
-view.bclip.value (                  $S_roda1.$V_WorkingView       ) = 1.12844552993774414E+01 ! Back clipping plane value
-
-joint.from (                        $S_roda1.$J_Roda1             ) = $S_rocker1.$M_Rocker_2roda ! From Marker
-joint.type (                        $S_roda1.$J_Roda1             ) = 2                       ! Type
-
-
-joint.from (                        $S_roda1.$J_connector         ) = $M_Isys                 ! From Marker
-
-
-view.fclip.value (                  $S_roda2.$V_WorkingView       ) = 1.12844556570053101E-02 ! Front clipping plane value
-view.bclip.value (                  $S_roda2.$V_WorkingView       ) = 1.12844552993774414E+01 ! Back clipping plane value
-
-joint.from (                        $S_roda2.$J_Roda1             ) = $S_rocker2.$M_Rocker_2roda ! From Marker
-joint.type (                        $S_roda2.$J_Roda1             ) = 2                       ! Type
-
-
-joint.from (                        $S_roda2.$J_connector         ) = $M_Isys                 ! From Marker
-
-
-model.data.redundancy                                               = 'eJxjYBgF+ECKSbKRZWqisaV5kpGpmYmFqZllkoVxkmmSZZJpokVyCgCPuwjVQAEAAAAAAAA=' ! Constraint redundancy data
-model.data.dependency                                               = 'eJxjYGBgYGYgHjDiwNjkcInhM4dY9SCQYpJsZJmaaGxpnmRkamZiYWpmmWRhnGSaZJlkmmiRnAIAnZcI9NwAAAAAAAAA' ! Solver state dependency data
+model.data.redundancy                                               = 'eJxjYBhcwDTRIjHVMskgzcjQyNg82dgwzcLIJCU1xcjM2NjMLNkIAJGaCIywAAAAAAAAAA==' ! Constraint redundancy data
+model.data.dependency                                               = 'eJxjZiAOMOLBDDjYyNg00SIx1TLJIM3I0MjYPNnYMM3CyCQlNcXIzNjYzCzZCACWrgidiAAAAAAAAAA=' ! Solver state dependency data
