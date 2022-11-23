@@ -242,7 +242,7 @@ subvar.dflt (                       $_lambda                      ) = ''        
 subvar.str (                        $_vd                          ) = '2.0'                   ! Definition
 subvar.dflt (                       $_vd                          ) = ''                      ! Default value
 
-subvar.str (                        $_beta                        ) = '0.5'                   ! Definition
+subvar.str (                        $_beta                        ) = '0.27'                  ! Definition
 subvar.dflt (                       $_beta                        ) = ''                      ! Default value
 
 !**********************************************************************
@@ -467,11 +467,13 @@ express.str (                       $X_ct1                        ) = '1/($_m*$S
 
 express.str (                       $X_ct2                        ) = '1/($_m*($S_roda1.$_r-$S_roda1.$X_delta))' ! Definition
 
-express.str (                       $X_tau                        ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
+express.str (                       $X_f                          ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
 
-express.str (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_ct1*$X_tau/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Definition
+express.str (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_f/$X_ct1' ! Definition
+express.txt (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_ct1*$X_f/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Comment
 
-express.str (                       $X_lei2                       ) = '-0.5*($_beta)*$X_ct2*$X_tau/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Definition
+express.str (                       $X_lei2                       ) = '-0.5*($_beta)*$X_f/$X_ct2\n\n' ! Definition
+express.txt (                       $X_lei2                       ) = '-0.5*($_beta)*$X_ct2*$X_f/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Comment
 
 express.str (                       $X_IF                         ) = '-20400*tanh(-100*VX($M_Boogie_BRF))' ! Definition
 
