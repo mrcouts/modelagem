@@ -78,18 +78,18 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 6.69808115060732234E-01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.47462632080714684E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.30560475865058834E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = -5.87696313858032227E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -5.30599523335695267E-03 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -1.44257638603448868E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = -8.08935523033142090E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 6.76190236583352089E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.31051700184470974E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 4.99677379531203769E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -5.87718129158020020E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -1.50928646326065063E-03 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -1.96513142436742783E-02 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -8.08825612068176270E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 1.57181024551391602E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 1.57181024551391602E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 6.07688389718532562E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 6.07688369750976562E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -233,6 +233,18 @@ subvar.dflt (                       $_kr                          ) = ''        
 subvar.str (                        $_cr                          ) = '1e4'                   ! Definition
 subvar.dflt (                       $_cr                          ) = ''                      ! Default value
 
+subvar.str (                        $_m                           ) = '9267.194791023'        ! Definition
+subvar.dflt (                       $_m                           ) = ''                      ! Default value
+
+subvar.str (                        $_lambda                      ) = '1.0'                   ! Definition
+subvar.dflt (                       $_lambda                      ) = ''                      ! Default value
+
+subvar.str (                        $_vd                          ) = '2.0'                   ! Definition
+subvar.dflt (                       $_vd                          ) = ''                      ! Default value
+
+subvar.str (                        $_beta                        ) = '0.5'                   ! Definition
+subvar.dflt (                       $_beta                        ) = ''                      ! Default value
+
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
@@ -291,7 +303,7 @@ prim.color.b (            1 ,       $P_chao                       ) = 1.28000000
 prim.color.b (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_chao                       ) = 1.30000000000000000E+01 ! [m] Length in X
+prim.par (                2 ,       $P_chao                       ) = 5.00000000000000000E+01 ! [m] Length in X
 prim.par (                3 ,       $P_chao                       ) = 4.00000000000000000E+00 ! [m] Length in Y
 prim.par (                4 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments X
 prim.par (                5 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments Y
@@ -340,7 +352,7 @@ joint.st.pos (            1 ,       $J_Boogie                     ) = 0.00000000
 joint.st.pos (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            3 ,       $J_Boogie                     ) = { $_H/2 + $S_esteira1.$_r1 -0.05 } ! Position
 joint.st.vel (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Boogie                     ) = 1.00000000000000002E-02 ! Velocity
+joint.st.vel (            2 ,       $J_Boogie                     ) = 1.00000000000000002E-03 ! Velocity
 joint.st.vel (            3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
@@ -368,7 +380,7 @@ prim.par (                4 ,       $P_Boogie                     ) = $_H       
 force.type (                        $F_mola_amort_rocker1         ) = 50                      ! Type
 force.from (                        $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! From Marker
 force.to (                          $F_mola_amort_rocker1         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.disabled (                    $F_mola_amort_rocker1         ) = 1                       ! Disabled
+force.disabled (                    $F_mola_amort_rocker1         ) = 0                       ! Disabled
 force.par (               1 ,       $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fx
 force.par (               4 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fy
@@ -380,7 +392,7 @@ force.par (               8 ,       $F_mola_amort_rocker1         ) = null      
 force.type (                        $F_mola_amort_rocker2         ) = 50                      ! Type
 force.from (                        $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! From Marker
 force.to (                          $F_mola_amort_rocker2         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.disabled (                    $F_mola_amort_rocker2         ) = 1                       ! Disabled
+force.disabled (                    $F_mola_amort_rocker2         ) = 0                       ! Disabled
 force.par (               1 ,       $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fx
 force.par (               4 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fy
@@ -389,12 +401,79 @@ force.par (               6 ,       $F_mola_amort_rocker2         ) = null      
 force.par (               7 ,       $F_mola_amort_rocker2         ) = $X_F_mola_amort_rocker2 ! [-] Expression for Ly
 force.par (               8 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Lz
 
+force.type (                        $F_lei11                      ) = 50                      ! Type
+force.from (                        $F_lei11                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_lei11                      ) = $S_esteira1.$M_Roda1_BRF ! To Marker
+force.par (               1 ,       $F_lei11                      ) = $M_Isys                 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_lei11                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_lei11                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_lei11                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_lei11                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_lei11                      ) = $X_lei1                 ! [-] Expression for Ly
+force.par (               8 ,       $F_lei11                      ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_lei21                      ) = 50                      ! Type
+force.from (                        $F_lei21                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_lei21                      ) = $S_roda1.$M_Roda1_BRF   ! To Marker
+force.par (               1 ,       $F_lei21                      ) = $M_Isys                 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_lei21                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_lei21                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_lei21                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_lei21                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_lei21                      ) = $X_lei2                 ! [-] Expression for Ly
+force.par (               8 ,       $F_lei21                      ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_lei22                      ) = 50                      ! Type
+force.from (                        $F_lei22                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_lei22                      ) = $S_roda2.$M_Roda1_BRF   ! To Marker
+force.par (               1 ,       $F_lei22                      ) = $M_Isys                 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_lei22                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_lei22                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_lei22                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_lei22                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_lei22                      ) = $X_lei2                 ! [-] Expression for Ly
+force.par (               8 ,       $F_lei22                      ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_lei12                      ) = 50                      ! Type
+force.from (                        $F_lei12                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_lei12                      ) = $S_esteira2.$M_Roda1_BRF ! To Marker
+force.par (               1 ,       $F_lei12                      ) = $M_Isys                 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_lei12                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_lei12                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_lei12                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_lei12                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_lei12                      ) = $X_lei1                 ! [-] Expression for Ly
+force.par (               8 ,       $F_lei12                      ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_IF                         ) = 50                      ! Type
+force.from (                        $F_IF                         ) = $M_Isys                 ! From Marker
+force.to (                          $F_IF                         ) = $M_Boogie_BRF           ! To Marker
+force.par (               1 ,       $F_IF                         ) = null                    ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_IF                         ) = $X_IF                   ! [-] Expression for Fx
+force.par (               4 ,       $F_IF                         ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_IF                         ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_IF                         ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_IF                         ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_IF                         ) = null                    ! [-] Expression for Lz
+
 !**********************************************************************
 ! Expressions
 !**********************************************************************
 express.str (                       $X_F_mola_amort_rocker1       ) = '-$_kr*(beta($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF))' ! Definition
 
 express.str (                       $X_F_mola_amort_rocker2       ) = '-$_kr*(beta($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF))' ! Definition
+
+express.str (                       $X_ct1                        ) = '1/($_m*$S_esteira1.$_r1)' ! Definition
+
+express.str (                       $X_ct2                        ) = '1/($_m*($S_roda1.$_r-$S_roda1.$X_delta))' ! Definition
+
+express.str (                       $X_tau                        ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
+
+express.str (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_ct1*$X_tau/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Definition
+
+express.str (                       $X_lei2                       ) = '-0.5*($_beta)*$X_ct2*$X_tau/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Definition
+
+express.str (                       $X_IF                         ) = '-20400*tanh(-100*VX($M_Boogie_BRF))' ! Definition
 
 
 ! Overwritten substructure values
