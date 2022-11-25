@@ -56,9 +56,9 @@ prop2d.proj.dir                                                     = 1         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 3.25998854637145996E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.62376594543457031E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 6.33505851030349731E-01 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 6.44133877754211426E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.21078891754150391E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 2.04894578456878662E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
@@ -66,8 +66,8 @@ view.orient (             4 ,       $V_WorkingView                ) = 7.07106769
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 6.71754217147827148E+00 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 1.42016662284731865E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 1.42016658782958984E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -304,7 +304,7 @@ joint.st.pos (            1 ,       $J_Base                       ) = -1.0000000
 joint.st.pos (            2 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            3 ,       $J_Base                       ) = { 5*$_r1 }              ! Position
 joint.st.vel (            1 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Base                       ) = 1.00000000000000000E+01 ! Velocity
+joint.st.vel (            2 ,       $J_Base                       ) = 1.20000000000000000E+01 ! Velocity
 joint.st.vel (            3 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Base                       ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Base                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
@@ -714,7 +714,7 @@ express.str (                       $X_Torquecte                  ) = '-10'     
 
 express.str (                       $X_Bn                         ) = '($_CI*$_TL*$_TW/($X_Fz2*(1-exp(-$_CI/(0.698*10^6)))))*5/(1+6*($_TW/$_TL))' ! Definition
 
-express.str (                       $X_Fz                         ) = '-($_ksolo*$X_delta + $_c_solo*$dX_delta)*$_A*cos(beta($M_Base_BRF))' ! Definition
+express.str (                       $X_Fn                         ) = '-($_ksolo*$X_delta + $_c_solo*$dX_delta)*$_A*cos(beta($M_Base_BRF))' ! Definition
 
 express.str (                       $X_delta                      ) = 'IF($X_dist_borda < 0)\n{\n-$X_dist_borda\n}\nELSE\n{\n0\n}' ! Definition
 
@@ -730,19 +730,23 @@ express.str (                       $X_vrel                       ) = 'VX($M_Bas
 
 express.str (                       $X_s                          ) = 'IF(abs(VX($M_Base_BRF)) - ($_r1)*abs(WY($M_Roda1_BRF))>0)\n{\n-$X_vrel/abs(VX($M_Base_BRF))\n}\nELSE\n{\n-$X_vrel/(($_r1)*abs(WY($M_Roda1_BRF)))\n}' ! Definition
 
-express.str (                       $X_Fz2                        ) = 'IF(abs($X_Fz) > 0.1)\n{\nabs($X_Fz)\n}\nELSE\n{\n0.1\n}' ! Definition
+express.str (                       $X_Fz2                        ) = 'IF(abs($X_Fn) > 0.1)\n{\nabs($X_Fn)\n}\nELSE\n{\n0.1\n}' ! Definition
 
-express.str (                       $X_GT                         ) = '$X_Fz*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*abs($X_s)))+0.03/$X_DWI)*tanh(-100*$X_vrel)' ! Definition
+express.str (                       $X_GT                         ) = '$X_Fn*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*abs($X_s)))+0.03/$X_DWI)*tanh(-100*$X_vrel)' ! Definition
 
 express.str (                       $X_DWR                        ) = '1+($X_My_base/$X_Fz2)/$_TL' ! Definition
 
 express.str (                       $X_DWI                        ) = '1-abs(0.7*($X_DWR-1)/($X_DWR+1))' ! Definition
 
-express.str (                       $X_MR                         ) = '$X_Fz*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*abs($X_s)/sqrt($X_Bn))*tanh(100*VX($M_Base_BRF))' ! Definition
+express.str (                       $X_MR                         ) = '$X_Fn*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*abs($X_s)/sqrt($X_Bn))*tanh(100*VX($M_Base_BRF))' ! Definition
 
-express.str (                       $X_Fx                         ) = '$X_GT - $X_MR'         ! Definition
+express.str (                       $X_NT                         ) = '$X_GT - $X_MR'         ! Definition
 
 express.str (                       $X_My_roda1                   ) = '-$_r1*$X_GT'           ! Definition
+
+express.str (                       $X_Fx                         ) = '$X_GT*cos(beta($M_Base_BRF)) - $X_MR' ! Definition
+
+express.str (                       $X_Fz                         ) = '$X_Fn - $X_GT*sin(beta($M_Base_BRF))' ! Definition
 
 model.data.redundancy                                               = 'eJxjYBhcwDTRIjHVMskgzcjQyNg82dgwzcLIJCU1xcjM2NjMLNkIAJGaCIywAAAAAAAAAA==' ! Constraint redundancy data
 model.data.dependency                                               = 'eJxjZiAOMOLBDDjYyNg00SIx1TLJIM3I0MjYPNnYMM3CyCQlNcXIzNjYzCzZCACWrgidiAAAAAAAAAA=' ! Solver state dependency data

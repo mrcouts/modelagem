@@ -78,18 +78,18 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 6.76190236583352089E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -1.31051700184470974E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 4.99677379531203769E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = -5.87718129158020020E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -1.50928646326065063E-03 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -1.96513142436742783E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = -8.08825612068176270E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 7.38960409164428711E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.01565189361572266E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 1.49099606275558472E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -7.07106769084930420E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -0.00000000000000000E+00 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -7.07106769084930420E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 6.07688389718532562E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 6.07688369750976562E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 3.07002477347850800E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.07002468109130859E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -245,6 +245,18 @@ subvar.dflt (                       $_vd                          ) = ''        
 subvar.str (                        $_beta                        ) = '0.27'                  ! Definition
 subvar.dflt (                       $_beta                        ) = ''                      ! Default value
 
+subvar.str (                        $_zmax                        ) = '0.1'                   ! Definition
+subvar.dflt (                       $_zmax                        ) = ''                      ! Default value
+
+subvar.str (                        $_zmin                        ) = '-$_zmax'               ! Definition
+subvar.dflt (                       $_zmin                        ) = ''                      ! Default value
+
+subvar.str (                        $_thick                       ) = '0.2'                   ! Definition
+subvar.dflt (                       $_thick                       ) = ''                      ! Default value
+
+subvar.str (                        $_dx                          ) = '1'                     ! Definition
+subvar.dflt (                       $_dx                          ) = ''                      ! Default value
+
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
@@ -280,6 +292,13 @@ marker.type (                       $M_chao_BRF                   ) = 1         
 marker.parent (                     $M_chao_BRF                   ) = $B_chao                 ! Body
 marker.flx.type (                   $M_chao_BRF                   ) = 4                       ! Flexible type
 
+marker.type (                       $M_chao_contact               ) = -96                     ! Type
+marker.parent (                     $M_chao_contact               ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_contact               ) = 7.03675977338026115E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_contact               ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_contact               ) = $M_bola_contact         ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_contact               ) = $P_chao                 ! [-] Contact geometry Primitive
+
 joint.from (                        $J_chao                       ) = $M_Isys                 ! From Marker
 joint.to (                          $J_chao                       ) = $M_chao_BRF             ! To Marker
 joint.type (                        $J_chao                       ) = 0                       ! Type
@@ -291,22 +310,120 @@ joint.par (               5 ,       $J_chao                       ) = 0.00000000
 joint.par (               6 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in z
 joint.par (               7 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
-prim.type (                         $P_chao                       ) = 31                      ! Type
+prim.type (                         $P_chao                       ) = 5                       ! Type
 prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
-prim.pos (                1 ,       $P_chao                       ) = -2.00000000000000000E+00 ! Position
-prim.pos (                2 ,       $P_chao                       ) = -2.00000000000000000E+00 ! Position
-prim.color.r (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.r (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.g (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.b (            2 ,       $P_chao                       ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.pos (                1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
+prim.pos (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
+prim.ang (                1 ,       $P_chao                       ) = { 90 deg }              ! Angles
+prim.vtx (                1 ,   1 , $P_chao                       ) = { -2*$_dx }             ! Vertices
+prim.vtx (                1 ,   2 , $P_chao                       ) = { -1*$_dx }             ! Vertices
+prim.vtx (                1 ,   3 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   4 , $P_chao                       ) = { 1*$_dx }              ! Vertices
+prim.vtx (                1 ,   5 , $P_chao                       ) = { 2*$_dx }              ! Vertices
+prim.vtx (                1 ,   6 , $P_chao                       ) = { 3*$_dx }              ! Vertices
+prim.vtx (                1 ,   7 , $P_chao                       ) = { 4*$_dx }              ! Vertices
+prim.vtx (                1 ,   8 , $P_chao                       ) = { 5*$_dx }              ! Vertices
+prim.vtx (                1 ,   9 , $P_chao                       ) = { 6*$_dx }              ! Vertices
+prim.vtx (                1 ,  10 , $P_chao                       ) = { 7*$_dx }              ! Vertices
+prim.vtx (                1 ,  11 , $P_chao                       ) = { 8*$_dx }              ! Vertices
+prim.vtx (                1 ,  12 , $P_chao                       ) = { 9*$_dx }              ! Vertices
+prim.vtx (                1 ,  13 , $P_chao                       ) = { 10*$_dx }             ! Vertices
+prim.vtx (                1 ,  14 , $P_chao                       ) = { 11*$_dx }             ! Vertices
+prim.vtx (                1 ,  15 , $P_chao                       ) = { 12*$_dx }             ! Vertices
+prim.vtx (                1 ,  16 , $P_chao                       ) = { 13*$_dx }             ! Vertices
+prim.vtx (                1 ,  17 , $P_chao                       ) = { 14*$_dx }             ! Vertices
+prim.vtx (                1 ,  18 , $P_chao                       ) = { 15*$_dx }             ! Vertices
+prim.vtx (                1 ,  19 , $P_chao                       ) = { 16*$_dx }             ! Vertices
+prim.vtx (                1 ,  20 , $P_chao                       ) = { 17*$_dx }             ! Vertices
+prim.vtx (                1 ,  21 , $P_chao                       ) = { 18*$_dx }             ! Vertices
+prim.vtx (                1 ,  22 , $P_chao                       ) = { 19*$_dx }             ! Vertices
+prim.vtx (                1 ,  23 , $P_chao                       ) = { 20*$_dx }             ! Vertices
+prim.vtx (                1 ,  24 , $P_chao                       ) = { 20*$_dx }             ! Vertices
+prim.vtx (                1 ,  25 , $P_chao                       ) = { 19*$_dx }             ! Vertices
+prim.vtx (                1 ,  26 , $P_chao                       ) = { 18*$_dx }             ! Vertices
+prim.vtx (                1 ,  27 , $P_chao                       ) = { 17*$_dx }             ! Vertices
+prim.vtx (                1 ,  28 , $P_chao                       ) = { 16*$_dx }             ! Vertices
+prim.vtx (                1 ,  29 , $P_chao                       ) = { 15*$_dx }             ! Vertices
+prim.vtx (                1 ,  30 , $P_chao                       ) = { 14*$_dx }             ! Vertices
+prim.vtx (                1 ,  31 , $P_chao                       ) = { 13*$_dx }             ! Vertices
+prim.vtx (                1 ,  32 , $P_chao                       ) = { 12*$_dx }             ! Vertices
+prim.vtx (                1 ,  33 , $P_chao                       ) = { 11*$_dx }             ! Vertices
+prim.vtx (                1 ,  34 , $P_chao                       ) = { 10*$_dx }             ! Vertices
+prim.vtx (                1 ,  35 , $P_chao                       ) = { 9*$_dx }              ! Vertices
+prim.vtx (                1 ,  36 , $P_chao                       ) = { 8*$_dx }              ! Vertices
+prim.vtx (                1 ,  37 , $P_chao                       ) = { 7*$_dx }              ! Vertices
+prim.vtx (                1 ,  38 , $P_chao                       ) = { 6*$_dx }              ! Vertices
+prim.vtx (                1 ,  39 , $P_chao                       ) = { 5*$_dx }              ! Vertices
+prim.vtx (                1 ,  40 , $P_chao                       ) = { 4*$_dx }              ! Vertices
+prim.vtx (                1 ,  41 , $P_chao                       ) = { 3*$_dx }              ! Vertices
+prim.vtx (                1 ,  42 , $P_chao                       ) = { 2*$_dx }              ! Vertices
+prim.vtx (                1 ,  43 , $P_chao                       ) = { 1*$_dx }              ! Vertices
+prim.vtx (                1 ,  44 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  45 , $P_chao                       ) = { -1*$_dx }             ! Vertices
+prim.vtx (                1 ,  46 , $P_chao                       ) = { -2*$_dx }             ! Vertices
+prim.vtx (                2 ,   1 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   2 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,   3 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   4 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,   5 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   6 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,   7 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   8 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,   9 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  10 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  11 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  12 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  13 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  14 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  15 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  16 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  17 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  18 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  19 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  20 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  21 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  22 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  23 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  24 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  25 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
+prim.vtx (                2 ,  26 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  27 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
+prim.vtx (                2 ,  28 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  29 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
+prim.vtx (                2 ,  30 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  31 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
+prim.vtx (                2 ,  32 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  33 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
+prim.vtx (                2 ,  34 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  35 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
+prim.vtx (                2 ,  36 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  37 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
+prim.vtx (                2 ,  38 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  39 , $P_chao                       ) = { $_zmin - $_thick }    ! Vertices
+prim.vtx (                2 ,  40 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  41 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
+prim.vtx (                2 ,  42 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  43 , $P_chao                       ) = { $_zmin - $_thick }    ! Vertices
+prim.vtx (                2 ,  44 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.vtx (                2 ,  45 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
+prim.vtx (                2 ,  46 , $P_chao                       ) = { -$_thick }            ! Vertices
+prim.color.r (            1 ,       $P_chao                       ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_chao                       ) = 1.85000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_chao                       ) = 1.50000000000000000E+01 ! Colors (blue component)
 prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.color.t (            2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_chao                       ) = 5.00000000000000000E+01 ! [m] Length in X
-prim.par (                3 ,       $P_chao                       ) = 4.00000000000000000E+00 ! [m] Length in Y
-prim.par (                4 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments X
-prim.par (                5 ,       $P_chao                       ) = 5.00000000000000000E+00 ! [-] Number of segments Y
+prim.par (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Contour by
+prim.par (                4 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Contour
+prim.par (                6 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Curve fitting type
+prim.par (                7 ,       $P_chao                       ) = 3.00000000000000000E+00 ! [-] Spline Degree
+prim.par (                9 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Material side
+prim.par (               10 ,       $P_chao                       ) = 4.00000000000000000E+00 ! [m] Depth
+prim.par (               11 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Wall thickness
+prim.par (               12 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (               13 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (               14 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Graphics discretization sag
+prim.par (               15 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [rad] Graphics discretization angle
+prim.par (               17 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Graphics start
+prim.par (               18 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Graphics end
 
 
 body.m (                            $B_Boogie                     ) = 1.00000000000000002E-08 ! Mass of the Body
@@ -372,6 +489,64 @@ prim.mp.dens.solid (                $P_Boogie                     ) = { 7850/10 
 prim.par (                2 ,       $P_Boogie                     ) = $_L                     ! [m] Length in X
 prim.par (                3 ,       $P_Boogie                     ) = $_W                     ! [m] Length in Y
 prim.par (                4 ,       $P_Boogie                     ) = $_H                     ! [m] Length in Z
+
+
+body.m (                            $B_bola                       ) = 1.00000000000000000E+00 ! Mass of the Body
+body.mp (                           $B_bola                       ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
+body.I.tens (             1 ,   1 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.kind (                       $B_bola                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_bola                       ) = 0.00000000000000000E+00 ! Damping input value
+
+marker.type (                       $M_bola_contact               ) = -96                     ! Type
+marker.parent (                     $M_bola_contact               ) = $B_bola                 ! Body
+marker.st.alg (           1 ,       $M_bola_contact               ) = 1.41381203588231497E+00 ! Algebraic states
+marker.par (              1 ,       $M_bola_contact               ) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_bola_contact               ) = $P_bola                 ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_bola_contact               ) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_bola_BRF                   ) = 1                       ! Type
+marker.parent (                     $M_bola_BRF                   ) = $B_bola                 ! Body
+marker.flx.type (                   $M_bola_BRF                   ) = 4                       ! Flexible type
+
+joint.from (                        $J_bola                       ) = $M_Isys                 ! From Marker
+joint.to (                          $J_bola                       ) = $M_bola_BRF             ! To Marker
+joint.type (                        $J_bola                       ) = 25                      ! Type
+joint.st.pos (            1 ,       $J_bola                       ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            2 ,       $J_bola                       ) = 5.00000000000000000E+00 ! Position
+joint.st.pos (            3 ,       $J_bola                       ) = 2.00000000000000000E+00 ! Position
+joint.st.vel (            1 ,       $J_bola                       ) = 1.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $J_bola                       ) = 3.00000000000000000E+00 ! Velocity
+joint.st.vel (            3 ,       $J_bola                       ) = 0.00000000000000000E+00 ! Velocity
+joint.par (               1 ,       $J_bola                       ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
+joint.par (               2 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
+joint.par (               3 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    3
+joint.par (               4 ,       $J_bola                       ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
+joint.par (               5 ,       $J_bola                       ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
+joint.par (               6 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of translation 3
+joint.par (               8 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
+
+prim.type (                         $P_bola                       ) = 2                       ! Type
+prim.ref (                          $P_bola                       ) = $M_bola_BRF             ! Reference Marker
+prim.color.r (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_bola                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_bola                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_bola                       ) = 4.00000000000000022E-01 ! [m] Height
+prim.par (                3 ,       $P_bola                       ) = 9.00000000000000022E-01 ! [m] Outer diameter
+prim.par (                4 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_bola                       ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_bola                       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_bola                       ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [-] Close geometry with
 
 
 !**********************************************************************
@@ -456,6 +631,17 @@ force.par (               6 ,       $F_IF                         ) = null      
 force.par (               7 ,       $F_IF                         ) = null                    ! [-] Expression for Ly
 force.par (               8 ,       $F_IF                         ) = null                    ! [-] Expression for Lz
 
+force.type (                        $F_contact                    ) = 50                      ! Type
+force.from (                        $F_contact                    ) = $M_chao_contact         ! From Marker
+force.to (                          $F_contact                    ) = $M_bola_contact         ! To Marker
+force.par (               1 ,       $F_contact                    ) = null                    ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_contact                    ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_contact                    ) = $X_Fcontact             ! [-] Expression for Fy
+force.par (               5 ,       $F_contact                    ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_contact                    ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_contact                    ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_contact                    ) = null                    ! [-] Expression for Lz
+
 !**********************************************************************
 ! Expressions
 !**********************************************************************
@@ -476,6 +662,8 @@ express.str (                       $X_lei2                       ) = '-0.5*($_b
 express.txt (                       $X_lei2                       ) = '-0.5*($_beta)*$X_ct2*$X_f/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Comment
 
 express.str (                       $X_IF                         ) = '-20400*tanh(-100*VX($M_Boogie_BRF))' ! Definition
+
+express.str (                       $X_Fcontact                   ) = 'IF(DY($M_bola_contact,$M_chao_contact,$M_chao_contact)>0)\n{\n0\n}\nELSE\n{\n10000000*DY($M_bola_contact,$M_chao_contact,$M_chao_contact)\n}' ! Definition
 
 
 ! Overwritten substructure values
@@ -539,5 +727,5 @@ joint.type (                        $S_roda2.$J_Roda1             ) = 2         
 joint.from (                        $S_roda2.$J_connector         ) = $M_Isys                 ! From Marker
 
 
-model.data.redundancy                                               = 'eJxjYBgF+ECKSbKRZWqisaV5kpGpmYmFqZllkoVxkmmSZZJpokVyCgCPuwjVQAEAAAAAAAA=' ! Constraint redundancy data
-model.data.dependency                                               = 'eJxjYGBgYGYgHjDiwNjkcInhM4dY9SCQYpJsZJmaaGxpnmRkamZiYWpmmWRhnGSaZJlkmmiRnAIAnZcI9NwAAAAAAAAA' ! Solver state dependency data
+model.data.redundancy                                               = 'eJxjYBgF+IChQYqJgZGZhWmqgZmpmYmhoUVySpKZiVmykaWBuaGZGQB+aQeeQAEAAAAAAAA=' ! Constraint redundancy data
+model.data.dependency                                               = 'eJxjYGBgYGYgDlBbHQgwEolxqaemOcjyxPBxiRkapJgYGJlZmKYamJmamRgaWiSnJJmZmCUbWRqYG5qZAQCfCQfHdAEAAAAAAAA=' ! Solver state dependency data
