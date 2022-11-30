@@ -208,6 +208,9 @@ subvar.dflt (                       $_e                           ) = ''        
 subvar.str (                        $_H                           ) = '1.1105'                ! Definition
 subvar.dflt (                       $_H                           ) = ''                      ! Default value
 
+subvar.str (                        $_m                           ) = '2011.445'              ! Definition
+subvar.dflt (                       $_m                           ) = ''                      ! Default value
+
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
