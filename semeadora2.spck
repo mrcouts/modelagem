@@ -78,9 +78,9 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 8.84158706665039062E+00 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 8.91210985183715820E+00 ! Position
 view.pos (                2 ,       $V_WorkingView                ) = -1.93704833984375000E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 2.28605675697326660E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 1.68534207344055176E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
@@ -570,6 +570,9 @@ express.str (                       $X_IF                         ) = '-20400*ta
 
 
 ! Overwritten substructure values
+view.fclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
+view.bclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
+
 marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact1  ) = 3.17705125881842854E-01 ! Algebraic states
 
 marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.11706462339812529E-01 ! Algebraic states
@@ -611,6 +614,9 @@ marker.par (              3 ,       $S_esteira1.$M_chao_contact5  ) = $P_chao   
 
 prim.transparency (                 $S_esteira1.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
 
+
+view.fclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
+view.bclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
 
 marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact1  ) = -3.10613404836115770E-01 ! Algebraic states
 
