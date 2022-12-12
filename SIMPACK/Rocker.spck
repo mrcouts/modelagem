@@ -67,7 +67,7 @@ view.angle (                        $V_WorkingView                ) = 7.85398185
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
 view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 5.15689086914062500E+00 ! Back clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 5.06577157974243164E+00 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -199,7 +199,7 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 subvar.str (                        $_W                           ) = '0.7'                   ! Definition
 subvar.dflt (                       $_W                           ) = ''                      ! Default value
 
-subvar.str (                        $_L                           ) = '2.75'                  ! Definition
+subvar.str (                        $_L                           ) = '2.4'                   ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
 subvar.str (                        $_e                           ) = '0.2'                   ! Definition

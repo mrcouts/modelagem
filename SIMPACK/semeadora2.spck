@@ -78,18 +78,18 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 7.38960409164428711E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -1.01565189361572266E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.49099606275558472E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = -7.07106769084930420E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -0.00000000000000000E+00 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = -7.07106769084930420E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 3.76684171228407649E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -6.52826885663671419E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 9.06743490137159824E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 7.13102638721466064E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -2.48378533869981766E-02 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -2.22878307104110718E-02 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 7.00264930725097656E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 3.07002477347850800E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 3.07002468109130859E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.65468635559082031E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -182,7 +182,7 @@ slv.integ.fix.utcpar (              $SLV_SolverSettings           ) = 1.00000000
 slv.integ.fix.olcpar (              $SLV_SolverSettings           ) = 5.00000000000000000E-01 ! TIME_INTEG_SCALARPAR_FIXINT_ONE_LEG_OLC
 slv.integ.sodasrt2.estfac (         $SLV_SolverSettings           ) = 9.99999999999999955E-07 ! TIME_INTEG_SCALARPAR_SODASRT20_ERROR_EST_SCALE_FACTOR
 slv.integ.tout.freq (               $SLV_SolverSettings           ) = { 200 Hz }              ! TIME_INTEG_PAR_OUTPUT_FREQ
-slv.integ.tend.time (               $SLV_SolverSettings           ) = { 2 s }                 ! TIME_INTEG_TIMEPAR_END_TIME
+slv.integ.tend.time (               $SLV_SolverSettings           ) = { 9 s }                 ! TIME_INTEG_TIMEPAR_END_TIME
 slv.integ.atol.gen (                $SLV_SolverSettings           ) = 1.00000000000000008E-05 ! TIME_INTEG_PARSTATE_DEFAULT
 slv.integ.atol.vel (                $SLV_SolverSettings           ) = 1.00000000000000005E-04 ! TIME_INTEG_PARSTATE_VEL
 slv.integ.rtol.gen (                $SLV_SolverSettings           ) = 9.99999999999999955E-08 ! TIME_INTEG_PARSTATE_DEFAULT
@@ -212,50 +212,36 @@ slv.meas.result (                   $SLV_SolverSettings           ) = 1         
 slv.meas.subvar (                   $SLV_SolverSettings           ) = 1                       ! MEAS_BOOLPAR_SUBVAR
 slv.assmbl.task (                   $SLV_SolverSettings           ) = 3                       ! ASSMBL_PAR_SOLVER_MODE
 slv.output.path.type (              $SLV_SolverSettings           ) = 1                       ! OUTPUT_PATH_PAR_TYPE
+slv.output.file.desc (              $SLV_SolverSettings           ) = ''                      ! Description written to the output file if supported
 slv.compat.solver (                 $SLV_SolverSettings           ) = 0                       ! 0 = no (new solver); 1 = yes (classic solver)
 slv.txt (                           $SLV_SolverSettings           ) = ''                      ! Comment
 
 !**********************************************************************
 ! SubVars
 !**********************************************************************
-subvar.str (                        $_W                           ) = '2'                     ! Definition
-subvar.dflt (                       $_W                           ) = ''                      ! Default value
-
 subvar.str (                        $_H                           ) = '1.2'                   ! Definition
 subvar.dflt (                       $_H                           ) = ''                      ! Default value
 
-subvar.str (                        $_L                           ) = '1.50'                  ! Definition
+subvar.str (                        $_L                           ) = '1.5'                   ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
-subvar.str (                        $_kr                          ) = '1e5'                   ! Definition
-subvar.dflt (                       $_kr                          ) = ''                      ! Default value
+subvar.str (                        $_W                           ) = '2'                     ! Definition
+subvar.dflt (                       $_W                           ) = ''                      ! Default value
 
-subvar.str (                        $_cr                          ) = '1e4'                   ! Definition
-subvar.dflt (                       $_cr                          ) = ''                      ! Default value
+subvar.str (                        $_mboogie                     ) = '2826'                  ! Definition
+subvar.dflt (                       $_mboogie                     ) = ''                      ! Default value
 
-subvar.str (                        $_m                           ) = '9267.194791023'        ! Definition
+subvar.str (                        $_m                           ) = '$_mboogie + $S_esteira1.$_m + $S_esteira2.$_m + $S_rocker1.$_m + $S_rocker2.$_m + $S_roda1.$_m + $S_roda2.$_m' ! Definition
 subvar.dflt (                       $_m                           ) = ''                      ! Default value
 
-subvar.str (                        $_lambda                      ) = '1.0'                   ! Definition
-subvar.dflt (                       $_lambda                      ) = ''                      ! Default value
-
-subvar.str (                        $_vd                          ) = '2.0'                   ! Definition
+subvar.str (                        $_vd                          ) = '2'                     ! Definition
 subvar.dflt (                       $_vd                          ) = ''                      ! Default value
 
-subvar.str (                        $_beta                        ) = '0.27'                  ! Definition
+subvar.str (                        $_lambda                      ) = '1'                     ! Definition
+subvar.dflt (                       $_lambda                      ) = ''                      ! Default value
+
+subvar.str (                        $_beta                        ) = '0.3'                   ! Definition
 subvar.dflt (                       $_beta                        ) = ''                      ! Default value
-
-subvar.str (                        $_zmax                        ) = '0.1'                   ! Definition
-subvar.dflt (                       $_zmax                        ) = ''                      ! Default value
-
-subvar.str (                        $_zmin                        ) = '-$_zmax'               ! Definition
-subvar.dflt (                       $_zmin                        ) = ''                      ! Default value
-
-subvar.str (                        $_thick                       ) = '0.2'                   ! Definition
-subvar.dflt (                       $_thick                       ) = ''                      ! Default value
-
-subvar.str (                        $_dx                          ) = '1'                     ! Definition
-subvar.dflt (                       $_dx                          ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
@@ -269,6 +255,14 @@ refsys.attr.2d.height (             $R_Isys                       ) = 2.20000000
 marker.type (                       $M_Isys                       ) = 1                       ! Type
 marker.parent (                     $M_Isys                       ) = $R_Isys                 ! Reference system
 
+marker.type (                       $M_Isys_1                     ) = 2                       ! Type
+marker.parent (                     $M_Isys_1                     ) = $R_Isys                 ! Reference system
+marker.pos (              2 ,       $M_Isys_1                     ) = -1.00000000000000000E+00 ! Position
+
+marker.type (                       $M_Isys_2                     ) = 2                       ! Type
+marker.parent (                     $M_Isys_2                     ) = $R_Isys                 ! Reference system
+marker.pos (              2 ,       $M_Isys_2                     ) = 1.00000000000000000E+00 ! Position
+
 prim.type (                         $P_Isys                       ) = 30                      ! Type
 prim.ref (                          $P_Isys                       ) = $M_Isys                 ! Reference Marker
 prim.color.r (            1 ,       $P_Isys                       ) = 1.48000000000000000E+02 ! Colors (red component)
@@ -281,142 +275,143 @@ prim.par (                3 ,       $P_Isys                       ) = 1.00000000
 !**********************************************************************
 ! Bodies
 !**********************************************************************
-body.m (                            $B_chao                       ) = 1.00000000000000004E-10 ! Mass of the Body
+body.m (                            $B_chao                       ) = 1.00000000000000000E+00 ! Mass of the Body
+body.mp (                           $B_chao                       ) = 0                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
 body.I.tens (             1 ,   1 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.tens (             2 ,   2 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.tens (             3 ,   3 , $B_chao                       ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.kind (                       $B_chao                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
-body.flx.dmp.all (                  $B_chao                       ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_chao                       ) = -3.00000000000000000E+01
+body.attr.2d.pos.y (                $B_chao                       ) = 3.00000000000000000E+01
+body.attr.2d.width (                $B_chao                       ) = 1.10000000000000000E+02
+body.attr.2d.height (               $B_chao                       ) = 8.00000000000000000E+01
 
 marker.type (                       $M_chao_BRF                   ) = 1                       ! Type
 marker.parent (                     $M_chao_BRF                   ) = $B_chao                 ! Body
 marker.flx.type (                   $M_chao_BRF                   ) = 4                       ! Flexible type
 
-marker.type (                       $M_chao_contact               ) = -96                     ! Type
-marker.parent (                     $M_chao_contact               ) = $B_chao                 ! Body
-marker.st.alg (           1 ,       $M_chao_contact               ) = 7.03675977338026115E+00 ! Algebraic states
-marker.par (              1 ,       $M_chao_contact               ) = 1.00000000000000000E+00 ! [-] Marker type
-marker.par (              2 ,       $M_chao_contact               ) = $M_bola_contact         ! [-] Parent Marker
-marker.par (              3 ,       $M_chao_contact               ) = $P_chao                 ! [-] Contact geometry Primitive
-
 joint.from (                        $J_chao                       ) = $M_Isys                 ! From Marker
 joint.to (                          $J_chao                       ) = $M_chao_BRF             ! To Marker
-joint.type (                        $J_chao                       ) = 0                       ! Type
-joint.par (               1 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
-joint.par (               2 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
-joint.par (               3 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
-joint.par (               4 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in x
-joint.par (               5 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in y
-joint.par (               6 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [m] Translation in z
-joint.par (               7 ,       $J_chao                       ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+joint.type (                        $J_chao                       ) = 1                       ! Type
+joint.st.pos (            1 ,       $J_chao                       ) = 0.00000000000000000E+00 ! Position
+joint.st.vel (            1 ,       $J_chao                       ) = 0.00000000000000000E+00 ! Velocity
+joint.attr.2d.pos.x (     1 ,       $J_chao                       ) = 20
+joint.attr.2d.pos.y (     1 ,       $J_chao                       ) = 170
+joint.attr.2d.ori (       1 ,       $J_chao                       ) = 270
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_chao      ) = 20, 20
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_chao      ) = 210, 187
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_chao        ) = 20, 20
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_chao        ) = 110, 153
 
 prim.type (                         $P_chao                       ) = 5                       ! Type
 prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
-prim.pos (                1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
-prim.pos (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
 prim.ang (                1 ,       $P_chao                       ) = { 90 deg }              ! Angles
-prim.vtx (                1 ,   1 , $P_chao                       ) = { -2*$_dx }             ! Vertices
-prim.vtx (                1 ,   2 , $P_chao                       ) = { -1*$_dx }             ! Vertices
+prim.ang (                2 ,       $P_chao                       ) = { 15 deg }              ! Angles
+prim.ang (                3 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Angles
+prim.vtx (                1 ,   1 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   2 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
 prim.vtx (                1 ,   3 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                1 ,   4 , $P_chao                       ) = { 1*$_dx }              ! Vertices
-prim.vtx (                1 ,   5 , $P_chao                       ) = { 2*$_dx }              ! Vertices
-prim.vtx (                1 ,   6 , $P_chao                       ) = { 3*$_dx }              ! Vertices
-prim.vtx (                1 ,   7 , $P_chao                       ) = { 4*$_dx }              ! Vertices
-prim.vtx (                1 ,   8 , $P_chao                       ) = { 5*$_dx }              ! Vertices
-prim.vtx (                1 ,   9 , $P_chao                       ) = { 6*$_dx }              ! Vertices
-prim.vtx (                1 ,  10 , $P_chao                       ) = { 7*$_dx }              ! Vertices
-prim.vtx (                1 ,  11 , $P_chao                       ) = { 8*$_dx }              ! Vertices
-prim.vtx (                1 ,  12 , $P_chao                       ) = { 9*$_dx }              ! Vertices
-prim.vtx (                1 ,  13 , $P_chao                       ) = { 10*$_dx }             ! Vertices
-prim.vtx (                1 ,  14 , $P_chao                       ) = { 11*$_dx }             ! Vertices
-prim.vtx (                1 ,  15 , $P_chao                       ) = { 12*$_dx }             ! Vertices
-prim.vtx (                1 ,  16 , $P_chao                       ) = { 13*$_dx }             ! Vertices
-prim.vtx (                1 ,  17 , $P_chao                       ) = { 14*$_dx }             ! Vertices
-prim.vtx (                1 ,  18 , $P_chao                       ) = { 15*$_dx }             ! Vertices
-prim.vtx (                1 ,  19 , $P_chao                       ) = { 16*$_dx }             ! Vertices
-prim.vtx (                1 ,  20 , $P_chao                       ) = { 17*$_dx }             ! Vertices
-prim.vtx (                1 ,  21 , $P_chao                       ) = { 18*$_dx }             ! Vertices
-prim.vtx (                1 ,  22 , $P_chao                       ) = { 19*$_dx }             ! Vertices
-prim.vtx (                1 ,  23 , $P_chao                       ) = { 20*$_dx }             ! Vertices
-prim.vtx (                1 ,  24 , $P_chao                       ) = { 20*$_dx }             ! Vertices
-prim.vtx (                1 ,  25 , $P_chao                       ) = { 19*$_dx }             ! Vertices
-prim.vtx (                1 ,  26 , $P_chao                       ) = { 18*$_dx }             ! Vertices
-prim.vtx (                1 ,  27 , $P_chao                       ) = { 17*$_dx }             ! Vertices
-prim.vtx (                1 ,  28 , $P_chao                       ) = { 16*$_dx }             ! Vertices
-prim.vtx (                1 ,  29 , $P_chao                       ) = { 15*$_dx }             ! Vertices
-prim.vtx (                1 ,  30 , $P_chao                       ) = { 14*$_dx }             ! Vertices
-prim.vtx (                1 ,  31 , $P_chao                       ) = { 13*$_dx }             ! Vertices
-prim.vtx (                1 ,  32 , $P_chao                       ) = { 12*$_dx }             ! Vertices
-prim.vtx (                1 ,  33 , $P_chao                       ) = { 11*$_dx }             ! Vertices
-prim.vtx (                1 ,  34 , $P_chao                       ) = { 10*$_dx }             ! Vertices
-prim.vtx (                1 ,  35 , $P_chao                       ) = { 9*$_dx }              ! Vertices
-prim.vtx (                1 ,  36 , $P_chao                       ) = { 8*$_dx }              ! Vertices
-prim.vtx (                1 ,  37 , $P_chao                       ) = { 7*$_dx }              ! Vertices
-prim.vtx (                1 ,  38 , $P_chao                       ) = { 6*$_dx }              ! Vertices
-prim.vtx (                1 ,  39 , $P_chao                       ) = { 5*$_dx }              ! Vertices
-prim.vtx (                1 ,  40 , $P_chao                       ) = { 4*$_dx }              ! Vertices
-prim.vtx (                1 ,  41 , $P_chao                       ) = { 3*$_dx }              ! Vertices
-prim.vtx (                1 ,  42 , $P_chao                       ) = { 2*$_dx }              ! Vertices
-prim.vtx (                1 ,  43 , $P_chao                       ) = { 1*$_dx }              ! Vertices
+prim.vtx (                1 ,   4 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   5 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   6 , $P_chao                       ) = 3.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   7 , $P_chao                       ) = 4.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   8 , $P_chao                       ) = 5.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   9 , $P_chao                       ) = 6.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  10 , $P_chao                       ) = 7.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  11 , $P_chao                       ) = 8.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  12 , $P_chao                       ) = 9.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  13 , $P_chao                       ) = 1.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  14 , $P_chao                       ) = 1.10000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  15 , $P_chao                       ) = 1.20000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  16 , $P_chao                       ) = 1.30000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  17 , $P_chao                       ) = 1.40000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  18 , $P_chao                       ) = 1.50000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  19 , $P_chao                       ) = 1.60000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  20 , $P_chao                       ) = 1.70000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  21 , $P_chao                       ) = 1.80000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  22 , $P_chao                       ) = 1.90000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  23 , $P_chao                       ) = 2.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  24 , $P_chao                       ) = 2.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  25 , $P_chao                       ) = 1.90000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  26 , $P_chao                       ) = 1.80000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  27 , $P_chao                       ) = 1.70000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  28 , $P_chao                       ) = 1.60000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  29 , $P_chao                       ) = 1.50000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  30 , $P_chao                       ) = 1.40000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  31 , $P_chao                       ) = 1.30000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  32 , $P_chao                       ) = 1.20000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  33 , $P_chao                       ) = 1.10000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  34 , $P_chao                       ) = 1.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  35 , $P_chao                       ) = 9.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  36 , $P_chao                       ) = 8.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  37 , $P_chao                       ) = 7.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  38 , $P_chao                       ) = 6.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  39 , $P_chao                       ) = 5.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  40 , $P_chao                       ) = 4.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  41 , $P_chao                       ) = 3.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  42 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  43 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
 prim.vtx (                1 ,  44 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                1 ,  45 , $P_chao                       ) = { -1*$_dx }             ! Vertices
-prim.vtx (                1 ,  46 , $P_chao                       ) = { -2*$_dx }             ! Vertices
+prim.vtx (                1 ,  45 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  46 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,   1 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,   2 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,   2 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,   3 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,   4 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,   4 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,   5 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,   6 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,   6 , $P_chao                       ) = 1.00000000000000006E-01 ! Vertices
 prim.vtx (                2 ,   7 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,   8 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,   8 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,   9 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  10 , $P_chao                       ) = $_zmax                  ! Vertices
-prim.vtx (                2 ,  11 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  12 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  10 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  11 , $P_chao                       ) = 1.00000000000000006E-01 ! Vertices
+prim.vtx (                2 ,  12 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,  13 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  14 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  14 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,  15 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  16 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  16 , $P_chao                       ) = 1.00000000000000006E-01 ! Vertices
 prim.vtx (                2 ,  17 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  18 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  18 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,  19 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  20 , $P_chao                       ) = $_zmin                  ! Vertices
+prim.vtx (                2 ,  20 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,  21 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  22 , $P_chao                       ) = $_zmax                  ! Vertices
+prim.vtx (                2 ,  22 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
 prim.vtx (                2 ,  23 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
-prim.vtx (                2 ,  24 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  25 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
-prim.vtx (                2 ,  26 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  27 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
-prim.vtx (                2 ,  28 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  29 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
-prim.vtx (                2 ,  30 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  31 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
-prim.vtx (                2 ,  32 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  33 , $P_chao                       ) = { $_zmax -$_thick }     ! Vertices
-prim.vtx (                2 ,  34 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  35 , $P_chao                       ) = { $_zmin -$_thick }     ! Vertices
-prim.vtx (                2 ,  36 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  37 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
-prim.vtx (                2 ,  38 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  39 , $P_chao                       ) = { $_zmin - $_thick }    ! Vertices
-prim.vtx (                2 ,  40 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  41 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
-prim.vtx (                2 ,  42 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  43 , $P_chao                       ) = { $_zmin - $_thick }    ! Vertices
-prim.vtx (                2 ,  44 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.vtx (                2 ,  45 , $P_chao                       ) = { $_zmax - $_thick }    ! Vertices
-prim.vtx (                2 ,  46 , $P_chao                       ) = { -$_thick }            ! Vertices
-prim.color.r (            1 ,       $P_chao                       ) = 2.55000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_chao                       ) = 1.85000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_chao                       ) = 1.50000000000000000E+01 ! Colors (blue component)
+prim.vtx (                2 ,  24 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  25 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  26 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  27 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  28 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  29 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  30 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  31 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  32 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  33 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  34 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  35 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  36 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  37 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  38 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  39 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  40 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  41 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  42 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  43 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  44 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  45 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.vtx (                2 ,  46 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
+prim.color.r (            1 ,       $P_chao                       ) = 3.00000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_chao                       ) = 1.44000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_chao                       ) = 2.55000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_chao                       ) = 2.50000000000000000E-01 ! Transparency
+prim.mp.dens.solid (                $P_chao                       ) = 7.85000000000000000E+03 ! Density
 prim.par (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Contour by
 prim.par (                4 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Contour
 prim.par (                6 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Curve fitting type
 prim.par (                7 ,       $P_chao                       ) = 3.00000000000000000E+00 ! [-] Spline Degree
 prim.par (                9 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Material side
-prim.par (               10 ,       $P_chao                       ) = 4.00000000000000000E+00 ! [m] Depth
+prim.par (               10 ,       $P_chao                       ) = 2.00000000000000000E+01 ! [m] Depth
 prim.par (               11 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Wall thickness
 prim.par (               12 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
 prim.par (               13 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Show top cap
@@ -426,7 +421,7 @@ prim.par (               17 ,       $P_chao                       ) = 0.00000000
 prim.par (               18 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Graphics end
 
 
-body.m (                            $B_Boogie                     ) = 1.00000000000000002E-08 ! Mass of the Body
+body.m (                            $B_Boogie                     ) = 1.00000000000000000E+00 ! Mass of the Body
 body.mp (                           $B_Boogie                     ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
 body.I.tens (             1 ,   1 , $B_Boogie                     ) = 1.00000000000000000E+00 ! Moments of inertia
 body.I.tens (             2 ,   2 , $B_Boogie                     ) = 1.00000000000000000E+00 ! Moments of inertia
@@ -439,40 +434,45 @@ marker.parent (                     $M_Boogie_BRF                 ) = $B_Boogie 
 marker.flx.type (                   $M_Boogie_BRF                 ) = 4                       ! Flexible type
 
 marker.type (                       $M_Boogie_esteira1            ) = 2                       ! Type
+marker.ref (                        $M_Boogie_esteira1            ) = $M_Boogie_BRF           ! Reference Marker
 marker.parent (                     $M_Boogie_esteira1            ) = $B_Boogie               ! Body
-marker.pos (              2 ,       $M_Boogie_esteira1            ) = { -$_W/2 }              ! Position
+marker.pos (              2 ,       $M_Boogie_esteira1            ) = { -$_W/2  - $S_esteira1.$_TW/2 } ! Position
 marker.pos (              3 ,       $M_Boogie_esteira1            ) = { -$_H/2 }              ! Position
 
 marker.type (                       $M_Boogie_esteira2            ) = 2                       ! Type
+marker.ref (                        $M_Boogie_esteira2            ) = $M_Boogie_BRF           ! Reference Marker
 marker.parent (                     $M_Boogie_esteira2            ) = $B_Boogie               ! Body
-marker.pos (              2 ,       $M_Boogie_esteira2            ) = { $_W/2 }               ! Position
+marker.pos (              2 ,       $M_Boogie_esteira2            ) = { $_W/2 + $S_esteira2.$_TW/2 } ! Position
 marker.pos (              3 ,       $M_Boogie_esteira2            ) = { -$_H/2 }              ! Position
 
-marker.type (                       $M_Boogie_2rocker1            ) = 2                       ! Type
-marker.ref (                        $M_Boogie_2rocker1            ) = $M_Boogie_BRF           ! Reference Marker
-marker.parent (                     $M_Boogie_2rocker1            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker1            ) = 0.00000000000000000E+00 ! Position
-marker.pos (              2 ,       $M_Boogie_2rocker1            ) = { -$_W/2 + $S_rocker1.$_W/2 } ! Position
-marker.pos (              3 ,       $M_Boogie_2rocker1            ) = { $_H/2 }               ! Position
+marker.type (                       $M_Boogie_rocker1             ) = 2                       ! Type
+marker.parent (                     $M_Boogie_rocker1             ) = $B_Boogie               ! Body
+marker.pos (              2 ,       $M_Boogie_rocker1             ) = { -$_W/2 + $S_rocker1.$_W/2 } ! Position
+marker.pos (              3 ,       $M_Boogie_rocker1             ) = { $_H/2 }               ! Position
 
-marker.type (                       $M_Boogie_2rocker2            ) = 2                       ! Type
-marker.ref (                        $M_Boogie_2rocker2            ) = $M_Boogie_BRF           ! Reference Marker
-marker.parent (                     $M_Boogie_2rocker2            ) = $B_Boogie               ! Body
-marker.pos (              1 ,       $M_Boogie_2rocker2            ) = 0.00000000000000000E+00 ! Position
-marker.pos (              2 ,       $M_Boogie_2rocker2            ) = { $_W/2 - $S_rocker2.$_W/2 } ! Position
-marker.pos (              3 ,       $M_Boogie_2rocker2            ) = { $_H/2 }               ! Position
+marker.type (                       $M_Boogie_rocker2             ) = 2                       ! Type
+marker.parent (                     $M_Boogie_rocker2             ) = $B_Boogie               ! Body
+marker.pos (              2 ,       $M_Boogie_rocker2             ) = { $_W/2 - $S_rocker1.$_W/2 } ! Position
+marker.pos (              3 ,       $M_Boogie_rocker2             ) = { $_H/2 }               ! Position
 
 joint.from (                        $J_Boogie                     ) = $M_Isys                 ! From Marker
 joint.to (                          $J_Boogie                     ) = $M_Boogie_BRF           ! To Marker
 joint.type (                        $J_Boogie                     ) = 25                      ! Type
 joint.st.pos (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            3 ,       $J_Boogie                     ) = { $_H/2 + $S_esteira1.$_r1 -0.05 } ! Position
+joint.st.pos (            3 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! Position
+joint.st.pos (            4 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
+joint.st.pos (            5 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
+joint.st.pos (            6 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
 joint.st.vel (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_Boogie                     ) = 1.00000000000000002E-03 ! Velocity
-joint.st.vel (            3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.par (               1 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
-joint.par (               2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
+joint.st.vel (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            3 ,       $J_Boogie                     ) = 1.00000000000000002E-02 ! Velocity
+joint.st.vel (            4 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            5 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            6 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
+joint.txt (                         $J_Boogie                     ) = '$_H/2 + $S_esteira1.$_r1' ! Comment
+joint.par (               1 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! [-] Axis of rotation    1
+joint.par (               2 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    2
 joint.par (               3 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! [-] Axis of rotation    3
 joint.par (               4 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
 joint.par (               5 ,       $J_Boogie                     ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
@@ -481,9 +481,9 @@ joint.par (               8 ,       $J_Boogie                     ) = 0.00000000
 
 prim.type (                         $P_Boogie                     ) = 1                       ! Type
 prim.ref (                          $P_Boogie                     ) = $M_Boogie_BRF           ! Reference Marker
-prim.color.r (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie                     ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.r (            1 ,       $P_Boogie                     ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie                     ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie                     ) = 0.00000000000000000E+00 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie                     ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.mp.dens.solid (                $P_Boogie                     ) = { 7850/10 }             ! Density
 prim.par (                2 ,       $P_Boogie                     ) = $_L                     ! [m] Length in X
@@ -491,139 +491,61 @@ prim.par (                3 ,       $P_Boogie                     ) = $_W       
 prim.par (                4 ,       $P_Boogie                     ) = $_H                     ! [m] Length in Z
 
 
-body.m (                            $B_bola                       ) = 1.00000000000000000E+00 ! Mass of the Body
-body.mp (                           $B_bola                       ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
-body.I.tens (             1 ,   1 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             2 ,   2 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.tens (             3 ,   3 , $B_bola                       ) = 1.00000000000000000E+00 ! Moments of inertia
-body.I.kind (                       $B_bola                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
-body.flx.dmp.all (                  $B_bola                       ) = 0.00000000000000000E+00 ! Damping input value
-
-marker.type (                       $M_bola_contact               ) = -96                     ! Type
-marker.parent (                     $M_bola_contact               ) = $B_bola                 ! Body
-marker.st.alg (           1 ,       $M_bola_contact               ) = 1.41381203588231497E+00 ! Algebraic states
-marker.par (              1 ,       $M_bola_contact               ) = 0.00000000000000000E+00 ! [-] Marker type
-marker.par (              3 ,       $M_bola_contact               ) = $P_bola                 ! [-] Contact geometry Primitive
-marker.par (              5 ,       $M_bola_contact               ) = 0.00000000000000000E+00 ! [-] Contact point determin. method
-
-marker.type (                       $M_bola_BRF                   ) = 1                       ! Type
-marker.parent (                     $M_bola_BRF                   ) = $B_bola                 ! Body
-marker.flx.type (                   $M_bola_BRF                   ) = 4                       ! Flexible type
-
-joint.from (                        $J_bola                       ) = $M_Isys                 ! From Marker
-joint.to (                          $J_bola                       ) = $M_bola_BRF             ! To Marker
-joint.type (                        $J_bola                       ) = 25                      ! Type
-joint.st.pos (            1 ,       $J_bola                       ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            2 ,       $J_bola                       ) = 5.00000000000000000E+00 ! Position
-joint.st.pos (            3 ,       $J_bola                       ) = 2.00000000000000000E+00 ! Position
-joint.st.vel (            1 ,       $J_bola                       ) = 1.00000000000000000E+00 ! Velocity
-joint.st.vel (            2 ,       $J_bola                       ) = 3.00000000000000000E+00 ! Velocity
-joint.st.vel (            3 ,       $J_bola                       ) = 0.00000000000000000E+00 ! Velocity
-joint.par (               1 ,       $J_bola                       ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
-joint.par (               2 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    2
-joint.par (               3 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of rotation    3
-joint.par (               4 ,       $J_bola                       ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
-joint.par (               5 ,       $J_bola                       ) = 3.00000000000000000E+00 ! [-] Axis of translation 2
-joint.par (               6 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Axis of translation 3
-joint.par (               8 ,       $J_bola                       ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
-
-prim.type (                         $P_bola                       ) = 2                       ! Type
-prim.ref (                          $P_bola                       ) = $M_bola_BRF             ! Reference Marker
-prim.color.r (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.r (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (red component)
-prim.color.g (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.g (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.b (            2 ,       $P_bola                       ) = 1.28000000000000000E+02 ! Colors (blue component)
-prim.color.t (            1 ,       $P_bola                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.color.t (            2 ,       $P_bola                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_bola                       ) = 4.00000000000000022E-01 ! [m] Height
-prim.par (                3 ,       $P_bola                       ) = 9.00000000000000022E-01 ! [m] Outer diameter
-prim.par (                4 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [m] Inner diameter
-prim.par (                5 ,       $P_bola                       ) = 2.40000000000000000E+01 ! [-] Number of planes
-prim.par (                6 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
-prim.par (                7 ,       $P_bola                       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
-prim.par (                8 ,       $P_bola                       ) = 1.00000000000000000E+00 ! [-] Show top cap
-prim.par (                9 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [rad] Start angle
-prim.par (               10 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [rad] Delta angle
-prim.par (               11 ,       $P_bola                       ) = 0.00000000000000000E+00 ! [-] Close geometry with
-
-
 !**********************************************************************
 ! Force Elements
 !**********************************************************************
-force.type (                        $F_mola_amort_rocker1         ) = 50                      ! Type
-force.from (                        $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! From Marker
-force.to (                          $F_mola_amort_rocker1         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.disabled (                    $F_mola_amort_rocker1         ) = 0                       ! Disabled
-force.par (               1 ,       $F_mola_amort_rocker1         ) = $M_Boogie_2rocker1      ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_mola_amort_rocker1         ) = $X_F_mola_amort_rocker1 ! [-] Expression for Ly
-force.par (               8 ,       $F_mola_amort_rocker1         ) = null                    ! [-] Expression for Lz
+force.type (                        $F_tau11                      ) = 50                      ! Type
+force.from (                        $F_tau11                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_tau11                      ) = $S_esteira1.$M_Roda1_BRF ! To Marker
+force.disabled (                    $F_tau11                      ) = 0                       ! Disabled
+force.par (               1 ,       $F_tau11                      ) = $M_Boogie_BRF           ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_tau11                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_tau11                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_tau11                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_tau11                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_tau11                      ) = $X_tau11                ! [-] Expression for Ly
+force.par (               8 ,       $F_tau11                      ) = null                    ! [-] Expression for Lz
 
-force.type (                        $F_mola_amort_rocker2         ) = 50                      ! Type
-force.from (                        $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! From Marker
-force.to (                          $F_mola_amort_rocker2         ) = $S_rocker1.$M_Rocker_BRF ! To Marker
-force.disabled (                    $F_mola_amort_rocker2         ) = 0                       ! Disabled
-force.par (               1 ,       $F_mola_amort_rocker2         ) = $M_Boogie_2rocker2      ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_mola_amort_rocker2         ) = $X_F_mola_amort_rocker2 ! [-] Expression for Ly
-force.par (               8 ,       $F_mola_amort_rocker2         ) = null                    ! [-] Expression for Lz
+force.type (                        $F_tau12                      ) = 50                      ! Type
+force.from (                        $F_tau12                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_tau12                      ) = $S_esteira2.$M_Roda1_BRF ! To Marker
+force.disabled (                    $F_tau12                      ) = 0                       ! Disabled
+force.par (               1 ,       $F_tau12                      ) = $M_Boogie_BRF           ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_tau12                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_tau12                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_tau12                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_tau12                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_tau12                      ) = $X_tau12                ! [-] Expression for Ly
+force.par (               8 ,       $F_tau12                      ) = null                    ! [-] Expression for Lz
 
-force.type (                        $F_lei11                      ) = 50                      ! Type
-force.from (                        $F_lei11                      ) = $M_Isys                 ! From Marker
-force.to (                          $F_lei11                      ) = $S_esteira1.$M_Roda1_BRF ! To Marker
-force.par (               1 ,       $F_lei11                      ) = $M_Isys                 ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_lei11                      ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_lei11                      ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_lei11                      ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_lei11                      ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_lei11                      ) = $X_lei1                 ! [-] Expression for Ly
-force.par (               8 ,       $F_lei11                      ) = null                    ! [-] Expression for Lz
+force.type (                        $F_tau21                      ) = 50                      ! Type
+force.from (                        $F_tau21                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_tau21                      ) = $S_roda1.$M_Roda1_BRF   ! To Marker
+force.disabled (                    $F_tau21                      ) = 0                       ! Disabled
+force.par (               1 ,       $F_tau21                      ) = $S_roda1.$M_Roda1_BRF   ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_tau21                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_tau21                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_tau21                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_tau21                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_tau21                      ) = $X_tau21                ! [-] Expression for Ly
+force.par (               8 ,       $F_tau21                      ) = null                    ! [-] Expression for Lz
 
-force.type (                        $F_lei21                      ) = 50                      ! Type
-force.from (                        $F_lei21                      ) = $M_Isys                 ! From Marker
-force.to (                          $F_lei21                      ) = $S_roda1.$M_Roda1_BRF   ! To Marker
-force.par (               1 ,       $F_lei21                      ) = $M_Isys                 ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_lei21                      ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_lei21                      ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_lei21                      ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_lei21                      ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_lei21                      ) = $X_lei2                 ! [-] Expression for Ly
-force.par (               8 ,       $F_lei21                      ) = null                    ! [-] Expression for Lz
-
-force.type (                        $F_lei22                      ) = 50                      ! Type
-force.from (                        $F_lei22                      ) = $M_Isys                 ! From Marker
-force.to (                          $F_lei22                      ) = $S_roda2.$M_Roda1_BRF   ! To Marker
-force.par (               1 ,       $F_lei22                      ) = $M_Isys                 ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_lei22                      ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_lei22                      ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_lei22                      ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_lei22                      ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_lei22                      ) = $X_lei2                 ! [-] Expression for Ly
-force.par (               8 ,       $F_lei22                      ) = null                    ! [-] Expression for Lz
-
-force.type (                        $F_lei12                      ) = 50                      ! Type
-force.from (                        $F_lei12                      ) = $M_Isys                 ! From Marker
-force.to (                          $F_lei12                      ) = $S_esteira2.$M_Roda1_BRF ! To Marker
-force.par (               1 ,       $F_lei12                      ) = $M_Isys                 ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_lei12                      ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_lei12                      ) = null                    ! [-] Expression for Fy
-force.par (               5 ,       $F_lei12                      ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_lei12                      ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_lei12                      ) = $X_lei1                 ! [-] Expression for Ly
-force.par (               8 ,       $F_lei12                      ) = null                    ! [-] Expression for Lz
+force.type (                        $F_tau22                      ) = 50                      ! Type
+force.from (                        $F_tau22                      ) = $M_Isys                 ! From Marker
+force.to (                          $F_tau22                      ) = $S_roda2.$M_Roda1_BRF   ! To Marker
+force.disabled (                    $F_tau22                      ) = 0                       ! Disabled
+force.par (               1 ,       $F_tau22                      ) = $S_roda2.$M_Roda1_BRF   ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_tau22                      ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_tau22                      ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_tau22                      ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_tau22                      ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_tau22                      ) = $X_tau22                ! [-] Expression for Ly
+force.par (               8 ,       $F_tau22                      ) = null                    ! [-] Expression for Lz
 
 force.type (                        $F_IF                         ) = 50                      ! Type
 force.from (                        $F_IF                         ) = $M_Isys                 ! From Marker
 force.to (                          $F_IF                         ) = $M_Boogie_BRF           ! To Marker
-force.par (               1 ,       $F_IF                         ) = null                    ! [-] Reference Marker for calc.
+force.par (               1 ,       $F_IF                         ) = $M_Boogie_BRF           ! [-] Reference Marker for calc.
 force.par (               3 ,       $F_IF                         ) = $X_IF                   ! [-] Expression for Fx
 force.par (               4 ,       $F_IF                         ) = null                    ! [-] Expression for Fy
 force.par (               5 ,       $F_IF                         ) = null                    ! [-] Expression for Fz
@@ -631,42 +553,36 @@ force.par (               6 ,       $F_IF                         ) = null      
 force.par (               7 ,       $F_IF                         ) = null                    ! [-] Expression for Ly
 force.par (               8 ,       $F_IF                         ) = null                    ! [-] Expression for Lz
 
-force.type (                        $F_contact                    ) = 50                      ! Type
-force.from (                        $F_contact                    ) = $M_chao_contact         ! From Marker
-force.to (                          $F_contact                    ) = $M_bola_contact         ! To Marker
-force.par (               1 ,       $F_contact                    ) = null                    ! [-] Reference Marker for calc.
-force.par (               3 ,       $F_contact                    ) = null                    ! [-] Expression for Fx
-force.par (               4 ,       $F_contact                    ) = $X_Fcontact             ! [-] Expression for Fy
-force.par (               5 ,       $F_contact                    ) = null                    ! [-] Expression for Fz
-force.par (               6 ,       $F_contact                    ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_contact                    ) = null                    ! [-] Expression for Ly
-force.par (               8 ,       $F_contact                    ) = null                    ! [-] Expression for Lz
-
 !**********************************************************************
 ! Expressions
 !**********************************************************************
-express.str (                       $X_F_mola_amort_rocker1       ) = '-$_kr*(beta($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker1,$S_rocker1.$M_Rocker_BRF))' ! Definition
+express.str (                       $X_PD                         ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
 
-express.str (                       $X_F_mola_amort_rocker2       ) = '-$_kr*(beta($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF)) - $_cr*(WY($M_Boogie_2rocker2,$S_rocker2.$M_Rocker_BRF))' ! Definition
+express.str (                       $X_tau11                      ) = '-0.5*(1-$_beta)*$_m*$S_esteira1.$_r1*$X_PD' ! Definition
 
-express.str (                       $X_ct1                        ) = '1/($_m*$S_esteira1.$_r1)' ! Definition
+express.str (                       $X_tau12                      ) = '-0.5*(1-$_beta)*$_m*$S_esteira2.$_r1*$X_PD' ! Definition
 
-express.str (                       $X_ct2                        ) = '1/($_m*($S_roda1.$_r-$S_roda1.$X_delta))' ! Definition
+express.str (                       $X_tau21                      ) = '-0.5*$_beta*$_m*$S_roda1.$_r*$X_PD' ! Definition
 
-express.str (                       $X_f                          ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
+express.str (                       $X_tau22                      ) = '-0.5*$_beta*$_m*$S_roda2.$_r*$X_PD' ! Definition
 
-express.str (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_f/$X_ct1' ! Definition
-express.txt (                       $X_lei1                       ) = '-0.5*(1-$_beta)*$X_ct1*$X_f/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Comment
-
-express.str (                       $X_lei2                       ) = '-0.5*($_beta)*$X_f/$X_ct2\n\n' ! Definition
-express.txt (                       $X_lei2                       ) = '-0.5*($_beta)*$X_ct2*$X_f/($_beta*$X_ct2^2 + (1-$_beta)*$X_ct1^2)' ! Comment
-
-express.str (                       $X_IF                         ) = '-20400*tanh(-100*VX($M_Boogie_BRF))' ! Definition
-
-express.str (                       $X_Fcontact                   ) = 'IF(DY($M_bola_contact,$M_chao_contact,$M_chao_contact)>0)\n{\n0\n}\nELSE\n{\n10000000*DY($M_bola_contact,$M_chao_contact,$M_chao_contact)\n}' ! Definition
+express.str (                       $X_IF                         ) = '-20400*tanh(-1000*VX($M_Boogie_BRF,$M_Isys,$M_Boogie_BRF))' ! Definition
 
 
 ! Overwritten substructure values
+view.fclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
+view.bclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
+
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact1  ) = 3.17705125881842854E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.11706462339812529E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact3  ) = -3.11002514118703999E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact4  ) = -3.13047888534102980E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact5  ) = -3.12439801193317990E-01 ! Algebraic states
+
 joint.from (                        $S_esteira1.$J_Base           ) = $M_Boogie_esteira1      ! From Marker
 joint.type (                        $S_esteira1.$J_Base           ) = 0                       ! Type
 joint.par (               1 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
@@ -678,8 +594,39 @@ joint.par (               6 ,       $S_esteira1.$J_Base           ) = 0.00000000
 joint.par (               7 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
 
-joint.from (                        $S_esteira1.$J_connector      ) = $M_Isys                 ! From Marker
+joint.from (                        $S_esteira1.$J_connector      ) = $M_Isys_1               ! From Marker
 
+
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact1  ) = 2.99686166460054082E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira1.$M_chao_contact1  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact2  ) = 2.73213788071420849E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira1.$M_chao_contact2  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact3  ) = 3.26409269879162744E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira1.$M_chao_contact3  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact4  ) = 2.55126086735941637E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira1.$M_chao_contact4  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact5  ) = 3.44857937136981274E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira1.$M_chao_contact5  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_esteira1.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
+
+
+view.fclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
+view.bclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
+
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact1  ) = -3.10613404836115770E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact2  ) = -3.11706462339812529E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact3  ) = -3.11002514118703999E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact4  ) = -3.13047888534102980E-01 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact5  ) = -3.12439801193317990E-01 ! Algebraic states
 
 joint.from (                        $S_esteira2.$J_Base           ) = $M_Boogie_esteira2      ! From Marker
 joint.type (                        $S_esteira2.$J_Base           ) = 0                       ! Type
@@ -692,23 +639,34 @@ joint.par (               6 ,       $S_esteira2.$J_Base           ) = 0.00000000
 joint.par (               7 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
 
-joint.from (                        $S_esteira2.$J_connector      ) = $M_Isys                 ! From Marker
+joint.from (                        $S_esteira2.$J_connector      ) = $M_Isys_2               ! From Marker
 
 
-view.fclip.value (                  $S_rocker1.$V_WorkingView     ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $S_rocker1.$V_WorkingView     ) = 4.88832426071166992E+00 ! Back clipping plane value
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact1  ) = 2.99686166460054082E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira2.$M_chao_contact1  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-joint.from (                        $S_rocker1.$J_Rocker          ) = $M_Boogie_2rocker1      ! From Marker
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact2  ) = 2.73213788071420849E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira2.$M_chao_contact2  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact3  ) = 3.26409269879162744E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira2.$M_chao_contact3  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact4  ) = 2.55126086735941637E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira2.$M_chao_contact4  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact5  ) = 3.44857937136981274E+00 ! Algebraic states
+marker.par (              3 ,       $S_esteira2.$M_chao_contact5  ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_esteira2.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
 
 
-view.fclip.value (                  $S_rocker2.$V_WorkingView     ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $S_rocker2.$V_WorkingView     ) = 4.88832426071166992E+00 ! Back clipping plane value
-
-joint.from (                        $S_rocker2.$J_Rocker          ) = $M_Boogie_2rocker2      ! From Marker
+joint.from (                        $S_rocker1.$J_Rocker          ) = $M_Boogie_rocker1       ! From Marker
 
 
-view.fclip.value (                  $S_roda1.$V_WorkingView       ) = 1.12844556570053101E-02 ! Front clipping plane value
-view.bclip.value (                  $S_roda1.$V_WorkingView       ) = 1.12844552993774414E+01 ! Back clipping plane value
+joint.from (                        $S_rocker2.$J_Rocker          ) = $M_Boogie_rocker2       ! From Marker
+
+
+marker.st.alg (           1 ,       $S_roda1.$M_Roda1_contact     ) = 1.43881847224910131E+00 ! Algebraic states
 
 joint.from (                        $S_roda1.$J_Roda1             ) = $S_rocker1.$M_Rocker_2roda ! From Marker
 joint.type (                        $S_roda1.$J_Roda1             ) = 2                       ! Type
@@ -717,8 +675,13 @@ joint.type (                        $S_roda1.$J_Roda1             ) = 2         
 joint.from (                        $S_roda1.$J_connector         ) = $M_Isys                 ! From Marker
 
 
-view.fclip.value (                  $S_roda2.$V_WorkingView       ) = 1.12844556570053101E-02 ! Front clipping plane value
-view.bclip.value (                  $S_roda2.$V_WorkingView       ) = 1.12844552993774414E+01 ! Back clipping plane value
+marker.st.alg (           1 ,       $S_roda1.$M_chao_contact      ) = 5.59694379842488754E+00 ! Algebraic states
+marker.par (              3 ,       $S_roda1.$M_chao_contact      ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_roda1.$P_chao              ) = 1.00000000000000000E+00 ! Transparency
+
+
+marker.st.alg (           1 ,       $S_roda2.$M_Roda1_contact     ) = 1.43881847224910131E+00 ! Algebraic states
 
 joint.from (                        $S_roda2.$J_Roda1             ) = $S_rocker2.$M_Rocker_2roda ! From Marker
 joint.type (                        $S_roda2.$J_Roda1             ) = 2                       ! Type
@@ -727,5 +690,11 @@ joint.type (                        $S_roda2.$J_Roda1             ) = 2         
 joint.from (                        $S_roda2.$J_connector         ) = $M_Isys                 ! From Marker
 
 
-model.data.redundancy                                               = 'eJxjYBgF+IChQYqJgZGZhWmqgZmpmYmhoUVySpKZiVmykaWBuaGZGQB+aQeeQAEAAAAAAAA=' ! Constraint redundancy data
-model.data.dependency                                               = 'eJxjYGBgYGYgDlBbHQgwEolxqaemOcjyxPBxiRkapJgYGJlZmKYamJmamRgaWiSnJJmZmCUbWRqYG5qZAQCfCQfHdAEAAAAAAAA=' ! Solver state dependency data
+marker.st.alg (           1 ,       $S_roda2.$M_chao_contact      ) = 5.59694379842488754E+00 ! Algebraic states
+marker.par (              3 ,       $S_roda2.$M_chao_contact      ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_roda2.$P_chao              ) = 1.00000000000000000E+00 ! Transparency
+
+
+model.data.redundancy                                               = 'eJxjYBgF+ECyQVKqgaW5gVGikbFRspGxSVqySaqphWlKmlGqpUVaGgCQFQjzQAEAAAAAAAA=' ! Constraint redundancy data
+model.data.dependency                                               = 'eJxjZEAFbAzUBYxEYlzqaWEWNnPx8QmJJxskpRpYmhsYJRoZGyUbGZukJZukmlqYpqQZpVpapKUBALAdCRpkAQAAAAAAAA==' ! Solver state dependency data
