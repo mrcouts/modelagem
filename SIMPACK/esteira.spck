@@ -56,9 +56,9 @@ prop2d.proj.dir                                                     = 1         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 2.17365118820453063E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -5.54190242069307715E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.70534478174522519E+00 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 4.94194898614659905E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -4.85699418617878109E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 2.11276475992053747E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = 5.88613569736480713E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = 2.55296062678098679E-02 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = 1.23382523655891418E-01 ! Orientation
@@ -474,7 +474,7 @@ joint.st.pos (            5 ,       $J_Base                       ) = { 5*$_r1 }
 joint.st.vel (            1 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            2 ,       $J_Base                       ) = 1.00000000000000006E-01 ! Velocity
 joint.st.vel (            3 ,       $J_Base                       ) = 8.00000000000000017E-02 ! Velocity
-joint.st.vel (            4 ,       $J_Base                       ) = 9.00000000000000000E+00 ! Velocity
+joint.st.vel (            4 ,       $J_Base                       ) = 5.00000000000000000E+00 ! Velocity
 joint.st.vel (            5 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            6 ,       $J_Base                       ) = 0.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Base                       ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
@@ -1229,72 +1229,227 @@ force.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $F_base        ) = 280, 172.7
 !**********************************************************************
 ! Expressions
 !**********************************************************************
-express.str (                       $X_Torquecte                  ) = '-10'                   ! Definition
+express.str (                       $X_wy                         ) = 'WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_Bn                         ) = '($_CI*$_TL*$_TW/($X_W2*(1-exp(-$_CI/(0.698*10^6)))))*5/(1+6*($_TW/$_TL))' ! Definition
+express.str (                       $X_vx                         ) = 'VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_Fn                         ) = '-($_A/2)*($_ksolo*($_5gW1*$X_delta11+$_5gW23*$X_delta21+$_5gW23*$X_delta31+$_5gW45*$X_delta41+$_5gW45*$X_delta51)+$_csolo*($_5gW1*$dX_delta11+$_5gW23*$dX_delta21+$_5gW23*$dX_delta31+$_5gW45*$dX_delta41+$_5gW45*$dX_delta51))' ! Definition
-express.txt (                       $X_Fn                         ) = '-($_ksolo*$X_delta1 + $_c_solo*$dX_delta1)*$_A*cos(beta($M_Base_BRF))' ! Comment
+express.str (                       $X_vx11                       ) = 'VX($M_Base_contact11,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta11                    ) = 'IF($X_dist_borda11 < 0)\n{\n-$X_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx12                       ) = 'VX($M_Base_contact12,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta12                    ) = 'IF($X_dist_borda12 < 0)\n{\n-$X_dist_borda12\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx13                       ) = 'VX($M_Base_contact13,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta13                    ) = 'IF($X_dist_borda13 < 0)\n{\n-$X_dist_borda13\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx21                       ) = 'VX($M_Base_contact21,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta21                    ) = 'IF($X_dist_borda21 < 0)\n{\n-$X_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx22                       ) = 'VX($M_Base_contact22,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta22                    ) = 'IF($X_dist_borda22 < 0)\n{\n-$X_dist_borda22\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx23                       ) = 'VX($M_Base_contact23,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta23                    ) = 'IF($X_dist_borda23 < 0)\n{\n-$X_dist_borda23\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx31                       ) = 'VX($M_Base_contact31,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta31                    ) = 'IF($X_dist_borda31 < 0)\n{\n-$X_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx32                       ) = 'VX($M_Base_contact32,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta32                    ) = 'IF($X_dist_borda32 < 0)\n{\n-$X_dist_borda32\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx33                       ) = 'VX($M_Base_contact33,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta33                    ) = 'IF($X_dist_borda33 < 0)\n{\n-$X_dist_borda33\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx41                       ) = 'VX($M_Base_contact41,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta41                    ) = 'IF($X_dist_borda41 < 0)\n{\n-$X_dist_borda41\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx42                       ) = 'VX($M_Base_contact42,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta42                    ) = 'IF($X_dist_borda42 < 0)\n{\n-$X_dist_borda42\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx43                       ) = 'VX($M_Base_contact43,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta43                    ) = 'IF($X_dist_borda43 < 0)\n{\n-$X_dist_borda43\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx51                       ) = 'VX($M_Base_contact51,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta51                    ) = 'IF($X_dist_borda51 < 0)\n{\n-$X_dist_borda51\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx52                       ) = 'VX($M_Base_contact52,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta52                    ) = 'IF($X_dist_borda52 < 0)\n{\n-$X_dist_borda52\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vx53                       ) = 'VX($M_Base_contact53,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $X_delta53                    ) = 'IF($X_dist_borda53 < 0)\n{\n-$X_dist_borda53\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy11                       ) = 'VY($M_Base_contact11,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta11                   ) = 'IF($X_dist_borda11 < 0)\n{\n-$dX_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy12                       ) = 'VY($M_Base_contact12,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta12                   ) = 'IF($X_dist_borda12 < 0)\n{\n-$dX_dist_borda12\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy13                       ) = 'VY($M_Base_contact13,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta13                   ) = 'IF($X_dist_borda13 < 0)\n{\n-$dX_dist_borda13\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy21                       ) = 'VY($M_Base_contact21,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta21                   ) = 'IF($X_dist_borda21 < 0)\n{\n-$dX_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy22                       ) = 'VY($M_Base_contact22,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta22                   ) = 'IF($X_dist_borda22 < 0)\n{\n-$dX_dist_borda22\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy23                       ) = 'VY($M_Base_contact23,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta23                   ) = 'IF($X_dist_borda23 < 0)\n{\n-$dX_dist_borda23\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy31                       ) = 'VY($M_Base_contact31,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta31                   ) = 'IF($X_dist_borda31 < 0)\n{\n-$dX_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy32                       ) = 'VY($M_Base_contact32,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta32                   ) = 'IF($X_dist_borda32 < 0)\n{\n-$dX_dist_borda32\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy33                       ) = 'VY($M_Base_contact33,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta33                   ) = 'IF($X_dist_borda33 < 0)\n{\n-$dX_dist_borda33\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy41                       ) = 'VY($M_Base_contact41,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta41                   ) = 'IF($X_dist_borda41 < 0)\n{\n-$dX_dist_borda41\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy42                       ) = 'VY($M_Base_contact42,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta42                   ) = 'IF($X_dist_borda42 < 0)\n{\n-$dX_dist_borda42\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy43                       ) = 'VY($M_Base_contact43,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta43                   ) = 'IF($X_dist_borda43 < 0)\n{\n-$dX_dist_borda43\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy51                       ) = 'VY($M_Base_contact51,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta51                   ) = 'IF($X_dist_borda51 < 0)\n{\n-$dX_dist_borda51\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy52                       ) = 'VY($M_Base_contact52,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta52                   ) = 'IF($X_dist_borda52 < 0)\n{\n-$dX_dist_borda52\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vy53                       ) = 'VY($M_Base_contact53,$M_connector_BRF,$M_Base_BRF)' ! Definition
 
-express.str (                       $dX_delta53                   ) = 'IF($X_dist_borda53 < 0)\n{\n-$dX_dist_borda53\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_vrel                       ) = '$X_vx - $_r1*$X_wy'    ! Definition
+express.txt (                       $X_vrel                       ) = '[br][br]VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF) - $_r1*WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)' ! Comment
+
+express.str (                       $X_vrel11                     ) = '$X_vx11 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel12                     ) = '$X_vx12 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel13                     ) = '$X_vx13 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel21                     ) = '$X_vx21 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel22                     ) = '$X_vx22 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel23                     ) = '$X_vx23 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel31                     ) = '$X_vx31 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel32                     ) = '$X_vx32 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel33                     ) = '$X_vx33 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel41                     ) = '$X_vx41 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel42                     ) = '$X_vx42 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel43                     ) = '$X_vx43 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel51                     ) = '$X_vx51 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel52                     ) = '$X_vx52 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vrel53                     ) = '$X_vx53 - $_r1*$X_wy'  ! Definition
+
+express.str (                       $X_vsref                      ) = 'max(abs($X_vx) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref11                    ) = 'max(abs($X_vx11) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref12                    ) = 'max(abs($X_vx12) , $_r1*abs($X_wy))\n' ! Definition
+
+express.str (                       $X_vsref13                    ) = 'max(abs($X_vx13) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref21                    ) = 'max(abs($X_vx21) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref22                    ) = 'max(abs($X_vx22) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref23                    ) = 'max(abs($X_vx23) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref31                    ) = 'max(abs($X_vx31) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref32                    ) = 'max(abs($X_vx32) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref33                    ) = 'max(abs($X_vx33) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref41                    ) = 'max(abs($X_vx41) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref42                    ) = 'max(abs($X_vx42) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref43                    ) = 'max(abs($X_vx43) , $_r1*abs($X_wy))\n' ! Definition
+
+express.str (                       $X_vsref51                    ) = 'max(abs($X_vx51) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref52                    ) = 'max(abs($X_vx52) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_vsref53                    ) = 'max(abs($X_vx53) , $_r1*abs($X_wy))' ! Definition
+
+express.str (                       $X_sx                         ) = 'IF($X_vsref > 0)\n{\nabs(-$X_vrel/$X_vsref)\n}\nELSE\n{\n0\n}' ! Definition
+express.txt (                       $X_sx                         ) = '[br][br][br][br]IF(abs(VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF)) - ($_r1)*abs(WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF))\\>0)[br]{[br]-$X_vrel/abs(VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF))[br]}[br]ELSE[br]{[br]-$X_vrel/(($_r1)*abs(WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)))[br]}' ! Comment
+
+express.str (                       $X_sx11                       ) = 'IF($X_vsref11 > 0)\n{\nabs(-$X_vrel11/$X_vsref11)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx12                       ) = 'IF($X_vsref12 > 0)\n{\nabs(-$X_vrel12/$X_vsref12)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx13                       ) = 'IF($X_vsref13 > 0)\n{\nabs(-$X_vrel13/$X_vsref13)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx21                       ) = 'IF($X_vsref21 > 0)\n{\nabs(-$X_vrel21/$X_vsref21)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx22                       ) = 'IF($X_vsref22 > 0)\n{\nabs(-$X_vrel22/$X_vsref22)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx23                       ) = 'IF($X_vsref23 > 0)\n{\nabs(-$X_vrel23/$X_vsref23)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx31                       ) = 'IF($X_vsref31 > 0)\n{\nabs(-$X_vrel31/$X_vsref31)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx32                       ) = 'IF($X_vsref32 > 0)\n{\nabs(-$X_vrel32/$X_vsref32)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx33                       ) = 'IF($X_vsref33 > 0)\n{\nabs(-$X_vrel33/$X_vsref33)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx41                       ) = 'IF($X_vsref41 > 0)\n{\nabs(-$X_vrel41/$X_vsref41)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx42                       ) = 'IF($X_vsref42 > 0)\n{\nabs(-$X_vrel42/$X_vsref42)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx43                       ) = 'IF($X_vsref43 > 0)\n{\nabs(-$X_vrel43/$X_vsref43)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx51                       ) = 'IF($X_vsref51 > 0)\n{\nabs(-$X_vrel51/$X_vsref51)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx52                       ) = 'IF($X_vsref52 > 0)\n{\nabs(-$X_vrel52/$X_vsref52)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sx53                       ) = 'IF($X_vsref53 > 0)\n{\nabs(-$X_vrel53/$X_vsref53)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy11                       ) = 'IF($X_vsref11 > 0)\n{\nabs($X_vy11/$X_vsref11)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy12                       ) = 'IF($X_vsref12 > 0)\n{\nabs($X_vy12/$X_vsref12)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy13                       ) = 'IF($X_vsref13 > 0)\n{\nabs($X_vy13/$X_vsref13)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy21                       ) = 'IF($X_vsref21> 0)\n{\nabs($X_vy21/$X_vsref21)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy22                       ) = 'IF($X_vsref22> 0)\n{\nabs($X_vy22/$X_vsref22)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy23                       ) = 'IF($X_vsref23> 0)\n{\nabs($X_vy23/$X_vsref23)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy31                       ) = 'IF($X_vsref31> 0)\n{\nabs($X_vy31/$X_vsref31)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy32                       ) = 'IF($X_vsref32> 0)\n{\nabs($X_vy32/$X_vsref32)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy33                       ) = 'IF($X_vsref33> 0)\n{\nabs($X_vy33/$X_vsref33)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy41                       ) = 'IF($X_vsref41> 0)\n{\nabs($X_vy41/$X_vsref41)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy42                       ) = 'IF($X_vsref42> 0)\n{\nabs($X_vy42/$X_vsref42)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy43                       ) = 'IF($X_vsref43> 0)\n{\nabs($X_vy43/$X_vsref43)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy51                       ) = 'IF($X_vsref51> 0)\n{\nabs($X_vy51/$X_vsref51)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy52                       ) = 'IF($X_vsref52> 0)\n{\nabs($X_vy52/$X_vsref52)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_sy53                       ) = 'IF($X_vsref53> 0)\n{\nabs($X_vy53/$X_vsref53)\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_s11                        ) = 'sqrt($X_sx11^2 + ($X_sy11/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s12                        ) = 'sqrt($X_sx12^2 + ($X_sy12/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s13                        ) = 'sqrt($X_sx13^2 + ($X_sy13/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s21                        ) = 'sqrt($X_sx21^2 + ($X_sy21/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s22                        ) = 'sqrt($X_sx22^2 + ($X_sy22/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s23                        ) = 'sqrt($X_sx23^2 + ($X_sy23/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s31                        ) = 'sqrt($X_sx31^2 + ($X_sy31/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s32                        ) = 'sqrt($X_sx32^2 + ($X_sy32/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s33                        ) = 'sqrt($X_sx33^2 + ($X_sy33/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s41                        ) = 'sqrt($X_sx41^2 + ($X_sy41/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s42                        ) = 'sqrt($X_sx42^2 + ($X_sy42/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s43                        ) = 'sqrt($X_sx43^2 + ($X_sy43/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s51                        ) = 'sqrt($X_sx51^2 + ($X_sy51/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s52                        ) = 'sqrt($X_sx52^2 + ($X_sy52/$_alpha)^2)' ! Definition
+
+express.str (                       $X_s53                        ) = 'sqrt($X_sx53^2 + ($X_sy53/$_alpha)^2)' ! Definition
 
 express.str (                       $X_dist_borda11               ) = 'DY($M_Base_contact11,$M_chao_contact1,$M_chao_contact1)' ! Definition
 express.txt (                       $X_dist_borda11               ) = 'DZ($M_Base_BRF)-$_r1'  ! Comment
@@ -1386,288 +1541,65 @@ express.txt (                       $dX_dist_borda52              ) = 'VZ($M_Bas
 express.str (                       $dX_dist_borda53              ) = 'VY($M_Base_contact53,$M_chao_contact5,$M_chao_contact5)' ! Definition
 express.txt (                       $dX_dist_borda53              ) = 'VZ($M_Base_BRF)'       ! Comment
 
-express.str (                       $X_My_base                    ) = 'tanh(1000*($_5gW1*$X_delta11+$_5g23*($X_delta21+$X_delta31+$_5g45*($X_delta41+$X_delta51))))*($_A/2)*($_ksolo*(-$_5g23*$_5gW23*$X_delta21+$_5g23*$_5gW23*$X_delta31-$_5g45*$_5gW45*$X_delta41+$_5g45*$_5gW45*$X_delta51)+$_csolo*(-$_5g23*$_5gW23*$dX_delta21+$_5g23*$_5gW23*$dX_delta31-$_5g45*$_5gW45*$dX_delta41+$_5g45*$_5gW45*$dX_delta51))' ! Definition
-express.txt (                       $X_My_base                    ) = 'tanh(10*$X_delta1)*($_ksolo*sin(beta($M_Base_BRF)) + $_c_solo*WY($M_Base_BRF)*cos(beta($M_Base_BRF)))*($_A/12)*(cos(beta($M_Base_BRF))*$_TL)^2' ! Comment
+express.str (                       $X_delta11                    ) = 'IF($X_dist_borda11 < 0)\n{\n-$X_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vrel                       ) = '$X_vx - $_r1*$X_wy'    ! Definition
-express.txt (                       $X_vrel                       ) = '[br][br]VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF) - $_r1*WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)' ! Comment
+express.str (                       $X_delta12                    ) = 'IF($X_dist_borda12 < 0)\n{\n-$X_dist_borda12\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_s                          ) = 'IF(abs(VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF)) - ($_r1)*abs(WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF))>0)\n{\n-$X_vrel/abs(VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF))\n}\nELSE\n{\n-$X_vrel/(($_r1)*abs(WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)))\n}' ! Definition
+express.str (                       $X_delta13                    ) = 'IF($X_dist_borda13 < 0)\n{\n-$X_dist_borda13\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_W2                         ) = 'IF(abs($X_W) > 0.1)\n{\nabs($X_W)\n}\nELSE\n{\n0.1\n}' ! Definition
+express.str (                       $X_delta21                    ) = 'IF($X_dist_borda21 < 0)\n{\n-$X_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_GT                         ) = '$X_W*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s00))+0.03/$X_DWI)*tanh(-1000*$X_vrel)*abs($X_sx)/$X_s00\n' ! Definition
-express.txt (                       $X_GT                         ) = '[br][br]$X_W*(1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*abs($X_s)))+0.03/$X_DWI)*tanh(-100*$X_vrel)' ! Comment
+express.str (                       $X_delta22                    ) = 'IF($X_dist_borda22 < 0)\n{\n-$X_dist_borda22\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_DWR                        ) = '1+($X_My_base/$X_W2)/$_TL' ! Definition
+express.str (                       $X_delta23                    ) = 'IF($X_dist_borda23 < 0)\n{\n-$X_dist_borda23\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_DWI                        ) = '1-abs(0.7*($X_DWR-1)/($X_DWR+1))' ! Definition
+express.str (                       $X_delta31                    ) = 'IF($X_dist_borda31 < 0)\n{\n-$X_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_MR                         ) = '$X_W*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*abs($X_s)/sqrt($X_Bn))*tanh(100*VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF))' ! Definition
+express.str (                       $X_delta32                    ) = 'IF($X_dist_borda32 < 0)\n{\n-$X_dist_borda32\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_NT                         ) = '$X_GTx - $X_MR'        ! Definition
+express.str (                       $X_delta33                    ) = 'IF($X_dist_borda33 < 0)\n{\n-$X_dist_borda33\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_My_roda1                   ) = '-$_r1*(-$X_GTx)'       ! Definition
+express.str (                       $X_delta41                    ) = 'IF($X_dist_borda41 < 0)\n{\n-$X_dist_borda41\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_Fx                         ) = '-$X_NT'                ! Definition
-express.txt (                       $X_Fx                         ) = '$X_GT*cos(beta($M_Base_BRF)) - $X_MR' ! Comment
+express.str (                       $X_delta42                    ) = 'IF($X_dist_borda42 < 0)\n{\n-$X_dist_borda42\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_Fz                         ) = '-$X_W'                 ! Definition
-express.txt (                       $X_Fz                         ) = '- $X_GT*sin(beta($M_Base_BRF))' ! Comment
+express.str (                       $X_delta43                    ) = 'IF($X_dist_borda43 < 0)\n{\n-$X_dist_borda43\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx                         ) = 'VX($M_Base_BRF,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $X_delta51                    ) = 'IF($X_dist_borda51 < 0)\n{\n-$X_dist_borda51\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx11                       ) = 'VX($M_Base_contact11,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $X_delta52                    ) = 'IF($X_dist_borda52 < 0)\n{\n-$X_dist_borda52\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx12                       ) = 'VX($M_Base_contact12,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $X_delta53                    ) = 'IF($X_dist_borda53 < 0)\n{\n-$X_dist_borda53\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx13                       ) = 'VX($M_Base_contact13,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta11                   ) = 'IF($X_dist_borda11 < 0)\n{\n-$dX_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx21                       ) = 'VX($M_Base_contact21,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta12                   ) = 'IF($X_dist_borda12 < 0)\n{\n-$dX_dist_borda12\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx22                       ) = 'VX($M_Base_contact22,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta13                   ) = 'IF($X_dist_borda13 < 0)\n{\n-$dX_dist_borda13\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx23                       ) = 'VX($M_Base_contact23,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta21                   ) = 'IF($X_dist_borda21 < 0)\n{\n-$dX_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx31                       ) = 'VX($M_Base_contact31,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta22                   ) = 'IF($X_dist_borda22 < 0)\n{\n-$dX_dist_borda22\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx32                       ) = 'VX($M_Base_contact32,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta23                   ) = 'IF($X_dist_borda23 < 0)\n{\n-$dX_dist_borda23\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx33                       ) = 'VX($M_Base_contact33,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta31                   ) = 'IF($X_dist_borda31 < 0)\n{\n-$dX_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx41                       ) = 'VX($M_Base_contact41,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta32                   ) = 'IF($X_dist_borda32 < 0)\n{\n-$dX_dist_borda32\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx42                       ) = 'VX($M_Base_contact42,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta33                   ) = 'IF($X_dist_borda33 < 0)\n{\n-$dX_dist_borda33\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx43                       ) = 'VX($M_Base_contact43,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta41                   ) = 'IF($X_dist_borda41 < 0)\n{\n-$dX_dist_borda41\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx51                       ) = 'VX($M_Base_contact51,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta42                   ) = 'IF($X_dist_borda42 < 0)\n{\n-$dX_dist_borda42\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx52                       ) = 'VX($M_Base_contact52,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta43                   ) = 'IF($X_dist_borda43 < 0)\n{\n-$dX_dist_borda43\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vx53                       ) = 'VX($M_Base_contact53,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta51                   ) = 'IF($X_dist_borda51 < 0)\n{\n-$dX_dist_borda51\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vy                         ) = 'VY($M_Base_BRF,$M_connector_BRF,$M_Base_BRF)' ! Definition
+express.str (                       $dX_delta52                   ) = 'IF($X_dist_borda52 < 0)\n{\n-$dX_dist_borda52\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_vy11                       ) = 'VY($M_Base_contact11,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy12                       ) = 'VY($M_Base_contact12,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy13                       ) = 'VY($M_Base_contact13,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy21                       ) = 'VY($M_Base_contact21,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy22                       ) = 'VY($M_Base_contact22,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy23                       ) = 'VY($M_Base_contact23,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy31                       ) = 'VY($M_Base_contact31,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy32                       ) = 'VY($M_Base_contact32,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy33                       ) = 'VY($M_Base_contact33,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy41                       ) = 'VY($M_Base_contact41,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy42                       ) = 'VY($M_Base_contact42,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy43                       ) = 'VY($M_Base_contact43,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy51                       ) = 'VY($M_Base_contact51,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy52                       ) = 'VY($M_Base_contact52,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vy53                       ) = 'VY($M_Base_contact53,$M_connector_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_wy                         ) = 'WY($M_Roda1_BRF,$M_Base_BRF,$M_Base_BRF)' ! Definition
-
-express.str (                       $X_vrel11                     ) = '$X_vx11 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel12                     ) = '$X_vx12 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel13                     ) = '$X_vx13 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel21                     ) = '$X_vx21 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel22                     ) = '$X_vx22 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel23                     ) = '$X_vx23 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel31                     ) = '$X_vx31 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel32                     ) = '$X_vx32 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel33                     ) = '$X_vx33 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel41                     ) = '$X_vx41 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel42                     ) = '$X_vx42 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel43                     ) = '$X_vx43 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel51                     ) = '$X_vx51 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel52                     ) = '$X_vx52 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vrel53                     ) = '$X_vx53 - $_r1*$X_wy'  ! Definition
-
-express.str (                       $X_vsref                      ) = 'max(abs($X_vx) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref11                    ) = 'max(abs($X_vx11) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref12                    ) = 'max(abs($X_vx12) , $_r1*abs($X_wy))\n' ! Definition
-
-express.str (                       $X_vsref13                    ) = 'max(abs($X_vx13) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref21                    ) = 'max(abs($X_vx21) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref22                    ) = 'max(abs($X_vx22) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref23                    ) = 'max(abs($X_vx23) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref31                    ) = 'max(abs($X_vx31) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref32                    ) = 'max(abs($X_vx32) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref33                    ) = 'max(abs($X_vx33) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref41                    ) = 'max(abs($X_vx41) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref42                    ) = 'max(abs($X_vx42) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref43                    ) = 'max(abs($X_vx43) , $_r1*abs($X_wy))\n' ! Definition
-
-express.str (                       $X_vsref51                    ) = 'max(abs($X_vx51) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref52                    ) = 'max(abs($X_vx52) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_vsref53                    ) = 'max(abs($X_vx53) , $_r1*abs($X_wy))' ! Definition
-
-express.str (                       $X_sx                         ) = 'IF($X_vsref > 0)\n{\n-$X_vrel/$X_vsref\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx11                       ) = 'IF($X_vsref11 > 0)\n{\nabs(-$X_vrel11/$X_vsref11)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx12                       ) = 'IF($X_vsref12 > 0)\n{\nabs(-$X_vrel12/$X_vsref12)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx13                       ) = 'IF($X_vsref13 > 0)\n{\nabs(-$X_vrel13/$X_vsref13)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx21                       ) = 'IF($X_vsref21 > 0)\n{\nabs(-$X_vrel21/$X_vsref21)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx22                       ) = 'IF($X_vsref22 > 0)\n{\nabs(-$X_vrel22/$X_vsref22)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx23                       ) = 'IF($X_vsref23 > 0)\n{\nabs(-$X_vrel23/$X_vsref23)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx31                       ) = 'IF($X_vsref31 > 0)\n{\nabs(-$X_vrel31/$X_vsref31)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx32                       ) = 'IF($X_vsref32 > 0)\n{\nabs(-$X_vrel32/$X_vsref32)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx33                       ) = 'IF($X_vsref33 > 0)\n{\nabs(-$X_vrel33/$X_vsref33)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx41                       ) = 'IF($X_vsref41 > 0)\n{\nabs(-$X_vrel41/$X_vsref41)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx42                       ) = 'IF($X_vsref42 > 0)\n{\nabs(-$X_vrel42/$X_vsref42)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx43                       ) = 'IF($X_vsref43 > 0)\n{\nabs(-$X_vrel43/$X_vsref43)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx51                       ) = 'IF($X_vsref51 > 0)\n{\nabs(-$X_vrel51/$X_vsref51)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx52                       ) = 'IF($X_vsref52 > 0)\n{\nabs(-$X_vrel52/$X_vsref52)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sx53                       ) = 'IF($X_vsref53 > 0)\n{\nabs(-$X_vrel53/$X_vsref53)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy                         ) = 'IF($X_vsref > 0)\n{\n$X_vy/$X_vsref\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy11                       ) = 'IF($X_vsref11 > 0)\n{\nabs($X_vy11/$X_vsref11)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy12                       ) = 'IF($X_vsref12 > 0)\n{\nabs($X_vy12/$X_vsref12)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy13                       ) = 'IF($X_vsref13 > 0)\n{\nabs($X_vy13/$X_vsref13)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy21                       ) = 'IF($X_vsref21> 0)\n{\nabs($X_vy21/$X_vsref21)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy22                       ) = 'IF($X_vsref22> 0)\n{\nabs($X_vy22/$X_vsref22)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy23                       ) = 'IF($X_vsref23> 0)\n{\nabs($X_vy23/$X_vsref23)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy31                       ) = 'IF($X_vsref31> 0)\n{\nabs($X_vy31/$X_vsref31)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy32                       ) = 'IF($X_vsref32> 0)\n{\nabs($X_vy32/$X_vsref32)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy33                       ) = 'IF($X_vsref33> 0)\n{\nabs($X_vy33/$X_vsref33)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy41                       ) = 'IF($X_vsref41> 0)\n{\nabs($X_vy41/$X_vsref41)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy42                       ) = 'IF($X_vsref42> 0)\n{\nabs($X_vy42/$X_vsref42)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy43                       ) = 'IF($X_vsref43> 0)\n{\nabs($X_vy43/$X_vsref43)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy51                       ) = 'IF($X_vsref51> 0)\n{\nabs($X_vy51/$X_vsref51)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy52                       ) = 'IF($X_vsref52> 0)\n{\nabs($X_vy52/$X_vsref52)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_sy53                       ) = 'IF($X_vsref53> 0)\n{\nabs($X_vy53/$X_vsref53)\n}\nELSE\n{\n0\n}' ! Definition
-
-express.str (                       $X_s00                        ) = 'sqrt($X_sx^2 + ($X_sy/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s11                        ) = 'sqrt($X_sx11^2 + ($X_sy11/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s12                        ) = 'sqrt($X_sx12^2 + ($X_sy12/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s13                        ) = 'sqrt($X_sx13^2 + ($X_sy13/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s21                        ) = 'sqrt($X_sx21^2 + ($X_sy21/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s22                        ) = 'sqrt($X_sx22^2 + ($X_sy22/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s23                        ) = 'sqrt($X_sx23^2 + ($X_sy23/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s31                        ) = 'sqrt($X_sx31^2 + ($X_sy31/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s32                        ) = 'sqrt($X_sx32^2 + ($X_sy32/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s33                        ) = 'sqrt($X_sx33^2 + ($X_sy33/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s41                        ) = 'sqrt($X_sx41^2 + ($X_sy41/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s42                        ) = 'sqrt($X_sx42^2 + ($X_sy42/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s43                        ) = 'sqrt($X_sx43^2 + ($X_sy43/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s51                        ) = 'sqrt($X_sx51^2 + ($X_sy51/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s52                        ) = 'sqrt($X_sx52^2 + ($X_sy52/$_alpha)^2)' ! Definition
-
-express.str (                       $X_s53                        ) = 'sqrt($X_sx53^2 + ($X_sy53/$_alpha)^2)' ! Definition
-
-express.str (                       $X_GTR11                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s11))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR12                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s12))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR13                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s13))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR21                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s21))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR22                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s22))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR23                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s23))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR31                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s31))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR32                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s32))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR33                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s33))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR41                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s41))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR42                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s42))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR43                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s43))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR51                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s51))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR52                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s52))+0.03/$X_DWI' ! Definition
-
-express.str (                       $X_GTR53                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s53))+0.03/$X_DWI' ! Definition
+express.str (                       $dX_delta53                   ) = 'IF($X_dist_borda53 < 0)\n{\n-$dX_dist_borda53\n}\nELSE\n{\n0\n}' ! Definition
 
 express.str (                       $X_dWdA11                     ) = '$_ksolo*$X_delta11 + $_csolo*$dX_delta11' ! Definition
 
@@ -1701,9 +1633,45 @@ express.str (                       $X_dWdA53                     ) = '$_ksolo*$
 
 express.str (                       $X_W                          ) = '($_A/4)*(\n$_5gW1*($_3gW1*$X_dWdA11+$_3gW23*($X_dWdA12+$X_dWdA13))\n+\n$_5gW23*($_3gW1*($X_dWdA21+$X_dWdA31)+$_3gW23*($X_dWdA22+$X_dWdA23+$X_dWdA32+$X_dWdA33))\n+\n$_5gW45*($_3gW1*($X_dWdA41+$X_dWdA51)+$_3gW23*($X_dWdA42+$X_dWdA43+$X_dWdA52+$X_dWdA53))\n)\n' ! Definition
 
+express.str (                       $X_W2                         ) = 'IF(abs($X_W) > 0.1)\n{\nabs($X_W)\n}\nELSE\n{\n0.1\n}' ! Definition
+
 express.str (                       $X_WMy                        ) = '-($_A/4)*(\n$_5gW23*$_5g23*($_3gW1*(-$X_dWdA21+$X_dWdA31)+$_3gW23*(-$X_dWdA22-$X_dWdA23+$X_dWdA32+$X_dWdA33))\n+\n$_5gW45*$_5g45*($_3gW1*(-$X_dWdA41+$X_dWdA51)+$_3gW23*(-$X_dWdA42-$X_dWdA43+$X_dWdA52+$X_dWdA53))\n)*$_TL/2\n' ! Definition
 
-express.str (                       $X_My                         ) = '-$X_WMy'               ! Definition
+express.str (                       $X_Bn                         ) = '($_CI*$_TL*$_TW/($X_W2*(1-exp(-$_CI/(0.698*10^6)))))*5/(1+6*($_TW/$_TL))' ! Definition
+
+express.str (                       $X_DWR                        ) = '1+(-$X_WMy/$X_W2)/$_TL' ! Definition
+
+express.str (                       $X_DWI                        ) = '1-abs(0.7*($X_DWR-1)/($X_DWR+1))' ! Definition
+
+express.str (                       $X_GTR11                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s11))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR12                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s12))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR13                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s13))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR21                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s21))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR22                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s22))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR23                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s23))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR31                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s31))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR32                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s32))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR33                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s33))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR41                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s41))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR42                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s42))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR43                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s43))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR51                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s51))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR52                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s52))+0.03/$X_DWI' ! Definition
+
+express.str (                       $X_GTR53                      ) = '1.10*(1-exp(-0.025*$X_Bn))*(1-exp(-17*$X_s53))+0.03/$X_DWI' ! Definition
 
 express.str (                       $X_dGTdA11                    ) = '$X_dWdA11*$X_GTR11'    ! Definition
 
@@ -1765,8 +1733,6 @@ express.str (                       $X_dGTxdA52                   ) = '($X_sx52/
 
 express.str (                       $X_dGTxdA53                   ) = '($X_sx53/$X_s53)*$X_dGTdA53*tanh(-1000*$X_vrel53)' ! Definition
 
-express.str (                       $X_GTx                        ) = '($_A/4)*(\n$_5gW1*($_3gW1*$X_dGTxdA11+$_3gW23*($X_dGTxdA12+$X_dGTxdA13))\n+\n$_5gW23*($_3gW1*($X_dGTxdA21+$X_dGTxdA31)+$_3gW23*($X_dGTxdA22+$X_dGTxdA23+$X_dGTxdA32+$X_dGTxdA33))\n+\n$_5gW45*($_3gW1*($X_dGTxdA41+$X_dGTxdA51)+$_3gW23*($X_dGTxdA42+$X_dGTxdA43+$X_dGTxdA52+$X_dGTxdA53))\n)\n' ! Definition
-
 express.str (                       $X_dGTydA11                   ) = '($X_sy11/($_alpha*$X_s11))*$X_dGTdA11*tanh(-1000*$X_vy11)' ! Definition
 
 express.str (                       $X_dGTydA12                   ) = '($X_sy12/($_alpha*$X_s12))*$X_dGTdA12*tanh(-1000*$X_vy12)' ! Definition
@@ -1797,17 +1763,33 @@ express.str (                       $X_dGTydA52                   ) = '($X_sy52/
 
 express.str (                       $X_dGTydA53                   ) = '($X_sy53/($_alpha*$X_s53))*$X_dGTdA53*tanh(-1000*$X_vy53)' ! Definition
 
-express.str (                       $X_GTy                        ) = '($_A/4)*(\n$_5gW1*($_3gW1*$X_dGTydA11+$_3gW23*($X_dGTydA12+$X_dGTydA13))\n+\n$_5gW23*($_3gW1*($X_dGTydA21+$X_dGTydA31)+$_3gW23*($X_dGTydA22+$X_dGTydA23+$X_dGTydA32+$X_dGTydA33))\n+\n$_5gW45*($_3gW1*($X_dGTydA41+$X_dGTydA51)+$_3gW23*($X_dGTydA42+$X_dGTydA43+$X_dGTydA52+$X_dGTydA53))\n)\n' ! Definition
+express.str (                       $X_GTx                        ) = '($_A/4)*(\n$_5gW1*($_3gW1*$X_dGTxdA11+$_3gW23*($X_dGTxdA12+$X_dGTxdA13))\n+\n$_5gW23*($_3gW1*($X_dGTxdA21+$X_dGTxdA31)+$_3gW23*($X_dGTxdA22+$X_dGTxdA23+$X_dGTxdA32+$X_dGTxdA33))\n+\n$_5gW45*($_3gW1*($X_dGTxdA41+$X_dGTxdA51)+$_3gW23*($X_dGTxdA42+$X_dGTxdA43+$X_dGTxdA52+$X_dGTxdA53))\n)\n' ! Definition
 
-express.str (                       $X_Fy                         ) = '-$X_GTy'               ! Definition
+express.str (                       $X_GTy                        ) = '($_A/4)*(\n$_5gW1*($_3gW1*$X_dGTydA11+$_3gW23*($X_dGTydA12+$X_dGTydA13))\n+\n$_5gW23*($_3gW1*($X_dGTydA21+$X_dGTydA31)+$_3gW23*($X_dGTydA22+$X_dGTydA23+$X_dGTydA32+$X_dGTydA33))\n+\n$_5gW45*($_3gW1*($X_dGTydA41+$X_dGTydA51)+$_3gW23*($X_dGTydA42+$X_dGTydA43+$X_dGTydA52+$X_dGTydA53))\n)\n' ! Definition
 
 express.str (                       $X_MGTxy                      ) = '($_A/4)*(\n(\n$_5gW23*$_5g23*($_3gW1*(-$X_dGTydA21+$X_dGTydA31)+$_3gW23*(-$X_dGTydA22-$X_dGTydA23+$X_dGTydA32+$X_dGTydA33))\n+\n$_5gW45*$_5g45*($_3gW1*(-$X_dGTydA41+$X_dGTydA51)+$_3gW23*(-$X_dGTydA42-$X_dGTydA43+$X_dGTydA52+$X_dGTydA53))\n)*$_TL/2\n-(\n$_5gW1*($_3gW23*(-$X_dGTxdA12+$X_dGTxdA13))\n+\n$_5gW23*($_3gW23*(-$X_dGTxdA22+$X_dGTxdA23-$X_dGTxdA32+$X_dGTxdA33))\n+\n$_5gW45*($_3gW23*(-$X_dGTxdA42+$X_dGTxdA43-$X_dGTxdA52+$X_dGTxdA53))\n)*$_3g23*$_TW/2\n)\n\n' ! Definition
 
-express.str (                       $X_Mz                         ) = '-$X_MGTxy'             ! Definition
-
 express.str (                       $X_WGTyMx                     ) = '($_A/4)*(\n$_5gW1*($_3gW23*(-$X_dWdA12+$X_dWdA13))\n+\n$_5gW23*($_3gW23*(-$X_dWdA22+$X_dWdA23-$X_dWdA32+$X_dWdA33))\n+\n$_5gW45*($_3gW23*(-$X_dWdA42+$X_dWdA43-$X_dWdA52+$X_dWdA53))\n)*$_3g23*$_TW/2 + $X_GTy*$_r1' ! Definition
 
+express.str (                       $X_MR                         ) = '$X_W*(2.5/($X_Bn*$X_DWI)+0.03/$X_DWI + 0.5*abs($X_sx)/sqrt($X_Bn))*tanh(1000*$X_vx)' ! Definition
+
+express.str (                       $X_NT                         ) = '$X_GTx - $X_MR'        ! Definition
+
+express.str (                       $X_My_roda1                   ) = '-$_r1*(-$X_GTx)'       ! Definition
+
+express.str (                       $X_Fx                         ) = '-$X_NT'                ! Definition
+express.txt (                       $X_Fx                         ) = '$X_GT*cos(beta($M_Base_BRF)) - $X_MR' ! Comment
+
+express.str (                       $X_Fy                         ) = '-$X_GTy'               ! Definition
+
 express.str (                       $X_Mx                         ) = '-$X_WGTyMx'            ! Definition
+
+express.str (                       $X_Fz                         ) = '-$X_W'                 ! Definition
+express.txt (                       $X_Fz                         ) = '- $X_GT*sin(beta($M_Base_BRF))' ! Comment
+
+express.str (                       $X_My                         ) = '-$X_WMy'               ! Definition
+
+express.str (                       $X_Mz                         ) = '-$X_MGTxy'             ! Definition
 
 model.data.redundancy                                               = 'eJxjYBhcINnc3NTIwiLV0NLU3DjVPNk0ydLI1CApzdjAwMzQKNUIAIXlCAiwAAAAAAAAAA==' ! Constraint redundancy data
 model.data.dependency                                               = 'eJxjZiAOMOLBDDjY6GpAINnc3NTIwiLV0NLU3DjVPNk0ydLI1CApzdjAwMzQKNUIAIuJCBmQAAAAAAAAAA==' ! Solver state dependency data
