@@ -56,18 +56,18 @@ prop2d.proj.dir                                                     = 2         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 3.22577278583776206E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -2.87891222734469920E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 2.92686518980190158E-01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 5.24405717849731445E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 2.11789414286613464E-01 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 2.88275688886642456E-01 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.72684276103973389E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 2.41904383897781372E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = 3.98247289657592773E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = -3.95281821489334106E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -3.09086196637053945E-08 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -3.09086196637053945E-08 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
 view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 5.06577157974243164E+00 ! Back clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 7.50006580352783203E+00 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -199,13 +199,13 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 subvar.str (                        $_W                           ) = '0.7'                   ! Definition
 subvar.dflt (                       $_W                           ) = ''                      ! Default value
 
-subvar.str (                        $_L                           ) = '2.4'                   ! Definition
+subvar.str (                        $_L                           ) = '2.5'                   ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
-subvar.str (                        $_e                           ) = '0.2'                   ! Definition
+subvar.str (                        $_e                           ) = '0.01'                  ! Definition
 subvar.dflt (                       $_e                           ) = ''                      ! Default value
 
-subvar.str (                        $_H                           ) = '1.1105'                ! Definition
+subvar.str (                        $_H                           ) = '0.625'                 ! Definition
 subvar.dflt (                       $_H                           ) = ''                      ! Default value
 
 subvar.str (                        $_m                           ) = '2011.445'              ! Definition
@@ -292,8 +292,8 @@ prim.color.r (            1 ,       $P_Rocker_Cuboid              ) = 3.00000000
 prim.color.g (            1 ,       $P_Rocker_Cuboid              ) = 1.44000000000000000E+02 ! Colors (green component)
 prim.color.b (            1 ,       $P_Rocker_Cuboid              ) = 2.55000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Rocker_Cuboid              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.transparency (                 $P_Rocker_Cuboid              ) = 2.50000000000000000E-01 ! Transparency
-prim.mp.dens.solid (                $P_Rocker_Cuboid              ) = { 7850/2 }              ! Density
+prim.transparency (                 $P_Rocker_Cuboid              ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Rocker_Cuboid              ) = 0.00000000000000000E+00 ! Density
 prim.par (                2 ,       $P_Rocker_Cuboid              ) = $_L                     ! [m] Length in X
 prim.par (                3 ,       $P_Rocker_Cuboid              ) = $_W                     ! [m] Length in Y
 prim.par (                4 ,       $P_Rocker_Cuboid              ) = $_e                     ! [m] Length in Z
@@ -306,11 +306,39 @@ prim.color.r (            1 ,       $P_Rocker_Cuboid2             ) = 3.00000000
 prim.color.g (            1 ,       $P_Rocker_Cuboid2             ) = 1.44000000000000000E+02 ! Colors (green component)
 prim.color.b (            1 ,       $P_Rocker_Cuboid2             ) = 2.55000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Rocker_Cuboid2             ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.transparency (                 $P_Rocker_Cuboid2             ) = 2.50000000000000000E-01 ! Transparency
-prim.mp.dens.solid (                $P_Rocker_Cuboid2             ) = { 7850/2 }              ! Density
+prim.transparency (                 $P_Rocker_Cuboid2             ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Rocker_Cuboid2             ) = 0.00000000000000000E+00 ! Density
 prim.par (                2 ,       $P_Rocker_Cuboid2             ) = $_e                     ! [m] Length in X
 prim.par (                3 ,       $P_Rocker_Cuboid2             ) = $_W                     ! [m] Length in Y
 prim.par (                4 ,       $P_Rocker_Cuboid2             ) = { $_H - $_e }           ! [m] Length in Z
+
+prim.type (                         $P_Rocker_CAD                 ) = 39                      ! Type
+prim.ref (                          $P_Rocker_CAD                 ) = $M_Rocker_BRF           ! Reference Marker
+prim.pos (                1 ,       $P_Rocker_CAD                 ) = -5.47299999999999986E+00 ! Position
+prim.pos (                2 ,       $P_Rocker_CAD                 ) = -4.00000000000000022E-01 ! Position
+prim.pos (                3 ,       $P_Rocker_CAD                 ) = -3.08000000000000007E+00 ! Position
+prim.ang (                1 ,       $P_Rocker_CAD                 ) = { 270 deg }             ! Angles
+prim.ang (                2 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                3 ,       $P_Rocker_CAD                 ) = { -15 deg }             ! Angles
+prim.color.r (            1 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Colors (red component)
+prim.color.g (            1 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Colors (green component)
+prim.color.b (            1 ,       $P_Rocker_CAD                 ) = 2.55000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Rocker_CAD                 ) = { 7850/7 }              ! Density
+prim.par (                2 ,       $P_Rocker_CAD                 ) = './pecas_stl/Rocker_Montagem.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Rocker_CAD                 ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Rocker_CAD                 ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
 
                                                                                                                                                                          

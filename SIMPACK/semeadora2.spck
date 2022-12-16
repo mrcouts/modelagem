@@ -78,18 +78,18 @@ substr.id (                         $S_roda2                      ) = '2'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 3.76684171228407649E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -6.52826885663671419E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 9.06743490137159824E-01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 7.13102638721466064E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -2.48378533869981766E-02 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -2.22878307104110718E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.00264930725097656E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 7.99892208076198585E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.38816133400541730E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 5.84555022813583491E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 5.74946403503417969E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 1.67492758482694626E-02 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 1.72271132469177246E-02 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 8.17838191986083984E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 3.65468635559082031E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 3.42997312545776367E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.42997283935546875E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -219,13 +219,13 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 !**********************************************************************
 ! SubVars
 !**********************************************************************
-subvar.str (                        $_H                           ) = '1.2'                   ! Definition
+subvar.str (                        $_H                           ) = '$S_rocker1.$_H + $S_roda1.$_r - $S_esteira1.$_r1' ! Definition
 subvar.dflt (                       $_H                           ) = ''                      ! Default value
 
 subvar.str (                        $_L                           ) = '1.5'                   ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
-subvar.str (                        $_W                           ) = '2'                     ! Definition
+subvar.str (                        $_W                           ) = '1.7'                   ! Definition
 subvar.dflt (                       $_W                           ) = ''                      ! Default value
 
 subvar.str (                        $_mboogie                     ) = '2826'                  ! Definition
@@ -306,7 +306,7 @@ joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_chao        ) = 110, 153
 prim.type (                         $P_chao                       ) = 5                       ! Type
 prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
 prim.ang (                1 ,       $P_chao                       ) = { 90 deg }              ! Angles
-prim.ang (                2 ,       $P_chao                       ) = { 15 deg }              ! Angles
+prim.ang (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Angles
 prim.ang (                3 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Angles
 prim.vtx (                1 ,   1 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
 prim.vtx (                1 ,   2 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
@@ -400,9 +400,9 @@ prim.vtx (                2 ,  43 , $P_chao                       ) = -5.0000000
 prim.vtx (                2 ,  44 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
 prim.vtx (                2 ,  45 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
 prim.vtx (                2 ,  46 , $P_chao                       ) = -5.00000000000000000E-01 ! Vertices
-prim.color.r (            1 ,       $P_chao                       ) = 3.00000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_chao                       ) = 1.44000000000000000E+02 ! Colors (green component)
-prim.color.b (            1 ,       $P_chao                       ) = 2.55000000000000000E+02 ! Colors (blue component)
+prim.color.r (            1 ,       $P_chao                       ) = 1.65000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_chao                       ) = 1.15000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_chao                       ) = 5.70000000000000000E+01 ! Colors (blue component)
 prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.transparency (                 $P_chao                       ) = 2.50000000000000000E-01 ! Transparency
 prim.mp.dens.solid (                $P_chao                       ) = 7.85000000000000000E+03 ! Density
@@ -485,10 +485,167 @@ prim.color.r (            1 ,       $P_Boogie                     ) = 2.55000000
 prim.color.g (            1 ,       $P_Boogie                     ) = 2.55000000000000000E+02 ! Colors (green component)
 prim.color.b (            1 ,       $P_Boogie                     ) = 0.00000000000000000E+00 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie                     ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_Boogie                     ) = 1.00000000000000000E+00 ! Transparency
 prim.mp.dens.solid (                $P_Boogie                     ) = { 7850/10 }             ! Density
 prim.par (                2 ,       $P_Boogie                     ) = $_L                     ! [m] Length in X
 prim.par (                3 ,       $P_Boogie                     ) = $_W                     ! [m] Length in Y
 prim.par (                4 ,       $P_Boogie                     ) = $_H                     ! [m] Length in Z
+
+prim.type (                         $P_Boogie_esteira1D           ) = 39                      ! Type
+prim.ref (                          $P_Boogie_esteira1D           ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                2 ,       $P_Boogie_esteira1D           ) = { -$_W/2 - 0.285 }      ! Position
+prim.pos (                3 ,       $P_Boogie_esteira1D           ) = 1.60000000000000003E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_esteira1D           ) = { 90 deg }              ! Angles
+prim.ang (                2 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $P_Boogie_esteira1D           ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_esteira1D           ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_esteira1D           ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $P_Boogie_esteira1D           ) = './pecas_stl/chassi_imp.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_esteira1D           ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_esteira1D           ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_esteira1D           ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Boogie_esteira2D           ) = 39                      ! Type
+prim.ref (                          $P_Boogie_esteira2D           ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                2 ,       $P_Boogie_esteira2D           ) = { $_W/2 +0.285 }        ! Position
+prim.pos (                3 ,       $P_Boogie_esteira2D           ) = 1.60000000000000003E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_esteira2D           ) = { 90 deg }              ! Angles
+prim.ang (                2 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $P_Boogie_esteira2D           ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_esteira2D           ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_esteira2D           ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $P_Boogie_esteira2D           ) = './pecas_stl/chassi_imp.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_esteira2D           ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_esteira2D           ) = 1.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_esteira2D           ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_esteira2D           ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Boogie_esteira1E           ) = 39                      ! Type
+prim.ref (                          $P_Boogie_esteira1E           ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                2 ,       $P_Boogie_esteira1E           ) = { -$_W/2 -0.285 + 0.32 } ! Position
+prim.pos (                3 ,       $P_Boogie_esteira1E           ) = 1.60000000000000003E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_esteira1E           ) = { 90 deg }              ! Angles
+prim.ang (                2 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $P_Boogie_esteira1E           ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_esteira1E           ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_esteira1E           ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $P_Boogie_esteira1E           ) = './pecas_stl/chassi_imp.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_esteira1E           ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_esteira1E           ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_esteira1E           ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Boogie_esteira2E           ) = 39                      ! Type
+prim.ref (                          $P_Boogie_esteira2E           ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                2 ,       $P_Boogie_esteira2E           ) = { $_W/2 + 0.285 - 0.32 } ! Position
+prim.pos (                3 ,       $P_Boogie_esteira2E           ) = 1.60000000000000003E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_esteira2E           ) = { 90 deg }              ! Angles
+prim.ang (                2 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $P_Boogie_esteira2E           ) = 2.55000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_esteira2E           ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_esteira2E           ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $P_Boogie_esteira2E           ) = './pecas_stl/chassi_imp.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_esteira2E           ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_esteira2E           ) = 1.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_esteira2E           ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_esteira2E           ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Boogie_Viga1               ) = 39                      ! Type
+prim.ref (                          $P_Boogie_Viga1               ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                1 ,       $P_Boogie_Viga1               ) = -5.25000000000000022E-01 ! Position
+prim.pos (                2 ,       $P_Boogie_Viga1               ) = 1.14999999999999991E+00 ! Position
+prim.pos (                3 ,       $P_Boogie_Viga1               ) = 5.89999999999999969E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_Viga1               ) = { 90 deg }              ! Angles
+prim.color.r (            1 ,       $P_Boogie_Viga1               ) = 3.00000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_Viga1               ) = 1.44000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_Viga1               ) = 2.55000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_Viga1               ) = { 7850/10 }             ! Density
+prim.par (                2 ,       $P_Boogie_Viga1               ) = './pecas_stl/Viga_Berco.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_Viga1               ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_Viga1               ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_Viga1               ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Boogie_Viga2               ) = 39                      ! Type
+prim.ref (                          $P_Boogie_Viga2               ) = $M_Boogie_BRF           ! Reference Marker
+prim.pos (                1 ,       $P_Boogie_Viga2               ) = 5.25000000000000022E-01 ! Position
+prim.pos (                2 ,       $P_Boogie_Viga2               ) = 1.14999999999999991E+00 ! Position
+prim.pos (                3 ,       $P_Boogie_Viga2               ) = 5.89999999999999969E-01 ! Position
+prim.ang (                1 ,       $P_Boogie_Viga2               ) = { 90 deg }              ! Angles
+prim.color.r (            1 ,       $P_Boogie_Viga2               ) = 3.00000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_Viga2               ) = 1.44000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_Viga2               ) = 2.55000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.mp.dens.solid (                $P_Boogie_Viga2               ) = { 7850/10 }             ! Density
+prim.par (                2 ,       $P_Boogie_Viga2               ) = './pecas_stl/Viga_Berco.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Boogie_Viga2               ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Boogie_Viga2               ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Boogie_Viga2               ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
 
 !**********************************************************************
@@ -660,10 +817,20 @@ marker.par (              3 ,       $S_esteira2.$M_chao_contact5  ) = $P_chao   
 prim.transparency (                 $S_esteira2.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
 
 
+marker.pos (              2 ,       $S_rocker1.$M_Rocker_2roda    ) = -1.00000000000000006E-01 ! Position
+
 joint.from (                        $S_rocker1.$J_Rocker          ) = $M_Boogie_rocker1       ! From Marker
 
+prim.pos (                2 ,       $S_rocker1.$P_Rocker_CAD      ) = 4.00000000000000022E-01 ! Position
+prim.par (               15 ,       $S_rocker1.$P_Rocker_CAD      ) = 1.00000000000000000E+00 ! [-] Mirror in z direction
+
+
+marker.pos (              2 ,       $S_rocker2.$M_Rocker_2roda    ) = 1.00000000000000006E-01 ! Position
 
 joint.from (                        $S_rocker2.$J_Rocker          ) = $M_Boogie_rocker2       ! From Marker
+
+prim.pos (                2 ,       $S_rocker2.$P_Rocker_CAD      ) = -4.00000000000000022E-01 ! Position
+prim.par (               15 ,       $S_rocker2.$P_Rocker_CAD      ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
 
 
 marker.st.alg (           1 ,       $S_roda1.$M_Roda1_contact     ) = 1.43881847224910131E+00 ! Algebraic states
@@ -685,6 +852,8 @@ marker.st.alg (           1 ,       $S_roda2.$M_Roda1_contact     ) = 1.43881847
 
 joint.from (                        $S_roda2.$J_Roda1             ) = $S_rocker2.$M_Rocker_2roda ! From Marker
 joint.type (                        $S_roda2.$J_Roda1             ) = 2                       ! Type
+
+prim.par (               15 ,       $S_roda2.$P_Roda1_aro         ) = 1.00000000000000000E+00 ! [-] Mirror in z direction
 
 
 joint.from (                        $S_roda2.$J_connector         ) = $M_Isys                 ! From Marker
