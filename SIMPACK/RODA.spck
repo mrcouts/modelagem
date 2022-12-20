@@ -56,18 +56,18 @@ prop2d.proj.dir                                                     = 1         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 6.96724204625934362E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -1.11102501922287047E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 3.13389283095602877E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 6.49731099605560303E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -4.47481498122215271E-02 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = -2.34541147947311401E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.58483350276947021E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 6.98472595214843750E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.52754878997802734E+01 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 2.64960193634033203E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 3.09086196637053945E-08 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 3.09086196637053945E-08 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 3.08475587517023087E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 3.08475570678710938E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 3.59825938940048218E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 3.59825935363769531E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -291,6 +291,7 @@ joint.st.vel (            1 ,       $J_Roda1                      ) = 0.00000000
 joint.st.vel (            2 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            3 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            4 ,       $J_Roda1                      ) = 7.00000000000000000E+00 ! Velocity
+joint.st.vel (            5 ,       $J_Roda1                      ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            6 ,       $J_Roda1                      ) = 1.00000000000000000E+00 ! Velocity
 joint.par (               1 ,       $J_Roda1                      ) = 2.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Roda1                      ) = 3.00000000000000000E+00 ! [-] Axis of rotation    2
@@ -570,7 +571,7 @@ force.par (               3 ,       $F_roda                       ) = $X_Fx     
 force.par (               4 ,       $F_roda                       ) = $X_Fz                   ! [-] Expression for Fy
 force.par (               5 ,       $F_roda                       ) = $X_GTy                  ! [-] Expression for Fz
 force.par (               6 ,       $F_roda                       ) = null                    ! [-] Expression for Lx
-force.par (               7 ,       $F_roda                       ) = null                    ! [-] Expression for Ly
+force.par (               7 ,       $F_roda                       ) = $X_Mz                   ! [-] Expression for Ly
 force.par (               8 ,       $F_roda                       ) = $X_My_roda1             ! [-] Expression for Lz
 force.attr.2d.pos.x (     1 ,       $F_roda                       ) = -20
 force.attr.2d.pos.y (     1 ,       $F_roda                       ) = 120
@@ -612,7 +613,9 @@ express.str (                       $X_delta                      ) = '($_ksolo/
 
 express.str (                       $dX_delta                     ) = '($_ksolo/($_ksolo+$_kpneu))*$dX_p' ! Definition
 
-express.str (                       $X_A                          ) = '(PI/2)*$_b*sqrt($X_delta*($_d-$X_delta))' ! Definition
+express.str (                       $X_a                          ) = 'sqrt(max($X_delta*($_d-$X_delta),0))' ! Definition
+
+express.str (                       $X_A                          ) = '2*$_b*$X_a'            ! Definition
 
 express.str (                       $X_W                          ) = '($_kpneu*$X_delta + $_cpneu*$dX_delta)*$X_A' ! Definition
 
@@ -620,7 +623,9 @@ express.str (                       $X_W2                         ) = 'IF(abs($X
 
 express.str (                       $X_Bn                         ) = '($_CI*$_d*$_b/($X_W2))*(1+5*$X_delta/$_h)/(1+6*($_b/$_d))' ! Definition
 
-express.str (                       $X_GT                         ) = '$X_W*(0.88*(1-exp(-0.1*$X_Bn))*(1-exp(-7.5*$X_s))+0.04)' ! Definition
+express.str (                       $X_mu                         ) = '0.88*(1-exp(-0.1*$X_Bn)) + 0.04' ! Definition
+
+express.str (                       $X_GT                         ) = '$X_W*(($X_mu - 0.04)*(1-exp(-7.5*$X_s))+0.04)' ! Definition
 
 express.str (                       $X_GTx                        ) = '($X_sx/$X_s)*$X_GT*tanh(-1000*$X_vrel)' ! Definition
 express.txt (                       $X_GTx                        ) = '$X_W*(0.88*(1-exp(-0.1*$X_Bn))*(1-exp(-7.5*abs($X_sx)))+0.04)*tanh(-1000*$X_vrel)' ! Comment
@@ -637,5 +642,12 @@ express.str (                       $X_Fz                         ) = '-$X_W'   
 express.str (                       $X_NT                         ) = '$X_GTx - $X_MR'        ! Definition
 
 express.str (                       $X_My_roda1                   ) = '-($_r-$X_delta)*$X_GTx' ! Definition
+
+express.str (                       $X_sm                         ) = '2*($X_a^2)*$_b*$_ksolo/(3*$X_mu*$X_W2)' ! Definition
+
+express.str (                       $X_sms                        ) = '$X_sm*$X_s'            ! Definition
+
+express.str (                       $X_Mz                         ) = 'IF($X_s < $X_sm)\n{\n-abs($X_GTy*$X_a*(1- 3*$X_sms + 3*$X_sms^2 - $X_sms^3)/(3 - 3*$X_sms + $X_sms^2))*tanh(-1000*WY($M_Roda1_BRF,$M_connector_BRF,$M_chao_contact))\n}\nELSE\n{\n0\n}\n\n' ! Definition
+express.txt (                       $X_Mz                         ) = ''                      ! Comment
 
                                                                                                                                                                        
