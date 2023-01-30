@@ -74,22 +74,40 @@ substr.id (                         $S_roda1                      ) = '1'       
 substr.file (                       $S_roda2                      ) = 'RODA.spck'             ! Filename
 substr.id (                         $S_roda2                      ) = '2'                     ! Substructure Id
 
+substr.file (                       $S_linhaSemente1              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente1              ) = '1'                     ! Substructure Id
+
+substr.file (                       $S_linhaSemente2              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente2              ) = '2'                     ! Substructure Id
+
+substr.file (                       $S_linhaSemente3              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente3              ) = '3'                     ! Substructure Id
+
+substr.file (                       $S_linhaSemente4              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente4              ) = '4'                     ! Substructure Id
+
+substr.file (                       $S_linhaSemente5              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente5              ) = '5'                     ! Substructure Id
+
+substr.file (                       $S_linhaSemente6              ) = './LinhaDeSemente.spck' ! Filename
+substr.id (                         $S_linhaSemente6              ) = '6'                     ! Substructure Id
+
 !**********************************************************************
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 1.04775934219360352E+01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -2.36515846252441406E+01 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 4.87540525197982788E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 1.85076427560011325E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -9.00444197186379824E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 4.09996273140041012E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 5.72662353515625000E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -2.29725847020745277E-05 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -2.29555822443217039E-04 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 8.19791316986083984E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 4.35784421861171722E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 4.35784416198730469E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 2.99318370819091797E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -245,6 +263,18 @@ subvar.dflt (                       $_beta                        ) = ''        
 
 subvar.str (                        $_deltaW                      ) = '0.3'                   ! Definition
 subvar.dflt (                       $_deltaW                      ) = ''                      ! Default value
+
+subvar.str (                        $_DistLinhas                  ) = '0.45'                  ! Definition
+subvar.dflt (                       $_DistLinhas                  ) = ''                      ! Default value
+
+subvar.str (                        $_DistXBogiePar               ) = '0.7'                   ! Definition
+subvar.dflt (                       $_DistXBogiePar               ) = ''                      ! Default value
+
+subvar.str (                        $_DistZBogiePar               ) = '0.45'                  ! Definition
+subvar.dflt (                       $_DistZBogiePar               ) = ''                      ! Default value
+
+subvar.str (                        $_DistPar                     ) = '0.22'                  ! Definition
+subvar.dflt (                       $_DistPar                     ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
@@ -458,21 +488,104 @@ marker.parent (                     $M_Boogie_rocker2             ) = $B_Boogie 
 marker.pos (              2 ,       $M_Boogie_rocker2             ) = { $_W/2 +$_deltaW - $S_rocker1.$_W/2 } ! Position
 marker.pos (              3 ,       $M_Boogie_rocker2             ) = { $_H/2 }               ! Position
 
+marker.type (                       $M_Boogie_ParalelogramoCima1  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima1  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima1  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima1  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima1  ) = { -$_DistLinhas/2 }     ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima1  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoCima2  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima2  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima2  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima2  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima2  ) = { $_DistLinhas/2 }      ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima2  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoCima3  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima3  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima3  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima3  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima3  ) = { -3*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima3  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoCima4  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima4  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima4  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima4  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima4  ) = { 3*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima4  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoCima5  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima5  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima5  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima5  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima5  ) = { -5*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima5  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoCima6  ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoCima6  ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoCima6  ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoCima6  ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoCima6  ) = { 5*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoCima6  ) = { $_DistZBogiePar + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo1 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo1 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo1 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo1 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo1 ) = { -$_DistLinhas/2 }     ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo1 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo2 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo2 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo2 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo2 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo2 ) = { $_DistLinhas/2 }      ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo2 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo3 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo3 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo3 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo3 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo3 ) = { -3*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo3 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo4 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo4 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo4 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo4 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo4 ) = { 3*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo4 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo5 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo5 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo5 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo5 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo5 ) = { -5*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo5 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_ParalelogramoBaixo6 ) = 2                       ! Type
+marker.ref (                        $M_Boogie_ParalelogramoBaixo6 ) = $M_Boogie_BRF           ! Reference Marker
+marker.parent (                     $M_Boogie_ParalelogramoBaixo6 ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo6 ) = { -$_DistXBogiePar }    ! Position
+marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo6 ) = { 5*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo6 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
 joint.from (                        $J_Boogie                     ) = $M_Isys                 ! From Marker
 joint.to (                          $J_Boogie                     ) = $M_Boogie_BRF           ! To Marker
 joint.type (                        $J_Boogie                     ) = 25                      ! Type
 joint.st.pos (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
 joint.st.pos (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Position
-joint.st.pos (            3 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! Position
-joint.st.pos (            4 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
-joint.st.pos (            5 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
-joint.st.pos (            6 ,       $J_Boogie                     ) = { 1.1*$_H/2 + $S_esteira1.$_r1 } ! Position
+joint.st.pos (            3 ,       $J_Boogie                     ) = 1.55355339059327346E+00 ! Position
+joint.st.pos (            4 ,       $J_Boogie                     ) = 7.53553390593274863E-01 ! Position
 joint.st.vel (            1 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
 joint.st.vel (            2 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            3 ,       $J_Boogie                     ) = 1.00000000000000002E-02 ! Velocity
+joint.st.vel (            3 ,       $J_Boogie                     ) = 7.12445416791281383E-56 ! Velocity
 joint.st.vel (            4 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            5 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
-joint.st.vel (            6 ,       $J_Boogie                     ) = 0.00000000000000000E+00 ! Velocity
+joint.st.dep (            1 ,       $J_Boogie                     ) = 0                       ! Dependency state
+joint.st.dep (            2 ,       $J_Boogie                     ) = 0                       ! Dependency state
+joint.st.dep (            4 ,       $J_Boogie                     ) = 0                       ! Dependency state
 joint.txt (                         $J_Boogie                     ) = '$_H/2 + $S_esteira1.$_r1' ! Comment
 joint.par (               1 ,       $J_Boogie                     ) = 1.00000000000000000E+00 ! [-] Axis of rotation    1
 joint.par (               2 ,       $J_Boogie                     ) = 2.00000000000000000E+00 ! [-] Axis of rotation    2
@@ -714,6 +827,693 @@ force.par (               7 ,       $F_IF                         ) = null      
 force.par (               8 ,       $F_IF                         ) = null                    ! [-] Expression for Lz
 
 !**********************************************************************
+! Connection Elements
+!**********************************************************************
+connect.type (                      $CTN_ParCima1                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima1                 ) = 7.85398163398607907E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima1                 ) = 1.68716374891672351E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima1                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima1                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima1                 ) = 7.85398163398608018E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima1                 ) = 6.99441767803158641E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima1                 ) = 7.85398163398607907E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima1                 ) = 1.68716374891672351E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima1                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima1                 ) = $S_linhaSemente1.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima1                 ) = $M_Boogie_ParalelogramoCima1 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima1                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima1                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima1                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima1     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima1     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima1     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima1     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima1     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima1           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima1     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima1     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima1     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima1     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima1     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima1                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima1                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima1                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima1                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima1                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima1                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima1                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima1           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima1           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima1           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima1           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima1           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParCima2                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima2                 ) = 7.85398163397449611E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima2                 ) = -1.30142617308628768E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima2                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima2                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima2                 ) = 7.85398163397446614E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima2                 ) = 7.05135507600611704E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima2                 ) = 7.85398163397449611E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima2                 ) = -1.30142617308628768E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima2                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima2                 ) = $S_linhaSemente2.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima2                 ) = $M_Boogie_ParalelogramoCima2 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima2                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima2                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima2                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima2     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima2     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima2     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima2     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima2     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima2           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima2     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima2     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima2     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima2     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima2     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima2                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima2                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima2                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima2                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima2                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima2                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima2                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima2           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima2           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima2           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima2           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima2           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParCima3                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima3                 ) = 7.85398163397448279E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima3                 ) = -4.83201573830789619E-71 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima3                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima3                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima3                 ) = 7.85398163397446614E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima3                 ) = 1.19671258650443135E-70 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima3                 ) = 7.85398163397448279E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima3                 ) = -4.83201573830789619E-71 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima3                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima3                 ) = $S_linhaSemente3.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima3                 ) = $M_Boogie_ParalelogramoCima3 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima3                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima3                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima3                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima3     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima3     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima3     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima3     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima3     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima3           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima3     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima3     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima3     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima3     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima3     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima3                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima3                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima3                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima3                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima3                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima3                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima3                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima3           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima3           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima3           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima3           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima3           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParCima4                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima4                 ) = 7.85398163397446836E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima4                 ) = 1.46627937104155363E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima4                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima4                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima4                 ) = 7.85398163397448279E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima4                 ) = 1.52275917711512625E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima4                 ) = 7.85398163397446836E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima4                 ) = 1.46627937104155363E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima4                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima4                 ) = $S_linhaSemente4.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima4                 ) = $M_Boogie_ParalelogramoCima4 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima4                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima4                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima4                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima4     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima4     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima4     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima4     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima4     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima4           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima4     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima4     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima4     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima4     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima4     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima4                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima4                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima4                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima4                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima4                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima4                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima4                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima4           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima4           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima4           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima4           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima4           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParCima5                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima5                 ) = 7.85398163397448279E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima5                 ) = 1.37890846661963932E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima5                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima5                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima5                 ) = 7.85398163397446836E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima5                 ) = -3.95221364341875159E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima5                 ) = 7.85398163397448279E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima5                 ) = 1.37890846661963932E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima5                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima5                 ) = $S_linhaSemente5.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima5                 ) = $M_Boogie_ParalelogramoCima5 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima5                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima5                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima5                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima5     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima5     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima5     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima5     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima5     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima5           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima5     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima5     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima5     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima5     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima5     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima5                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima5                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima5                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima5                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima5                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima5                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima5                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima5           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima5           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima5           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima5           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima5           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParCima6                 ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParCima6                 ) = 7.85398163397447724E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima6                 ) = -1.00666845498420394E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParCima6                 ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParCima6                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima6                 ) = 7.85398163397908911E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima6                 ) = -5.15605585377537756E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima6                 ) = 7.85398163397447724E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima6                 ) = -1.00666845498420394E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParCima6                 ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParCima6                 ) = $S_linhaSemente6.$S_BarraCima.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParCima6                 ) = $M_Boogie_ParalelogramoCima6 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParCima6                 ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParCima6                 ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParCima6                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParCima6     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParCima6     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParCima6     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParCima6     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParCima6     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParCima6           ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParCima6     ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParCima6     ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParCima6     ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParCima6     ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParCima6     ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParCima6                 ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParCima6                 ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParCima6                 ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParCima6                 ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParCima6                 ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParCima6                 ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParCima6                 ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParCima6           ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParCima6           ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParCima6           ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParCima6           ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParCima6           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo1                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo1                ) = 7.85398163398608018E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo1                ) = 1.83325686400169275E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo1                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo1                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo1                ) = 7.85398163398608018E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo1                ) = 1.38947236968490373E-70 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo1                ) = 7.85398163398608018E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo1                ) = 1.83325686400169275E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo1                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo1                ) = $S_linhaSemente1.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo1                ) = $M_Boogie_ParalelogramoBaixo1 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo1                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo1                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo1                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo1    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo1    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo1    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo1    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo1    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo1          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo1    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo1    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo1    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo1    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo1    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo1                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo1                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo1                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo1                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo1                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo1                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo1                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo1          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo1          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo1          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo1          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo1          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo2                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo2                ) = 7.85398163397450166E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo2                ) = -2.12901564152751759E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo2                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo2                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo2                ) = 7.85398163397446170E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo2                ) = 1.82535620943932145E-70 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo2                ) = 7.85398163397450166E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo2                ) = -2.12901564152751759E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo2                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo2                ) = $S_linhaSemente2.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo2                ) = $M_Boogie_ParalelogramoBaixo2 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo2                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo2                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo2                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo2    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo2    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo2    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo2    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo2    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo2          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo2    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo2    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo2    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo2    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo2    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo2                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo2                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo2                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo2                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo2                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo2                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo2                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo2          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo2          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo2          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo2          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo2          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo3                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo3                ) = 7.85398163397448501E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo3                ) = -5.41617766126543812E-71 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo3                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo3                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo3                ) = 7.85398163397445837E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo3                ) = 1.62322094664252007E-70 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo3                ) = 7.85398163397448501E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo3                ) = -5.41617766126543812E-71 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo3                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo3                ) = $S_linhaSemente3.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo3                ) = $M_Boogie_ParalelogramoBaixo3 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo3                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo3                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo3                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo3    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo3    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo3    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo3    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo3    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo3          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo3    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo3    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo3    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo3    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo3    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo3                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo3                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo3                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo3                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo3                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo3                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo3                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo3          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo3          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo3          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo3          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo3          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo4                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo4                ) = 7.85398163397446170E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo4                ) = 1.71363220904489685E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo4                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo4                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo4                ) = 7.85398163397448390E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo4                ) = -3.31495924970078732E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo4                ) = 7.85398163397446170E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo4                ) = 1.71363220904489685E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo4                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo4                ) = $S_linhaSemente4.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo4                ) = $M_Boogie_ParalelogramoBaixo4 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo4                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo4                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo4                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo4    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo4    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo4    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo4    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo4    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo4          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo4    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo4    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo4    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo4    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo4    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo4                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo4                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo4                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo4                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo4                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo4                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo4                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo4          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo4          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo4          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo4          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo4          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo5                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo5                ) = 7.85398163397448279E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo5                ) = 1.70022111623984482E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo5                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo5                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo5                ) = 7.85398163397446503E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo5                ) = -6.45514212478436818E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo5                ) = 7.85398163397448279E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo5                ) = 1.70022111623984482E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo5                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo5                ) = $S_linhaSemente5.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo5                ) = $M_Boogie_ParalelogramoBaixo5 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo5                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo5                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo5                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo5    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo5    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo5    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo5    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo5    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo5          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo5    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo5    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo5    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo5    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo5    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo5                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo5                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo5                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo5                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo5                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo5                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo5                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo5          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo5          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo5          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo5          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo5          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+connect.type (                      $CTN_ParBaixo6                ) = 11                      ! Type
+connect.st.pos (          1 ,       $CTN_ParBaixo6                ) = 7.85398163397447724E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo6                ) = -1.11926038748952008E-70 ! Velocity states
+connect.st.equi (         1 ,       $CTN_ParBaixo6                ) = 0                       ! Equilibrium calculation flags
+connect.st.lin (          1 ,       $CTN_ParBaixo6                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
+connect.st.desc (         1 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo6                ) = 7.85398163397446503E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo6                ) = -6.45514212478436818E-71 ! Descriptive states
+connect.st.desc (         4 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo6                ) = 7.85398163397447724E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo6                ) = -1.11926038748952008E-70 ! Descriptive states
+connect.st.force (        1 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        2 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        3 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        4 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        5 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.force (        6 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
+connect.st.intern (                 $CTN_ParBaixo6                ) = ''                      ! Internal state
+connect.par (             2 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! [-] Interface
+connect.par (             2 ,   2 , $CTN_ParBaixo6                ) = $S_linhaSemente6.$S_BarraBaixo.$M_Body1_Junta2 ! [-] From Marker
+connect.par (             2 ,   3 , $CTN_ParBaixo6                ) = $M_Boogie_ParalelogramoBaixo6 ! [-] To Marker
+connect.par (             3 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! [-] Kinematic parameters
+connect.par (             3 ,   3 , $CTN_ParBaixo6                ) = 1.00000000000000000E+00 ! [-] Axis of rotation
+connect.par (             4 ,       $CTN_ParBaixo6                ) = 1.00000000000000000E+00 ! [-] Limits <prel>
+connect.par (             4 ,   1 , $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! [-] Rotation beta
+connect.par (             4 ,   1 ,   1 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [-] Enable lower
+connect.par (             4 ,   1 ,   2 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [rad] Lower value
+connect.par (             4 ,   1 ,   3 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [-] Enable upper
+connect.par (             4 ,   1 ,   4 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [rad] Upper value
+connect.par (             4 ,  10 , $CTN_ParBaixo6                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             4 ,  10 ,   1 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [-] Lower limit on Rotation beta
+connect.par (             4 ,  10 ,   1 ,   1 , $CTN_ParBaixo6    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   1 ,   2 , $CTN_ParBaixo6    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   1 ,   5 , $CTN_ParBaixo6    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   1 ,   6 , $CTN_ParBaixo6    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   1 ,   7 , $CTN_ParBaixo6    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             4 ,  10 ,   2 , $CTN_ParBaixo6          ) = 0.00000000000000000E+00 ! [-] Upper limit on Rotation beta
+connect.par (             4 ,  10 ,   2 ,   1 , $CTN_ParBaixo6    ) = 0.00000000000000000E+00 ! [-] Enforcement
+connect.par (             4 ,  10 ,   2 ,   2 , $CTN_ParBaixo6    ) = 1.00000000000000000E+00 ! [-] Root handling
+connect.par (             4 ,  10 ,   2 ,   5 , $CTN_ParBaixo6    ) = 1.00000000000000000E+00 ! [-] Restitution coefficient
+connect.par (             4 ,  10 ,   2 ,   6 , $CTN_ParBaixo6    ) = 1.00000000000000000E+08 ! [Nm/rad] Stiffness
+connect.par (             4 ,  10 ,   2 ,   7 , $CTN_ParBaixo6    ) = 1.00000000000000000E+08 ! [Nms/rad] Damping
+connect.par (             5 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! [-] Friction <prel>
+connect.par (             5 ,   1 , $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! [-] Type
+connect.par (             5 ,   2 , $CTN_ParBaixo6                ) = 1.00000000000000006E-01 ! [-] Dynamic friction coefficient
+connect.par (             5 ,   3 , $CTN_ParBaixo6                ) = 2.00000000000000011E-01 ! [-] Static friction coefficient
+connect.par (             5 ,   4 , $CTN_ParBaixo6                ) = 1.00000000000000000E+02 ! [Ns/m] Damping coefficient
+connect.par (             5 ,   5 , $CTN_ParBaixo6                ) = 1.00000000000000006E-01 ! [m] Reference diameter
+connect.par (             5 ,   6 , $CTN_ParBaixo6                ) = 1.00000000000000006E-01 ! [m] Axial reference diameter
+connect.par (             5 ,   7 , $CTN_ParBaixo6                ) = 1.00000000000000006E-01 ! [m] Reference width
+connect.par (             5 ,  10 , $CTN_ParBaixo6                ) = 1.00000000000000000E+00 ! [-] Advanced
+connect.par (             5 ,  10 ,   1 , $CTN_ParBaixo6          ) = 1.00000000000000002E-03 ! [m/s] Dynamic velocity limit
+connect.par (             5 ,  10 ,   2 , $CTN_ParBaixo6          ) = 1.00000000000000008E-05 ! [m/s] Static velocity limit
+connect.par (             5 ,  10 ,   3 , $CTN_ParBaixo6          ) = 1.00000000000000008E-05 ! [m/s] Min. slip velocity
+connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo6          ) = 1.00000000000000000E+08 ! [N/m] Stick stiffness
+connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo6          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
+
+!**********************************************************************
 ! Expressions
 !**********************************************************************
 express.str (                       $X_PD                         ) = '2*$_lambda*($_vd - VX($M_Boogie_BRF)) + ($_lambda^2)*($_vd*TIME - DX($M_Boogie_BRF))' ! Definition
@@ -733,15 +1533,15 @@ express.str (                       $X_IF                         ) = '-20400*ta
 view.fclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
 view.bclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact1  ) = 3.17705125881842854E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact1  ) = 3.14696350906618016E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.11706462339812529E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.11027861751300705E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact3  ) = -3.11002514118703999E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact3  ) = -3.18425407888681178E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact4  ) = -3.13047888534102980E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact4  ) = -3.10478942219824638E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact5  ) = -3.12439801193317990E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact5  ) = -3.22938713723598392E-01 ! Algebraic states
 
 joint.from (                        $S_esteira1.$J_Base           ) = $M_Boogie_esteira1      ! From Marker
 joint.type (                        $S_esteira1.$J_Base           ) = 0                       ! Type
@@ -754,22 +1554,38 @@ joint.par (               6 ,       $S_esteira1.$J_Base           ) = 0.00000000
 joint.par (               7 ,       $S_esteira1.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
 
+joint.st.pos (            1 ,       $S_esteira1.$J_Roda1          ) = 8.79415699927085893E-27 ! Position
+joint.st.vel (            1 ,       $S_esteira1.$J_Roda1          ) = 2.22495138881049958E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira1.$J_Roda2          ) = 2.63814411884459219E-26 ! Position
+joint.st.vel (            1 ,       $S_esteira1.$J_Roda2          ) = 6.49526406845681256E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira1.$J_Roda3          ) = 2.63822742972743981E-26 ! Position
+joint.st.vel (            1 ,       $S_esteira1.$J_Roda3          ) = 6.65580395646838678E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira1.$J_Roda4          ) = 8.79503968343208315E-27 ! Position
+joint.st.vel (            1 ,       $S_esteira1.$J_Roda4          ) = 2.54537988637614013E-71 ! Velocity
+
+
 joint.from (                        $S_esteira1.$J_connector      ) = $M_Isys_1               ! From Marker
 
 
-marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact1  ) = 2.99686166460054082E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact1  ) = 3.54965116008306847E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira1.$M_chao_contact1  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact2  ) = 2.73213788071420849E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact2  ) = 3.27782961056397903E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira1.$M_chao_contact2  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact3  ) = 3.26409269879162744E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact3  ) = 3.82498226794020768E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira1.$M_chao_contact3  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact4  ) = 2.55126086735941637E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact4  ) = 3.09466971404125601E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira1.$M_chao_contact4  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact5  ) = 3.44857937136981274E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_chao_contact5  ) = 4.01350146802264440E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira1.$M_chao_contact5  ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_esteira1.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
@@ -778,15 +1594,15 @@ prim.transparency (                 $S_esteira1.$P_chao           ) = 1.00000000
 view.fclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148491561412811E-02 ! Front clipping plane value
 view.bclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148468017578125E+01 ! Back clipping plane value
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact1  ) = -3.10613404836115770E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact1  ) = -3.13622179811340662E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact2  ) = -3.11706462339812529E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact2  ) = -3.11027861751300705E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact3  ) = -3.11002514118703999E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact3  ) = -3.18425407888681178E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact4  ) = -3.13047888534102980E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact4  ) = -3.10478942219824638E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact5  ) = -3.12439801193317990E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact5  ) = -3.22938713723598392E-01 ! Algebraic states
 
 joint.from (                        $S_esteira2.$J_Base           ) = $M_Boogie_esteira2      ! From Marker
 joint.type (                        $S_esteira2.$J_Base           ) = 0                       ! Type
@@ -799,22 +1615,38 @@ joint.par (               6 ,       $S_esteira2.$J_Base           ) = 0.00000000
 joint.par (               7 ,       $S_esteira2.$J_Base           ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
 
+joint.st.pos (            1 ,       $S_esteira2.$J_Roda1          ) = -5.35208030562431712E-29 ! Position
+joint.st.vel (            1 ,       $S_esteira2.$J_Roda1          ) = -8.81593831030257956E-59 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira2.$J_Roda2          ) = -1.60295197132149201E-28 ! Position
+joint.st.vel (            1 ,       $S_esteira2.$J_Roda2          ) = -2.64478149309073478E-58 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira2.$J_Roda3          ) = -1.61433956739257095E-28 ! Position
+joint.st.vel (            1 ,       $S_esteira2.$J_Roda3          ) = -2.64478149309080093E-58 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_esteira2.$J_Roda4          ) = -5.11479627381102777E-29 ! Position
+joint.st.vel (            1 ,       $S_esteira2.$J_Roda4          ) = -8.81593831030241153E-59 ! Velocity
+
+
 joint.from (                        $S_esteira2.$J_connector      ) = $M_Isys_2               ! From Marker
 
 
-marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact1  ) = 2.99686166460054082E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact1  ) = 3.54965116008306847E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira2.$M_chao_contact1  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact2  ) = 2.73213788071420849E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact2  ) = 3.27782961056397903E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira2.$M_chao_contact2  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact3  ) = 3.26409269879162744E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact3  ) = 3.82498226794020768E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira2.$M_chao_contact3  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact4  ) = 2.55126086735941637E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact4  ) = 3.09466971404125601E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira2.$M_chao_contact4  ) = $P_chao                 ! [-] Contact geometry Primitive
 
-marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact5  ) = 3.44857937136981274E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_chao_contact5  ) = 4.01350146802264440E+00 ! Algebraic states
 marker.par (              3 ,       $S_esteira2.$M_chao_contact5  ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_esteira2.$P_chao           ) = 1.00000000000000000E+00 ! Transparency
@@ -836,7 +1668,7 @@ prim.pos (                2 ,       $S_rocker2.$P_Rocker_CAD      ) = -4.0000000
 prim.par (               15 ,       $S_rocker2.$P_Rocker_CAD      ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
 
 
-marker.st.alg (           1 ,       $S_roda1.$M_Roda1_contact     ) = 1.43881847224910131E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_roda1.$M_Roda1_contact     ) = 1.41572543428950515E+00 ! Algebraic states
 
 joint.from (                        $S_roda1.$J_Roda1             ) = $S_rocker1.$M_Rocker_2roda ! From Marker
 joint.type (                        $S_roda1.$J_Roda1             ) = 2                       ! Type
@@ -845,13 +1677,13 @@ joint.type (                        $S_roda1.$J_Roda1             ) = 2         
 joint.from (                        $S_roda1.$J_connector         ) = $M_Isys                 ! From Marker
 
 
-marker.st.alg (           1 ,       $S_roda1.$M_chao_contact      ) = 5.59694379842488754E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_roda1.$M_chao_contact      ) = 6.01298538212555922E+00 ! Algebraic states
 marker.par (              3 ,       $S_roda1.$M_chao_contact      ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_roda1.$P_chao              ) = 1.00000000000000000E+00 ! Transparency
 
 
-marker.st.alg (           1 ,       $S_roda2.$M_Roda1_contact     ) = 1.43881847224910131E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_roda2.$M_Roda1_contact     ) = 1.41572543428950515E+00 ! Algebraic states
 
 joint.from (                        $S_roda2.$J_Roda1             ) = $S_rocker2.$M_Rocker_2roda ! From Marker
 joint.type (                        $S_roda2.$J_Roda1             ) = 2                       ! Type
@@ -862,11 +1694,123 @@ prim.par (               15 ,       $S_roda2.$P_Roda1_aro         ) = 1.00000000
 joint.from (                        $S_roda2.$J_connector         ) = $M_Isys                 ! From Marker
 
 
-marker.st.alg (           1 ,       $S_roda2.$M_chao_contact      ) = 5.59694379842488754E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_roda2.$M_chao_contact      ) = 6.01298538212555922E+00 ! Algebraic states
 marker.par (              3 ,       $S_roda2.$M_chao_contact      ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_roda2.$P_chao              ) = 1.00000000000000000E+00 ! Transparency
 
 
-model.data.redundancy                                               = 'eJxjYBgF+ECyQVKqgaW5gVGikbFRspGxSVqySaqphWlKmlGqpUVaGgCQFQjzQAEAAAAAAAA=' ! Constraint redundancy data
-model.data.dependency                                               = 'eJxjZEAFbAzUBYxEYlzqaWEWNnPx8QmJJxskpRpYmhsYJRoZGyUbGZukJZukmlqYpqQZpVpapKUBALAdCRpkAQAAAAAAAA==' ! Solver state dependency data
+joint.st.pos (            1 ,       $S_linhaSemente1.$J_Estrutura ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente1.$J_Estrutura ) = 2.82678182087800477E-17 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente1.$J_Estrutura ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente1.$J_Estrutura ) = 4.09650617310919022E-13 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente1.$J_Estrutura ) = -2.25000000000000006E-01 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente1.$J_Estrutura ) = 4.24999999999591038E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente1.$J_Estrutura ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente1.$J_Estrutura ) = -1.50596752711473900E-70 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente1.$J_Estrutura ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente1.$J_Estrutura ) = 7.12445416791282560E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente1.$J_Estrutura ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente1.$J_Estrutura ) = -1.41289676971873194E-70 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente1.$S_BarraCima.$J_Body1) = -7.85398163398607907E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente1.$S_BarraCima.$J_Body1) = -1.81196221801984633E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente1.$S_BarraBaixo.$J_Body1) = -7.85398163398608018E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente1.$S_BarraBaixo.$J_Body1) = -3.27289336886953622E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente2.$J_Estrutura ) = 1.05229416697109820E-31 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente2.$J_Estrutura ) = -1.33825433410886822E-15 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente2.$J_Estrutura ) = -1.01084443954311497E-31 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente2.$J_Estrutura ) = 7.42163800912848264E-16 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente2.$J_Estrutura ) = 2.25000000000000006E-01 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente2.$J_Estrutura ) = 4.24999999999999933E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente2.$J_Estrutura ) = -8.99394459170037479E-89 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente2.$J_Estrutura ) = 1.30142617308628768E-70 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente2.$J_Estrutura ) = 2.49727917439694597E-88 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente2.$J_Estrutura ) = 7.12445416791280296E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente2.$J_Estrutura ) = -3.94292190990873889E-88 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente2.$J_Estrutura ) = 1.33386972305339444E-70 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente2.$S_BarraBaixo.$J_Body1) = -7.85398163397448723E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente2.$S_BarraBaixo.$J_Body1) = 8.27589468441230063E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente3.$J_Estrutura ) = -1.34793446618145405E-31 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente3.$J_Estrutura ) = -1.54605101141998095E-19 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente3.$J_Estrutura ) = 1.04358247801774875E-31 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente3.$J_Estrutura ) = -3.99821569350359407E-16 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente3.$J_Estrutura ) = -6.75000000000000044E-01 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente3.$J_Estrutura ) = 4.25000000000000988E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente3.$J_Estrutura ) = -1.57994146328097385E-72 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente3.$J_Estrutura ) = 4.83201573830789619E-71 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente3.$J_Estrutura ) = 4.56349813029399842E-72 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente3.$J_Estrutura ) = 7.12445416791281383E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente3.$J_Estrutura ) = -7.18498447665535346E-72 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente3.$J_Estrutura ) = 4.20652685642764997E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente3.$S_BarraBaixo.$J_Body1) = -7.85398163397448501E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente3.$S_BarraBaixo.$J_Body1) = 5.84161922957542239E-72 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente4.$J_Estrutura ) = -1.11840034185518391E-30 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente4.$J_Estrutura ) = 1.46367742209085929E-15 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente4.$J_Estrutura ) = -6.25372043886095439E-32 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente4.$J_Estrutura ) = -1.56203717390091910E-15 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente4.$J_Estrutura ) = 6.75000000000000044E-01 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente4.$J_Estrutura ) = 4.25000000000002320E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente4.$J_Estrutura ) = -8.09147874171632531E-72 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente4.$J_Estrutura ) = -1.46627937104155363E-70 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente4.$J_Estrutura ) = -4.39932802644304939E-72 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente4.$J_Estrutura ) = 7.12445416791282651E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente4.$J_Estrutura ) = 1.12320867072248016E-71 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente4.$J_Estrutura ) = -1.24871954578830910E-70 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente4.$S_BarraBaixo.$J_Body1) = -7.85398163397447613E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente4.$S_BarraBaixo.$J_Body1) = -2.47352838003343063E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente5.$J_Estrutura ) = -7.73220001830438903E-31 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente5.$J_Estrutura ) = 4.39972322842764381E-17 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente5.$J_Estrutura ) = -1.33205526567736809E-30 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente5.$J_Estrutura ) = -3.63765746831484430E-16 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente5.$J_Estrutura ) = -1.12500000000000000E+00 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente5.$J_Estrutura ) = 4.25000000000000988E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente5.$J_Estrutura ) = 9.31470026192555430E-72 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente5.$J_Estrutura ) = -1.37890846661963932E-70 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente5.$J_Estrutura ) = -1.62493230649020403E-72 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente5.$J_Estrutura ) = 7.12445416791282469E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente5.$J_Estrutura ) = 3.20548056637059621E-71 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente5.$J_Estrutura ) = -1.18549929506139799E-70 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente5.$S_BarraBaixo.$J_Body1) = -7.85398163397448168E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente5.$S_BarraBaixo.$J_Body1) = -3.21312649620205496E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente6.$J_Estrutura ) = -1.22910218874811476E-30 ! Position
+joint.st.pos (            2 ,       $S_linhaSemente6.$J_Estrutura ) = 4.69768124287630678E-16 ! Position
+joint.st.pos (            3 ,       $S_linhaSemente6.$J_Estrutura ) = -1.15045280782305197E-30 ! Position
+joint.st.pos (            4 ,       $S_linhaSemente6.$J_Estrutura ) = -6.58832040311221726E-16 ! Position
+joint.st.pos (            5 ,       $S_linhaSemente6.$J_Estrutura ) = 1.12500000000000000E+00 ! Position
+joint.st.pos (            6 ,       $S_linhaSemente6.$J_Estrutura ) = 4.25000000000001377E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente6.$J_Estrutura ) = 1.44167150972893165E-72 ! Velocity
+joint.st.vel (            2 ,       $S_linhaSemente6.$J_Estrutura ) = 1.00666845498420394E-70 ! Velocity
+joint.st.vel (            3 ,       $S_linhaSemente6.$J_Estrutura ) = 1.44167150972893366E-72 ! Velocity
+joint.st.vel (            4 ,       $S_linhaSemente6.$J_Estrutura ) = 7.12445416791280658E-56 ! Velocity
+joint.st.vel (            5 ,       $S_linhaSemente6.$J_Estrutura ) = 4.50056997840623727E-72 ! Velocity
+joint.st.vel (            6 ,       $S_linhaSemente6.$J_Estrutura ) = 6.26910918838043915E-71 ! Velocity
+
+
+joint.st.pos (            1 ,       $S_linhaSemente6.$S_BarraBaixo.$J_Body1) = -7.85398163397448168E-01 ! Position
+joint.st.vel (            1 ,       $S_linhaSemente6.$S_BarraBaixo.$J_Body1) = 1.12591932505316140E-71 ! Velocity
+
+
+model.data.redundancy                                               = 'eJxjYBgFxAJGEuUY8YjjMgOfHaS4hxqAWPMZCbDRzcHnf0JsbOrRw40Y91BDnBjzLRJNzCyTzYFkapKxoZFJSlJKokFSWoplUpK5mYGZJQC8hQlHgAMAAAAAAAA=' ! Constraint redundancy data
+model.data.dependency                                               = 'eJxjZEAFLEDMSADDADqbkFpizCRGLSGzsbmPGD4hcTYS3IbLvdj8i+4PdD4MU2o/rvAebvZj00sP+9H14HMHLf1PK/stEk3MLJPNgWRqkrGhkUlKUkqiQVJaimVSkrmZgZklAHZ7CgBMBAAAAAAAAA==' ! Solver state dependency data
