@@ -56,18 +56,18 @@ prop2d.proj.dir                                                     = 2         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 2.41904383897781372E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = 3.98247289657592773E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = -3.95281821489334106E-01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = -3.09086196637053945E-08 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = -3.09086196637053945E-08 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 2.13301753997802734E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = 3.06761360168457031E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = -4.81972813606262207E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 5.80740272998809814E-02 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = 6.92121624946594238E-01 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 7.17447459697723389E-01 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 5.35182952880859375E-02 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
 view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 7.50006580352783203E+00 ! Back clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 6.27275180816650391E+00 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -199,13 +199,13 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 subvar.str (                        $_W                           ) = '0.7'                   ! Definition
 subvar.dflt (                       $_W                           ) = ''                      ! Default value
 
-subvar.str (                        $_L                           ) = '2.5'                   ! Definition
+subvar.str (                        $_L                           ) = '2.43 - 0.02'           ! Definition
 subvar.dflt (                       $_L                           ) = ''                      ! Default value
 
 subvar.str (                        $_e                           ) = '0.01'                  ! Definition
 subvar.dflt (                       $_e                           ) = ''                      ! Default value
 
-subvar.str (                        $_H                           ) = '0.625'                 ! Definition
+subvar.str (                        $_H                           ) = '0.625 + 0.25 + 0.09 -0.045' ! Definition
 subvar.dflt (                       $_H                           ) = ''                      ! Default value
 
 subvar.str (                        $_m                           ) = '2011.445'              ! Definition
@@ -254,6 +254,7 @@ marker.flx.type (                   $M_Rocker_BRF                 ) = 4         
 marker.type (                       $M_Rocker_2roda               ) = 2                       ! Type
 marker.parent (                     $M_Rocker_2roda               ) = $B_Rocker               ! Body
 marker.pos (              1 ,       $M_Rocker_2roda               ) = { $_L - $_e/2 }         ! Position
+marker.pos (              2 ,       $M_Rocker_2roda               ) = -1.10000000000000001E-01 ! Position
 marker.pos (              3 ,       $M_Rocker_2roda               ) = { -($_H - $_e/2) }      ! Position
 
 joint.from (                        $J_Rocker                     ) = $M_Isys                 ! From Marker
@@ -314,12 +315,12 @@ prim.par (                4 ,       $P_Rocker_Cuboid2             ) = { $_H - $_
 
 prim.type (                         $P_Rocker_CAD                 ) = 39                      ! Type
 prim.ref (                          $P_Rocker_CAD                 ) = $M_Rocker_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Rocker_CAD                 ) = -5.47299999999999986E+00 ! Position
-prim.pos (                2 ,       $P_Rocker_CAD                 ) = -4.00000000000000022E-01 ! Position
-prim.pos (                3 ,       $P_Rocker_CAD                 ) = -3.08000000000000007E+00 ! Position
-prim.ang (                1 ,       $P_Rocker_CAD                 ) = { 270 deg }             ! Angles
+prim.pos (                1 ,       $P_Rocker_CAD                 ) = { -5.473 -0.75+ 0.05 -0.04 } ! Position
+prim.pos (                2 ,       $P_Rocker_CAD                 ) = 5.99999999999999978E-01 ! Position
+prim.pos (                3 ,       $P_Rocker_CAD                 ) = { 0.62+0.13+0.35 +0.035 -0.215 } ! Position
+prim.ang (                1 ,       $P_Rocker_CAD                 ) = { 90 deg }              ! Angles
 prim.ang (                2 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Rocker_CAD                 ) = { -15 deg }             ! Angles
+prim.ang (                3 ,       $P_Rocker_CAD                 ) = { (4+2) deg }           ! Angles
 prim.color.r (            1 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Colors (red component)
 prim.color.g (            1 ,       $P_Rocker_CAD                 ) = 0.00000000000000000E+00 ! Colors (green component)
 prim.color.b (            1 ,       $P_Rocker_CAD                 ) = 2.55000000000000000E+02 ! Colors (blue component)

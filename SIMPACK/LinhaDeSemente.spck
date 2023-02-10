@@ -74,18 +74,18 @@ substr.id (                         $S_DiscoD2                    ) = '3'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 7.71645307540893555E-01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.93306112289428711E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 8.38570713996887207E-01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 0.00000000000000000E+00 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.07106769084930420E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 5.58870824213954620E-01 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = 2.70557265001116320E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 1.11645317065267591E+00 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -5.26610501110553741E-02 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -6.35578751564025879E-01 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -7.63886392116546631E-01 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -9.87116992473602295E-02 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 1.62669830024242401E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 1.62669830322265625E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 1.23235635757446289E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -260,23 +260,23 @@ subvar.dflt (                       $_Fn_discoD1                  ) = ''        
 subvar.str (                        $_Fn_discoD2                  ) = '50*9.81'               ! Definition
 subvar.dflt (                       $_Fn_discoD2                  ) = ''                      ! Default value
 
-subvar.str (                        $_k_discosV                   ) = '1e7'                   ! Definition
-subvar.dflt (                       $_k_discosV                   ) = ''                      ! Default value
-
-subvar.str (                        $_c_discosV                   ) = '1e7'                   ! Definition
+subvar.str (                        $_c_discosV                   ) = '1'                     ! Definition
 subvar.dflt (                       $_c_discosV                   ) = ''                      ! Default value
 
-subvar.str (                        $_k_discoD1                   ) = '1e7'                   ! Definition
-subvar.dflt (                       $_k_discoD1                   ) = ''                      ! Default value
-
-subvar.str (                        $_c_discoD1                   ) = '1e7'                   ! Definition
+subvar.str (                        $_c_discoD1                   ) = '2'                     ! Definition
 subvar.dflt (                       $_c_discoD1                   ) = ''                      ! Default value
 
-subvar.str (                        $_k_discoD2                   ) = '1e7'                   ! Definition
-subvar.dflt (                       $_k_discoD2                   ) = ''                      ! Default value
-
-subvar.str (                        $_c_discoD2                   ) = '1e7'                   ! Definition
+subvar.str (                        $_c_discoD2                   ) = '2'                     ! Definition
 subvar.dflt (                       $_c_discoD2                   ) = ''                      ! Default value
+
+subvar.str (                        $_L0                          ) = '0.15'                  ! Definition
+subvar.dflt (                       $_L0                          ) = ''                      ! Default value
+
+subvar.str (                        $_k                           ) = '1e3'                   ! Definition
+subvar.dflt (                       $_k                           ) = ''                      ! Default value
+
+subvar.str (                        $_beta0                       ) = '-15.5 deg'             ! Definition
+subvar.dflt (                       $_beta0                       ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
@@ -320,13 +320,13 @@ marker.flx.type (                   $M_Estrutura_BRF              ) = 4         
 
 marker.type (                       $M_Estrutura_BaraCima         ) = 2                       ! Type
 marker.parent (                     $M_Estrutura_BaraCima         ) = $B_Estrutura            ! Body
-marker.pos (              1 ,       $M_Estrutura_BaraCima         ) = { $_L/2 }               ! Position
+marker.pos (              1 ,       $M_Estrutura_BaraCima         ) = { $_L/2 -0.005 }        ! Position
 marker.pos (              3 ,       $M_Estrutura_BaraCima         ) = { $_H/2 + $_DistPar/2 } ! Position
 
 marker.type (                       $M_Estrutura_BaraBaixo        ) = 2                       ! Type
 marker.parent (                     $M_Estrutura_BaraBaixo        ) = $B_Estrutura            ! Body
-marker.pos (              1 ,       $M_Estrutura_BaraBaixo        ) = { $_L/2 }               ! Position
-marker.pos (              3 ,       $M_Estrutura_BaraBaixo        ) = { $_H/2 - $_DistPar/2 } ! Position
+marker.pos (              1 ,       $M_Estrutura_BaraBaixo        ) = { $_L/2 -0.005 }        ! Position
+marker.pos (              3 ,       $M_Estrutura_BaraBaixo        ) = { $_H/2 - $_DistPar/2 + 0.02 -0.1 } ! Position
 
 marker.type (                       $M_discosV                    ) = 2                       ! Type
 marker.ref (                        $M_discosV                    ) = $M_Estrutura_BaraCima   ! Reference Marker
@@ -499,6 +499,28 @@ prim.par (               30 ,       $P_discoComp1                 ) = 0.00000000
 prim.par (               31 ,       $P_discoComp1                 ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_discoComp1                 ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
+prim.type (                         $P_discoComp1_pneu            ) = 39                      ! Type
+prim.ref (                          $P_discoComp1_pneu            ) = $M_discoComp1_BRF       ! Reference Marker
+prim.ang (                3 ,       $P_discoComp1_pneu            ) = { 90 deg }              ! Angles
+prim.color.r (            1 ,       $P_discoComp1_pneu            ) = 6.50000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_discoComp1_pneu            ) = 6.50000000000000000E+01 ! Colors (green component)
+prim.color.b (            1 ,       $P_discoComp1_pneu            ) = 6.50000000000000000E+01 ! Colors (blue component)
+prim.color.t (            1 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_discoComp1_pneu            ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
+prim.par (                9 ,       $P_discoComp1_pneu            ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_discoComp1_pneu            ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_discoComp1_pneu            ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
 
 body.m (                            $B_discoComp2                 ) = 1.00000000000000000E+00 ! Mass of the Body
 body.mp (                           $B_discoComp2                 ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
@@ -550,6 +572,28 @@ prim.par (               18 ,       $P_discoComp2                 ) = 0.00000000
 prim.par (               30 ,       $P_discoComp2                 ) = 0.00000000000000000E+00 ! [-] Wireframe representation
 prim.par (               31 ,       $P_discoComp2                 ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_discoComp2                 ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_discoComp2_pneu            ) = 39                      ! Type
+prim.ref (                          $P_discoComp2_pneu            ) = $M_discoComp2_BRF       ! Reference Marker
+prim.ang (                3 ,       $P_discoComp2_pneu            ) = { 90 deg }              ! Angles
+prim.color.r (            1 ,       $P_discoComp2_pneu            ) = 6.50000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_discoComp2_pneu            ) = 6.50000000000000000E+01 ! Colors (green component)
+prim.color.b (            1 ,       $P_discoComp2_pneu            ) = 6.50000000000000000E+01 ! Colors (blue component)
+prim.color.t (            1 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_discoComp2_pneu            ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
+prim.par (                9 ,       $P_discoComp2_pneu            ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_discoComp2_pneu            ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_discoComp2_pneu            ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
 
 body.m (                            $B_chao                       ) = 9.99999999999999980E-13 ! Mass of the Body
@@ -676,31 +720,102 @@ joint.par (               6 ,       $J_connector                  ) = 0.00000000
 joint.par (               7 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [-] Rotation sequence
 
 
+!**********************************************************************
+! Force Elements
+!**********************************************************************
+force.type (                        $F_amortV                     ) = 50                      ! Type
+force.from (                        $F_amortV                     ) = $M_Estrutura_BRF        ! From Marker
+force.to (                          $F_amortV                     ) = $S_DiscosV.$M_Roda1_BRF ! To Marker
+force.par (               1 ,       $F_amortV                     ) = $M_Estrutura_BRF        ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_amortV                     ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_amortV                     ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_amortV                     ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_amortV                     ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_amortV                     ) = $X_F_amortV             ! [-] Expression for Ly
+force.par (               8 ,       $F_amortV                     ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_amortD1                    ) = 50                      ! Type
+force.from (                        $F_amortD1                    ) = $M_Estrutura_BRF        ! From Marker
+force.to (                          $F_amortD1                    ) = $S_DiscoD1.$M_Roda1_BRF ! To Marker
+force.par (               1 ,       $F_amortD1                    ) = $M_Estrutura_BRF        ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_amortD1                    ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_amortD1                    ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_amortD1                    ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_amortD1                    ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_amortD1                    ) = $X_F_amortD1            ! [-] Expression for Ly
+force.par (               8 ,       $F_amortD1                    ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_amortD2                    ) = 50                      ! Type
+force.from (                        $F_amortD2                    ) = $M_Estrutura_BRF        ! From Marker
+force.to (                          $F_amortD2                    ) = $S_DiscoD2.$M_Roda1_BRF ! To Marker
+force.par (               1 ,       $F_amortD2                    ) = $M_Estrutura_BRF        ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_amortD2                    ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_amortD2                    ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_amortD2                    ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_amortD2                    ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_amortD2                    ) = $X_F_amortD2            ! [-] Expression for Ly
+force.par (               8 ,       $F_amortD2                    ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_molaPar                    ) = 50                      ! Type
+force.from (                        $F_molaPar                    ) = $S_BarraCima.$M_Body1_mola ! From Marker
+force.to (                          $F_molaPar                    ) = $S_BarraBaixo.$M_Body1_mola ! To Marker
+force.disabled (                    $F_molaPar                    ) = 1                       ! Disabled
+force.par (               1 ,       $F_molaPar                    ) = $S_BarraBaixo.$M_Body1_contact ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_molaPar                    ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_molaPar                    ) = $X_Fmola                ! [-] Expression for Fy
+force.par (               5 ,       $F_molaPar                    ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_molaPar                    ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_molaPar                    ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_molaPar                    ) = null                    ! [-] Expression for Lz
+
+!**********************************************************************
+! Expressions
+!**********************************************************************
+express.str (                       $X_F_amortV                   ) = '$_c_discosV*WY($S_DiscosV.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Definition
+
+express.str (                       $X_F_amortD1                  ) = '$_c_discoD1*WY($S_DiscoD1.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Definition
+
+express.str (                       $X_F_amortD2                  ) = '$_c_discoD2*WY($S_DiscoD2.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Definition
+
+express.str (                       $X_Lmola                      ) = 'DM($S_BarraCima.$M_Body1_mola, $S_BarraBaixo.$M_Body1_mola)' ! Definition
+
+express.str (                       $X_Fmola                      ) = '$_k*($X_Lmola - $_L0)' ! Definition
+
 
 ! Overwritten substructure values
+subvar.str (                        $S_BarraCima.$_x              ) = '-0.20'                 ! Definition
+
+marker.st.alg (           1 ,       $S_BarraCima.$M_Body1_contact ) = -5.11306094125549504E-01 ! Algebraic states
+
 joint.from (                        $S_BarraCima.$J_Body1         ) = $M_Estrutura_BaraCima   ! From Marker
 joint.to (                          $S_BarraCima.$J_Body1         ) = $S_BarraCima.$M_Body1_Junta1 ! To Marker
 joint.type (                        $S_BarraCima.$J_Body1         ) = 2                       ! Type
-joint.st.pos (            1 ,       $S_BarraCima.$J_Body1         ) = { -45 deg }             ! Position
+joint.st.pos (            1 ,       $S_BarraCima.$J_Body1         ) = { $_beta0 }             ! Position
 
+
+subvar.str (                        $S_BarraBaixo.$_x             ) = '-0.05'                 ! Definition
+
+marker.st.alg (           1 ,       $S_BarraBaixo.$M_Body1_contact) = 3.98250686383992747E+00 ! Algebraic states
+marker.par (              1 ,       $S_BarraBaixo.$M_Body1_contact) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $S_BarraBaixo.$M_Body1_contact) = $S_BarraCima.$M_Body1_contact ! [-] Parent Marker
 
 joint.from (                        $S_BarraBaixo.$J_Body1        ) = $M_Estrutura_BaraBaixo  ! From Marker
 joint.to (                          $S_BarraBaixo.$J_Body1        ) = $S_BarraBaixo.$M_Body1_Junta1 ! To Marker
 joint.type (                        $S_BarraBaixo.$J_Body1        ) = 2                       ! Type
-joint.st.pos (            1 ,       $S_BarraBaixo.$J_Body1        ) = { -45 deg }             ! Position
+joint.st.pos (            1 ,       $S_BarraBaixo.$J_Body1        ) = { $_beta0 }             ! Position
 
 
 subvar.str (                        $S_DiscosV.$_b                ) = '0.100'                 ! Definition
 
 subvar.str (                        $S_DiscosV.$_d                ) = '2*$_r_discosV'         ! Definition
 
-subvar.str (                        $S_DiscosV.$_ksolo            ) = '5*10^6'                ! Definition
+subvar.str (                        $S_DiscosV.$_ksolo            ) = '5e7'                   ! Definition
 
 subvar.str (                        $S_DiscosV.$_cpneu            ) = '10^8'                  ! Definition
 
-subvar.str (                        $S_DiscosV.$_kpneu            ) = '1.12e9'                ! Definition
+subvar.str (                        $S_DiscosV.$_kpneu            ) = '1.12e10'               ! Definition
 
-marker.st.alg (           1 ,       $S_DiscosV.$M_Roda1_contact   ) = 1.38727999537128532E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_DiscosV.$M_Roda1_contact   ) = 1.38727999537129842E+00 ! Algebraic states
 
 joint.from (                        $S_DiscosV.$J_Roda1           ) = $M_discosV              ! From Marker
 joint.type (                        $S_DiscosV.$J_Roda1           ) = 2                       ! Type
@@ -723,7 +838,12 @@ prim.mp.dens.solid (                $S_DiscosV.$P_Roda1_pneu      ) = 7.85000000
 prim.par (                2 ,       $S_DiscosV.$P_Roda1_pneu      ) = './pecas_stl/mecanismo_de_plantio_stl/rodas.stl' ! [-] CAD file name
 
 prim.type (                         $S_DiscosV.$P_Roda1_aro       ) = 1                       ! Type
-prim.transparency (                 $S_DiscosV.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! Transparency
+prim.ang (                1 ,       $S_DiscosV.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_DiscosV.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $S_DiscosV.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (red component)
+prim.color.g (            1 ,       $S_DiscosV.$P_Roda1_aro       ) = 2.55000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $S_DiscosV.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (blue component)
+prim.transparency (                 $S_DiscosV.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Transparency
 prim.par (                2 ,       $S_DiscosV.$P_Roda1_aro       ) = 1.00000000000000002E-02 ! [m] Length in X
 prim.par (                3 ,       $S_DiscosV.$P_Roda1_aro       ) = 1.00000000000000002E-02 ! [m] Length in Y
 prim.par (                4 ,       $S_DiscosV.$P_Roda1_aro       ) = 4.00000000000000022E-01 ! [m] Length in Z
@@ -732,7 +852,7 @@ prim.par (                4 ,       $S_DiscosV.$P_Roda1_aro       ) = 4.00000000
 joint.from (                        $S_DiscosV.$J_connector       ) = $M_Isys                 ! From Marker
 
 
-marker.st.alg (           1 ,       $S_DiscosV.$M_chao_contact    ) = -1.65638406620686696E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_DiscosV.$M_chao_contact    ) = -1.65638406620690337E+00 ! Algebraic states
 marker.par (              3 ,       $S_DiscosV.$M_chao_contact    ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_DiscosV.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
@@ -741,6 +861,8 @@ prim.transparency (                 $S_DiscosV.$P_chao            ) = 1.00000000
 subvar.str (                        $S_DiscoD1.$_b                ) = '0.025'                 ! Definition
 
 subvar.str (                        $S_DiscoD1.$_d                ) = '2*$_r_discosD'         ! Definition
+
+subvar.str (                        $S_DiscoD1.$_ksolo            ) = '5e7'                   ! Definition
 
 subvar.str (                        $S_DiscoD1.$_cpneu            ) = '10^8'                  ! Definition
 
@@ -783,7 +905,7 @@ prim.par (                4 ,       $S_DiscoD1.$P_Roda1_aro       ) = 5.00000000
 joint.from (                        $S_DiscoD1.$J_connector       ) = $M_Isys                 ! From Marker
 
 
-marker.st.alg (           1 ,       $S_DiscoD1.$M_chao_contact    ) = -2.40116441105910994E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_DiscoD1.$M_chao_contact    ) = -2.40116441105910861E+00 ! Algebraic states
 marker.par (              3 ,       $S_DiscoD1.$M_chao_contact    ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_DiscoD1.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
@@ -793,11 +915,13 @@ subvar.str (                        $S_DiscoD2.$_b                ) = '0.025'   
 
 subvar.str (                        $S_DiscoD2.$_d                ) = '2*$_r_discosD'         ! Definition
 
+subvar.str (                        $S_DiscoD2.$_ksolo            ) = '5e7'                   ! Definition
+
 subvar.str (                        $S_DiscoD2.$_cpneu            ) = '10^8'                  ! Definition
 
-subvar.str (                        $S_DiscoD2.$_kpneu            ) = '1.12e9'                ! Definition
+subvar.str (                        $S_DiscoD2.$_kpneu            ) = '1.12e10'               ! Definition
 
-marker.st.alg (           1 ,       $S_DiscoD2.$M_Roda1_contact   ) = 7.37506126860953182E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_DiscoD2.$M_Roda1_contact   ) = 7.37506126860954514E-01 ! Algebraic states
 
 joint.from (                        $S_DiscoD2.$J_Roda1           ) = $M_discosD2             ! From Marker
 joint.type (                        $S_DiscoD2.$J_Roda1           ) = 2                       ! Type
@@ -820,15 +944,21 @@ prim.mp.dens.solid (                $S_DiscoD2.$P_Roda1_pneu      ) = 7.85000000
 prim.par (                2 ,       $S_DiscoD2.$P_Roda1_pneu      ) = './pecas_stl/mecanismo_de_plantio_stl/disco_de_corte.stl' ! [-] CAD file name
 
 prim.type (                         $S_DiscoD2.$P_Roda1_aro       ) = 1                       ! Type
-prim.transparency (                 $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! Transparency
+prim.ang (                1 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (red component)
+prim.color.g (            1 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (green component)
+prim.color.b (            1 ,       $S_DiscoD2.$P_Roda1_aro       ) = 2.55000000000000000E+02 ! Colors (blue component)
+prim.transparency (                 $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000002E-02 ! [m] Length in X
 prim.par (                3 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000002E-02 ! [m] Length in Y
-prim.par (                4 ,       $S_DiscoD2.$P_Roda1_aro       ) = 4.00000000000000022E-01 ! [m] Length in Z
+prim.par (                4 ,       $S_DiscoD2.$P_Roda1_aro       ) = 5.99999999999999978E-01 ! [m] Length in Z
 
 
 joint.from (                        $S_DiscoD2.$J_connector       ) = $M_Isys                 ! From Marker
 
 
-marker.st.alg (           1 ,       $S_DiscoD2.$M_chao_contact    ) = -2.37646145029331679E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_DiscoD2.$M_chao_contact    ) = -2.37646145029331768E+00 ! Algebraic states
 marker.par (              3 ,       $S_DiscoD2.$M_chao_contact    ) = $P_chao                 ! [-] Contact geometry Primitive
 
 prim.transparency (                 $S_DiscoD2.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
