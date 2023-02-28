@@ -211,9 +211,6 @@ subvar.dflt (                       $_CI                          ) = ''        
 subvar.str (                        $_ksolo                       ) = '5*10^6'                ! Definition
 subvar.dflt (                       $_ksolo                       ) = ''                      ! Default value
 
-subvar.str (                        $_A                           ) = '$_d*$_b'               ! Definition
-subvar.dflt (                       $_A                           ) = ''                      ! Default value
-
 subvar.str (                        $_cpneu                       ) = '10^6'                  ! Definition
 subvar.dflt (                       $_cpneu                       ) = ''                      ! Default value
 

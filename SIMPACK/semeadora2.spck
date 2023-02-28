@@ -96,13 +96,13 @@ substr.id (                         $S_LinhaSemente6              ) = '6'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 1.50926647675805725E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -5.92890883618355424E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 6.54169359069783241E-01 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 7.07009494304656982E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = -1.17309521883726120E-02 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 1.17309521883726120E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.07009494304656982E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 2.64957469160435721E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -3.37106729443677544E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 3.16959450923604891E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = 7.07036256790161133E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -9.98737476766109467E-03 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = 9.98737476766109467E-03 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = 7.07036256790161133E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
@@ -285,6 +285,12 @@ subvar.dflt (                       $_fix_botinhaZ                ) = ''        
 subvar.str (                        $_fix_botinhaX                ) = '1.03'                  ! Definition
 subvar.dflt (                       $_fix_botinhaX                ) = ''                      ! Default value
 
+subvar.str (                        $_r_cilindro                  ) = '0.05'                  ! Definition
+subvar.dflt (                       $_r_cilindro                  ) = ''                      ! Default value
+
+subvar.str (                        $_h_cilindro                  ) = '0.1'                   ! Definition
+subvar.dflt (                       $_h_cilindro                  ) = ''                      ! Default value
+
 !**********************************************************************
 ! Reference systems
 !**********************************************************************
@@ -331,6 +337,48 @@ body.attr.2d.height (               $B_chao                       ) = 8.00000000
 marker.type (                       $M_chao_BRF                   ) = 1                       ! Type
 marker.parent (                     $M_chao_BRF                   ) = $B_chao                 ! Body
 marker.flx.type (                   $M_chao_BRF                   ) = 4                       ! Flexible type
+
+marker.type (                       $M_chao_PontaBotinha1_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha1_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha1_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha1_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha1_contact ) = $M_Boogie_PontaBotinha1_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha1_contact ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.type (                       $M_chao_PontaBotinha2_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha2_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha2_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha2_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha2_contact ) = $M_Boogie_PontaBotinha2_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha2_contact ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.type (                       $M_chao_PontaBotinha3_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha3_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha3_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha3_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha3_contact ) = $M_Boogie_PontaBotinha3_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha3_contact ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.type (                       $M_chao_PontaBotinha4_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha4_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha4_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha4_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha4_contact ) = $M_Boogie_PontaBotinha4_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha4_contact ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.type (                       $M_chao_PontaBotinha5_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha5_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha5_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha5_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha5_contact ) = $M_Boogie_PontaBotinha5_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha5_contact ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.type (                       $M_chao_PontaBotinha6_contact ) = -96                     ! Type
+marker.parent (                     $M_chao_PontaBotinha6_contact ) = $B_chao                 ! Body
+marker.st.alg (           1 ,       $M_chao_PontaBotinha6_contact ) = 4.06841378252694863E+00 ! Algebraic states
+marker.par (              1 ,       $M_chao_PontaBotinha6_contact ) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $M_chao_PontaBotinha6_contact ) = $M_Boogie_PontaBotinha6_contact ! [-] Parent Marker
+marker.par (              3 ,       $M_chao_PontaBotinha6_contact ) = $P_chao                 ! [-] Contact geometry Primitive
 
 joint.from (                        $J_chao                       ) = $M_Isys                 ! From Marker
 joint.to (                          $J_chao                       ) = $M_chao_BRF             ! To Marker
@@ -582,6 +630,102 @@ marker.parent (                     $M_Boogie_ParalelogramoBaixo6 ) = $B_Boogie 
 marker.pos (              1 ,       $M_Boogie_ParalelogramoBaixo6 ) = { -$_DistXBogiePar }    ! Position
 marker.pos (              2 ,       $M_Boogie_ParalelogramoBaixo6 ) = { 5*$_DistLinhas/2 }    ! Position
 marker.pos (              3 ,       $M_Boogie_ParalelogramoBaixo6 ) = { $_DistZBogiePar - $_DistPar/2 } ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha1       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha1       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha1       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha1       ) = { -$_DistLinhas/2 }     ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha1       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha2       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha2       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha2       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha2       ) = { $_DistLinhas/2 }      ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha2       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha3       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha3       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha3       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha3       ) = { -3*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha3       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha4       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha4       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha4       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha4       ) = { 3*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha4       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha5       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha5       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha5       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha5       ) = { -5*$_DistLinhas/2 }   ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha5       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha6       ) = 2                       ! Type
+marker.parent (                     $M_Boogie_PontaBotinha6       ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha6       ) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha6       ) = { 5*$_DistLinhas/2 }    ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha6       ) = { -$_H/2 -0.39 }        ! Position
+
+marker.type (                       $M_Boogie_PontaBotinha1_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha1_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha1_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha1_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha1_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha1_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha1_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha1_contact) = $P_Boogie_CBotinha1    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha1_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_Boogie_PontaBotinha2_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha2_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha2_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha2_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha2_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha2_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha2_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha2_contact) = $P_Boogie_CBotinha2    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha2_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_Boogie_PontaBotinha3_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha3_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha3_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha3_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha3_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha3_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha3_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha3_contact) = $P_Boogie_CBotinha3    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha3_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_Boogie_PontaBotinha4_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha4_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha4_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha4_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha4_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha4_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha4_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha4_contact) = $P_Boogie_CBotinha4    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha4_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_Boogie_PontaBotinha5_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha5_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha5_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha5_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha5_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha5_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha5_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha5_contact) = $P_Boogie_CBotinha5    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha5_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
+
+marker.type (                       $M_Boogie_PontaBotinha6_contact) = -96                    ! Type
+marker.parent (                     $M_Boogie_PontaBotinha6_contact) = $B_Boogie              ! Body
+marker.pos (              1 ,       $M_Boogie_PontaBotinha6_contact) = 7.00000000000000067E-02 ! Position
+marker.pos (              2 ,       $M_Boogie_PontaBotinha6_contact) = { -5*$_DistLinhas/2 }  ! Position
+marker.pos (              3 ,       $M_Boogie_PontaBotinha6_contact) = { -$_H/2 -0.39 }       ! Position
+marker.st.alg (           1 ,       $M_Boogie_PontaBotinha6_contact) = 1.56925865133902498E-01 ! Algebraic states
+marker.par (              1 ,       $M_Boogie_PontaBotinha6_contact) = 0.00000000000000000E+00 ! [-] Marker type
+marker.par (              3 ,       $M_Boogie_PontaBotinha6_contact) = $P_Boogie_CBotinha6    ! [-] Contact geometry Primitive
+marker.par (              5 ,       $M_Boogie_PontaBotinha6_contact) = 0.00000000000000000E+00 ! [-] Contact point determin. method
 
 joint.from (                        $J_Boogie                     ) = $M_Isys                 ! From Marker
 joint.to (                          $J_Boogie                     ) = $M_Boogie_BRF           ! To Marker
@@ -1613,6 +1757,132 @@ prim.par (               30 ,       $P_Boogie_disco6              ) = 0.00000000
 prim.par (               31 ,       $P_Boogie_disco6              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
+prim.type (                         $P_Boogie_CBotinha1           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha1           ) = $M_Boogie_PontaBotinha1 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha1           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha1           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha1           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha1           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha1           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.type (                         $P_Boogie_CBotinha2           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha2           ) = $M_Boogie_PontaBotinha2 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha2           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha2           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha2           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha2           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha2           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.type (                         $P_Boogie_CBotinha3           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha3           ) = $M_Boogie_PontaBotinha3 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha3           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha3           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha3           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha3           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha3           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.type (                         $P_Boogie_CBotinha4           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha4           ) = $M_Boogie_PontaBotinha4 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha4           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha4           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha4           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha4           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha4           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.type (                         $P_Boogie_CBotinha5           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha5           ) = $M_Boogie_PontaBotinha5 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha5           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha5           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha5           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha5           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha5           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.type (                         $P_Boogie_CBotinha6           ) = 2                       ! Type
+prim.ref (                          $P_Boogie_CBotinha6           ) = $M_Boogie_PontaBotinha6 ! Reference Marker
+prim.color.r (            1 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.r (            2 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.g (            2 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.b (            2 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.color.t (            2 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_Boogie_CBotinha6           ) = $_h_cilindro            ! [m] Height
+prim.par (                3 ,       $P_Boogie_CBotinha6           ) = { 2*$_r_cilindro }      ! [m] Outer diameter
+prim.par (                4 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $P_Boogie_CBotinha6           ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $P_Boogie_CBotinha6           ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $P_Boogie_CBotinha6           ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
 
 !**********************************************************************
 ! Force Elements
@@ -1681,16 +1951,16 @@ force.par (               8 ,       $F_IF                         ) = null      
 ! Connection Elements
 !**********************************************************************
 connect.type (                      $CTN_ParCima1                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima1                 ) = 2.70526034059124898E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima1                 ) = -2.77187289896934973E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima1                 ) = 2.70526034059124731E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima1                 ) = -2.40544438300179206E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima1                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima1                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima1                 ) = 2.70526034059125786E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima1                 ) = -2.03901586703423440E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima1                 ) = 2.70526034059124898E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima1                 ) = -2.77187289896934973E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima1                 ) = 2.70526034059124898E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima1                 ) = -2.77187289896934973E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima1                 ) = 2.70526034059124731E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima1                 ) = -2.40544438300179206E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima1                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -1739,16 +2009,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima1           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima1           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParCima2                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima2                 ) = 2.70526034059124953E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima2                 ) = -2.58865864098557106E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima2                 ) = 2.70526034059125509E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima2                 ) = -2.22223012501801339E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima2                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima2                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima2                 ) = 2.70526034059125620E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima2                 ) = -2.28330154434593940E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima2                 ) = 2.70526034059124953E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima2                 ) = -2.58865864098557106E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima2                 ) = 2.70526034059124953E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima2                 ) = -2.58865864098557106E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima2                 ) = 2.70526034059125509E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima2                 ) = -2.22223012501801339E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima2                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -1797,16 +2067,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima2           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima2           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParCima3                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima3                 ) = 2.70526034059124509E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima3                 ) = -2.34437296367386606E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima3                 ) = 2.70526034059126230E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima3                 ) = -2.28330154434593940E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima3                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima3                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima3                 ) = 2.70526034059125731E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima3                 ) = -2.71080147964142340E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima3                 ) = 2.70526034059124509E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima3                 ) = -2.34437296367386606E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima3                 ) = 2.70526034059124509E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima3                 ) = -2.34437296367386606E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima3                 ) = 2.70526034059126230E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima3                 ) = -2.28330154434593940E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima3                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -1855,16 +2125,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima3           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima3           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParCima4                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima4                 ) = 2.70526034059125953E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima4                 ) = -2.46651580232971840E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima4                 ) = 2.70526034059125509E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima4                 ) = -2.89401573762520239E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima4                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima4                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima4                 ) = 2.70526034059124842E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima4                 ) = -2.64973006031349739E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima4                 ) = 2.70526034059125953E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima4                 ) = -2.46651580232971840E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima4                 ) = 2.70526034059125953E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima4                 ) = -2.46651580232971840E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima4                 ) = 2.70526034059125509E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima4                 ) = -2.89401573762520239E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima4                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -1913,16 +2183,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima4           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima4           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParCima5                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima5                 ) = 2.70526034059124731E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima5                 ) = -4.23758696283958071E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima5                 ) = 2.70526034059125509E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima5                 ) = -2.46651580232971840E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima5                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima5                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima5                 ) = 2.70526034059125065E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima5                 ) = -2.89401573762520239E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima5                 ) = 2.70526034059124731E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima5                 ) = -4.23758696283958071E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima5                 ) = 2.70526034059124731E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima5                 ) = -4.23758696283958071E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima5                 ) = 2.70526034059125509E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima5                 ) = -2.46651580232971840E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima5                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -1971,16 +2241,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima5           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima5           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParCima6                 ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParCima6                 ) = 2.70526034059124398E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParCima6                 ) = -2.39224208004851660E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParCima6                 ) = 2.70526034059125065E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParCima6                 ) = -2.69759917668814761E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParCima6                 ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParCima6                 ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParCima6                 ) = 2.70526034059124454E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParCima6                 ) = -2.45331349937644261E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParCima6                 ) = 2.70526034059124398E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParCima6                 ) = -2.39224208004851660E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParCima6                 ) = 2.70526034059124398E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParCima6                 ) = -2.39224208004851660E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParCima6                 ) = 2.70526034059125065E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParCima6                 ) = -2.69759917668814761E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParCima6                 ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2029,16 +2299,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParCima6           ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParCima6           ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo1                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo1                ) = 2.70526034059125398E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo1                ) = -3.00636138224613335E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo1                ) = 2.70526034059124731E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo1                ) = -2.25359519099884710E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo1                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo1                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo1                ) = 2.70526034059125620E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo1                ) = -2.44759497750250357E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo1                ) = 2.70526034059125398E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo1                ) = -3.00636138224613335E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo1                ) = 2.70526034059125398E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo1                ) = -3.00636138224613335E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo1                ) = 2.70526034059124731E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo1                ) = -2.25359519099884710E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo1                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2087,16 +2357,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo1          ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo1          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo2                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo2                ) = 2.70526034059124953E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo2                ) = -2.51598637056345832E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo2                ) = 2.70526034059124731E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo2                ) = -2.29275820865696400E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo2                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo2                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo2                ) = 2.70526034059125509E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo2                ) = -2.11396880205522089E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo2                ) = 2.70526034059124953E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo2                ) = -2.51598637056345832E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo2                ) = 2.70526034059124953E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo2                ) = -2.51598637056345832E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo2                ) = 2.70526034059124731E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo2                ) = -2.29275820865696400E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo2                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2145,16 +2415,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo2          ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo2          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo3                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo3                ) = 2.70526034059124842E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo3                ) = -2.74758583824100788E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo3                ) = 2.70526034059126508E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo3                ) = -2.13227859257716612E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo3                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo3                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo3                ) = 2.70526034059125731E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo3                ) = -3.09613844964173019E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo3                ) = 2.70526034059124842E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo3                ) = -2.74758583824100788E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo3                ) = 2.70526034059124842E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo3                ) = -2.74758583824100788E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo3                ) = 2.70526034059126508E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo3                ) = -2.13227859257716612E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo3                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2203,16 +2473,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo3          ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo3          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo4                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo4                ) = 2.70526034059126119E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo4                ) = -2.26658495785755581E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo4                ) = 2.70526034059125953E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo4                ) = -2.93485803663090132E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo4                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo4                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo4                ) = 2.70526034059124676E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo4                ) = -2.46789519463942022E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo4                ) = 2.70526034059126119E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo4                ) = -2.26658495785755581E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo4                ) = 2.70526034059126119E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo4                ) = -2.26658495785755581E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo4                ) = 2.70526034059125953E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo4                ) = -2.93485803663090132E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo4                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2261,16 +2531,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo4          ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo4          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo5                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo5                ) = 2.70526034059124953E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo5                ) = -4.82025670049933382E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo5                ) = 2.70526034059125731E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo5                ) = -2.10241956223853717E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo5                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo5                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo5                ) = 2.70526034059125065E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo5                ) = -2.19616623764513414E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo5                ) = 2.70526034059124953E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo5                ) = -4.82025670049933382E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo5                ) = 2.70526034059124953E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo5                ) = -4.82025670049933382E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo5                ) = 2.70526034059125731E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo5                ) = -2.10241956223853717E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo5                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2319,16 +2589,16 @@ connect.par (             5 ,  10 ,   4 , $CTN_ParBaixo5          ) = 1.00000000
 connect.par (             5 ,  10 ,   5 , $CTN_ParBaixo5          ) = 1.00000000000000000E+04 ! [Ns/m] Stick damping
 
 connect.type (                      $CTN_ParBaixo6                ) = 11                      ! Type
-connect.st.pos (          1 ,       $CTN_ParBaixo6                ) = 2.70526034059124842E-01 ! Position states
-connect.st.vel (          1 ,       $CTN_ParBaixo6                ) = -2.23469056012245151E-70 ! Velocity states
+connect.st.pos (          1 ,       $CTN_ParBaixo6                ) = 2.70526034059124787E-01 ! Position states
+connect.st.vel (          1 ,       $CTN_ParBaixo6                ) = -3.24793207994508493E-70 ! Velocity states
 connect.st.equi (         1 ,       $CTN_ParBaixo6                ) = 0                       ! Equilibrium calculation flags
 connect.st.lin (          1 ,       $CTN_ParBaixo6                ) = 0                       ! Linearization mode (0=Automatic; 1=Export; 2=Resolve
 connect.st.desc (         1 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         2 ,       $CTN_ParBaixo6                ) = 2.70526034059124287E-01 ! Descriptive states
-connect.st.desc (         3 ,       $CTN_ParBaixo6                ) = -2.90263681569566745E-70 ! Descriptive states
+connect.st.desc (         2 ,       $CTN_ParBaixo6                ) = 2.70526034059124842E-01 ! Descriptive states
+connect.st.desc (         3 ,       $CTN_ParBaixo6                ) = -2.23469056012245151E-70 ! Descriptive states
 connect.st.desc (         4 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Descriptive states
-connect.st.desc (         5 ,       $CTN_ParBaixo6                ) = 2.70526034059124842E-01 ! Descriptive states
-connect.st.desc (         6 ,       $CTN_ParBaixo6                ) = -2.23469056012245151E-70 ! Descriptive states
+connect.st.desc (         5 ,       $CTN_ParBaixo6                ) = 2.70526034059124787E-01 ! Descriptive states
+connect.st.desc (         6 ,       $CTN_ParBaixo6                ) = -3.24793207994508493E-70 ! Descriptive states
 connect.st.force (        1 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        2 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
 connect.st.force (        3 ,       $CTN_ParBaixo6                ) = 0.00000000000000000E+00 ! Constraint forces (locked directions)
@@ -2398,7 +2668,7 @@ view.bclip.value (                  $S_esteira1.$V_WorkingView    ) = 3.50148468
 
 marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact1  ) = 3.13759244289371353E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.14696714392739163E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact2  ) = -3.14696714392739219E-01 ! Algebraic states
 
 marker.st.alg (           1 ,       $S_esteira1.$M_Base_contact3  ) = -3.14249379157070075E-01 ! Algebraic states
 
@@ -2459,7 +2729,7 @@ view.bclip.value (                  $S_esteira2.$V_WorkingView    ) = 3.50148468
 
 marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact1  ) = -3.14559286428587270E-01 ! Algebraic states
 
-marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact2  ) = -3.14696714392739163E-01 ! Algebraic states
+marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact2  ) = -3.14696714392739219E-01 ! Algebraic states
 
 marker.st.alg (           1 ,       $S_esteira2.$M_Base_contact3  ) = -3.14249379157070075E-01 ! Algebraic states
 
@@ -2563,18 +2833,18 @@ marker.par (              3 ,       $S_roda2.$M_chao_contact      ) = $P_chao   
 prim.transparency (                 $S_roda2.$P_chao              ) = 1.00000000000000000E+00 ! Transparency
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente1.$J_Estrutura ) = -6.55933373157599260E-23 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente1.$J_Estrutura ) = 6.04707925400188642E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente1.$J_Estrutura ) = 4.64698762604545178E-23 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente1.$J_Estrutura ) = 3.60638905120292508E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente1.$J_Estrutura ) = 9.86856776957303853E-31 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente1.$J_Estrutura ) = 7.68083553169757996E-16 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente1.$J_Estrutura ) = -1.83670992315982423E-40 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente1.$J_Estrutura ) = 3.60638905120292341E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente1.$J_Estrutura ) = -2.50000000000000000E-01 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente1.$J_Estrutura ) = 5.28390889286348031E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente1.$J_Estrutura ) = 1.11741994969687842E-72 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente1.$J_Estrutura ) = 2.44285677311705123E-71 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente1.$J_Estrutura ) = 2.68932140226432385E-72 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente1.$J_Estrutura ) = 7.12445416791283556E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente1.$J_Estrutura ) = -1.37105390421329488E-86 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente1.$J_Estrutura ) = 1.38680271183767680E-70 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente1.$J_Estrutura ) = 5.28390889286348475E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente1.$J_Estrutura ) = -1.30673740488040024E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente1.$J_Estrutura ) = -1.22142838655852582E-71 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente1.$J_Estrutura ) = -3.14495626379098127E-72 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente1.$J_Estrutura ) = 7.12445416791283828E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente1.$J_Estrutura ) = 1.09348042691879170E-86 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente1.$J_Estrutura ) = 8.83332816718916570E-71 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente1.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2591,52 +2861,52 @@ joint.st.vel (            1 ,       $S_LinhaSemente1.$S_BarraCima.$J_Body1) = 2.
 
 marker.st.alg (           1 ,       $S_LinhaSemente1.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
-joint.st.pos (            1 ,       $S_LinhaSemente1.$S_BarraBaixo.$J_Body1) = -2.70526034059125953E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente1.$S_BarraBaixo.$J_Body1) = 2.76207570493442802E-70 ! Velocity
+joint.st.pos (            1 ,       $S_LinhaSemente1.$S_BarraBaixo.$J_Body1) = -2.70526034059125509E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente1.$S_BarraBaixo.$J_Body1) = 2.37573802965469977E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488575E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497477E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente1.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscosV.$M_chao_contact) = 1.75537147391901849E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscosV.$M_chao_contact) = 1.75537146953594725E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente1.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514755E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente1.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD1.$M_chao_contact) = -4.02358415389621257E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente1.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente1.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente1.$S_DiscoD2.$M_chao_contact) = -4.25530822675348404E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente1.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente2.$J_Estrutura ) = 3.50504897760461434E-23 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente2.$J_Estrutura ) = 5.16265631074637111E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente2.$J_Estrutura ) = -4.17237009442929727E-23 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente2.$J_Estrutura ) = 3.60638905120292230E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente2.$J_Estrutura ) = -4.13343152723674761E-31 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente2.$J_Estrutura ) = -2.36078105785711012E-23 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente2.$J_Estrutura ) = 1.19576011954959345E-30 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente2.$J_Estrutura ) = 3.60638905120292730E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente2.$J_Estrutura ) = 2.50000000000000000E-01 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente2.$J_Estrutura ) = 5.28390889286348253E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente2.$J_Estrutura ) = -7.62253969412067156E-73 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente2.$J_Estrutura ) = 6.10714193279262808E-72 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente2.$J_Estrutura ) = 7.87262640508858556E-73 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente2.$J_Estrutura ) = 7.12445416791283556E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente2.$J_Estrutura ) = -1.34554489999313002E-72 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente2.$J_Estrutura ) = 1.05103100919298372E-70 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente2.$J_Estrutura ) = 5.28390889286348142E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente2.$J_Estrutura ) = -4.27010916718950782E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente2.$J_Estrutura ) = -3.05357096639631495E-71 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente2.$J_Estrutura ) = -9.40458532537174738E-73 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente2.$J_Estrutura ) = 7.12445416791284009E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente2.$J_Estrutura ) = 7.22040393491056975E-72 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente2.$J_Estrutura ) = 8.78663908309719571E-71 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente2.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2653,52 +2923,52 @@ joint.st.vel (            1 ,       $S_LinhaSemente2.$S_BarraCima.$J_Body1) = 2.
 
 marker.st.alg (           1 ,       $S_LinhaSemente2.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
-joint.st.pos (            1 ,       $S_LinhaSemente2.$S_BarraBaixo.$J_Body1) = -2.70526034059125509E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente2.$S_BarraBaixo.$J_Body1) = 2.45491495123553199E-70 ! Velocity
+joint.st.pos (            1 ,       $S_LinhaSemente2.$S_BarraBaixo.$J_Body1) = -2.70526034059124731E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente2.$S_BarraBaixo.$J_Body1) = 2.59811530529659566E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488575E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497477E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente2.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscosV.$M_chao_contact) = 1.75537147391901871E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscosV.$M_chao_contact) = 1.75537146953594791E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente2.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514613E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente2.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD1.$M_chao_contact) = -4.02358415389621257E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente2.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente2.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente2.$S_DiscoD2.$M_chao_contact) = -4.25530822675348332E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente2.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente3.$J_Estrutura ) = -1.02966594478838738E-22 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente3.$J_Estrutura ) = 9.98554330679147939E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente3.$J_Estrutura ) = 9.79221294790533593E-23 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente3.$J_Estrutura ) = 3.60638905120291953E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente3.$J_Estrutura ) = -4.43846084882767826E-31 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente3.$J_Estrutura ) = -7.68083535584739205E-16 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente3.$J_Estrutura ) = -1.36262177232020950E-29 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente3.$J_Estrutura ) = 3.60638905120293118E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente3.$J_Estrutura ) = -7.50000000000000000E-01 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente3.$J_Estrutura ) = 5.28390889286348364E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente3.$J_Estrutura ) = 2.56861591068376707E-72 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente3.$J_Estrutura ) = -1.83214257983778792E-71 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente3.$J_Estrutura ) = -2.27906024208755562E-72 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente3.$J_Estrutura ) = 7.12445416791283556E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente3.$J_Estrutura ) = 2.59310802630639546E-72 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente3.$J_Estrutura ) = 9.23441868426820293E-71 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente3.$J_Estrutura ) = 5.28390889286346921E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente3.$J_Estrutura ) = 1.96254178648021780E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente3.$J_Estrutura ) = -2.44285677311705163E-71 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente3.$J_Estrutura ) = -1.57846938693722996E-71 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente3.$J_Estrutura ) = 7.12445416791283918E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente3.$J_Estrutura ) = 1.86491684880103247E-71 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente3.$J_Estrutura ) = 8.80457625239062641E-71 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente3.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2715,52 +2985,52 @@ joint.st.vel (            1 ,       $S_LinhaSemente3.$S_BarraCima.$J_Body1) = 2.
 
 marker.st.alg (           1 ,       $S_LinhaSemente3.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
-joint.st.pos (            1 ,       $S_LinhaSemente3.$S_BarraBaixo.$J_Body1) = -2.70526034059125842E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente3.$S_BarraBaixo.$J_Body1) = 2.93080009622478655E-70 ! Velocity
+joint.st.pos (            1 ,       $S_LinhaSemente3.$S_BarraBaixo.$J_Body1) = -2.70526034059125731E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente3.$S_BarraBaixo.$J_Body1) = 2.37656426988887112E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488553E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497500E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente3.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscosV.$M_chao_contact) = 1.75537147391901893E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscosV.$M_chao_contact) = 1.75537146953594836E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente3.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514613E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente3.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD1.$M_chao_contact) = -4.02358415389621257E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente3.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente3.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente3.$S_DiscoD2.$M_chao_contact) = -4.25530822675348332E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente3.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente4.$J_Estrutura ) = 6.34871641105237309E-23 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente4.$J_Estrutura ) = -4.54818522144799731E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente4.$J_Estrutura ) = -1.23453613998618272E-22 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente4.$J_Estrutura ) = 3.60638905120293063E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente4.$J_Estrutura ) = -1.54830029644332408E-30 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente4.$J_Estrutura ) = 1.69088468539190995E-23 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente4.$J_Estrutura ) = 6.35890160450995256E-30 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente4.$J_Estrutura ) = 3.60638905120292730E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente4.$J_Estrutura ) = 7.50000000000000000E-01 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente4.$J_Estrutura ) = 5.28390889286347254E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente4.$J_Estrutura ) = 1.16248168532460955E-71 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente4.$J_Estrutura ) = -6.10714193279263009E-72 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente4.$J_Estrutura ) = -8.36988770426393434E-72 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente4.$J_Estrutura ) = 7.12445416791283828E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente4.$J_Estrutura ) = 1.48452469871241630E-71 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente4.$J_Estrutura ) = 9.84119078652161322E-71 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente4.$J_Estrutura ) = 5.28390889286347587E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente4.$J_Estrutura ) = 5.02344365789165216E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente4.$J_Estrutura ) = 3.66428515967557745E-71 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente4.$J_Estrutura ) = -8.20592711023442796E-74 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente4.$J_Estrutura ) = 7.12445416791283556E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente4.$J_Estrutura ) = 2.49408689123169535E-72 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente4.$J_Estrutura ) = 1.33258191519288122E-70 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente4.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2777,52 +3047,52 @@ joint.st.vel (            1 ,       $S_LinhaSemente4.$S_BarraCima.$J_Body1) = 2.
 
 marker.st.alg (           1 ,       $S_LinhaSemente4.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
-joint.st.pos (            1 ,       $S_LinhaSemente4.$S_BarraBaixo.$J_Body1) = -2.70526034059125675E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente4.$S_BarraBaixo.$J_Body1) = 2.32765637718548214E-70 ! Velocity
+joint.st.pos (            1 ,       $S_LinhaSemente4.$S_BarraBaixo.$J_Body1) = -2.70526034059125953E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente4.$S_BarraBaixo.$J_Body1) = 2.56842952066334333E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488575E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497477E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente4.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscosV.$M_chao_contact) = 1.75537147391901827E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscosV.$M_chao_contact) = 1.75537146953594769E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente4.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514755E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente4.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD1.$M_chao_contact) = -4.02358415389621257E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente4.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente4.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente4.$S_DiscoD2.$M_chao_contact) = -4.25530822675348332E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente4.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente5.$J_Estrutura ) = -1.08742937238947441E-22 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente5.$J_Estrutura ) = 7.76441739575107026E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente5.$J_Estrutura ) = 1.37052853889901739E-22 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente5.$J_Estrutura ) = 3.60638905120292286E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente5.$J_Estrutura ) = 1.42125710684467900E-30 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente5.$J_Estrutura ) = -6.08754975456367032E-24 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente5.$J_Estrutura ) = -3.34429367196509773E-30 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente5.$J_Estrutura ) = 3.60638905120292730E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente5.$J_Estrutura ) = -1.25000000000000000E+00 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente5.$J_Estrutura ) = 5.28390889286348364E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente5.$J_Estrutura ) = 9.20576888104432523E-72 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente5.$J_Estrutura ) = 1.70999974118193598E-70 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente5.$J_Estrutura ) = 1.70789119070735819E-71 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente5.$J_Estrutura ) = 7.12445416791283013E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente5.$J_Estrutura ) = -1.27640992384161971E-71 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente5.$J_Estrutura ) = 2.90808480348252172E-70 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente5.$J_Estrutura ) = 5.28390889286347587E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente5.$J_Estrutura ) = 7.78928045815104629E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente5.$J_Estrutura ) = -6.10714193279263009E-72 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente5.$J_Estrutura ) = -5.85496591542838183E-72 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente5.$J_Estrutura ) = 7.12445416791283828E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente5.$J_Estrutura ) = 1.53001382413990299E-71 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente5.$J_Estrutura ) = 8.70164638271369558E-71 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente5.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2840,51 +3110,51 @@ joint.st.vel (            1 ,       $S_LinhaSemente5.$S_BarraCima.$J_Body1) = 2.
 marker.st.alg (           1 ,       $S_LinhaSemente5.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
 joint.st.pos (            1 ,       $S_LinhaSemente5.$S_BarraBaixo.$J_Body1) = -2.70526034059125731E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente5.$S_BarraBaixo.$J_Body1) = 3.11025695931739784E-70 ! Velocity
+joint.st.vel (            1 ,       $S_LinhaSemente5.$S_BarraBaixo.$J_Body1) = 2.16349098156646350E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488553E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497477E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente5.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscosV.$M_chao_contact) = 1.75537147391901871E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscosV.$M_chao_contact) = 1.75537146953594769E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente5.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514471E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente5.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD1.$M_chao_contact) = -4.02358415389621200E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente5.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente5.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente5.$S_DiscoD2.$M_chao_contact) = -4.25530822675348332E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente5.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-joint.st.pos (            1 ,       $S_LinhaSemente6.$J_Estrutura ) = 6.31050756288757103E-23 ! Position
-joint.st.pos (            2 ,       $S_LinhaSemente6.$J_Estrutura ) = 7.11794336239326499E-16 ! Position
-joint.st.pos (            3 ,       $S_LinhaSemente6.$J_Estrutura ) = -1.47944823923044714E-22 ! Position
-joint.st.pos (            4 ,       $S_LinhaSemente6.$J_Estrutura ) = 3.60638905120292452E-01 ! Position
+joint.st.pos (            1 ,       $S_LinhaSemente6.$J_Estrutura ) = 5.35546156101856145E-31 ! Position
+joint.st.pos (            2 ,       $S_LinhaSemente6.$J_Estrutura ) = 3.20938696496299811E-23 ! Position
+joint.st.pos (            3 ,       $S_LinhaSemente6.$J_Estrutura ) = 7.35744607788240462E-30 ! Position
+joint.st.pos (            4 ,       $S_LinhaSemente6.$J_Estrutura ) = 3.60638905120292563E-01 ! Position
 joint.st.pos (            5 ,       $S_LinhaSemente6.$J_Estrutura ) = 1.25000000000000000E+00 ! Position
-joint.st.pos (            6 ,       $S_LinhaSemente6.$J_Estrutura ) = 5.28390889286348364E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente6.$J_Estrutura ) = -1.30781434617792130E-71 ! Velocity
-joint.st.vel (            2 ,       $S_LinhaSemente6.$J_Estrutura ) = 6.71785612607189401E-71 ! Velocity
-joint.st.vel (            3 ,       $S_LinhaSemente6.$J_Estrutura ) = -1.86760296602421458E-71 ! Velocity
-joint.st.vel (            4 ,       $S_LinhaSemente6.$J_Estrutura ) = 7.12445416791283556E-56 ! Velocity
-joint.st.vel (            5 ,       $S_LinhaSemente6.$J_Estrutura ) = -1.16393236684450465E-71 ! Velocity
-joint.st.vel (            6 ,       $S_LinhaSemente6.$J_Estrutura ) = 1.21048391646935785E-70 ! Velocity
+joint.st.pos (            6 ,       $S_LinhaSemente6.$J_Estrutura ) = 5.28390889286347920E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente6.$J_Estrutura ) = 9.24946211745288727E-72 ! Velocity
+joint.st.vel (            2 ,       $S_LinhaSemente6.$J_Estrutura ) = 9.77142709246820493E-71 ! Velocity
+joint.st.vel (            3 ,       $S_LinhaSemente6.$J_Estrutura ) = -2.31775892417617122E-72 ! Velocity
+joint.st.vel (            4 ,       $S_LinhaSemente6.$J_Estrutura ) = 7.12445416791283375E-56 ! Velocity
+joint.st.vel (            5 ,       $S_LinhaSemente6.$J_Estrutura ) = 5.73302561656099291E-72 ! Velocity
+joint.st.vel (            6 ,       $S_LinhaSemente6.$J_Estrutura ) = 1.95314899838493488E-70 ! Velocity
 
 
 prim.transparency (                 $S_LinhaSemente6.$P_chao      ) = 1.00000000000000000E+00 ! Transparency
@@ -2901,39 +3171,39 @@ joint.st.vel (            1 ,       $S_LinhaSemente6.$S_BarraCima.$J_Body1) = 1.
 
 marker.st.alg (           1 ,       $S_LinhaSemente6.$S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
 
-joint.st.pos (            1 ,       $S_LinhaSemente6.$S_BarraBaixo.$J_Body1) = -2.70526034059125564E-01 ! Position
-joint.st.vel (            1 ,       $S_LinhaSemente6.$S_BarraBaixo.$J_Body1) = 1.56290494751526219E-70 ! Velocity
+joint.st.pos (            1 ,       $S_LinhaSemente6.$S_BarraBaixo.$J_Body1) = -2.70526034059124787E-01 ! Position
+joint.st.vel (            1 ,       $S_LinhaSemente6.$S_BarraBaixo.$J_Body1) = 2.27078937069826460E-70 ! Velocity
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscosV.$M_Roda1_contact) = 1.37519164736488575E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscosV.$M_Roda1_contact) = 1.37519164717497477E+00 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente6.$S_DiscosV.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscosV.$M_chao_contact) = 1.75537147391901804E+00 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscosV.$M_chao_contact) = 1.75537146953594769E+00 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente6.$S_DiscosV.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD1.$M_Roda1_contact) = 9.31544866425514471E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD1.$M_Roda1_contact) = 9.31544866460873067E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente6.$S_DiscoD1.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD1.$M_chao_contact) = -4.02358415389621200E+02 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD1.$M_chao_contact) = -4.02358415389900756E+02 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente6.$S_DiscoD1.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD2.$M_Roda1_contact) = 1.15480820379619580E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD2.$M_Roda1_contact) = 1.15480820397137052E+01 ! Algebraic states
 
 
 joint.from (                        $S_LinhaSemente6.$S_DiscoD2.$J_connector) = $M_Isys       ! From Marker
 
 
-marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact) = -4.25530822662520052E+01 ! Algebraic states
+marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact) = -4.25530822675348332E+01 ! Algebraic states
 marker.par (              3 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact) = $P_chao    ! [-] Contact geometry Primitive
 
 
-model.data.redundancy                                               = 'eJxjYBgFxAJGKorjkqMGoKXZMPMZ0fjUZqPbh89eUsVxsalpPgwYmCYaG5qYmZgZJlmYWpqnpqRaWJgnGVkaWBiapBoYpgIApsQILYADAAAAAAAA' ! Constraint redundancy data
-model.data.dependency                                               = 'eJxjZEAFLEDMSABjA4T0oOvFZyYh/djYuOxANxcfn5A4GwG3kYKx2YkvfEh166gfhocfcLlhKPgB3W58fhmsfiAlPgbKDwamicaGJmYmZoZJFqaW5qkpqRYW5klGlgYWhiapBoapAHf1CPjkBQAAAAAAAA==' ! Solver state dependency data
+model.data.redundancy                                               = 'eJxjYBgFxAJGMtSTqodU82kJiHU/IwE2ujm4zCSknlRxUt1DjvkMWMSR1ZuYGlikGJtbJhlYGhqbppimJlkYppomppmbG6QlJhmaAgCqBAi4gAMAAAAAAAA=' ! Constraint redundancy data
+model.data.dependency                                               = 'eJxjZEAFLEDMSABjA4TUY2PjMpOQ/eh68Imjm4uPT0icjQR3kRqGhPxEqlsp9QMp4T8c/YAv3Y76gTg/4HPLUE1Lg9EPJqYGFinG5pZJBpaGxqYppqlJFoappolp5uYGaYlJhqYAe0kJg+QFAAAAAAAA' ! Solver state dependency data
