@@ -1,0 +1,1014 @@
+!file.version=3.7! Removing this line will make the file unreadable
+
+!**********************************************************************
+! Simpack Version Information
+!**********************************************************************
+version.number = 20220002
+version.desc   = ''
+version.build  = 122
+
+!**********************************************************************
+!  Global parameters
+!**********************************************************************
+gravity (                 1                                       ) = 0.00000000000000000E+00 ! Gravity
+gravity (                 2                                       ) = 0.00000000000000000E+00 ! Gravity
+gravity (                 3                                       ) = -9.81000000000000050E+00 ! Gravity
+vehicle.startvel                                                    = 0.00000000000000000E+00 ! Vehicle initial velocity
+vehicle.applystartvel                                               = 0                       ! Apply vehicle initial velocity at solver start
+glob.compat.flxnodeori                                              = 0                       ! Flexbody Node Orientation Method
+glob.compat.afcf                                                    = 0                       ! References Frame for Joint and Force Element Forces and Torques
+rw.cont.meth                                                        = 2                       ! MISCPAR_RW_CONTACT_METHOD
+rw.linear                                                           = 0                       ! MISCPAR_RW_PROFILE_LINEARIZATION_METHOD
+time                                                                = 0.00000000000000000E+00 ! Time
+slv.active                                                          = $SLV_SolverSettings     ! Active SolverSettings element
+track.active                                                        = null                    ! Active Track element
+prop3d.bg.base.color.r                                              = 2.15000000000000000E+02 ! Background color (red component)
+prop3d.bg.base.color.g                                              = 2.15000000000000000E+02 ! Background color (green component)
+prop3d.bg.base.color.b                                              = 2.15000000000000000E+02 ! Background color (blue component)
+prop3d.bg.base.color.t                                              = 0.00000000000000000E+00 ! Background color (transparency component)
+prop3d.bg.grad.color.r                                              = 2.55000000000000000E+02 ! Gradient color (red component)
+prop3d.bg.grad.color.g                                              = 2.55000000000000000E+02 ! Gradient color (green component)
+prop3d.bg.grad.color.b                                              = 2.55000000000000000E+02 ! Gradient color (blue component)
+prop3d.bg.grad.color.t                                              = 0.00000000000000000E+00 ! Gradient color (transparency component)
+prop3d.bg.gradient                                                  = 1                       ! 0 = constant, 1 = gradient
+prop3d.marker.size                                                  = 0.00000000000000000E+00 ! length of Marker axes, if value is zero, use "auto"
+prop3d.marker.auto                                                  = 1                       ! 0 = user defined, 1 = auto size determination
+prop3d.marker.color.r                                               = 0.00000000000000000E+00 ! Marker color (red component)
+prop3d.marker.color.g                                               = 0.00000000000000000E+00 ! Marker color (green component)
+prop3d.marker.color.b                                               = 0.00000000000000000E+00 ! Marker color (blue component)
+prop3d.marker.color.t                                               = 0.00000000000000000E+00 ! Marker color (transparency component)
+prop3d.display                                                      = 1                       ! 1 = shaded,  2 = wireframe, 3 = hidden line
+prop3d.bbox                                                         = 0                       ! 0 = exclude all refsys objects, 1 = include all refsys objects
+prop2d.joint.visible                                                = 1                       ! Joints visible
+prop2d.force.visible                                                = 1                       ! Forces visible
+prop2d.constr.visible                                               = 1                       ! Constraints visible
+prop2d.sensor.visible                                               = 0                       ! Sensors visible
+prop2d.grid.visible                                                 = 0                       ! Show grid
+prop2d.grid.hor.start                                               = 0.00000000000000000E+00 ! Horizontal offset
+prop2d.grid.hor.step                                                = 1.00000000000000000E+01 ! Horizontal step
+prop2d.grid.vert.start                                              = 0.00000000000000000E+00 ! Vertical offset
+prop2d.grid.vert.step                                               = 1.00000000000000000E+01 ! Vertical step
+prop2d.line.width                                                   = 0                       ! Line width
+prop2d.proj.dir                                                     = 2                       ! Projection direction
+
+
+!**********************************************************************
+! Substructures
+!**********************************************************************
+substr.file (                       $S_BarraCima                  ) = './BarraPar.spck'       ! Filename
+substr.id (                         $S_BarraCima                  ) = '1'                     ! Substructure Id
+
+substr.file (                       $S_BarraBaixo                 ) = './BarraPar.spck'       ! Filename
+substr.id (                         $S_BarraBaixo                 ) = '2'                     ! Substructure Id
+
+substr.file (                       $S_DiscoComp1                 ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_DiscoComp1                 ) = '1'                     ! Substructure Id
+
+substr.file (                       $S_DiscoComp2                 ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_DiscoComp2                 ) = '2'                     ! Substructure Id
+
+substr.file (                       $S_DiscosV                    ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_DiscosV                    ) = '3'                     ! Substructure Id
+
+substr.file (                       $S_DiscoD1                    ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_DiscoD1                    ) = '4'                     ! Substructure Id
+
+substr.file (                       $S_DiscoD2                    ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_DiscoD2                    ) = '5'                     ! Substructure Id
+
+!**********************************************************************
+! Views
+!**********************************************************************
+view.type (                         $V_WorkingView                ) = 0                       ! Projection type
+view.pos (                1 ,       $V_WorkingView                ) = -1.43978678592247888E-01 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -2.01815812633867608E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 3.38632819693884812E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -6.92506849765777588E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -1.28408163785934448E-01 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -9.28750559687614441E-02 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -7.03789591789245605E-01 ! Orientation
+view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
+view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
+view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
+view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 5.79545688629150391E+00 ! Back clipping plane value
+view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
+view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
+view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
+
+view.type (                         $V_Ortho                      ) = 0                       ! Projection type
+view.pos (                1 ,       $V_Ortho                      ) = 6.85247761197388172E-01 ! Position
+view.pos (                2 ,       $V_Ortho                      ) = -7.19467787537723780E-01 ! Position
+view.pos (                3 ,       $V_Ortho                      ) = 3.52404586199554615E-01 ! Position
+view.orient (             1 ,       $V_Ortho                      ) = 5.24405717849731445E-01 ! Orientation
+view.orient (             2 ,       $V_Ortho                      ) = 2.11789414286613464E-01 ! Orientation
+view.orient (             3 ,       $V_Ortho                      ) = 2.88275688886642456E-01 ! Orientation
+view.orient (             4 ,       $V_Ortho                      ) = 7.72684276103973389E-01 ! Orientation
+view.angle (                        $V_Ortho                      ) = 7.85398185253143311E-01 ! Lens angle
+view.fclip.auto (                   $V_Ortho                      ) = 1                       ! Front clipping plane auto
+view.bclip.auto (                   $V_Ortho                      ) = 1                       ! Back clipping plane auto
+view.rotcenter.type (               $V_Ortho                      ) = 0                       ! Rotation center type
+view.rotcenter.adjust (             $V_Ortho                      ) = 1                       ! Adjust rotation center
+view.motion.active (                $V_Ortho                      ) = 0                       ! Camera is moved
+
+view.type (                         $V_Front                      ) = 1                       ! Projection type
+view.pos (                1 ,       $V_Front                      ) = 0.00000000000000000E+00 ! Position
+view.pos (                2 ,       $V_Front                      ) = -5.99845290184020996E-01 ! Position
+view.pos (                3 ,       $V_Front                      ) = 2.98023294931226701E-08 ! Position
+view.orient (             1 ,       $V_Front                      ) = 7.07106769084930420E-01 ! Orientation
+view.orient (             2 ,       $V_Front                      ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             3 ,       $V_Front                      ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             4 ,       $V_Front                      ) = 7.07106769084930420E-01 ! Orientation
+view.height (                       $V_Front                      ) = 8.00000000000000044E-01 ! View height
+view.fclip.auto (                   $V_Front                      ) = 1                       ! Front clipping plane auto
+view.bclip.auto (                   $V_Front                      ) = 1                       ! Back clipping plane auto
+view.rotcenter.type (               $V_Front                      ) = 0                       ! Rotation center type
+view.rotcenter.adjust (             $V_Front                      ) = 1                       ! Adjust rotation center
+view.motion.active (                $V_Front                      ) = 0                       ! Camera is moved
+
+view.type (                         $V_Top                        ) = 1                       ! Projection type
+view.pos (                1 ,       $V_Top                        ) = 0.00000000000000000E+00 ! Position
+view.pos (                2 ,       $V_Top                        ) = -7.49893719330430031E-04 ! Position
+view.pos (                3 ,       $V_Top                        ) = 5.99095582962036133E-01 ! Position
+view.orient (             1 ,       $V_Top                        ) = 2.51447520582814832E-08 ! Orientation
+view.orient (             2 ,       $V_Top                        ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             3 ,       $V_Top                        ) = 0.00000000000000000E+00 ! Orientation
+view.orient (             4 ,       $V_Top                        ) = 1.00000000000000000E+00 ! Orientation
+view.height (                       $V_Top                        ) = 8.00000000000000044E-01 ! View height
+view.fclip.auto (                   $V_Top                        ) = 1                       ! Front clipping plane auto
+view.bclip.auto (                   $V_Top                        ) = 1                       ! Back clipping plane auto
+view.rotcenter.type (               $V_Top                        ) = 0                       ! Rotation center type
+view.rotcenter.adjust (             $V_Top                        ) = 1                       ! Adjust rotation center
+view.motion.active (                $V_Top                        ) = 0                       ! Camera is moved
+
+!**********************************************************************
+! Solver Settings
+!**********************************************************************
+slv.kin.task (                      $SLV_SolverSettings           ) = 3                       ! KIN_INTPAR_TASK
+slv.kin.tout.n (                    $SLV_SolverSettings           ) = 201                     ! KIN_INTPAR_NUM_STEPS
+slv.kin.tol (                       $SLV_SolverSettings           ) = 9.99999999999999955E-07 ! Kinematics tolerance
+slv.integ.fix.driftstab (           $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_INTPAR_FIXINT_CONSTAB
+slv.integ.fix.jac.update (          $SLV_SolverSettings           ) = 3                       ! TIME_INTEG_PAR_FIXINT_JACOBIAN_EVAL
+slv.integ.fix.part.type (           $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_INTPAR_FIXINT_JAC_PART_TYPE
+slv.integ.fix.order (               $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FIXINT_METHOD_ORDER
+slv.integ.fix.posup (               $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FIXINT_POS_COORD_UPDATE
+slv.integ.sodasrt.formalism (       $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_FORMALISM
+slv.integ.type (                    $SLV_SolverSettings           ) = 1                       ! Integrator type
+slv.integ.jac.struc (               $SLV_SolverSettings           ) = 3                       ! SOLVER_TIME_INTEG_PAR_JACOBIAN_STRUC
+slv.integ.jac.incr.type (           $SLV_SolverSettings           ) = 2                       ! Jacobian increment type
+slv.integ.linalg.slv (              $SLV_SolverSettings           ) = 1                       ! 1 = dense ; 2 = sparse (UMFPACK) ; 3 = sparse (PARDISO)
+slv.integ.lsode.meth (              $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_PAR_LSODE_INTEG_METHOD
+slv.integ.lsode.jac.struc (         $SLV_SolverSettings           ) = 3                       ! SOLVER_TIME_INTEG_PAR_LSODE_JACOBIAN_STRUC
+slv.integ.lsode.maxord (            $SLV_SolverSettings           ) = 5                       ! TIME_INTEG_INTPAR_LSODE_MAX_ORDER
+slv.integ.maxrhs (                  $SLV_SolverSettings           ) = -1                      ! TIME_INTEG_INTPAR_MAX_RHS
+slv.integ.maxstp (                  $SLV_SolverSettings           ) = -1                      ! TIME_INTEG_INTPAR_MAX_TIME_STEPS
+slv.integ.newton.maxit (            $SLV_SolverSettings           ) = 7                       ! TIME_INTEG_INTPAR_NEWTON_ITERS
+slv.integ.tout.n (                  $SLV_SolverSettings           ) = 101                     ! TIME_INTEG_INTPAR_OUTPUT_NUM_POINTS
+slv.integ.sodasrt2.iestsc (         $SLV_SolverSettings           ) = 2                       ! TIME_INTEG_PAR_SODASRT20_ERROR_EST_SCALE_METHOD
+slv.integ.sodasrt.maxord (          $SLV_SolverSettings           ) = 5                       ! TIME_INTEG_INTPAR_SODASRT_MAX_ORDER
+slv.integ.sodasrt1.errnorm (        $SLV_SolverSettings           ) = 3                       ! TIME_INTEG_PAR_SODASRT_NORM_TYPE
+slv.integ.tout.mode (               $SLV_SolverSettings           ) = 0                       ! TIME_INTEG_INTPAR_TOUT_MODE
+slv.integ.meetop (                  $SLV_SolverSettings           ) = 0                       ! TIME_INTEG_BOOLPAR_EVAL_MOTION_EQ_AT_COMM_POINTS
+slv.integ.driftstab (               $SLV_SolverSettings           ) = 2                       ! TIME_INTEG_BOOLPAR_ACCEPT_DRIFT
+slv.integ.root (                    $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_BOOLPAR_DETECT_IMPLICIT_DISCONTINUITIES
+slv.integ.jac.part (                $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_BOOLPAR_PARTITIONED_EVAL_JACOBIAN
+slv.integ.addrhscall (              $SLV_SolverSettings           ) = 0                       ! TIME_INTEG_BOOLPAR_EXTRA_EVAL_AFTER_SUCCESSFUL_STEP
+slv.integ.linalg.red2nd (           $SLV_SolverSettings           ) = 1                       ! Linear equations second order reduction
+slv.integ.fix.oneleg (              $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_BOOLPAR_FIXINT_IMPLICIT_ONE_LEG_OLC
+slv.integ.fix.conforce (            $SLV_SolverSettings           ) = 0                       ! TIME_INTEG_BOOLPAR_FIXINT_CONFORCE
+slv.integ.fix.clss (                $SLV_SolverSettings           ) = 1                       ! TIME_INTEG_BOOLPAR_FIXINT_METHOD_CLASS
+slv.integ.sodasrt1.scal.lam (       $SLV_SolverSettings           ) = 9.99999999999999955E-08 ! TIME_INTEG_SCALARPAR_SCALE_CONSTRAINT_FORCES
+slv.integ.sodasrt1.scal.acc (       $SLV_SolverSettings           ) = 1.00000000000000000E+00 ! TIME_INTEG_SCALARPAR_SCALE_ACCELERATIONS
+slv.integ.newton.eps (              $SLV_SolverSettings           ) = 3.33000000000000018E-01 ! TIME_INTEG_SCALARPAR_NEWTON_ERROR_BOUND
+slv.integ.fix.utcpar (              $SLV_SolverSettings           ) = 1.00000000000000000E+00 ! TIME_INTEG_SCALARPAR_FIXINT_EULER_UTC
+slv.integ.fix.olcpar (              $SLV_SolverSettings           ) = 5.00000000000000000E-01 ! TIME_INTEG_SCALARPAR_FIXINT_ONE_LEG_OLC
+slv.integ.sodasrt2.estfac (         $SLV_SolverSettings           ) = 9.99999999999999955E-07 ! TIME_INTEG_SCALARPAR_SODASRT20_ERROR_EST_SCALE_FACTOR
+slv.integ.tout.freq (               $SLV_SolverSettings           ) = { 200 Hz }              ! TIME_INTEG_PAR_OUTPUT_FREQ
+slv.integ.tend.time (               $SLV_SolverSettings           ) = { 2 s }                 ! TIME_INTEG_TIMEPAR_END_TIME
+slv.integ.atol.gen (                $SLV_SolverSettings           ) = 1.00000000000000008E-05 ! TIME_INTEG_PARSTATE_DEFAULT
+slv.integ.atol.vel (                $SLV_SolverSettings           ) = 1.00000000000000005E-04 ! TIME_INTEG_PARSTATE_VEL
+slv.integ.rtol.gen (                $SLV_SolverSettings           ) = 9.99999999999999955E-08 ! TIME_INTEG_PARSTATE_DEFAULT
+slv.integ.rtol.vel (                $SLV_SolverSettings           ) = 1.00000000000000008E-05 ! TIME_INTEG_PARSTATE_VEL
+slv.meas.geo (                      $SLV_SolverSettings           ) = 1                       ! Animation data to result file
+slv.meas.sensor.pos (               $SLV_SolverSettings           ) = 1                       ! Sensor position to result file
+slv.meas.sensor.vel (               $SLV_SolverSettings           ) = 1                       ! Sensor velocity to result file
+slv.meas.sensor.acc (               $SLV_SolverSettings           ) = 1                       ! Sensor acceleration to result file
+slv.meas.force.af (                 $SLV_SolverSettings           ) = 1                       ! applied forces to result file
+slv.meas.force.ov (                 $SLV_SolverSettings           ) = 1                       ! Force output values to result file
+slv.meas.force.st.dyn (             $SLV_SolverSettings           ) = 1                       ! Force dynamic states to result file
+slv.meas.force.st.alg (             $SLV_SolverSettings           ) = 1                       ! Force algebraic states to result file
+slv.meas.joint.st.pos (             $SLV_SolverSettings           ) = 1                       ! Joint position to result file
+slv.meas.joint.st.vel (             $SLV_SolverSettings           ) = 1                       ! Joint velocity to result file
+slv.meas.joint.st.acc (             $SLV_SolverSettings           ) = 1                       ! Joint acceleration to result file
+slv.meas.joint.cf (                 $SLV_SolverSettings           ) = 1                       ! Joint constraining forces to result file
+slv.meas.body.pos (                 $SLV_SolverSettings           ) = 1                       ! Body position to result file
+slv.meas.body.vel (                 $SLV_SolverSettings           ) = 1                       ! Body velocity to result file
+slv.meas.body.acc (                 $SLV_SolverSettings           ) = 1                       ! Body acceleration to result file
+slv.meas.body.flx.st.pos (          $SLV_SolverSettings           ) = 1                       ! Body elastic state position to result file
+slv.meas.body.flx.st.vel (          $SLV_SolverSettings           ) = 1                       ! Body elastic state velocity to result file
+slv.meas.body.flx.st.acc (          $SLV_SolverSettings           ) = 1                       ! Body elastic state acceleration to result file
+slv.meas.marker.st.alg (            $SLV_SolverSettings           ) = 1                       ! Marker algebraic state to result file
+slv.meas.constr.cf (                $SLV_SolverSettings           ) = 1                       ! Constraint constrained state to result file
+slv.meas.yout (                     $SLV_SolverSettings           ) = 1                       ! y-Outputs to result file
+slv.meas.result (                   $SLV_SolverSettings           ) = 1                       ! Result elements to result file
+slv.meas.subvar (                   $SLV_SolverSettings           ) = 1                       ! MEAS_BOOLPAR_SUBVAR
+slv.assmbl.task (                   $SLV_SolverSettings           ) = 3                       ! ASSMBL_PAR_SOLVER_MODE
+slv.output.path.type (              $SLV_SolverSettings           ) = 1                       ! OUTPUT_PATH_PAR_TYPE
+slv.compat.solver (                 $SLV_SolverSettings           ) = 0                       ! 0 = no (new solver); 1 = yes (classic solver)
+slv.txt (                           $SLV_SolverSettings           ) = ''                      ! Comment
+
+!**********************************************************************
+! SubVars
+!**********************************************************************
+subvar.str (                        $_L                           ) = '1'                     ! Definition
+subvar.dflt (                       $_L                           ) = ''                      ! Default value
+
+subvar.str (                        $_W                           ) = '0.12'                  ! Definition
+subvar.dflt (                       $_W                           ) = ''                      ! Default value
+
+subvar.str (                        $_H                           ) = '0.85'                  ! Definition
+subvar.dflt (                       $_H                           ) = ''                      ! Default value
+
+subvar.str (                        $_DistPar                     ) = '0.22'                  ! Definition
+subvar.dflt (                       $_DistPar                     ) = ''                      ! Default value
+
+subvar.str (                        $_dx_discosV                  ) = '1.11'                  ! Definition
+subvar.dflt (                       $_dx_discosV                  ) = ''                      ! Default value
+
+subvar.str (                        $_dx_discoComp                ) = '0.67'                  ! Definition
+subvar.dflt (                       $_dx_discoComp                ) = ''                      ! Default value
+
+subvar.str (                        $_dx_discosD                  ) = '0.409'                 ! Definition
+subvar.dflt (                       $_dx_discosD                  ) = ''                      ! Default value
+
+subvar.str (                        $_dz_discosV                  ) = '0.8'                   ! Definition
+subvar.dflt (                       $_dz_discosV                  ) = ''                      ! Default value
+
+subvar.str (                        $_dz_discoComp                ) = '0.73'                  ! Definition
+subvar.dflt (                       $_dz_discoComp                ) = ''                      ! Default value
+
+subvar.str (                        $_dz_discosD                  ) = '0.745'                 ! Definition
+subvar.dflt (                       $_dz_discosD                  ) = ''                      ! Default value
+
+subvar.str (                        $_r_discosV                   ) = '0.293/2 - 0.0105 + 0.011' ! Definition
+subvar.dflt (                       $_r_discosV                   ) = ''                      ! Default value
+subvar.txt (                        $_r_discosV                   ) = ''                      ! Comment
+
+subvar.str (                        $_r_discosD                   ) = '0.382/2'               ! Definition
+subvar.dflt (                       $_r_discosD                   ) = ''                      ! Default value
+
+subvar.str (                        $_Fn_discosV                  ) = '6*9.81'                ! Definition
+subvar.dflt (                       $_Fn_discosV                  ) = ''                      ! Default value
+
+subvar.str (                        $_Fn_discoD1                  ) = '50*9.81'               ! Definition
+subvar.dflt (                       $_Fn_discoD1                  ) = ''                      ! Default value
+
+subvar.str (                        $_Fn_discoD2                  ) = '50*9.81'               ! Definition
+subvar.dflt (                       $_Fn_discoD2                  ) = ''                      ! Default value
+
+subvar.str (                        $_c_discosV                   ) = '1'                     ! Definition
+subvar.dflt (                       $_c_discosV                   ) = ''                      ! Default value
+
+subvar.str (                        $_c_discoD1                   ) = '2'                     ! Definition
+subvar.dflt (                       $_c_discoD1                   ) = ''                      ! Default value
+
+subvar.str (                        $_c_discoD2                   ) = '2'                     ! Definition
+subvar.dflt (                       $_c_discoD2                   ) = ''                      ! Default value
+
+subvar.str (                        $_L0                          ) = '0.15'                  ! Definition
+subvar.dflt (                       $_L0                          ) = ''                      ! Default value
+
+subvar.str (                        $_k                           ) = '1e3'                   ! Definition
+subvar.dflt (                       $_k                           ) = ''                      ! Default value
+
+subvar.str (                        $_beta0                       ) = '-15.5 deg'             ! Definition
+subvar.dflt (                       $_beta0                       ) = ''                      ! Default value
+
+!**********************************************************************
+! Reference systems
+!**********************************************************************
+refsys.type (                       $R_Isys                       ) = 1                       ! Type
+refsys.attr.2d.pos.x (              $R_Isys                       ) = -9.00000000000000000E+01
+refsys.attr.2d.pos.y (              $R_Isys                       ) = -1.00000000000000000E+01
+refsys.attr.2d.width (              $R_Isys                       ) = 2.40000000000000000E+02
+refsys.attr.2d.height (             $R_Isys                       ) = 2.20000000000000000E+02
+
+marker.type (                       $M_Isys                       ) = 1                       ! Type
+marker.parent (                     $M_Isys                       ) = $R_Isys                 ! Reference system
+
+prim.type (                         $P_Isys                       ) = 30                      ! Type
+prim.ref (                          $P_Isys                       ) = $M_Isys                 ! Reference Marker
+prim.color.r (            1 ,       $P_Isys                       ) = 1.48000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Isys                       ) = 1.48000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Isys                       ) = 1.48000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Isys                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                3 ,       $P_Isys                       ) = 1.00000000000000006E-01 ! [m] Length
+
+
+!**********************************************************************
+! Bodies
+!**********************************************************************
+body.m (                            $B_Estrutura                  ) = 1.00000000000000000E+00 ! Mass of the Body
+body.mp (                           $B_Estrutura                  ) = 1                       ! 0=manual; 1=auto (based on geometry); 2=mass manual, CG & Inertia auto
+body.I.tens (             1 ,   1 , $B_Estrutura                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_Estrutura                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_Estrutura                  ) = 1.00000000000000000E+00 ! Moments of inertia
+body.I.kind (                       $B_Estrutura                  ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_Estrutura                  ) = 0.00000000000000000E+00 ! Damping input value
+body.attr.2d.pos.x (                $B_Estrutura                  ) = -3.00000000000000000E+01
+body.attr.2d.pos.y (                $B_Estrutura                  ) = 3.00000000000000000E+01
+body.attr.2d.width (                $B_Estrutura                  ) = 1.10000000000000000E+02
+body.attr.2d.height (               $B_Estrutura                  ) = 8.00000000000000000E+01
+
+marker.type (                       $M_Estrutura_BRF              ) = 1                       ! Type
+marker.parent (                     $M_Estrutura_BRF              ) = $B_Estrutura            ! Body
+marker.flx.type (                   $M_Estrutura_BRF              ) = 4                       ! Flexible type
+
+marker.type (                       $M_Estrutura_BaraCima         ) = 2                       ! Type
+marker.parent (                     $M_Estrutura_BaraCima         ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_Estrutura_BaraCima         ) = { $_L/2 -0.005 }        ! Position
+marker.pos (              3 ,       $M_Estrutura_BaraCima         ) = { $_H/2 + $_DistPar/2 } ! Position
+
+marker.type (                       $M_Estrutura_BaraBaixo        ) = 2                       ! Type
+marker.parent (                     $M_Estrutura_BaraBaixo        ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_Estrutura_BaraBaixo        ) = { $_L/2 -0.005 }        ! Position
+marker.pos (              3 ,       $M_Estrutura_BaraBaixo        ) = { $_H/2 - $_DistPar/2 + 0.02 -0.1 } ! Position
+
+marker.type (                       $M_discosV                    ) = 2                       ! Type
+marker.ref (                        $M_discosV                    ) = $M_Estrutura_BaraCima   ! Reference Marker
+marker.parent (                     $M_discosV                    ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_discosV                    ) = { -$_dx_discosV }       ! Position
+marker.pos (              3 ,       $M_discosV                    ) = { -$_dz_discosV }       ! Position
+
+marker.type (                       $M_discoComp1                 ) = 2                       ! Type
+marker.ref (                        $M_discoComp1                 ) = $M_Estrutura_BaraCima   ! Reference Marker
+marker.parent (                     $M_discoComp1                 ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_discoComp1                 ) = { -$_dx_discoComp }     ! Position
+marker.pos (              2 ,       $M_discoComp1                 ) = -1.40000000000000013E-01 ! Position
+marker.pos (              3 ,       $M_discoComp1                 ) = { -$_dz_discoComp }     ! Position
+
+marker.type (                       $M_discoComp2                 ) = 2                       ! Type
+marker.ref (                        $M_discoComp2                 ) = $M_Estrutura_BaraCima   ! Reference Marker
+marker.parent (                     $M_discoComp2                 ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_discoComp2                 ) = { -$_dx_discoComp }     ! Position
+marker.pos (              2 ,       $M_discoComp2                 ) = 1.40000000000000013E-01 ! Position
+marker.pos (              3 ,       $M_discoComp2                 ) = { -$_dz_discoComp }     ! Position
+
+marker.type (                       $M_discosD1                   ) = 2                       ! Type
+marker.ref (                        $M_discosD1                   ) = $M_Estrutura_BaraCima   ! Reference Marker
+marker.parent (                     $M_discosD1                   ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_discosD1                   ) = { -$_dx_discosD }       ! Position
+marker.pos (              2 ,       $M_discosD1                   ) = -3.50000000000000033E-02 ! Position
+marker.pos (              3 ,       $M_discosD1                   ) = { -$_dz_discosD }       ! Position
+
+marker.type (                       $M_discosD2                   ) = 2                       ! Type
+marker.ref (                        $M_discosD2                   ) = $M_Estrutura_BaraCima   ! Reference Marker
+marker.parent (                     $M_discosD2                   ) = $B_Estrutura            ! Body
+marker.pos (              1 ,       $M_discosD2                   ) = { -$_dx_discosD - 0.025 } ! Position
+marker.pos (              2 ,       $M_discosD2                   ) = 3.50000000000000033E-02 ! Position
+marker.pos (              3 ,       $M_discosD2                   ) = { -$_dz_discosD }       ! Position
+
+joint.from (                        $J_Estrutura                  ) = $M_Isys                 ! From Marker
+joint.to (                          $J_Estrutura                  ) = $M_Estrutura_BRF        ! To Marker
+joint.type (                        $J_Estrutura                  ) = 25                      ! Type
+joint.st.pos (            1 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            2 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            3 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            4 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            5 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Position
+joint.st.pos (            6 ,       $J_Estrutura                  ) = { $_H/2 }               ! Position
+joint.st.vel (            1 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            2 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            3 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            4 ,       $J_Estrutura                  ) = 1.00000000000000002E-02 ! Velocity
+joint.st.vel (            5 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Velocity
+joint.st.vel (            6 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! Velocity
+joint.par (               1 ,       $J_Estrutura                  ) = 1.00000000000000000E+00 ! [-] Axis of rotation    1
+joint.par (               2 ,       $J_Estrutura                  ) = 2.00000000000000000E+00 ! [-] Axis of rotation    2
+joint.par (               3 ,       $J_Estrutura                  ) = 3.00000000000000000E+00 ! [-] Axis of rotation    3
+joint.par (               4 ,       $J_Estrutura                  ) = 1.00000000000000000E+00 ! [-] Axis of translation 1
+joint.par (               5 ,       $J_Estrutura                  ) = 2.00000000000000000E+00 ! [-] Axis of translation 2
+joint.par (               6 ,       $J_Estrutura                  ) = 3.00000000000000000E+00 ! [-] Axis of translation 3
+joint.par (               8 ,       $J_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Trans-rot sequence
+joint.attr.2d.pos.x (     1 ,       $J_Estrutura                  ) = 20
+joint.attr.2d.pos.y (     1 ,       $J_Estrutura                  ) = 170
+joint.attr.2d.ori (       1 ,       $J_Estrutura                  ) = 270
+joint.attr.2d.paths.from.x (   1 ,   1 ,   1 ,   1 , $J_Estrutura ) = 20, 20
+joint.attr.2d.paths.from.y (   1 ,   1 ,   1 ,   1 , $J_Estrutura ) = 210, 187
+joint.attr.2d.paths.to.x (   1 ,   1 ,   1 ,   1 , $J_Estrutura   ) = 20, 20
+joint.attr.2d.paths.to.y (   1 ,   1 ,   1 ,   1 , $J_Estrutura   ) = 110, 153
+
+prim.type (                         $P_Estrutura                  ) = 39                      ! Type
+prim.ref (                          $P_Estrutura                  ) = $M_Estrutura_BRF        ! Reference Marker
+prim.pos (                1 ,       $P_Estrutura                  ) = { -1.144 + $_L/2 }      ! Position
+prim.pos (                2 ,       $P_Estrutura                  ) = { 0.08 +0.005 }         ! Position
+prim.pos (                3 ,       $P_Estrutura                  ) = { -0.48 + $_H/2 }       ! Position
+prim.ang (                3 ,       $P_Estrutura                  ) = { 180 deg }             ! Angles
+prim.color.r (            1 ,       $P_Estrutura                  ) = 1.91000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Estrutura                  ) = 1.91000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Estrutura                  ) = 1.91000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_Estrutura                  ) = 0.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Estrutura                  ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $P_Estrutura                  ) = './pecas_stl/estrutura.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Estrutura                  ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Estrutura                  ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Estrutura                  ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Estrutura_discosV          ) = 39                      ! Type
+prim.ref (                          $P_Estrutura_discosV          ) = $M_discosV              ! Reference Marker
+prim.pos (                2 ,       $P_Estrutura_discosV          ) = -9.19999999999999984E-02 ! Position
+prim.pos (                3 ,       $P_Estrutura_discosV          ) = -5.00000000000000010E-03 ! Position
+prim.ang (                1 ,       $P_Estrutura_discosV          ) = { 9.36 deg }            ! Angles
+prim.ang (                2 ,       $P_Estrutura_discosV          ) = { 90 deg }              ! Angles
+prim.ang (                3 ,       $P_Estrutura_discosV          ) = { 90 deg }              ! Angles
+prim.color.r (            1 ,       $P_Estrutura_discosV          ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Estrutura_discosV          ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Estrutura_discosV          ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! Density
+prim.par (                2 ,       $P_Estrutura_discosV          ) = './pecas_stl/mecanismo_de_plantio_stl/rodas.stl' ! [-] CAD file name
+prim.par (                9 ,       $P_Estrutura_discosV          ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Estrutura_discosV          ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Estrutura_discosV          ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+
+body.m (                            $B_chao                       ) = 9.99999999999999980E-13 ! Mass of the Body
+body.cg.pos (             1 ,       $B_chao                       ) = 0.00000000000000000E+00 ! Center of gravity
+body.cg.pos (             2 ,       $B_chao                       ) = 0.00000000000000000E+00 ! Center of gravity
+body.cg.pos (             3 ,       $B_chao                       ) = 0.00000000000000000E+00 ! Center of gravity
+body.I.tens (             1 ,   1 , $B_chao                       ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.tens (             1 ,   2 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             1 ,   3 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   1 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_chao                       ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.tens (             2 ,   3 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   1 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   2 , $B_chao                       ) = 0.00000000000000000E+00 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_chao                       ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.kind (                       $B_chao                       ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_chao                       ) = 0.00000000000000000E+00 ! Damping input value
+
+marker.type (                       $M_chao_BRF                   ) = 1                       ! Type
+marker.parent (                     $M_chao_BRF                   ) = $B_chao                 ! Body
+marker.flx.type (                   $M_chao_BRF                   ) = 4                       ! Flexible type
+
+joint.from (                        $J_chao                       ) = $M_Isys                 ! From Marker
+joint.to (                          $J_chao                       ) = $M_chao_BRF             ! To Marker
+joint.type (                        $J_chao                       ) = 0                       ! Type
+
+prim.type (                         $P_chao                       ) = 43                      ! Type
+prim.ref (                          $P_chao                       ) = $M_chao_BRF             ! Reference Marker
+prim.pos (                1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
+prim.pos (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Position
+prim.pos (                3 ,       $P_chao                       ) = -2.99999999999999989E-01 ! Position
+prim.ang (                1 ,       $P_chao                       ) = { 270 deg }             ! Angles
+prim.ang (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                3 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Angles
+prim.vtx (                1 ,   1 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   2 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   3 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   4 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   5 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   6 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   7 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   8 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   9 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  10 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  11 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  12 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  13 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  14 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  15 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  16 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  17 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  18 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  19 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  20 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  21 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  22 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  23 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  24 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  25 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  26 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   1 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   2 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   3 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   4 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   5 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   6 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   7 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   8 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   9 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  10 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  11 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  12 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  13 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  14 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  15 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  16 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  17 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  18 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  19 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  20 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  21 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  22 , $P_chao                       ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  23 , $P_chao                       ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  24 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  25 , $P_chao                       ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  26 , $P_chao                       ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   1 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   2 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   3 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   4 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   5 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   6 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   7 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   8 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,   9 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  10 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  11 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  12 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  13 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  14 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  15 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  16 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  17 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  18 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  19 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  20 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  21 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  22 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  23 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  24 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  25 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                3 ,  26 , $P_chao                       ) = 0.00000000000000000E+00 ! Vertices
+prim.color.r (            1 ,       $P_chao                       ) = 1.39000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_chao                       ) = 9.60000000000000000E+01 ! Colors (green component)
+prim.color.b (            1 ,       $P_chao                       ) = 9.70000000000000000E+01 ! Colors (blue component)
+prim.color.t (            1 ,       $P_chao                       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.par (                2 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Surface by
+prim.par (                7 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] Coordinate type
+prim.par (                8 ,       $P_chao                       ) = 1.00000000000000000E+00 ! [-] Surface fitting type
+prim.par (                9 ,       $P_chao                       ) = 3.00000000000000000E+00 ! [-] Spline degree in 1st dir
+prim.par (               10 ,       $P_chao                       ) = 3.00000000000000000E+00 ! [-] Spline degree in 2nd dir
+prim.par (               17 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] No. graphic points in 1st dir
+prim.par (               18 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [-] No. graphic points in 2nd dir
+prim.par (               19 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Graphics start 1st dir
+prim.par (               20 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Graphics end 1st dir
+prim.par (               21 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Graphics start 2nd dir
+prim.par (               22 ,       $P_chao                       ) = 0.00000000000000000E+00 ! [m] Graphics end 2nd dir
+
+prim.type (                         $P_chao_prisma                ) = 5                       ! Type
+prim.ref (                          $P_chao_prisma                ) = $M_chao_BRF             ! Reference Marker
+prim.pos (                1 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! Position
+prim.pos (                2 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! Position
+prim.pos (                3 ,       $P_chao_prisma                ) = -2.99999999999999989E-01 ! Position
+prim.ang (                1 ,       $P_chao_prisma                ) = { 270 deg }             ! Angles
+prim.ang (                2 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                3 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! Angles
+prim.vtx (                1 ,   1 , $P_chao_prisma                ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   2 , $P_chao_prisma                ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   3 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   4 , $P_chao_prisma                ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   5 , $P_chao_prisma                ) = 3.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   6 , $P_chao_prisma                ) = 4.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   7 , $P_chao_prisma                ) = 5.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   8 , $P_chao_prisma                ) = 6.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,   9 , $P_chao_prisma                ) = 7.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  10 , $P_chao_prisma                ) = 8.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  11 , $P_chao_prisma                ) = 9.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  12 , $P_chao_prisma                ) = 1.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  13 , $P_chao_prisma                ) = 1.00000000000000000E+01 ! Vertices
+prim.vtx (                1 ,  14 , $P_chao_prisma                ) = 9.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  15 , $P_chao_prisma                ) = 8.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  16 , $P_chao_prisma                ) = 7.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  17 , $P_chao_prisma                ) = 6.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  18 , $P_chao_prisma                ) = 5.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  19 , $P_chao_prisma                ) = 4.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  20 , $P_chao_prisma                ) = 3.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  21 , $P_chao_prisma                ) = 2.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  22 , $P_chao_prisma                ) = 1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  23 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  24 , $P_chao_prisma                ) = -1.00000000000000000E+00 ! Vertices
+prim.vtx (                1 ,  25 , $P_chao_prisma                ) = -2.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   1 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   2 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   3 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   4 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   5 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   6 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   7 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   8 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,   9 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  10 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  11 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  12 , $P_chao_prisma                ) = 0.00000000000000000E+00 ! Vertices
+prim.vtx (                2 ,  13 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  14 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  15 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  16 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  17 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  18 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  19 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  20 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  21 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  22 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  23 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  24 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.vtx (                2 ,  25 , $P_chao_prisma                ) = -2.99999999999999989E-01 ! Vertices
+prim.color.r (            1 ,       $P_chao_prisma                ) = 1.39000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_chao_prisma                ) = 9.60000000000000000E+01 ! Colors (green component)
+prim.color.b (            1 ,       $P_chao_prisma                ) = 9.70000000000000000E+01 ! Colors (blue component)
+prim.color.t (            1 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_chao_prisma                ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [-] Contour by
+prim.par (                4 ,       $P_chao_prisma                ) = 1.00000000000000000E+00 ! [-] Contour
+prim.par (                6 ,       $P_chao_prisma                ) = 1.00000000000000000E+00 ! [-] Curve fitting type
+prim.par (                7 ,       $P_chao_prisma                ) = 3.00000000000000000E+00 ! [-] Spline Degree
+prim.par (                9 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [-] Material side
+prim.par (               10 ,       $P_chao_prisma                ) = 2.00000000000000000E+00 ! [m] Depth
+prim.par (               11 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [m] Wall thickness
+prim.par (               12 ,       $P_chao_prisma                ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (               13 ,       $P_chao_prisma                ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (               14 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [m] Graphics discretization sag
+prim.par (               15 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [rad] Graphics discretization angle
+prim.par (               17 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [-] Graphics start
+prim.par (               18 ,       $P_chao_prisma                ) = 0.00000000000000000E+00 ! [-] Graphics end
+
+
+body.m (                            $B_connector                  ) = 9.99999999999999980E-13 ! Mass of the Body
+body.I.tens (             1 ,   1 , $B_connector                  ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.tens (             2 ,   2 , $B_connector                  ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.tens (             3 ,   3 , $B_connector                  ) = 9.99999999999999980E-13 ! Moments of inertia
+body.I.kind (                       $B_connector                  ) = -1                      ! Kind of I-tensor specification: -1=wrt CG; 0=wrt BRF; 1=wrt Marker
+body.flx.dmp.all (                  $B_connector                  ) = 0.00000000000000000E+00 ! Damping input value
+
+marker.type (                       $M_connector_BRF              ) = 1                       ! Type
+marker.parent (                     $M_connector_BRF              ) = $B_connector            ! Body
+marker.flx.type (                   $M_connector_BRF              ) = 4                       ! Flexible type
+
+joint.from (                        $J_connector                  ) = $M_Isys                 ! From Marker
+joint.to (                          $J_connector                  ) = $M_connector_BRF        ! To Marker
+joint.type (                        $J_connector                  ) = 0                       ! Type
+joint.par (               1 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about alpha
+joint.par (               2 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about beta
+joint.par (               3 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [rad] Rotation about gamma
+joint.par (               4 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in x
+joint.par (               5 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in y
+joint.par (               6 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [m] Translation in z
+joint.par (               7 ,       $J_connector                  ) = 0.00000000000000000E+00 ! [-] Rotation sequence
+
+
+!**********************************************************************
+! Force Elements
+!**********************************************************************
+force.type (                        $F_molaPar                    ) = 50                      ! Type
+force.from (                        $F_molaPar                    ) = $S_BarraCima.$M_Body1_mola ! From Marker
+force.to (                          $F_molaPar                    ) = $S_BarraBaixo.$M_Body1_mola ! To Marker
+force.disabled (                    $F_molaPar                    ) = 0                       ! Disabled
+force.par (               1 ,       $F_molaPar                    ) = $S_BarraBaixo.$M_Body1_contact ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_molaPar                    ) = null                    ! [-] Expression for Fx
+force.par (               4 ,       $F_molaPar                    ) = $X_Fmola                ! [-] Expression for Fy
+force.par (               5 ,       $F_molaPar                    ) = null                    ! [-] Expression for Fz
+force.par (               6 ,       $F_molaPar                    ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_molaPar                    ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_molaPar                    ) = null                    ! [-] Expression for Lz
+
+!**********************************************************************
+! Expressions
+!**********************************************************************
+express.str (                       $X_F_amortV                   ) = '0'                     ! Definition
+express.txt (                       $X_F_amortV                   ) = '$_c_discosV*WY($S_DiscosV.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Comment
+
+express.str (                       $X_F_amortD1                  ) = '0'                     ! Definition
+express.txt (                       $X_F_amortD1                  ) = '$_c_discoD1*WY($S_DiscoD1.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Comment
+
+express.str (                       $X_F_amortD2                  ) = '0'                     ! Definition
+express.txt (                       $X_F_amortD2                  ) = '$_c_discoD2*WY($S_DiscoD2.$M_Roda1_BRF,$M_Estrutura_BRF,$M_Estrutura_BRF)' ! Comment
+
+express.str (                       $X_Lmola                      ) = 'DM($S_BarraCima.$M_Body1_mola, $S_BarraBaixo.$M_Body1_mola)' ! Definition
+
+express.str (                       $X_Fmola                      ) = '$_k*($X_Lmola - $_L0)' ! Definition
+
+
+! Overwritten substructure values
+subvar.str (                        $S_BarraCima.$_x              ) = '-0.20'                 ! Definition
+
+marker.st.alg (           1 ,       $S_BarraCima.$M_Body1_contact ) = -5.16244773342849683E-01 ! Algebraic states
+marker.par (              5 ,       $S_BarraCima.$M_Body1_contact ) = 1.00000000000000000E+00 ! [-] Contact point determin. method
+marker.par (              6 ,       $S_BarraCima.$M_Body1_contact ) = 9.99999999999999955E-08 ! [-] Solver tolerance
+
+joint.from (                        $S_BarraCima.$J_Body1         ) = $M_Estrutura_BaraCima   ! From Marker
+joint.to (                          $S_BarraCima.$J_Body1         ) = $S_BarraCima.$M_Body1_Junta1 ! To Marker
+joint.type (                        $S_BarraCima.$J_Body1         ) = 2                       ! Type
+joint.st.pos (            1 ,       $S_BarraCima.$J_Body1         ) = { $_beta0 }             ! Position
+
+
+subvar.str (                        $S_BarraBaixo.$_x             ) = '-0.05'                 ! Definition
+
+marker.st.alg (           1 ,       $S_BarraBaixo.$M_Body1_contact) = 3.97756818462262896E+00 ! Algebraic states
+marker.par (              1 ,       $S_BarraBaixo.$M_Body1_contact) = 1.00000000000000000E+00 ! [-] Marker type
+marker.par (              2 ,       $S_BarraBaixo.$M_Body1_contact) = $S_BarraCima.$M_Body1_contact ! [-] Parent Marker
+
+joint.from (                        $S_BarraBaixo.$J_Body1        ) = $M_Estrutura_BaraBaixo  ! From Marker
+joint.to (                          $S_BarraBaixo.$J_Body1        ) = $S_BarraBaixo.$M_Body1_Junta1 ! To Marker
+joint.type (                        $S_BarraBaixo.$J_Body1        ) = 2                       ! Type
+joint.st.pos (            1 ,       $S_BarraBaixo.$J_Body1        ) = { $_beta0 }             ! Position
+
+
+subvar.str (                        $S_DiscoComp1.$_b             ) = '0.1'                   ! Definition
+
+subvar.str (                        $S_DiscoComp1.$_d             ) = '0.35'                  ! Definition
+
+subvar.str (                        $S_DiscoComp1.$_A             ) = '0.05*10'               ! Definition
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_Base_contact1) = -6.28318529721279795E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_Base_contact1) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_Base_contact2) = -6.28318529713699458E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_Base_contact2) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_Base_contact3) = 9.13417793229625924E-09 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_Base_contact3) = 1.57079632679489656E+00 ! Algebraic states
+
+joint.from (                        $S_DiscoComp1.$J_Base         ) = $M_discoComp1           ! From Marker
+joint.type (                        $S_DiscoComp1.$J_Base         ) = 2                       ! Type
+
+
+prim.ang (                3 ,       $S_DiscoComp1.$P_Roda1_pneu   ) = { 90 deg }              ! Angles
+prim.par (                2 ,       $S_DiscoComp1.$P_Roda1_pneu   ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
+
+prim.par (                2 ,       $S_DiscoComp1.$P_Roda1_aro    ) = './pecas_stl/mecanismo_de_plantio_stl/aro.stl' ! [-] CAD file name
+
+
+joint.from (                        $S_DiscoComp1.$J_connector    ) = $M_connector_BRF        ! From Marker
+
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_chao_contact1) = -1.75000000000000044E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_chao_contact1) = -1.39999999451826646E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp1.$M_chao_contact1) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_chao_contact2) = -1.78872983346207465E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_chao_contact2) = -1.39999999447657453E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp1.$M_chao_contact2) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoComp1.$M_chao_contact3) = -1.71127016653792624E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp1.$M_chao_contact3) = -1.39999999497620209E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp1.$M_chao_contact3) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_DiscoComp1.$P_chao         ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_DiscoComp2.$_b             ) = '0.1'                   ! Definition
+
+subvar.str (                        $S_DiscoComp2.$_d             ) = '0.35'                  ! Definition
+
+subvar.str (                        $S_DiscoComp2.$_A             ) = '0.05*10'               ! Definition
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_Base_contact1) = -6.28318531715695627E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_Base_contact1) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_Base_contact2) = -6.28318531722160323E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_Base_contact2) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_Base_contact3) = 5.65486677545350318E+01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_Base_contact3) = 1.41371669411540690E+01 ! Algebraic states
+
+joint.from (                        $S_DiscoComp2.$J_Base         ) = $M_discoComp2           ! From Marker
+joint.type (                        $S_DiscoComp2.$J_Base         ) = 2                       ! Type
+
+
+prim.ang (                3 ,       $S_DiscoComp2.$P_Roda1_pneu   ) = { 90 deg }              ! Angles
+prim.par (                2 ,       $S_DiscoComp2.$P_Roda1_pneu   ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
+
+prim.par (                2 ,       $S_DiscoComp2.$P_Roda1_aro    ) = './pecas_stl/mecanismo_de_plantio_stl/aro.stl' ! [-] CAD file name
+
+
+joint.from (                        $S_DiscoComp2.$J_connector    ) = $M_connector_BRF        ! From Marker
+
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_chao_contact1) = -1.75000000000000044E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_chao_contact1) = 1.39999999451244667E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp2.$M_chao_contact1) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_chao_contact2) = -1.78872983346207465E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_chao_contact2) = 1.39999999447689066E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp2.$M_chao_contact2) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoComp2.$M_chao_contact3) = -1.71127016653792624E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoComp2.$M_chao_contact3) = 1.39999999445531570E-01 ! Algebraic states
+marker.par (              3 ,       $S_DiscoComp2.$M_chao_contact3) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_DiscoComp2.$P_chao         ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_DiscosV.$_b                ) = '0.1'                   ! Definition
+
+subvar.str (                        $S_DiscosV.$_d                ) = '2*$_r_discosV'         ! Definition
+
+subvar.str (                        $S_DiscosV.$_A                ) = '0.001'                 ! Definition
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_Base_contact1   ) = -6.28318531480476494E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_Base_contact2   ) = -6.28318529581959950E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_Base_contact2   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_Base_contact3   ) = -1.64552448931947320E-09 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_Base_contact3   ) = 1.57079632679489656E+00 ! Algebraic states
+
+joint.from (                        $S_DiscosV.$J_Base            ) = $M_discosV              ! From Marker
+joint.type (                        $S_DiscosV.$J_Base            ) = 2                       ! Type
+
+
+prim.type (                         $S_DiscosV.$P_Roda1_pneu      ) = 2                       ! Type
+prim.ang (                3 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_DiscosV.$P_Roda1_pneu      ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_DiscosV.$P_Roda1_pneu      ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_DiscosV.$P_Roda1_pneu      ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_DiscosV.$P_Roda1_pneu      ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! Density
+prim.par (                2 ,       $S_DiscosV.$P_Roda1_pneu      ) = { 2*$S_DiscosV.$_b }    ! [m] Height
+prim.par (                3 ,       $S_DiscosV.$P_Roda1_pneu      ) = $S_DiscosV.$_d          ! [m] Outer diameter
+prim.par (                4 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_DiscosV.$P_Roda1_pneu      ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_DiscosV.$P_Roda1_pneu      ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_DiscosV.$P_Roda1_pneu      ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $S_DiscosV.$P_Roda1_pneu      ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+prim.pos (                2 ,       $S_DiscosV.$P_Roda1_aro       ) = -9.19999999999999984E-02 ! Position
+prim.pos (                3 ,       $S_DiscosV.$P_Roda1_aro       ) = -5.00000000000000010E-03 ! Position
+prim.ang (                1 ,       $S_DiscosV.$P_Roda1_aro       ) = { 9.36 deg }            ! Angles
+prim.ang (                3 ,       $S_DiscosV.$P_Roda1_aro       ) = { 90 deg }              ! Angles
+prim.transparency (                 $S_DiscosV.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $S_DiscosV.$P_Roda1_aro       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_DiscosV.$P_Roda1_aro       ) = './pecas_stl/mecanismo_de_plantio_stl/rodas.stl' ! [-] CAD file name
+
+
+joint.from (                        $S_DiscosV.$J_connector       ) = $M_connector_BRF        ! From Marker
+
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_chao_contact1   ) = -6.15000000000000102E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_chao_contact1   ) = -9.91273192645372014E-11 ! Algebraic states
+marker.par (              3 ,       $S_DiscosV.$M_chao_contact1   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_chao_contact2   ) = -6.18872983346207550E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_chao_contact2   ) = 1.47679829871997102E-10 ! Algebraic states
+marker.par (              3 ,       $S_DiscosV.$M_chao_contact2   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscosV.$M_chao_contact3   ) = -6.11127016653792654E-01 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscosV.$M_chao_contact3   ) = -2.13918183611531487E-11 ! Algebraic states
+marker.par (              3 ,       $S_DiscosV.$M_chao_contact3   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_DiscosV.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_DiscoD1.$_b                ) = '0.1'                   ! Definition
+
+subvar.str (                        $S_DiscoD1.$_d                ) = '2*$_r_discosD'         ! Definition
+
+subvar.str (                        $S_DiscoD1.$_A                ) = '0.001'                 ! Definition
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_Base_contact1   ) = -6.28318531202079722E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_Base_contact2   ) = -6.28318529696012273E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_Base_contact2   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_Base_contact3   ) = 5.28564436783957442E-09 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_Base_contact3   ) = 1.57079632679489656E+00 ! Algebraic states
+
+joint.from (                        $S_DiscoD1.$J_Base            ) = $M_discosD1             ! From Marker
+joint.type (                        $S_DiscoD1.$J_Base            ) = 2                       ! Type
+
+
+prim.ang (                2 ,       $S_DiscoD1.$P_Roda1_pneu      ) = { 90 deg }              ! Angles
+prim.ang (                3 ,       $S_DiscoD1.$P_Roda1_pneu      ) = { 270 deg }             ! Angles
+prim.mp.dens.solid (                $S_DiscoD1.$P_Roda1_pneu      ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_DiscoD1.$P_Roda1_pneu      ) = './pecas_stl/mecanismo_de_plantio_stl/disco_de_corte.stl' ! [-] CAD file name
+
+prim.type (                         $S_DiscoD1.$P_Roda1_aro       ) = 2                       ! Type
+prim.ang (                1 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_DiscoD1.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_DiscoD1.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_DiscoD1.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_DiscoD1.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_DiscoD1.$P_Roda1_aro       ) = $S_DiscoD1.$_b          ! [m] Height
+prim.par (                3 ,       $S_DiscoD1.$P_Roda1_aro       ) = $S_DiscoD1.$_d          ! [m] Outer diameter
+prim.par (                4 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_DiscoD1.$P_Roda1_aro       ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_DiscoD1.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_DiscoD1.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $S_DiscoD1.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+
+joint.from (                        $S_DiscoD1.$J_connector       ) = $M_connector_BRF        ! From Marker
+
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_chao_contact1   ) = 8.60000000000000209E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_chao_contact1   ) = -3.50000001161890617E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD1.$M_chao_contact1   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_chao_contact2   ) = 8.21270166537926005E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_chao_contact2   ) = -3.49999997547328773E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD1.$M_chao_contact2   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoD1.$M_chao_contact3   ) = 8.98729833462074412E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD1.$M_chao_contact3   ) = -3.49999998731445397E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD1.$M_chao_contact3   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_DiscoD1.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_DiscoD2.$_b                ) = '0.1'                   ! Definition
+
+subvar.str (                        $S_DiscoD2.$_d                ) = '2*$_r_discosD'         ! Definition
+
+subvar.str (                        $S_DiscoD2.$_A                ) = '0.001'                 ! Definition
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_Base_contact1   ) = -6.28318531691980020E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_Base_contact2   ) = -6.28318531399338909E+00 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_Base_contact2   ) = 1.57079632679489656E+00 ! Algebraic states
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_Base_contact3   ) = 9.51080633166945618E-09 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_Base_contact3   ) = 1.57079632679489656E+00 ! Algebraic states
+
+joint.from (                        $S_DiscoD2.$J_Base            ) = $M_discosD2             ! From Marker
+joint.type (                        $S_DiscoD2.$J_Base            ) = 2                       ! Type
+
+
+prim.ang (                2 ,       $S_DiscoD2.$P_Roda1_pneu      ) = { 90 deg }              ! Angles
+prim.ang (                3 ,       $S_DiscoD2.$P_Roda1_pneu      ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_DiscoD2.$P_Roda1_pneu      ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_DiscoD2.$P_Roda1_pneu      ) = './pecas_stl/mecanismo_de_plantio_stl/disco_de_corte.stl' ! [-] CAD file name
+
+prim.type (                         $S_DiscoD2.$P_Roda1_aro       ) = 2                       ! Type
+prim.ang (                1 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_DiscoD2.$P_Roda1_aro       ) = $S_DiscoD2.$_b          ! [m] Height
+prim.par (                3 ,       $S_DiscoD2.$P_Roda1_aro       ) = $S_DiscoD2.$_d          ! [m] Outer diameter
+prim.par (                4 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_DiscoD2.$P_Roda1_aro       ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_DiscoD2.$P_Roda1_aro       ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_DiscoD2.$P_Roda1_aro       ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_DiscoD2.$J_connector       ) = $M_connector_BRF        ! From Marker
+
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_chao_contact1   ) = 6.09999999999999987E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_chao_contact1   ) = 3.49999997662348641E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD2.$M_chao_contact1   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_chao_contact2   ) = 5.71270166537925853E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_chao_contact2   ) = 3.49999998364687384E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD2.$M_chao_contact2   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.st.alg (           1 ,       $S_DiscoD2.$M_chao_contact3   ) = 6.48729833462074190E-02 ! Algebraic states
+marker.st.alg (           2 ,       $S_DiscoD2.$M_chao_contact3   ) = 3.50000002282593592E-02 ! Algebraic states
+marker.par (              3 ,       $S_DiscoD2.$M_chao_contact3   ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_DiscoD2.$P_chao            ) = 1.00000000000000000E+00 ! Transparency
+
+
+                                     

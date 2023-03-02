@@ -56,9 +56,9 @@ prop2d.proj.dir                                                     = 1         
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 1.87764674890786409E-01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -4.33223882634774782E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 1.08669275227293838E+00 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = -1.05179901185329072E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -6.80787642241921276E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 2.23231432811007835E+00 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = -6.12583339214324951E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = -3.11917681246995926E-02 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = -2.46201269328594208E-03 ! Orientation
@@ -66,8 +66,8 @@ view.orient (             4 ,       $V_WorkingView                ) = -7.8978651
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 8.27262687683105469E+00 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 1.08864959329366684E-02 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 1.08864955902099609E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -161,7 +161,7 @@ slv.integ.fix.utcpar (              $SLV_SolverSettings           ) = 1.00000000
 slv.integ.fix.olcpar (              $SLV_SolverSettings           ) = 5.00000000000000000E-01 ! TIME_INTEG_SCALARPAR_FIXINT_ONE_LEG_OLC
 slv.integ.sodasrt2.estfac (         $SLV_SolverSettings           ) = 9.99999999999999955E-07 ! TIME_INTEG_SCALARPAR_SODASRT20_ERROR_EST_SCALE_FACTOR
 slv.integ.tout.freq (               $SLV_SolverSettings           ) = { 200 Hz }              ! TIME_INTEG_PAR_OUTPUT_FREQ
-slv.integ.fix.h (                   $SLV_SolverSettings           ) = 1.00000000000000002E-03 ! TIME_INTEG_TIMEPAR_CONSTANT_STEPSIZE
+slv.integ.fix.h (                   $SLV_SolverSettings           ) = 5.00000000000000010E-04 ! TIME_INTEG_TIMEPAR_CONSTANT_STEPSIZE
 slv.integ.tend.time (               $SLV_SolverSettings           ) = { 10 s }                ! TIME_INTEG_TIMEPAR_END_TIME
 slv.integ.atol.gen (                $SLV_SolverSettings           ) = 1.00000000000000008E-05 ! TIME_INTEG_PARSTATE_DEFAULT
 slv.integ.atol.vel (                $SLV_SolverSettings           ) = 1.00000000000000005E-04 ! TIME_INTEG_PARSTATE_VEL
@@ -202,9 +202,8 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 subvar.str (                        $_b                           ) = '0.400'                 ! Definition
 subvar.dflt (                       $_b                           ) = ''                      ! Default value
 
-subvar.str (                        $_TL                          ) = '1.1*$_d'               ! Definition
+subvar.str (                        $_TL                          ) = '$_d*1.1'               ! Definition
 subvar.dflt (                       $_TL                          ) = ''                      ! Default value
-subvar.txt (                        $_TL                          ) = '0.05'                  ! Comment
 
 subvar.str (                        $_d                           ) = '0.879'                 ! Definition
 subvar.dflt (                       $_d                           ) = ''                      ! Default value
@@ -246,11 +245,17 @@ subvar.dflt (                       $_m                           ) = ''        
 subvar.str (                        $_alpha                       ) = '2'                     ! Definition
 subvar.dflt (                       $_alpha                       ) = ''                      ! Default value
 
-subvar.str (                        $_kpneu                       ) = '1.12e7'                ! Definition
-subvar.dflt (                       $_kpneu                       ) = ''                      ! Default value
+subvar.str (                        $_MRR                         ) = '0.04'                  ! Definition
+subvar.dflt (                       $_MRR                         ) = ''                      ! Default value
 
-subvar.str (                        $_h                           ) = '0.55*$_b'              ! Definition
-subvar.dflt (                       $_h                           ) = ''                      ! Default value
+subvar.str (                        $_mu                          ) = '0.92'                  ! Definition
+subvar.dflt (                       $_mu                          ) = ''                      ! Default value
+
+subvar.str (                        $_C                           ) = '0.88*7.5'              ! Definition
+subvar.dflt (                       $_C                           ) = ''                      ! Default value
+
+subvar.str (                        $_A                           ) = '0.05'                  ! Definition
+subvar.dflt (                       $_A                           ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
@@ -295,7 +300,7 @@ marker.flx.type (                   $M_Base_BRF                   ) = 4         
 
 marker.type (                       $M_Base_contact1              ) = -87                     ! Type
 marker.parent (                     $M_Base_contact1              ) = $B_Base                 ! Body
-marker.st.alg (           1 ,       $M_Base_contact1              ) = -6.28318531042283901E+00 ! Algebraic states
+marker.st.alg (           1 ,       $M_Base_contact1              ) = -6.28318531744797948E+00 ! Algebraic states
 marker.st.alg (           2 ,       $M_Base_contact1              ) = 1.76819188664477744E+00 ! Algebraic states
 marker.par (              1 ,       $M_Base_contact1              ) = 0.00000000000000000E+00 ! [-] Marker type
 marker.par (              3 ,       $M_Base_contact1              ) = $P_C1                   ! [-] Contact geometry Primitive
@@ -305,7 +310,7 @@ marker.par (              7 ,       $M_Base_contact1              ) = 9.99999999
 
 marker.type (                       $M_Base_contact2              ) = -87                     ! Type
 marker.parent (                     $M_Base_contact2              ) = $B_Base                 ! Body
-marker.st.alg (           1 ,       $M_Base_contact2              ) = -6.28318530171946410E+00 ! Algebraic states
+marker.st.alg (           1 ,       $M_Base_contact2              ) = -6.28318530974313028E+00 ! Algebraic states
 marker.st.alg (           2 ,       $M_Base_contact2              ) = 1.76819188664477744E+00 ! Algebraic states
 marker.par (              1 ,       $M_Base_contact2              ) = 0.00000000000000000E+00 ! [-] Marker type
 marker.par (              3 ,       $M_Base_contact2              ) = $P_C2                   ! [-] Contact geometry Primitive
@@ -315,7 +320,7 @@ marker.par (              7 ,       $M_Base_contact2              ) = 9.99999999
 
 marker.type (                       $M_Base_contact3              ) = -87                     ! Type
 marker.parent (                     $M_Base_contact3              ) = $B_Base                 ! Body
-marker.st.alg (           1 ,       $M_Base_contact3              ) = 3.56689219840114813E-09 ! Algebraic states
+marker.st.alg (           1 ,       $M_Base_contact3              ) = 9.71143371691560796E-09 ! Algebraic states
 marker.st.alg (           2 ,       $M_Base_contact3              ) = 1.59818114474331052E+00 ! Algebraic states
 marker.par (              1 ,       $M_Base_contact3              ) = 0.00000000000000000E+00 ! [-] Marker type
 marker.par (              3 ,       $M_Base_contact3              ) = $P_C3                   ! [-] Contact geometry Primitive
@@ -568,7 +573,7 @@ marker.flx.type (                   $M_chao_BRF                   ) = 4         
 marker.type (                       $M_chao_contact1              ) = -87                     ! Type
 marker.parent (                     $M_chao_contact1              ) = $B_chao                 ! Body
 marker.st.alg (           1 ,       $M_chao_contact1              ) = -2.02637000000000045E+00 ! Algebraic states
-marker.st.alg (           2 ,       $M_chao_contact1              ) = -4.36091434698823666E-10 ! Algebraic states
+marker.st.alg (           2 ,       $M_chao_contact1              ) = -1.38069987596197792E-09 ! Algebraic states
 marker.par (              1 ,       $M_chao_contact1              ) = 1.00000000000000000E+00 ! [-] Marker type
 marker.par (              2 ,       $M_chao_contact1              ) = $M_Base_contact1        ! [-] Parent Marker
 marker.par (              3 ,       $M_chao_contact1              ) = $P_chao                 ! [-] Contact geometry Primitive
@@ -576,7 +581,7 @@ marker.par (              3 ,       $M_chao_contact1              ) = $P_chao   
 marker.type (                       $M_chao_contact2              ) = -87                     ! Type
 marker.parent (                     $M_chao_contact2              ) = $B_chao                 ! Body
 marker.st.alg (           1 ,       $M_chao_contact2              ) = -2.40084875974479539E+00 ! Algebraic states
-marker.st.alg (           2 ,       $M_chao_contact2              ) = 7.34174319609587161E-10 ! Algebraic states
+marker.st.alg (           2 ,       $M_chao_contact2              ) = -3.44697034830995404E-10 ! Algebraic states
 marker.par (              1 ,       $M_chao_contact2              ) = 1.00000000000000000E+00 ! [-] Marker type
 marker.par (              2 ,       $M_chao_contact2              ) = $M_Base_contact2        ! [-] Parent Marker
 marker.par (              3 ,       $M_chao_contact2              ) = $P_chao                 ! [-] Contact geometry Primitive
@@ -584,7 +589,7 @@ marker.par (              3 ,       $M_chao_contact2              ) = $P_chao   
 marker.type (                       $M_chao_contact3              ) = -87                     ! Type
 marker.parent (                     $M_chao_contact3              ) = $B_chao                 ! Body
 marker.st.alg (           1 ,       $M_chao_contact3              ) = -1.63023247299151453E+00 ! Algebraic states
-marker.st.alg (           2 ,       $M_chao_contact3              ) = 6.13718150834586522E-10 ! Algebraic states
+marker.st.alg (           2 ,       $M_chao_contact3              ) = 1.67094568918278416E-09 ! Algebraic states
 marker.par (              1 ,       $M_chao_contact3              ) = 1.00000000000000000E+00 ! [-] Marker type
 marker.par (              2 ,       $M_chao_contact3              ) = $M_Base_contact3        ! [-] Parent Marker
 marker.par (              3 ,       $M_chao_contact3              ) = $P_chao                 ! [-] Contact geometry Primitive
@@ -886,57 +891,49 @@ express.str (                       $X_sy11                       ) = 'IF($X_vsr
 
 express.str (                       $X_s11                        ) = 'sqrt($X_sx11^2 + ($X_sy11/$_alpha)^2)' ! Definition
 
-express.str (                       $X_dist_borda11               ) = 'DZ($M_Base_contact11,$M_chao_contact1,$M_chao_contact1)' ! Definition
+express.str (                       $X_dist_borda11               ) = 'DZ($M_Base_contact11,$M_chao_contact1,$M_Base_contact11)' ! Definition
 express.txt (                       $X_dist_borda11               ) = 'DZ($M_Base_BRF)-$_r1'  ! Comment
 
-express.str (                       $X_dist_borda21               ) = 'DZ($M_Base_contact21,$M_chao_contact2,$M_chao_contact2)' ! Definition
+express.str (                       $X_dist_borda21               ) = 'DZ($M_Base_contact21,$M_chao_contact2,$M_Base_contact21)' ! Definition
 express.txt (                       $X_dist_borda21               ) = 'DZ($M_Base_BRF)-$_r1'  ! Comment
 
-express.str (                       $X_dist_borda31               ) = 'DZ($M_Base_contact31,$M_chao_contact3,$M_chao_contact3)' ! Definition
+express.str (                       $X_dist_borda31               ) = 'DZ($M_Base_contact31,$M_chao_contact3,$M_Base_contact31)' ! Definition
 express.txt (                       $X_dist_borda31               ) = 'DZ($M_Base_BRF)-$_r1'  ! Comment
 
-express.str (                       $dX_dist_borda11              ) = 'VZ($M_Base_contact11,$M_chao_contact1,$M_chao_contact1)' ! Definition
+express.str (                       $dX_dist_borda11              ) = 'VZ($M_Base_contact11,$M_chao_contact1,$M_Base_contact11)' ! Definition
 express.txt (                       $dX_dist_borda11              ) = 'VZ($M_Base_BRF)'       ! Comment
 
-express.str (                       $dX_dist_borda21              ) = 'VZ($M_Base_contact21,$M_chao_contact2,$M_chao_contact2)' ! Definition
+express.str (                       $dX_dist_borda21              ) = 'VZ($M_Base_contact21,$M_chao_contact2,$M_Base_contact21)' ! Definition
 express.txt (                       $dX_dist_borda21              ) = 'VZ($M_Base_BRF)'       ! Comment
 
-express.str (                       $dX_dist_borda31              ) = 'VZ($M_Base_contact31,$M_chao_contact3,$M_chao_contact3)' ! Definition
+express.str (                       $dX_dist_borda31              ) = 'VZ($M_Base_contact31,$M_chao_contact3,$M_Base_contact31)' ! Definition
 express.txt (                       $dX_dist_borda31              ) = 'VZ($M_Base_BRF)'       ! Comment
 
-express.str (                       $X_delta11                    ) = 'IF($X_dist_borda11 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$X_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_delta11                    ) = 'IF($X_dist_borda11 < 0)\n{\n-$X_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_delta21                    ) = 'IF($X_dist_borda21 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$X_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_delta21                    ) = 'IF($X_dist_borda21 < 0)\n{\n-$X_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_delta31                    ) = 'IF($X_dist_borda31 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$X_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $X_delta31                    ) = 'IF($X_dist_borda31 < 0)\n{\n-$X_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $dX_delta11                   ) = 'IF($X_dist_borda11 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$dX_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $dX_delta11                   ) = 'IF($X_dist_borda11 < 0)\n{\n-$dX_dist_borda11\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $dX_delta21                   ) = 'IF($X_dist_borda21 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$dX_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $dX_delta21                   ) = 'IF($X_dist_borda21 < 0)\n{\n-$dX_dist_borda21\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $dX_delta31                   ) = 'IF($X_dist_borda31 < 0)\n{\n-($_ksolo/($_ksolo+$_kpneu))*$dX_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
+express.str (                       $dX_delta31                   ) = 'IF($X_dist_borda31 < 0)\n{\n-$dX_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_dWdA11                     ) = '$_kpneu*$X_delta11 + $_cpneu*$dX_delta11' ! Definition
+express.str (                       $X_dWdA11                     ) = '$_ksolo*$X_delta11 + $_cpneu*$dX_delta11' ! Definition
 
-express.str (                       $X_dWdA21                     ) = '$_kpneu*$X_delta21 + $_cpneu*$dX_delta21' ! Definition
+express.str (                       $X_dWdA21                     ) = '$_ksolo*$X_delta21 + $_cpneu*$dX_delta21' ! Definition
 
-express.str (                       $X_dWdA31                     ) = '$_kpneu*$X_delta31 + $_cpneu*$dX_delta31' ! Definition
+express.str (                       $X_dWdA31                     ) = '$_ksolo*$X_delta31 + $_cpneu*$dX_delta31' ! Definition
 
-express.str (                       $X_W                          ) = '$X_A*$X_dWdA11'        ! Definition
+express.str (                       $X_W                          ) = '$_A*$X_dWdA11'         ! Definition
 express.txt (                       $X_W                          ) = '($X_A/2)*([br]$_3gW1*($X_dWdA11)[br]+[br]$_3gW23*($X_dWdA21+$X_dWdA31)[br])[br]' ! Comment
 
-express.str (                       $X_W2                         ) = 'IF(abs($X_W) > 0.1)\n{\nabs($X_W)\n}\nELSE\n{\n0.1\n}' ! Definition
-
-express.str (                       $X_WMy                        ) = '-($X_A/2)*(\n$_3gW23*$_3g23*(-$X_dWdA21+$X_dWdA31)\n)*$_TL/2\n' ! Definition
+express.str (                       $X_WMy                        ) = '-($_A/2)*(\n$_3gW23*$_3g23*(-$X_dWdA21+$X_dWdA31)\n)*$_TL/2\n' ! Definition
 express.txt (                       $X_WMy                        ) = '($_A/4)*([br]$_5gW1*($_3gW1*$X_dWdA11+$_3gW23*($X_dWdA12+$X_dWdA13))[br]+[br]$_5gW23*($_3gW1*($X_dWdA21+$X_dWdA31)+$_3gW23*($X_dWdA22+$X_dWdA23+$X_dWdA32+$X_dWdA33))[br]+[br]$_5gW45*($_3gW1*($X_dWdA41+$X_dWdA51)+$_3gW23*($X_dWdA42+$X_dWdA43+$X_dWdA52+$X_dWdA53))[br])[br][br]' ! Comment
 
-express.str (                       $X_Bn                         ) = '($_CI*$_d*$_b/($X_W2))*(1+5*$X_delta11/$_h)/(1+6*($_b/$_d))' ! Definition
-
-express.str (                       $X_DWR                        ) = '1+(-$X_WMy/$X_W2)/$_TL' ! Definition
-
-express.str (                       $X_DWI                        ) = '1-abs(0.7*($X_DWR-1)/($X_DWR+1))' ! Definition
-
-express.str (                       $X_GTR11                      ) = '($X_mu - 0.04)*(1-exp(-7.5*$X_s11))+0.04' ! Definition
+express.str (                       $X_GTR11                      ) = '($_mu - $_MRR)*(1-exp(-($_C/($_mu - $_MRR))*$X_s11))+$_MRR' ! Definition
 
 express.str (                       $X_dGTdA11                    ) = '$X_dWdA11*$X_GTR11'    ! Definition
 
@@ -944,10 +941,10 @@ express.str (                       $X_dGTxdA11                   ) = '($X_sx11/
 
 express.str (                       $X_dGTydA11                   ) = '($X_sy11/($_alpha*$X_s11))*$X_dGTdA11*tanh(-1000*$X_vy11)' ! Definition
 
-express.str (                       $X_GTx                        ) = '$X_A*$X_dGTxdA11'      ! Definition
+express.str (                       $X_GTx                        ) = '$_A*$X_dGTxdA11'       ! Definition
 express.txt (                       $X_GTx                        ) = '($X_A/2)*([br]$_3gW1*($X_dGTxdA11)[br]+[br]$_3gW23*($X_dGTxdA21+$X_dGTxdA31)[br])[br][br]' ! Comment
 
-express.str (                       $X_GTy                        ) = '$X_A*$X_dGTydA11\n\n'  ! Definition
+express.str (                       $X_GTy                        ) = '$_A*$X_dGTydA11\n\n'   ! Definition
 express.txt (                       $X_GTy                        ) = '($_A/4)*([br]$_5gW1*($_3gW1*$X_dGTydA11+$_3gW23*($X_dGTydA12+$X_dGTydA13))[br]+[br]$_5gW23*($_3gW1*($X_dGTydA21+$X_dGTydA31)+$_3gW23*($X_dGTydA22+$X_dGTydA23+$X_dGTydA32+$X_dGTydA33))[br]+[br]$_5gW45*($_3gW1*($X_dGTydA41+$X_dGTydA51)+$_3gW23*($X_dGTydA42+$X_dGTydA43+$X_dGTydA52+$X_dGTydA53))[br])[br][br]' ! Comment
 
 express.str (                       $X_MGTxy                      ) = '0\n'                   ! Definition
@@ -956,7 +953,7 @@ express.txt (                       $X_MGTxy                      ) = '($X_A/2)*
 express.str (                       $X_WGTyMx                     ) = '$X_GTy*($_r-$X_delta11)' ! Definition
 express.txt (                       $X_WGTyMx                     ) = '($_A/4)*([br]$_5gW1*($_3gW23*(-$X_dWdA12+$X_dWdA13))[br]+[br]$_5gW23*($_3gW23*(-$X_dWdA22+$X_dWdA23-$X_dWdA32+$X_dWdA33))[br]+[br]$_5gW45*($_3gW23*(-$X_dWdA42+$X_dWdA43-$X_dWdA52+$X_dWdA53))[br])*$_3g23*$_TW/2 + $X_GTy*$_r1' ! Comment
 
-express.str (                       $X_MR                         ) = '$X_W*(1.0/($X_Bn)+0.04 + 0.5*$X_sx11/sqrt($X_Bn))*tanh(1000*$X_vx11)' ! Definition
+express.str (                       $X_MR                         ) = '$X_W*$_MRR*tanh(1000*$X_vx11)' ! Definition
 
 express.str (                       $X_NT                         ) = '$X_GTx - $X_MR'        ! Definition
 
@@ -975,11 +972,5 @@ express.txt (                       $X_Fz                         ) = '- $X_GT*s
 express.str (                       $X_My                         ) = '-$X_WMy'               ! Definition
 
 express.str (                       $X_Mz                         ) = '-$X_MGTxy'             ! Definition
-
-express.str (                       $X_mu                         ) = '0.88*(1-exp(-0.1*$X_Bn)) + 0.04' ! Definition
-
-express.str (                       $X_a                          ) = 'sqrt(max($X_delta11*($_d-$X_delta11),0))' ! Definition
-
-express.str (                       $X_A                          ) = '(pi/4)*2*$_b*$X_a'     ! Definition
 
                                                                                                                                                                        
