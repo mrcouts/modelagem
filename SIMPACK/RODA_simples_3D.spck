@@ -217,8 +217,8 @@ subvar.dflt (                       $_CI                          ) = ''        
 subvar.str (                        $_ksolo                       ) = '5*10^6'                ! Definition
 subvar.dflt (                       $_ksolo                       ) = ''                      ! Default value
 
-subvar.str (                        $_cpneu                       ) = '10^6'                  ! Definition
-subvar.dflt (                       $_cpneu                       ) = ''                      ! Default value
+subvar.str (                        $_csolo                       ) = '10^6'                  ! Definition
+subvar.dflt (                       $_csolo                       ) = ''                      ! Default value
 
 subvar.str (                        $_vmin                        ) = '10^(-8)'               ! Definition
 subvar.dflt (                       $_vmin                        ) = ''                      ! Default value
@@ -921,11 +921,11 @@ express.str (                       $dX_delta21                   ) = 'IF($X_dis
 
 express.str (                       $dX_delta31                   ) = 'IF($X_dist_borda31 < 0)\n{\n-$dX_dist_borda31\n}\nELSE\n{\n0\n}' ! Definition
 
-express.str (                       $X_dWdA11                     ) = '$_ksolo*$X_delta11 + $_cpneu*$dX_delta11' ! Definition
+express.str (                       $X_dWdA11                     ) = '$_ksolo*$X_delta11 + $_csolo*$dX_delta11' ! Definition
 
-express.str (                       $X_dWdA21                     ) = '$_ksolo*$X_delta21 + $_cpneu*$dX_delta21' ! Definition
+express.str (                       $X_dWdA21                     ) = '$_ksolo*$X_delta21 + $_csolo*$dX_delta21' ! Definition
 
-express.str (                       $X_dWdA31                     ) = '$_ksolo*$X_delta31 + $_cpneu*$dX_delta31' ! Definition
+express.str (                       $X_dWdA31                     ) = '$_ksolo*$X_delta31 + $_csolo*$dX_delta31' ! Definition
 
 express.str (                       $X_W                          ) = '$_A*$X_dWdA11'         ! Definition
 express.txt (                       $X_W                          ) = '($X_A/2)*([br]$_3gW1*($X_dWdA11)[br]+[br]$_3gW23*($X_dWdA21+$X_dWdA31)[br])[br]' ! Comment

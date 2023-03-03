@@ -92,22 +92,40 @@ substr.id (                         $S_LinhaSemente5              ) = '5'       
 substr.file (                       $S_LinhaSemente6              ) = './LinhaDeSemente_3D.spck' ! Filename
 substr.id (                         $S_LinhaSemente6              ) = '6'                     ! Substructure Id
 
+substr.file (                       $S_disco5                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco5                     ) = '6'                     ! Substructure Id
+
+substr.file (                       $S_disco3                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco3                     ) = '7'                     ! Substructure Id
+
+substr.file (                       $S_disco1                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco1                     ) = '8'                     ! Substructure Id
+
+substr.file (                       $S_disco2                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco2                     ) = '9'                     ! Substructure Id
+
+substr.file (                       $S_disco4                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco4                     ) = '10'                    ! Substructure Id
+
+substr.file (                       $S_disco6                     ) = './RODA_simples_3D.spck' ! Filename
+substr.id (                         $S_disco6                     ) = '11'                    ! Substructure Id
+
 !**********************************************************************
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 3.03172520682346658E+00 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -9.18837486457778141E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 2.65340876215600474E+00 ! Position
-view.orient (             1 ,       $V_WorkingView                ) = 6.71337425708770752E-01 ! Orientation
-view.orient (             2 ,       $V_WorkingView                ) = 1.08482344076037407E-02 ! Orientation
-view.orient (             3 ,       $V_WorkingView                ) = 1.19293350726366043E-02 ! Orientation
-view.orient (             4 ,       $V_WorkingView                ) = 7.40976393222808838E-01 ! Orientation
+view.pos (                1 ,       $V_WorkingView                ) = 4.06707286834716797E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -2.75332760810852051E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 5.65932035446166992E-01 ! Position
+view.orient (             1 ,       $V_WorkingView                ) = -6.72031700611114502E-01 ! Orientation
+view.orient (             2 ,       $V_WorkingView                ) = -1.99920386075973511E-01 ! Orientation
+view.orient (             3 ,       $V_WorkingView                ) = -1.63604691624641418E-01 ! Orientation
+view.orient (             4 ,       $V_WorkingView                ) = -6.94001913070678711E-01 ! Orientation
 view.angle (                        $V_WorkingView                ) = 7.85398185253143311E-01 ! Lens angle
 view.fclip.auto (                   $V_WorkingView                ) = 1                       ! Front clipping plane auto
 view.bclip.auto (                   $V_WorkingView                ) = 1                       ! Back clipping plane auto
-view.fclip.value (                  $V_WorkingView                ) = 1.98338404297828674E-02 ! Front clipping plane value
-view.bclip.value (                  $V_WorkingView                ) = 1.98338394165039062E+01 ! Back clipping plane value
+view.fclip.value (                  $V_WorkingView                ) = 9.99999977648258209E-03 ! Front clipping plane value
+view.bclip.value (                  $V_WorkingView                ) = 1.28654851913452148E+01 ! Back clipping plane value
 view.rotcenter.type (               $V_WorkingView                ) = 0                       ! Rotation center type
 view.rotcenter.adjust (             $V_WorkingView                ) = 1                       ! Adjust rotation center
 view.motion.active (                $V_WorkingView                ) = 0                       ! Camera is moved
@@ -285,11 +303,23 @@ subvar.dflt (                       $_fix_botinhaZ                ) = ''        
 subvar.str (                        $_fix_botinhaX                ) = '1.03'                  ! Definition
 subvar.dflt (                       $_fix_botinhaX                ) = ''                      ! Default value
 
-subvar.str (                        $_r_cilindro                  ) = '0.05'                  ! Definition
-subvar.dflt (                       $_r_cilindro                  ) = ''                      ! Default value
+subvar.str (                        $_rarb                        ) = '0.05'                  ! Definition
+subvar.dflt (                       $_rarb                        ) = ''                      ! Default value
 
-subvar.str (                        $_h_cilindro                  ) = '0.1'                   ! Definition
-subvar.dflt (                       $_h_cilindro                  ) = ''                      ! Default value
+subvar.str (                        $_ksolo                       ) = '5*10^6'                ! Definition
+subvar.dflt (                       $_ksolo                       ) = ''                      ! Default value
+
+subvar.str (                        $_csolo                       ) = '10^6'                  ! Definition
+subvar.dflt (                       $_csolo                       ) = ''                      ! Default value
+
+subvar.str (                        $_A_bot                       ) = '5e-4'                  ! Definition
+subvar.dflt (                       $_A_bot                       ) = ''                      ! Default value
+
+subvar.str (                        $_IF                          ) = '20400/2'               ! Definition
+subvar.dflt (                       $_IF                          ) = ''                      ! Default value
+
+subvar.str (                        $_FzDownBot                   ) = '100'                   ! Definition
+subvar.dflt (                       $_FzDownBot                   ) = ''                      ! Default value
 
 !**********************************************************************
 ! Reference systems
@@ -851,6 +881,42 @@ marker.par (              3 ,       $M_Boogie_PontaBotinha6_contact) = $P_Boogie
 marker.par (              4 ,       $M_Boogie_PontaBotinha6_contact) = 1.00000000000000000E+00 ! [-] Normal orientation
 marker.par (              6 ,       $M_Boogie_PontaBotinha6_contact) = 1.00000000000000000E+00 ! [-] Contact point determin. method
 marker.par (              7 ,       $M_Boogie_PontaBotinha6_contact) = 9.99999999999999955E-08 ! [-] Solver tolerance
+
+marker.type (                       $M_Boogie_Disco1              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco1              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco1              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco1              ) = { -$_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco1              ) = { $_fix_botinhaZ -0.237 } ! Position
+
+marker.type (                       $M_Boogie_Disco2              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco2              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco2              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco2              ) = { $_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco2              ) = { $_fix_botinhaZ -0.237 } ! Position
+
+marker.type (                       $M_Boogie_Disco3              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco3              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco3              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco3              ) = { -3*$_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco3              ) = { $_fix_botinhaZ -0.237 } ! Position
+
+marker.type (                       $M_Boogie_Disco4              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco4              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco4              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco4              ) = { 3*$_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco4              ) = { $_fix_botinhaZ -0.237 } ! Position
+
+marker.type (                       $M_Boogie_Disco5              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco5              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco5              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco5              ) = { -5*$_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco5              ) = { $_fix_botinhaZ -0.237 } ! Position
+
+marker.type (                       $M_Boogie_Disco6              ) = 2                       ! Type
+marker.parent (                     $M_Boogie_Disco6              ) = $B_Boogie               ! Body
+marker.pos (              1 ,       $M_Boogie_Disco6              ) = { $_fix_botinhaX -0.463 } ! Position
+marker.pos (              2 ,       $M_Boogie_Disco6              ) = { 5*$_DistLinhas/2 -0.015 } ! Position
+marker.pos (              3 ,       $M_Boogie_Disco6              ) = { $_fix_botinhaZ -0.237 } ! Position
 
 joint.from (                        $J_Boogie                     ) = $M_Isys                 ! From Marker
 joint.to (                          $J_Boogie                     ) = $M_Boogie_BRF           ! To Marker
@@ -1720,168 +1786,6 @@ prim.par (               30 ,       $P_Boogie_bracos_disco6       ) = 0.00000000
 prim.par (               31 ,       $P_Boogie_bracos_disco6       ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_Boogie_bracos_disco6       ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
-prim.type (                         $P_Boogie_disco1              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco1              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco1              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco1              ) = { -$_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco1              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco1              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco1              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco1              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco1              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco1              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco1              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco1              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco1              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco1              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
-prim.type (                         $P_Boogie_disco2              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco2              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco2              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco2              ) = { $_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco2              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco2              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco2              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco2              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco2              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco2              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco2              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco2              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco2              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco2              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
-prim.type (                         $P_Boogie_disco3              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco3              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco3              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco3              ) = { -3*$_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco3              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco3              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco3              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco3              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco3              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco3              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco3              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco3              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco3              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco3              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
-prim.type (                         $P_Boogie_disco4              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco4              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco4              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco4              ) = { 3*$_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco4              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco4              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco4              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco4              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco4              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco4              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco4              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco4              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco4              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco4              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
-prim.type (                         $P_Boogie_disco5              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco5              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco5              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco5              ) = { -5*$_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco5              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco5              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco5              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco5              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco5              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco5              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco5              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco5              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco5              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco5              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
-prim.type (                         $P_Boogie_disco6              ) = 39                      ! Type
-prim.ref (                          $P_Boogie_disco6              ) = $M_Boogie_BRF           ! Reference Marker
-prim.pos (                1 ,       $P_Boogie_disco6              ) = { $_fix_botinhaX -0.463 } ! Position
-prim.pos (                2 ,       $P_Boogie_disco6              ) = { 5*$_DistLinhas/2 + 0.03 } ! Position
-prim.pos (                3 ,       $P_Boogie_disco6              ) = { $_fix_botinhaZ -0.237 } ! Position
-prim.ang (                1 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! Angles
-prim.ang (                3 ,       $P_Boogie_disco6              ) = { 90 deg }              ! Angles
-prim.color.r (            1 ,       $P_Boogie_disco6              ) = 6.40000000000000000E+01 ! Colors (red component)
-prim.color.g (            1 ,       $P_Boogie_disco6              ) = 6.40000000000000000E+01 ! Colors (green component)
-prim.color.b (            1 ,       $P_Boogie_disco6              ) = 6.40000000000000000E+01 ! Colors (blue component)
-prim.color.t (            1 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.mp.dens.solid (                $P_Boogie_disco6              ) = 7.85000000000000000E+03 ! Density
-prim.par (                2 ,       $P_Boogie_disco6              ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
-prim.par (                9 ,       $P_Boogie_disco6              ) = { 1/1000 }              ! [-] Global scaling factor
-prim.par (               10 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
-prim.par (               11 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
-prim.par (               12 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
-prim.par (               13 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
-prim.par (               14 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
-prim.par (               15 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
-prim.par (               16 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
-prim.par (               17 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Switch face normals
-prim.par (               18 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Repeat shape
-prim.par (               30 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Wireframe representation
-prim.par (               31 ,       $P_Boogie_disco6              ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
-prim.par (               32 ,       $P_Boogie_disco6              ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
-
 prim.type (                         $P_Boogie_CBotinha1           ) = 15                      ! Type
 prim.ref (                          $P_Boogie_CBotinha1           ) = $M_Boogie_PontaBotinha1 ! Reference Marker
 prim.color.r (            1 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (red component)
@@ -1892,7 +1796,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha1           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha1           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha1           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha1           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha1           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha1           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha1           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -1907,7 +1812,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha2           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha2           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha2           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha2           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha2           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha2           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha2           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -1922,7 +1828,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha3           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha3           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha3           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha3           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha3           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha3           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha3           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -1937,7 +1844,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha4           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha4           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha4           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha4           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha4           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha4           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha4           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -1952,7 +1860,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha5           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha5           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha5           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha5           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha5           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha5           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha5           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -1967,7 +1876,8 @@ prim.color.b (            1 ,       $P_Boogie_CBotinha6           ) = 1.28000000
 prim.color.b (            2 ,       $P_Boogie_CBotinha6           ) = 1.28000000000000000E+02 ! Colors (blue component)
 prim.color.t (            1 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! Colors (transparency component)
 prim.color.t (            2 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! Colors (transparency component)
-prim.par (                2 ,       $P_Boogie_CBotinha6           ) = $_r_cilindro            ! [m] Radius
+prim.transparency (                 $P_Boogie_CBotinha6           ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $P_Boogie_CBotinha6           ) = $_rarb                  ! [m] Radius
 prim.par (                3 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [rad] Start angle
 prim.par (                4 ,       $P_Boogie_CBotinha6           ) = 0.00000000000000000E+00 ! [rad] Delta angle
 prim.par (                5 ,       $P_Boogie_CBotinha6           ) = 2.40000000000000000E+01 ! [-] Number of meridians
@@ -2001,7 +1911,7 @@ force.par (               7 ,       $F_tau12                      ) = $X_tau12  
 force.par (               8 ,       $F_tau12                      ) = null                    ! [-] Expression for Lz
 
 force.type (                        $F_tau21                      ) = 50                      ! Type
-force.from (                        $F_tau21                      ) = $M_Isys                 ! From Marker
+force.from (                        $F_tau21                      ) = $S_rocker1.$M_Rocker_2roda ! From Marker
 force.to (                          $F_tau21                      ) = $S_roda1.$M_Roda1_BRF   ! To Marker
 force.disabled (                    $F_tau21                      ) = 0                       ! Disabled
 force.par (               1 ,       $F_tau21                      ) = $M_Isys                 ! [-] Reference Marker for calc.
@@ -2013,7 +1923,7 @@ force.par (               7 ,       $F_tau21                      ) = $X_tau21  
 force.par (               8 ,       $F_tau21                      ) = null                    ! [-] Expression for Lz
 
 force.type (                        $F_tau22                      ) = 50                      ! Type
-force.from (                        $F_tau22                      ) = $M_Isys                 ! From Marker
+force.from (                        $F_tau22                      ) = $S_rocker2.$M_Rocker_2roda ! From Marker
 force.to (                          $F_tau22                      ) = $S_roda2.$M_Roda1_BRF   ! To Marker
 force.disabled (                    $F_tau22                      ) = 0                       ! Disabled
 force.par (               1 ,       $F_tau22                      ) = $M_Isys                 ! [-] Reference Marker for calc.
@@ -2035,6 +1945,72 @@ force.par (               5 ,       $F_IF                         ) = null      
 force.par (               6 ,       $F_IF                         ) = null                    ! [-] Expression for Lx
 force.par (               7 ,       $F_IF                         ) = null                    ! [-] Expression for Ly
 force.par (               8 ,       $F_IF                         ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot1                       ) = 50                      ! Type
+force.from (                        $F_bot1                       ) = $M_chao_PontaBotinha1_contact ! From Marker
+force.to (                          $F_bot1                       ) = $M_Boogie_PontaBotinha1 ! To Marker
+force.par (               1 ,       $F_bot1                       ) = $M_Boogie_PontaBotinha1 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot1                       ) = $X_IF_Bot1              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot1                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot1                       ) = $X_Fz_bot1              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot1                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot1                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot1                       ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot2                       ) = 50                      ! Type
+force.from (                        $F_bot2                       ) = $M_chao_PontaBotinha2_contact ! From Marker
+force.to (                          $F_bot2                       ) = $M_Boogie_PontaBotinha2 ! To Marker
+force.par (               1 ,       $F_bot2                       ) = $M_Boogie_PontaBotinha2 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot2                       ) = $X_IF_Bot2              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot2                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot2                       ) = $X_Fz_bot2              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot2                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot2                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot2                       ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot3                       ) = 50                      ! Type
+force.from (                        $F_bot3                       ) = $M_chao_PontaBotinha3_contact ! From Marker
+force.to (                          $F_bot3                       ) = $M_Boogie_PontaBotinha3 ! To Marker
+force.par (               1 ,       $F_bot3                       ) = $M_Boogie_PontaBotinha3 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot3                       ) = $X_IF_Bot3              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot3                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot3                       ) = $X_Fz_bot3              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot3                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot3                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot3                       ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot4                       ) = 50                      ! Type
+force.from (                        $F_bot4                       ) = $M_chao_PontaBotinha4_contact ! From Marker
+force.to (                          $F_bot4                       ) = $M_Boogie_PontaBotinha4 ! To Marker
+force.par (               1 ,       $F_bot4                       ) = $M_Boogie_PontaBotinha4 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot4                       ) = $X_IF_Bot4              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot4                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot4                       ) = $X_Fz_bot4              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot4                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot4                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot4                       ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot5                       ) = 50                      ! Type
+force.from (                        $F_bot5                       ) = $M_chao_PontaBotinha5_contact ! From Marker
+force.to (                          $F_bot5                       ) = $M_Boogie_PontaBotinha5 ! To Marker
+force.par (               1 ,       $F_bot5                       ) = $M_Boogie_PontaBotinha5 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot5                       ) = $X_IF_Bot5              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot5                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot5                       ) = $X_Fz_bot5              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot5                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot5                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot5                       ) = null                    ! [-] Expression for Lz
+
+force.type (                        $F_bot6                       ) = 50                      ! Type
+force.from (                        $F_bot6                       ) = $M_chao_PontaBotinha6_contact ! From Marker
+force.to (                          $F_bot6                       ) = $M_Boogie_PontaBotinha6 ! To Marker
+force.par (               1 ,       $F_bot6                       ) = $M_Boogie_PontaBotinha6 ! [-] Reference Marker for calc.
+force.par (               3 ,       $F_bot6                       ) = $X_IF_Bot6              ! [-] Expression for Fx
+force.par (               4 ,       $F_bot6                       ) = null                    ! [-] Expression for Fy
+force.par (               5 ,       $F_bot6                       ) = $X_Fz_bot6              ! [-] Expression for Fz
+force.par (               6 ,       $F_bot6                       ) = null                    ! [-] Expression for Lx
+force.par (               7 ,       $F_bot6                       ) = null                    ! [-] Expression for Ly
+force.par (               8 ,       $F_bot6                       ) = null                    ! [-] Expression for Lz
 
 !**********************************************************************
 ! Connection Elements
@@ -2748,7 +2724,7 @@ express.str (                       $X_tau21                      ) = '-0.5*$_be
 
 express.str (                       $X_tau22                      ) = '-0.5*$_beta*$_m*(0.4395)*$X_PD' ! Definition
 
-express.str (                       $X_IF                         ) = '-20400*tanh(-1000*VX($M_Boogie_BRF,$M_Isys,$M_Boogie_BRF))' ! Definition
+express.str (                       $X_IF                         ) = '-$_IF*tanh(-1000*VX($M_Boogie_BRF,$M_Isys,$M_Boogie_BRF))' ! Definition
 
 express.str (                       $X_DistBotinhaPonta1          ) = 'DZ($M_Boogie_PontaBotinha1,$M_chao_PontaBotinha1_contact,$M_chao_PontaBotinha1_contact)' ! Definition
 
@@ -2797,6 +2773,32 @@ express.str (                       $dX_delta4                    ) = 'IF($X_Dis
 express.str (                       $dX_delta5                    ) = 'IF($X_DistBotinhaPonta5 < 0)\n{\n-$dX_DistBotinhaPonta5\n}\nELSE\n{\n0\n}' ! Definition
 
 express.str (                       $dX_delta6                    ) = 'IF($X_DistBotinhaPonta6 < 0)\n{\n-$dX_DistBotinhaPonta6\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot1                    ) = 'IF($X_delta1>0)\n{\n-($_ksolo*$X_delta1 + $_csolo*$dX_delta1)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha1_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot2                    ) = 'IF($X_delta2>0)\n{\n-($_ksolo*$X_delta2 + $_csolo*$dX_delta2)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha2_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot3                    ) = 'IF($X_delta3>0)\n{\n-($_ksolo*$X_delta3 + $_csolo*$dX_delta3)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha3_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot4                    ) = 'IF($X_delta4>0)\n{\n-($_ksolo*$X_delta4 + $_csolo*$dX_delta4)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha4_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot5                    ) = 'IF($X_delta5>0)\n{\n-($_ksolo*$X_delta5 + $_csolo*$dX_delta5)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha5_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_Fz_bot6                    ) = 'IF($X_delta6>0)\n{\n-($_ksolo*$X_delta6 + $_csolo*$dX_delta6)*$_A_bot + $_FzDownBot*tanh(100*VX($M_Boogie_BRF,$M_Isys,$M_chao_PontaBotinha6_contact))\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot                     ) = '$X_IF/12'              ! Definition
+
+express.str (                       $X_IF_Bot1                    ) = 'IF($X_delta1>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot2                    ) = 'IF($X_delta2>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot3                    ) = 'IF($X_delta3>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot4                    ) = 'IF($X_delta4>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot5                    ) = 'IF($X_delta5>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
+
+express.str (                       $X_IF_Bot6                    ) = 'IF($X_delta6>0)\n{\n$X_IF_Bot\n}\nELSE\n{\n0\n}' ! Definition
 
 
 ! Overwritten substructure values
@@ -4012,6 +4014,278 @@ marker.st.alg (           2 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact2
 
 marker.st.alg (           1 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact3) = 5.84381665327927569E-01 ! Algebraic states
 marker.st.alg (           2 ,       $S_LinhaSemente6.$S_DiscoD2.$M_chao_contact3) = 1.28500282091190909E+00 ! Algebraic states
+
+
+subvar.str (                        $S_disco5.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco5.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco5.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco5.$J_Base             ) = $M_Boogie_Disco5        ! From Marker
+joint.type (                        $S_disco5.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco5.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco5.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco5.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco5.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco5.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco5.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco5.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco5.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco5.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco5.$P_Roda1_aro        ) = $S_disco5.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco5.$P_Roda1_aro        ) = $S_disco5.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco5.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco5.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco5.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+prim.par (               10 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Delta angle
+prim.par (               11 ,       $S_disco5.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Close geometry with
+
+
+joint.from (                        $S_disco5.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco5.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco5.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco5.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco5.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_disco3.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco3.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco3.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco3.$J_Base             ) = $M_Boogie_Disco3        ! From Marker
+joint.type (                        $S_disco3.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco3.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco3.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco3.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco3.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco3.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco3.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco3.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco3.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco3.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco3.$P_Roda1_aro        ) = $S_disco3.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco3.$P_Roda1_aro        ) = $S_disco3.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco3.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco3.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco3.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco3.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_disco3.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco3.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco3.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco3.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco3.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_disco1.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco1.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco1.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco1.$J_Base             ) = $M_Boogie_Disco1        ! From Marker
+joint.type (                        $S_disco1.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco1.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco1.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco1.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco1.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco1.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco1.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco1.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco1.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco1.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco1.$P_Roda1_aro        ) = $S_disco1.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco1.$P_Roda1_aro        ) = $S_disco1.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco1.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco1.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco1.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco1.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_disco1.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco1.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco1.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco1.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco1.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_disco2.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco2.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco2.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco2.$J_Base             ) = $M_Boogie_Disco2        ! From Marker
+joint.type (                        $S_disco2.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco2.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco2.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco2.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco2.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco2.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco2.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco2.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco2.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco2.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco2.$P_Roda1_aro        ) = $S_disco2.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco2.$P_Roda1_aro        ) = $S_disco2.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco2.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco2.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco2.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco2.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_disco2.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco2.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco2.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco2.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco2.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_disco4.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco4.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco4.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco4.$J_Base             ) = $M_Boogie_Disco4        ! From Marker
+joint.type (                        $S_disco4.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco4.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco4.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco4.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco4.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco4.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco4.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco4.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco4.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco4.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco4.$P_Roda1_aro        ) = $S_disco4.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco4.$P_Roda1_aro        ) = $S_disco4.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco4.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco4.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco4.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco4.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_disco4.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco4.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco4.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco4.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco4.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
+
+
+subvar.str (                        $S_disco6.$_b                 ) = '0.01'                  ! Definition
+
+subvar.str (                        $S_disco6.$_d                 ) = '0.511'                 ! Definition
+
+subvar.str (                        $S_disco6.$_A                 ) = '0.001'                 ! Definition
+
+joint.from (                        $S_disco6.$J_Base             ) = $M_Boogie_Disco6        ! From Marker
+joint.type (                        $S_disco6.$J_Base             ) = 2                       ! Type
+
+
+prim.pos (                2 ,       $S_disco6.$P_Roda1_pneu       ) = 4.49999999999999983E-02 ! Position
+prim.ang (                3 ,       $S_disco6.$P_Roda1_pneu       ) = { 90 deg }              ! Angles
+prim.mp.dens.solid (                $S_disco6.$P_Roda1_pneu       ) = 7.85000000000000000E+03 ! Density
+prim.par (                2 ,       $S_disco6.$P_Roda1_pneu       ) = './pecas_stl/disco_de_corte_stl/discos.stl' ! [-] CAD file name
+
+prim.type (                         $S_disco6.$P_Roda1_aro        ) = 2                       ! Type
+prim.ang (                1 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            2 ,       $S_disco6.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (red component)
+prim.color.g (            2 ,       $S_disco6.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (green component)
+prim.color.b (            2 ,       $S_disco6.$P_Roda1_aro        ) = 1.28000000000000000E+02 ! Colors (blue component)
+prim.color.t (            2 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $S_disco6.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! Transparency
+prim.par (                2 ,       $S_disco6.$P_Roda1_aro        ) = $S_disco6.$_b           ! [m] Height
+prim.par (                3 ,       $S_disco6.$P_Roda1_aro        ) = $S_disco6.$_d           ! [m] Outer diameter
+prim.par (                4 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [m] Inner diameter
+prim.par (                5 ,       $S_disco6.$P_Roda1_aro        ) = 2.40000000000000000E+01 ! [-] Number of planes
+prim.par (                6 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [-] Number of highlighted planes
+prim.par (                7 ,       $S_disco6.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show bottom cap
+prim.par (                8 ,       $S_disco6.$P_Roda1_aro        ) = 1.00000000000000000E+00 ! [-] Show top cap
+prim.par (                9 ,       $S_disco6.$P_Roda1_aro        ) = 0.00000000000000000E+00 ! [rad] Start angle
+
+
+joint.from (                        $S_disco6.$J_connector        ) = $M_Isys                 ! From Marker
+
+
+marker.par (              3 ,       $S_disco6.$M_chao_contact1    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco6.$M_chao_contact2    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+marker.par (              3 ,       $S_disco6.$M_chao_contact3    ) = $P_chao                 ! [-] Contact geometry Primitive
+
+prim.transparency (                 $S_disco6.$P_chao             ) = 1.00000000000000000E+00 ! Transparency
 
 
 model.data.redundancy                                               = 'eJxjYBgFxAJGEsVJNYsc88mxm9rmMJLJZsQjTi3zsZmDz15qm2NglmRoaZaUYmiQnGhgaGyYYppimmaUaGFuZJ6WYmaRBgCwvAjegAMAAAAAAAA=' ! Constraint redundancy data
