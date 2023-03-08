@@ -860,7 +860,7 @@ subvar.str (                        $S_DiscosV.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscosV.$_d                ) = '2*$_r_discosV'         ! Definition
 
-subvar.str (                        $S_DiscosV.$_A                ) = '0.001'                 ! Definition
+subvar.str (                        $S_DiscosV.$_A                ) = '0.001*0.45'            ! Definition
 
 marker.st.alg (           1 ,       $S_DiscosV.$M_Base_contact1   ) = -6.28318531480476494E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscosV.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
@@ -925,7 +925,7 @@ subvar.str (                        $S_DiscoD1.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscoD1.$_d                ) = '2*$_r_discosD'         ! Definition
 
-subvar.str (                        $S_DiscoD1.$_A                ) = '0.001'                 ! Definition
+subvar.str (                        $S_DiscoD1.$_A                ) = '0.001*2.45'            ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoD1.$M_Base_contact1   ) = -6.28318531202079722E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoD1.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
@@ -987,7 +987,7 @@ subvar.str (                        $S_DiscoD2.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscoD2.$_d                ) = '2*$_r_discosD'         ! Definition
 
-subvar.str (                        $S_DiscoD2.$_A                ) = '0.001'                 ! Definition
+subvar.str (                        $S_DiscoD2.$_A                ) = '0.001*2.45'            ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoD2.$M_Base_contact1   ) = -6.28318531691980020E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoD2.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
