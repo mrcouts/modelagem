@@ -80,9 +80,9 @@ substr.id (                         $S_DiscoD2                    ) = '5'       
 ! Views
 !**********************************************************************
 view.type (                         $V_WorkingView                ) = 0                       ! Projection type
-view.pos (                1 ,       $V_WorkingView                ) = 5.46697412471985444E-01 ! Position
-view.pos (                2 ,       $V_WorkingView                ) = -1.79315760042663896E+00 ! Position
-view.pos (                3 ,       $V_WorkingView                ) = 3.73424025179701857E-01 ! Position
+view.pos (                1 ,       $V_WorkingView                ) = 1.05827004059392493E+00 ! Position
+view.pos (                2 ,       $V_WorkingView                ) = -1.62677096039260505E+00 ! Position
+view.pos (                3 ,       $V_WorkingView                ) = 3.66945244939415716E-01 ! Position
 view.orient (             1 ,       $V_WorkingView                ) = -6.92506849765777588E-01 ! Orientation
 view.orient (             2 ,       $V_WorkingView                ) = -1.28408163785934448E-01 ! Orientation
 view.orient (             3 ,       $V_WorkingView                ) = -9.28750559687614441E-02 ! Orientation
@@ -278,7 +278,7 @@ subvar.dflt (                       $_c_discoD2                   ) = ''        
 subvar.str (                        $_L0                          ) = '0.15'                  ! Definition
 subvar.dflt (                       $_L0                          ) = ''                      ! Default value
 
-subvar.str (                        $_k                           ) = '1e3'                   ! Definition
+subvar.str (                        $_k                           ) = '1e4'                   ! Definition
 subvar.dflt (                       $_k                           ) = ''                      ! Default value
 
 subvar.str (                        $_beta0                       ) = '-15.5 deg'             ! Definition
@@ -774,7 +774,7 @@ subvar.str (                        $S_DiscoComp1.$_b             ) = '0.1'     
 
 subvar.str (                        $S_DiscoComp1.$_d             ) = '0.35'                  ! Definition
 
-subvar.str (                        $S_DiscoComp1.$_A             ) = '0.05*10'               ! Definition
+subvar.str (                        $S_DiscoComp1.$_A             ) = '0.004'                 ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoComp1.$M_Base_contact1) = -6.28318529721279795E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoComp1.$M_Base_contact1) = 1.57079632679489656E+00 ! Algebraic states
@@ -792,6 +792,7 @@ joint.type (                        $S_DiscoComp1.$J_Base         ) = 2         
 prim.ang (                3 ,       $S_DiscoComp1.$P_Roda1_pneu   ) = { 90 deg }              ! Angles
 prim.par (                2 ,       $S_DiscoComp1.$P_Roda1_pneu   ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
 
+prim.mp.dens.solid (                $S_DiscoComp1.$P_Roda1_aro    ) = 7.85000000000000000E+03 ! Density
 prim.par (                2 ,       $S_DiscoComp1.$P_Roda1_aro    ) = './pecas_stl/mecanismo_de_plantio_stl/aro.stl' ! [-] CAD file name
 
 
@@ -817,7 +818,7 @@ subvar.str (                        $S_DiscoComp2.$_b             ) = '0.1'     
 
 subvar.str (                        $S_DiscoComp2.$_d             ) = '0.35'                  ! Definition
 
-subvar.str (                        $S_DiscoComp2.$_A             ) = '0.05*10'               ! Definition
+subvar.str (                        $S_DiscoComp2.$_A             ) = '0.004'                 ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoComp2.$M_Base_contact1) = -6.28318531715695627E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoComp2.$M_Base_contact1) = 1.57079632679489656E+00 ! Algebraic states
@@ -835,6 +836,7 @@ joint.type (                        $S_DiscoComp2.$J_Base         ) = 2         
 prim.ang (                3 ,       $S_DiscoComp2.$P_Roda1_pneu   ) = { 90 deg }              ! Angles
 prim.par (                2 ,       $S_DiscoComp2.$P_Roda1_pneu   ) = './pecas_stl/mecanismo_de_plantio_stl/pneu (1).stl' ! [-] CAD file name
 
+prim.mp.dens.solid (                $S_DiscoComp2.$P_Roda1_aro    ) = 7.85000000000000000E+03 ! Density
 prim.par (                2 ,       $S_DiscoComp2.$P_Roda1_aro    ) = './pecas_stl/mecanismo_de_plantio_stl/aro.stl' ! [-] CAD file name
 
 
@@ -860,7 +862,7 @@ subvar.str (                        $S_DiscosV.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscosV.$_d                ) = '2*$_r_discosV'         ! Definition
 
-subvar.str (                        $S_DiscosV.$_A                ) = '0.001*0.3'             ! Definition
+subvar.str (                        $S_DiscosV.$_A                ) = '0.002'                 ! Definition
 
 marker.st.alg (           1 ,       $S_DiscosV.$M_Base_contact1   ) = -6.28318531480476494E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscosV.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
@@ -925,7 +927,7 @@ subvar.str (                        $S_DiscoD1.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscoD1.$_d                ) = '2*$_r_discosD'         ! Definition
 
-subvar.str (                        $S_DiscoD1.$_A                ) = '0.001*2.35'            ! Definition
+subvar.str (                        $S_DiscoD1.$_A                ) = '0.001*0.1'             ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoD1.$M_Base_contact1   ) = -6.28318531202079722E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoD1.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states
@@ -987,7 +989,7 @@ subvar.str (                        $S_DiscoD2.$_b                ) = '0.1'     
 
 subvar.str (                        $S_DiscoD2.$_d                ) = '2*$_r_discosD'         ! Definition
 
-subvar.str (                        $S_DiscoD2.$_A                ) = '0.001*2.35'            ! Definition
+subvar.str (                        $S_DiscoD2.$_A                ) = '0.001*0.1'             ! Definition
 
 marker.st.alg (           1 ,       $S_DiscoD2.$M_Base_contact1   ) = -6.28318531691980020E+00 ! Algebraic states
 marker.st.alg (           2 ,       $S_DiscoD2.$M_Base_contact1   ) = 1.57079632679489656E+00 ! Algebraic states

@@ -202,7 +202,7 @@ slv.txt (                           $SLV_SolverSettings           ) = ''        
 subvar.str (                        $_b                           ) = '0.400'                 ! Definition
 subvar.dflt (                       $_b                           ) = ''                      ! Default value
 
-subvar.str (                        $_TL                          ) = '$_d*1.1'               ! Definition
+subvar.str (                        $_TL                          ) = '$_d*1.3'               ! Definition
 subvar.dflt (                       $_TL                          ) = ''                      ! Default value
 
 subvar.str (                        $_d                           ) = '0.879'                 ! Definition
@@ -227,7 +227,7 @@ subvar.str (                        $_3g23                        ) = 'sqrt(3/5)
 subvar.dflt (                       $_3g23                        ) = ''                      ! Default value
 subvar.txt (                        $_3g23                        ) = '(1/3)*sqrt(5-2*sqrt(10/7))' ! Comment
 
-subvar.str (                        $_rarb                        ) = '0.015'                 ! Definition
+subvar.str (                        $_rarb                        ) = '0.015*2'               ! Definition
 subvar.dflt (                       $_rarb                        ) = ''                      ! Default value
 subvar.txt (                        $_rarb                        ) = ''                      ! Comment
 
@@ -498,6 +498,33 @@ prim.par (               30 ,       $P_Roda1_pneu                 ) = 0.00000000
 prim.par (               31 ,       $P_Roda1_pneu                 ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_Roda1_pneu                 ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
+prim.type (                         $P_Roda1_pneu_Copy_1          ) = 39                      ! Type
+prim.ref (                          $P_Roda1_pneu_Copy_1          ) = $M_Roda1_BRF            ! Reference Marker
+prim.pos (                1 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! Position
+prim.ang (                1 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                2 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! Angles
+prim.ang (                3 ,       $P_Roda1_pneu_Copy_1          ) = { 180 deg }             ! Angles
+prim.color.r (            1 ,       $P_Roda1_pneu_Copy_1          ) = 5.20000000000000000E+01 ! Colors (red component)
+prim.color.g (            1 ,       $P_Roda1_pneu_Copy_1          ) = 5.20000000000000000E+01 ! Colors (green component)
+prim.color.b (            1 ,       $P_Roda1_pneu_Copy_1          ) = 5.20000000000000000E+01 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_Roda1_pneu_Copy_1          ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! Density
+prim.par (                2 ,       $P_Roda1_pneu_Copy_1          ) = './pecas_stl/pneu.stl'  ! [-] CAD file name
+prim.par (                9 ,       $P_Roda1_pneu_Copy_1          ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Roda1_pneu_Copy_1          ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Roda1_pneu_Copy_1          ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
 prim.type (                         $P_Roda1_aro                  ) = 39                      ! Type
 prim.ref (                          $P_Roda1_aro                  ) = $M_Roda1_BRF            ! Reference Marker
 prim.pos (                1 ,       $P_Roda1_aro                  ) = 0.00000000000000000E+00 ! Position
@@ -523,6 +550,33 @@ prim.par (               18 ,       $P_Roda1_aro                  ) = 0.00000000
 prim.par (               30 ,       $P_Roda1_aro                  ) = 0.00000000000000000E+00 ! [-] Wireframe representation
 prim.par (               31 ,       $P_Roda1_aro                  ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
 prim.par (               32 ,       $P_Roda1_aro                  ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
+
+prim.type (                         $P_Roda1_aro_Copy_1           ) = 39                      ! Type
+prim.ref (                          $P_Roda1_aro_Copy_1           ) = $M_Roda1_BRF            ! Reference Marker
+prim.pos (                1 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! Position
+prim.ang (                1 ,       $P_Roda1_aro_Copy_1           ) = { 90 deg }              ! Angles
+prim.ang (                2 ,       $P_Roda1_aro_Copy_1           ) = { 90 deg }              ! Angles
+prim.ang (                3 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! Angles
+prim.color.r (            1 ,       $P_Roda1_aro_Copy_1           ) = 1.88000000000000000E+02 ! Colors (red component)
+prim.color.g (            1 ,       $P_Roda1_aro_Copy_1           ) = 1.88000000000000000E+02 ! Colors (green component)
+prim.color.b (            1 ,       $P_Roda1_aro_Copy_1           ) = 1.88000000000000000E+02 ! Colors (blue component)
+prim.color.t (            1 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! Colors (transparency component)
+prim.transparency (                 $P_Roda1_aro_Copy_1           ) = 1.00000000000000000E+00 ! Transparency
+prim.mp.dens.solid (                $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! Density
+prim.par (                2 ,       $P_Roda1_aro_Copy_1           ) = './pecas_stl/aro.stl'   ! [-] CAD file name
+prim.par (                9 ,       $P_Roda1_aro_Copy_1           ) = { 1/1000 }              ! [-] Global scaling factor
+prim.par (               10 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Scaling factor in x direction
+prim.par (               11 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Scaling factor in y direction
+prim.par (               12 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Scaling factor in z direction
+prim.par (               13 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Mirror in x direction
+prim.par (               14 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Mirror in y direction
+prim.par (               15 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Mirror in z direction
+prim.par (               16 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Switch vertex normals
+prim.par (               17 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Switch face normals
+prim.par (               18 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Repeat shape
+prim.par (               30 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Wireframe representation
+prim.par (               31 ,       $P_Roda1_aro_Copy_1           ) = 5.23598775598298816E-01 ! [rad] Sharp edge angle
+prim.par (               32 ,       $P_Roda1_aro_Copy_1           ) = 0.00000000000000000E+00 ! [-] Vertex normal (re-)computation
 
 
 body.m (                            $B_connector                  ) = 1.00000000000000006E-09 ! Mass of the Body
